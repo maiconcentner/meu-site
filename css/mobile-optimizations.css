@@ -1,0 +1,117 @@
+/* 
+* Otimizações específicas para dispositivos móveis
+* Autor: Seu Nome
+* Data: 2025
+*/
+
+/* Overlay para menu mobile */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Impedir rolagem quando menu estiver aberto */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Melhorar áreas de toque */
+@media (max-width: 767.98px) {
+    /* Aumentar área de toque para links e botões */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Ajustar espaçamento de links no footer */
+    .footer-column ul li {
+        padding: 8px 0;
+        margin-bottom: 0;
+    }
+    
+    /* Melhorar visualização de formulários */
+    input, select, textarea, button[type="submit"] {
+        font-size: 16px !important; /* Evitar zoom em iOS */
+    }
+    
+    /* Melhorar cards de serviços em mobile */
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .service-card p {
+        flex-grow: 1;
+    }
+    
+    /* Melhorar visualização de portfólio em mobile */
+    .portfolio-item.touch-focus .portfolio-overlay {
+        opacity: 1;
+    }
+    
+    .portfolio-item.touch-focus .portfolio-info {
+        transform: translateY(0);
+    }
+    
+    /* Melhorar visualização de depoimentos */
+    .testimonial-card {
+        margin: 10px 0;
+    }
+    
+    /* Ajustar CTA para mobile */
+    .cta-content .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Otimizar carregamento de fontes */
+.fonts-loaded body {
+    opacity: 1;
+}
+
+/* Melhorar performance de animações em dispositivos de baixo desempenho */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Melhorar legibilidade em telas pequenas */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 15px;
+    }
+    
+    p {
+        line-height: 1.5;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Otimizar imagens para dispositivos móveis */
+.portfolio-image img,
+.testimonial-author img {
+    width: 100%;
+    height: auto;
+}

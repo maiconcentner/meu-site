@@ -38,6 +38,18 @@
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* Melhorar espaçamento em tablets */
+    .services-section,
+    .recent-works-section,
+    .testimonials-section,
+    .contact-section {
+        padding: 70px 0;
+    }
+    
+    .cta-section {
+        padding: 60px 0;
+    }
 }
 
 /* Telas pequenas (celulares em modo paisagem, menos de 768px) */
@@ -66,6 +78,7 @@
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: var(--transition);
         z-index: 1000;
+        overflow-y: auto; /* Permitir rolagem no menu mobile */
     }
     
     .main-nav .nav-list.active {
@@ -79,17 +92,20 @@
     
     .main-nav .nav-list li a {
         display: block;
-        padding: 5px 0;
+        padding: 8px 0; /* Aumentar área de toque */
         font-size: 1.1rem;
     }
     
     .main-nav .nav-list li a.btn {
         display: inline-block;
+        width: 100%; /* Botão de largura total no menu mobile */
+        text-align: center;
     }
     
     .hero-section {
         padding: 80px 0;
         height: auto;
+        margin-top: 60px; /* Ajustar para o header menor */
     }
     
     .hero-content h1 {
@@ -105,6 +121,10 @@
         gap: 15px;
     }
     
+    .hero-buttons .btn {
+        width: 100%; /* Botões de largura total em mobile */
+    }
+    
     .services-grid,
     .portfolio-showcase {
         grid-template-columns: 1fr;
@@ -114,6 +134,34 @@
         flex-direction: column;
         gap: 15px;
         text-align: center;
+    }
+    
+    /* Ajustes adicionais para mobile */
+    .services-section,
+    .recent-works-section,
+    .testimonials-section,
+    .contact-section {
+        padding: 50px 0;
+    }
+    
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+    }
+    
+    /* Melhorar formulário em mobile */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px 15px; /* Aumentar área de toque */
+    }
+    
+    /* Melhorar visualização de cards */
+    .service-card {
+        padding: 25px 20px;
     }
 }
 
@@ -134,5 +182,64 @@
     
     .testimonial-author img {
         margin: 0 auto 10px;
+    }
+    
+    /* Melhorias adicionais para telas muito pequenas */
+    .logo h1 {
+        font-size: 1.5rem; /* Logo menor */
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem; /* Título menor */
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    /* Melhorar espaçamento vertical */
+    .section-header h2::after {
+        margin-top: 10px;
+    }
+    
+    /* Ajustar portfolio para telas pequenas */
+    .portfolio-image {
+        height: 200px;
+    }
+    
+    .portfolio-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Melhorar visualização de contato */
+    .contact-method {
+        align-items: flex-start;
+    }
+    
+    .contact-method i {
+        margin-top: 3px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (menos de 360px) */
+@media (max-width: 359.98px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
     }
 }
