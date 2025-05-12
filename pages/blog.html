@@ -1,1 +1,475 @@
-﻿<!DOCTYPE html><html lang='pt-br'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Blog</title><link rel='stylesheet' href='../css/style.css'></head><body><h1>Blog</h1></body></html>
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog do Prof. Maicon Centner - Artigos sobre matemática, estatística, educação e ciência de dados">
+    <title>Blog - Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner do Blog -->
+    <section class="hero-section" style="height: 50vh; min-height: 400px;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fade-in">Blog Sobre Exatas</h1>
+                <p class="animate-fade-in delay-1">Artigos, dicas e reflexões sobre matemática, estatística, educação e ciência de dados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros do Blog -->
+    <section class="blog-filter-section">
+        <div class="container">
+            <div class="blog-filters">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar no blog..." id="blogSearch">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="matematica">Matemática</button>
+                    <button class="filter-btn" data-category="estatistica">Estatística</button>
+                    <button class="filter-btn" data-category="educacao">Educação</button>
+                    <button class="filter-btn" data-category="ia">Inteligência Artificial</button>
+                    <button class="filter-btn" data-category="carreira">Carreira</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artigos em Destaque -->
+    <section class="featured-posts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artigos em Destaque</h2>
+                <p>Conteúdos selecionados para ampliar seu conhecimento em exatas</p>
+            </div>
+            <div class="featured-posts-grid">
+                <div class="featured-post main-feature">
+                    <div class="post-image">
+                        <img src="../images/blog/ia-educacao-matematica.jpg" alt="IA na Educação Matemática">
+                        <div class="post-category">
+                            <span>Educação</span>
+                            <span>IA</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 10 de maio de 2025</span>
+                        <h3><a href="blog/ia-educacao-matematica.html">Como a Inteligência Artificial está transformando o ensino de matemática</a></h3>
+                        <p>A integração de ferramentas de IA nas aulas de matemática tem revolucionado a forma como os alunos aprendem e como os professores ensinam. Conheça as principais tecnologias e metodologias que estão mudando o cenário educacional.</p>
+                        <a href="blog/ia-educacao-matematica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="featured-post">
+                    <div class="post-image">
+                        <img src="../images/blog/estatistica-cotidiano.jpg" alt="Estatística no Cotidiano">
+                        <div class="post-category">
+                            <span>Estatística</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 5 de maio de 2025</span>
+                        <h3><a href="blog/estatistica-cotidiano.html">Estatística no cotidiano: como os dados influenciam nossas decisões diárias</a></h3>
+                        <p>Entenda como conceitos estatísticos estão presentes em decisões que tomamos todos os dias, mesmo sem percebermos.</p>
+                        <a href="blog/estatistica-cotidiano.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="featured-post">
+                    <div class="post-image">
+                        <img src="../images/blog/matematica-financeira.jpg" alt="Matemática Financeira">
+                        <div class="post-category">
+                            <span>Matemática</span>
+                            <span>Carreira</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 28 de abril de 2025</span>
+                        <h3><a href="blog/matematica-financeira-essencial.html">Matemática financeira essencial: conceitos que todo profissional deveria dominar</a></h3>
+                        <p>Descubra os principais conceitos de matemática financeira que podem ajudar na gestão pessoal e no desenvolvimento profissional.</p>
+                        <a href="blog/matematica-financeira-essencial.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Artigos -->
+    <section class="blog-posts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Todos os Artigos</h2>
+                <p>Explore nosso acervo de conteúdos sobre matemática, estatística e educação</p>
+            </div>
+            <div class="blog-posts-grid">
+                <!-- Artigo 1 -->
+                <div class="blog-post-card" data-category="matematica educacao">
+                    <div class="post-image">
+                        <img src="../images/blog/metodologias-ativas.jpg" alt="Metodologias Ativas">
+                        <div class="post-category">
+                            <span>Matemática</span>
+                            <span>Educação</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 25 de abril de 2025</span>
+                        <h3><a href="blog/metodologias-ativas-matematica.html">5 metodologias ativas para tornar suas aulas de matemática mais envolventes</a></h3>
+                        <p>Estratégias práticas para implementar metodologias ativas e transformar o ensino de matemática em uma experiência mais dinâmica e participativa.</p>
+                        <a href="blog/metodologias-ativas-matematica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 2 -->
+                <div class="blog-post-card" data-category="estatistica ia">
+                    <div class="post-image">
+                        <img src="../images/blog/machine-learning.jpg" alt="Machine Learning">
+                        <div class="post-category">
+                            <span>Estatística</span>
+                            <span>IA</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 20 de abril de 2025</span>
+                        <h3><a href="blog/estatistica-machine-learning.html">A importância da estatística para o machine learning: fundamentos essenciais</a></h3>
+                        <p>Como conceitos estatísticos formam a base para algoritmos de aprendizado de máquina e por que dominar estatística é fundamental para profissionais de dados.</p>
+                        <a href="blog/estatistica-machine-learning.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 3 -->
+                <div class="blog-post-card" data-category="matematica">
+                    <div class="post-image">
+                        <img src="../images/blog/calculo-aplicacoes.jpg" alt="Cálculo e Aplicações">
+                        <div class="post-category">
+                            <span>Matemática</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 15 de abril de 2025</span>
+                        <h3><a href="blog/calculo-aplicacoes-praticas.html">Cálculo diferencial e integral: aplicações práticas no mundo real</a></h3>
+                        <p>Exemplos concretos de como o cálculo é utilizado em diferentes áreas profissionais, da engenharia à economia.</p>
+                        <a href="blog/calculo-aplicacoes-praticas.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 4 -->
+                <div class="blog-post-card" data-category="carreira educacao">
+                    <div class="post-image">
+                        <img src="../images/blog/carreira-matematica.jpg" alt="Carreira em Matemática">
+                        <div class="post-category">
+                            <span>Carreira</span>
+                            <span>Educação</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 10 de abril de 2025</span>
+                        <h3><a href="blog/carreiras-matematica.html">10 carreiras promissoras para quem gosta de matemática além da docência</a></h3>
+                        <p>Descubra oportunidades de carreira além da sala de aula para profissionais com formação e habilidades em matemática.</p>
+                        <a href="blog/carreiras-matematica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 5 -->
+                <div class="blog-post-card" data-category="estatistica carreira">
+                    <div class="post-image">
+                        <img src="../images/blog/r-vs-python.jpg" alt="R vs Python">
+                        <div class="post-category">
+                            <span>Estatística</span>
+                            <span>Carreira</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 5 de abril de 2025</span>
+                        <h3><a href="blog/r-vs-python-estatistica.html">R vs Python: qual linguagem escolher para análise estatística?</a></h3>
+                        <p>Uma comparação detalhada entre R e Python para análise de dados e estatística, com prós e contras de cada linguagem.</p>
+                        <a href="blog/r-vs-python-estatistica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 6 -->
+                <div class="blog-post-card" data-category="ia educacao">
+                    <div class="post-image">
+                        <img src="../images/blog/chatgpt-educacao.jpg" alt="ChatGPT na Educação">
+                        <div class="post-category">
+                            <span>IA</span>
+                            <span>Educação</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 1 de abril de 2025</span>
+                        <h3><a href="blog/chatgpt-ensino-matematica.html">Como usar o ChatGPT para potencializar o ensino de matemática</a></h3>
+                        <p>Guia prático com exemplos de prompts e estratégias para utilizar o ChatGPT como ferramenta auxiliar no ensino e aprendizado de matemática.</p>
+                        <a href="blog/chatgpt-ensino-matematica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 7 -->
+                <div class="blog-post-card" data-category="matematica educacao">
+                    <div class="post-image">
+                        <img src="../images/blog/matematica-jogos.jpg" alt="Matemática e Jogos">
+                        <div class="post-category">
+                            <span>Matemática</span>
+                            <span>Educação</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 25 de março de 2025</span>
+                        <h3><a href="blog/matematica-jogos-digitais.html">Matemática nos jogos digitais: aprendendo com diversão e tecnologia</a></h3>
+                        <p>Como jogos digitais podem ser aliados no ensino de conceitos matemáticos, desenvolvendo habilidades de forma lúdica e engajadora.</p>
+                        <a href="blog/matematica-jogos-digitais.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 8 -->
+                <div class="blog-post-card" data-category="estatistica">
+                    <div class="post-image">
+                        <img src="../images/blog/visualizacao-dados.jpg" alt="Visualização de Dados">
+                        <div class="post-category">
+                            <span>Estatística</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 20 de março de 2025</span>
+                        <h3><a href="blog/visualizacao-dados-eficaz.html">A arte da visualização de dados: como comunicar estatísticas de forma eficaz</a></h3>
+                        <p>Princípios e técnicas para criar visualizações de dados que comunicam informações estatísticas de maneira clara e impactante.</p>
+                        <a href="blog/visualizacao-dados-eficaz.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 9 -->
+                <div class="blog-post-card" data-category="matematica carreira">
+                    <div class="post-image">
+                        <img src="../images/blog/excel-avancado.jpg" alt="Excel Avançado">
+                        <div class="post-category">
+                            <span>Matemática</span>
+                            <span>Carreira</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 15 de março de 2025</span>
+                        <h3><a href="blog/excel-avancado-matematica.html">Excel avançado para profissionais: funções matemáticas que todo profissional deveria conhecer</a></h3>
+                        <p>Guia prático das principais funções matemáticas e estatísticas do Excel que podem otimizar seu trabalho e análises.</p>
+                        <a href="blog/excel-avancado-matematica.html" class="read-more">Ler artigo completo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginação -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <span>...</span>
+                <a href="#">5</a>
+                <a href="#" class="next">Próximo <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <h2>Receba nossos artigos por e-mail</h2>
+                    <p>Inscreva-se para receber conteúdos exclusivos sobre matemática, estatística e educação</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletterForm" action="#" method="POST">
+                        <div class="form-group">
+                            <input type="email" id="newsletterEmail" name="email" placeholder="Seu melhor e-mail" required>
+                            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="termsCheck" name="terms" required>
+                            <label for="termsCheck">Concordo em receber e-mails com conteúdos e novidades</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Tem dúvidas em matemática ou estatística?</h2>
+                <p>Entre em contato para agendar uma aula particular ou solicitar ajuda com exercícios e projetos acadêmicos.</p>
+                <a href="orcamento.html" class="btn btn-light">Solicitar orçamento agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#analise">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="faq.html">Perguntas Frequentes</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@SobreExatas" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // Filtros do blog
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogPosts = document.querySelectorAll('.blog-post-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover classe active de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adicionar classe active ao botão clicado
+                    button.classList.add('active');
+                    
+                    // Filtrar posts
+                    const category = button.getAttribute('data-category');
+                    
+                    if (category === 'all') {
+                        // Mostrar todos os posts
+                        blogPosts.forEach(post => {
+                            post.style.display = 'block';
+                        });
+                    } else {
+                        // Filtrar posts pela categoria
+                        blogPosts.forEach(post => {
+                            const postCategories = post.getAttribute('data-category');
+                            
+                            if (postCategories.includes(category)) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Busca no blog
+            const searchInput = document.getElementById('blogSearch');
+            
+            if (searchInput) {
+                searchInput.addEventListener('keyup', () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    
+                    blogPosts.forEach(post => {
+                        const title = post.querySelector('h3').textContent.toLowerCase();
+                        const content = post.querySelector('p').textContent.toLowerCase();
+                        
+                        if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                            post.style.display = 'block';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('newsletterEmail').value;
+                    
+                    // Aqui você pode adicionar o código para enviar o email para seu sistema
+                    alert(`Obrigado por se inscrever! Em breve você receberá nossos conteúdos no email: ${email}`);
+                    
+                    newsletterForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
