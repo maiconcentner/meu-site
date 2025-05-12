@@ -1,0 +1,876 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perguntas frequentes sobre os serviços do Prof. Maicon Centner - Matemática, Estatística e Ciência de Dados">
+    <title>FAQ - Perguntas Frequentes | Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Resto do código HTML permanece igual -->
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página com Partículas -->
+    <section class="page-banner faq-banner">
+        <div id="particles-js" class="particles-container"></div>
+        <div class="container">
+            <div class="banner-content">
+                <h1 class="animate-fade-in">Perguntas Frequentes</h1>
+                <p class="animate-fade-in delay-1">Respostas para as dúvidas mais comuns sobre meus serviços</p>
+                <div class="animate-fade-in delay-2">
+                    <a href="#faq-search" class="btn btn-outline scroll-to">
+                        <i class="fas fa-search"></i> Buscar respostas
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-wave">
+            
+        </div>
+    </section>
+
+    <!-- Pesquisa de FAQ com Animação -->
+    <section id="faq-search" class="faq-search-section">
+        <div class="container">
+            <div class="faq-search-container animate-slide-up">
+                <h2>Como posso ajudar você hoje?</h2>
+                <div class="search-box">
+                    <input type="text" id="faqSearch" placeholder="Digite sua dúvida aqui...">
+                    <button class="search-btn pulse-animation"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="popular-searches">
+                    <p>Buscas populares:</p>
+                    <div class="search-tags">
+                        <a href="#" class="search-tag animate-tag" data-search="preço">Preços</a>
+                        <a href="#" class="search-tag animate-tag" data-search="aula online">Aulas online</a>
+                        <a href="#" class="search-tag animate-tag" data-search="pagamento">Formas de pagamento</a>
+                        <a href="#" class="search-tag animate-tag" data-search="prazo">Prazos de entrega</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </section>
+
+    <!-- Seção de FAQ com Cards Animados -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>Dúvidas Comuns</h2>
+                <p>Encontre respostas para as perguntas mais frequentes sobre meus serviços</p>
+                <div class="section-divider">
+                    <span><i class="fas fa-question-circle"></i></span>
+                </div>
+            </div>
+
+            <div class="faq-categories animate-slide-up">
+                <button class="faq-category-btn active" data-category="geral">
+                    <i class="fas fa-info-circle"></i> Geral
+                </button>
+                <button class="faq-category-btn" data-category="aulas">
+                    <i class="fas fa-chalkboard-teacher"></i> Aulas Particulares
+                </button>
+                <button class="faq-category-btn" data-category="exercicios">
+                    <i class="fas fa-tasks"></i> Resolução de Exercícios
+                </button>
+                <button class="faq-category-btn" data-category="analise">
+                    <i class="fas fa-chart-bar"></i> Análise Estatística
+                </button>
+                <button class="faq-category-btn" data-category="automacao">
+                    <i class="fas fa-robot"></i> Automatização
+                </button>
+                <button class="faq-category-btn" data-category="pagamentos">
+                    <i class="fas fa-credit-card"></i> Pagamentos
+                </button>
+            </div>
+
+            <div class="faq-container">
+                <!-- Perguntas Gerais -->
+                <div class="faq-category active" data-category="geral" id="geral">
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Como funciona o processo de contratação dos seus serviços?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>O processo é simples e direto: entre em contato comigo através do formulário no site, WhatsApp ou e-mail, descrevendo sua necessidade. Analisarei sua solicitação e enviarei uma proposta detalhada com valores, prazos e condições. Após a aprovação da proposta, iniciamos o trabalho conforme o cronograma acordado.</p>
+                                <div class="faq-process-steps">
+                                    <div class="process-step">
+                                        <div class="step-icon"><i class="fas fa-comments"></i></div>
+                                        <div class="step-text">Contato inicial</div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                                        <div class="step-text">Proposta</div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="step-text">Aprovação</div>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-icon"><i class="fas fa-play-circle"></i></div>
+                                        <div class="step-text">Início</div>
+                                    </div>
+                                </div>
+                                <div class="faq-cta">
+                                    <a href="orcamento.html" class="btn btn-primary btn-glow">Solicitar orçamento</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-fade-in delay-1">
+                        <div class="faq-question">
+                            <h3>Quais áreas da matemática você atende?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Atendo diversas áreas da matemática, incluindo:</p>
+                                <div class="faq-topics">
+                                    <div class="topic-item">
+                                        <i class="fas fa-calculator"></i>
+                                        <span>Matemática básica e avançada</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-square-root-alt"></i>
+                                        <span>Cálculo diferencial e integral</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>Álgebra linear</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-chart-pie"></i>
+                                        <span>Estatística e probabilidade</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>Matemática financeira</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Matemática aplicada</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-database"></i>
+                                        <span>Ciência de dados</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fas fa-wave-square"></i>
+                                        <span>Equações diferenciais</span>
+                                    </div>
+                                </div>
+                                <div class="faq-cta">
+                                    <a href="servicos.html" class="btn btn-outline btn-hover-effect">Ver todos os serviços</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-2">
+                        <div class="faq-question">
+                            <h3>Você atende apenas alunos de graduação ou também outros níveis?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Atendo alunos de diversos níveis educacionais, desde o ensino fundamental até pós-graduação, além de profissionais que precisam de apoio em matemática aplicada. Cada atendimento é personalizado conforme o nível de conhecimento e as necessidades específicas do aluno ou cliente.</p>
+                                <div class="education-levels">
+                                    <div class="level-bar">
+                                        <span class="level-label">Ensino Fundamental</span>
+                                        <div class="level-progress">
+                                            <div class="level-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="level-bar">
+                                        <span class="level-label">Ensino Médio</span>
+                                        <div class="level-progress">
+                                            <div class="level-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="level-bar">
+                                        <span class="level-label">Graduação</span>
+                                        <div class="level-progress">
+                                            <div class="level-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="level-bar">
+                                        <span class="level-label">Pós-Graduação</span>
+                                        <div class="level-progress">
+                                            <div class="level-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="level-bar">
+                                        <span class="level-label">Profissionais</span>
+                                        <div class="level-progress">
+                                            <div class="level-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-3">
+                        <div class="faq-question">
+                            <h3>Você emite certificado ou nota fiscal pelos serviços?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Sim, emito nota fiscal para todos os serviços prestados. Para cursos e treinamentos específicos, também posso fornecer certificados de participação ou conclusão, conforme acordado previamente.</p>
+                                <div class="document-icons">
+                                    <div class="document-icon">
+                                        <i class="fas fa-file-invoice"></i>
+                                        <span>Nota Fiscal</span>
+                                    </div>
+                                    <div class="document-icon">
+                                        <i class="fas fa-certificate"></i>
+                                        <span>Certificado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aulas Particulares -->
+                <div class="faq-category" data-category="aulas" id="aulas">
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Como funcionam as aulas particulares online?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>As aulas online são realizadas por plataformas como Zoom, Google Meet ou Microsoft Teams, conforme sua preferência. Utilizo uma mesa digitalizadora e compartilhamento de tela para explicações claras e interativas. Disponibilizo materiais de apoio antes ou depois das aulas, e você pode gravar as sessões para revisão posterior, mediante acordo prévio.</p>
+                                <div class="online-class-visual">
+                                    <div class="platform-icons">
+                                        <div class="platform">
+                                            <i class="fas fa-video"></i>
+                                            <span>Zoom</span>
+                                        </div>
+                                        <div class="platform">
+                                            <i class="fab fa-google"></i>
+                                            <span>Meet</span>
+                                        </div>
+                                        <div class="platform">
+                                            <i class="fab fa-microsoft"></i>
+                                            <span>Teams</span>
+                                        </div>
+                                    </div>
+                                    <div class="class-features">
+                                        <div class="feature">
+                                            <i class="fas fa-tablet-alt"></i>
+                                            <span>Mesa digitalizadora</span>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-desktop"></i>
+                                            <span>Compartilhamento de tela</span>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span>Material de apoio</span>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-video-slash"></i>
+                                            <span>Gravação opcional</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-media">
+                                    <div class="video-container">
+                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/EeXahHziKsU?si=_uvqgUsJiSA8mGIK" title="Aula demonstrativa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-1">
+                        <div class="faq-question">
+                            <h3>Qual a duração e frequência ideal das aulas particulares?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>A duração padrão é de 1 hora por sessão, mas pode ser ajustada conforme sua necessidade. Quanto à frequência, recomendo:</p>
+                                <div class="frequency-chart">
+                                    <div class="chart-item">
+                                        <div class="chart-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="chart-info">
+                                            <h4>Reforço contínuo</h4>
+                                            <div class="frequency-bars">
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar"></div>
+                                                <div class="frequency-bar"></div>
+                                            </div>
+                                            <p>1-2 aulas semanais</p>
+                                        </div>
+                                    </div>
+                                    <div class="chart-item">
+                                        <div class="chart-icon">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="chart-info">
+                                            <h4>Preparação para provas</h4>
+                                            <div class="frequency-bars">
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar"></div>
+                                            </div>
+                                            <p>2-3 aulas semanais</p>
+                                        </div>
+                                    </div>
+                                    <div class="chart-item">
+                                        <div class="chart-icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="chart-info">
+                                            <h4>Recuperação intensiva</h4>
+                                            <div class="frequency-bars">
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                                <div class="frequency-bar active"></div>
+                                            </div>
+                                            <p>3-4 aulas semanais</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>O plano ideal será definido após avaliarmos juntos seus objetivos e disponibilidade.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-2">
+                        <div class="faq-question">
+                            <h3>Você oferece pacotes de aulas com desconto?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Sim, ofereço pacotes de aulas com descontos progressivos:</p>
+                                <div class="pricing-cards">
+                                    <div class="pricing-card">
+                                        <div class="card-header">
+                                            <h4>Pacote Básico</h4>
+                                            <div class="price-tag">
+                                                <span class="discount">5%</span>
+                                                <span class="off">OFF</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>4 aulas</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Validade: 30 dias</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Material incluído</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-card popular">
+                                        <div class="popular-tag">Mais escolhido</div>
+                                        <div class="card-header">
+                                            <h4>Pacote Intermediário</h4>
+                                            <div class="price-tag">
+                                                <span class="discount">10%</span>
+                                                <span class="off">OFF</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>8 aulas</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Validade: 60 dias</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Material incluído</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Suporte por WhatsApp</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-card">
+                                        <div class="card-header">
+                                            <h4>Pacote Avançado</h4>
+                                            <div class="price-tag">
+                                                <span class="discount">15%</span>
+                                                <span class="off">OFF</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>12 aulas</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Validade: 90 dias</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Material incluído</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Suporte por WhatsApp</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Avaliação diagnóstica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-cta">
+                                    <a href="orcamento.html" class="btn btn-primary btn-glow">Solicitar orçamento</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-3">
+                        <div class="faq-question">
+                            <h3>Você fornece material didático para as aulas?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Sim, forneço materiais didáticos personalizados para cada aluno, incluindo:</p>
+                                <div class="materials-grid">
+                                    <div class="material-item">
+                                        <div class="material-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="material-info">
+                                            <h4>Resumos teóricos</h4>
+                                            <p>Conteúdo essencial de forma clara e direta</p>
+                                        </div>
+                                    </div>
+                                    <div class="material-item">
+                                        <div class="material-icon">
+                                            <i class="fas fa-tasks"></i>
+                                        </div>
+                                        <div class="material-info">
+                                            <h4>Listas de exercícios</h4>
+                                            <p>Com gabarito e resolução detalhada</p>
+                                        </div>
+                                    </div>
+                                    <div class="material-item">
+                                        <div class="material-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <div class="material-info">
+                                            <h4>Exemplos resolvidos</h4>
+                                            <p>Passo a passo com explicações</p>
+                                        </div>
+                                    </div>
+                                    <div class="material-item">
+                                        <div class="material-icon">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </div>
+                                        <div class="material-info">
+                                            <h4>Materiais complementares</h4>
+                                            <p>Específicos para cada tema estudado</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Todo o material é desenvolvido considerando o nível de conhecimento e as necessidades específicas do aluno.</p>
+                                <div class="material-preview">
+                                    <img src="../images/faq/material-preview.jpg" alt="Exemplo de material didático" class="preview-image">
+                                    <div class="preview-overlay">
+                                        <i class="fas fa-search-plus"></i>
+                                        <span>Visualizar exemplo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resolução de Exercícios -->
+                <div class="faq-category" data-category="exercicios" id="exercicios">
+                    <!-- Conteúdo similar para as outras categorias, com animações e elementos visuais -->
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Como enviar os exercícios para resolução?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Você pode enviar os exercícios por e-mail ou WhatsApp em formato de imagem, PDF ou documento de texto. É importante que o enunciado esteja legível e completo. Para exercícios mais complexos, podemos agendar uma breve chamada para esclarecer detalhes específicos.</p>
+                                <div class="submission-methods">
+                                    <div class="method">
+                                        <i class="fas fa-envelope"></i>
+                                        <h4>E-mail</h4>
+                                        <p>maiconcentner@gmail.com</p>
+                                    </div>
+                                    <div class="method">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <h4>WhatsApp</h4>
+                                        <p>(14) 99125-8667</p>
+                                    </div>
+                                    <div class="method">
+                                        <i class="fas fa-upload"></i>
+                                        <h4>Upload</h4>
+                                        <p>Formulário no site</p>
+                                    </div>
+                                </div>
+                                <div class="faq-tips animated-tip">
+                                    <h4><i class="fas fa-lightbulb"></i> Dica profissional:</h4>
+                                    <p>Para garantir resoluções mais precisas, inclua todas as informações relevantes como fórmulas específicas a serem utilizadas, notações preferidas ou requisitos particulares do seu professor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animate-fade-in delay-1">
+                        <div class="faq-question">
+                            <h3>Como são apresentadas as resoluções dos exercícios?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>As resoluções são entregues em formato digital (PDF), com desenvolvimento passo a passo, explicações detalhadas e justificativas teóricas quando necessário. Para conteúdos que exigem gráficos ou visualizações específicas, utilizo softwares especializados para garantir clareza.</p>
+                                <div class="resolution-showcase">
+                                    <div class="showcase-tabs">
+                                        <button class="tab-btn active" data-tab="tab1">Exemplo 1</button>
+                                        <button class="tab-btn" data-tab="tab2">Exemplo 2</button>
+                                        <button class="tab-btn" data-tab="tab3">Exemplo 3</button>
+                                    </div>
+                                    <div class="showcase-content">
+                                        <div class="tab-content active" data-tab="tab1">
+                                            <div class="resolution-preview">
+                                                <img src="../images/faq/exemplo-resolucao-1.jpg" alt="Exemplo de resolução de cálculo" class="resolution-image">
+                                                <div class="zoom-controls">
+                                                    <button class="zoom-btn"><i class="fas fa-search-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" data-tab="tab2">
+                                            <div class="resolution-preview">
+                                                <img src="../images/faq/exemplo-resolucao-2.jpg" alt="Exemplo de resolução estatística" class="resolution-image">
+                                                <div class="zoom-controls">
+                                                    <button class="zoom-btn"><i class="fas fa-search-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" data-tab="tab3">
+                                            <div class="resolution-preview">
+                                                <img src="../images/faq/exemplo-resolucao-3.jpg" alt="Exemplo de resolução de álgebra" class="resolution-image">
+                                                <div class="zoom-controls">
+                                                    <button class="zoom-btn"><i class="fas fa-search-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Análise Estatística -->
+                <div class="faq-category" data-category="analise" id="analise">
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Quais softwares você utiliza para análise estatística?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Trabalho com diversos softwares estatísticos, adaptando a escolha conforme a necessidade do projeto:</p>
+                                <div class="software-showcase">
+                                    <div class="software-grid">
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fab fa-r-project"></i>
+                                            </div>
+                                            <span>R e RStudio</span>
+                                            <div class="expertise-level" data-level="95%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fab fa-python"></i>
+                                            </div>
+                                            <span>Python</span>
+                                            <div class="expertise-level" data-level="90%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <span>SPSS</span>
+                                            <div class="expertise-level" data-level="85%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-file-excel"></i>
+                                            </div>
+                                            <span>Excel</span>
+                                            <div class="expertise-level" data-level="95%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <span>Minitab</span>
+                                            <div class="expertise-level" data-level="80%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-chart-pie"></i>
+                                            </div>
+                                            <span>Stata</span>
+                                            <div class="expertise-level" data-level="75%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-chart-area"></i>
+                                            </div>
+                                            <span>Power BI</span>
+                                            <div class="expertise-level" data-level="85%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                        <div class="software-item">
+                                            <div class="software-icon">
+                                                <i class="fas fa-table"></i>
+                                            </div>
+                                            <span>Tableau</span>
+                                            <div class="expertise-level" data-level="80%">
+                                                <div class="level-fill"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automatização -->
+                <div class="faq-category" data-category="automacao" id="automacao">
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Que tipo de processos você pode automatizar?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Posso automatizar diversos processos matemáticos e estatísticos, como:</p>
+                                <ul class="automation-list">
+                                    <li><i class="fas fa-robot"></i> Análise de dados repetitivos</li>
+                                    <li><i class="fas fa-file-excel"></i> Geração de relatórios automáticos</li>
+                                    <li><i class="fas fa-calculator"></i> Cálculos complexos recorrentes</li>
+                                    <li><i class="fas fa-chart-line"></i> Visualização de dados dinâmicos</li>
+                                    <li><i class="fas fa-database"></i> Tratamento de grandes bases de dados</li>
+                                    <li><i class="fas fa-sync"></i> Atualizações periódicas de indicadores</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagamentos -->
+                <div class="faq-category" data-category="pagamentos" id="pagamentos">
+                    <div class="faq-item animate-fade-in">
+                        <div class="faq-question">
+                            <h3>Quais são as formas de pagamento aceitas?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Aceito diversas formas de pagamento para sua conveniência:</p>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <div class="method-icon"><i class="fas fa-credit-card"></i></div>
+                                        <h4>Cartão de crédito</h4>
+                                        <p>Parcelamento em até 12x</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <div class="method-icon"><i class="fas fa-money-bill-wave"></i></div>
+                                        <h4>PIX</h4>
+                                        <p>Transferência instantânea</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <div class="method-icon"><i class="fas fa-university"></i></div>
+                                        <h4>Transferência bancária</h4>
+                                        <p>Principais bancos</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <div class="method-icon"><i class="fab fa-paypal"></i></div>
+                                        <h4>PayPal</h4>
+                                        <p>Pagamento internacional</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensagem de nenhum resultado encontrado -->
+            <div id="no-results-message">
+                <h3><i class="fas fa-search"></i> Nenhum resultado encontrado</h3>
+                <p>Não encontramos respostas para sua pesquisa. Tente outros termos ou entre em contato diretamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato Rápido -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-card animate-slide-up">
+                <div class="contact-header">
+                    <h2>Não encontrou o que procurava?</h2>
+                    <p>Entre em contato diretamente e terei prazer em responder suas dúvidas.</p>
+                </div>
+                <div class="contact-options">
+                    <a href="https://wa.me/5514991258667" class="contact-option whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:maiconcentner@gmail.com" class="contact-option email">
+                        <i class="fas fa-envelope"></i>
+                        <span>E-mail</span>
+                    </a>
+                    <a href="orcamento.html" class="contact-option form">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Formulário</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Matemática, Estatística e Ciência de Dados</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                            <li><a href="depoimentos.html">Depoimentos</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#estatistica">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                            <li><a href="servicos.html#consultoria">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contato</h3>
+                        <ul class="contact-info">
+                            <li><i class="fab fa-whatsapp"></i> (14) 99125-8667</li>
+                            <li><i class="fas fa-envelope"></i> maiconcentner@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Atendimento online</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Prof. Maicon Centner. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/particles-config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/faq.js"></script>
+</body>
+</html>

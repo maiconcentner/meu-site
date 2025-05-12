@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio do Prof. Maicon Centner - Projetos em matemática, estatística e ciência de dados">
+    <title>Portfólio | Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html" class="active">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página com Partículas -->
+    <section class="page-banner portfolio-banner">
+        <div id="particles-js" class="particles-container"></div>
+        <div class="container">
+            <div class="banner-content">
+                <h1 class="animate-fade-in">Portfólio</h1>
+                <p class="animate-fade-in delay-1">Conheça alguns dos meus principais projetos e trabalhos realizados</p>
+                <div class="animate-fade-in delay-2">
+                    <a href="#portfolio-categories" class="btn btn-outline scroll-to">
+                        <i class="fas fa-th"></i> Ver projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-wave">
+            
+        </div>
+    </section>
+
+    <!-- Categorias de Portfólio -->
+    <section id="portfolio-categories" class="portfolio-categories-section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2>Meus Projetos</h2>
+                <p>Explore meus trabalhos por categoria</p>
+                <div class="section-divider">
+                    <span><i class="fas fa-project-diagram"></i></span>
+                </div>
+            </div>
+
+            <div class="portfolio-filters animate-slide-up">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-border-all"></i> Todos
+                </button>
+                <button class="filter-btn" data-filter="educacao">
+                    <i class="fas fa-graduation-cap"></i> Educação
+                </button>
+                <button class="filter-btn" data-filter="analise">
+                    <i class="fas fa-chart-bar"></i> Análise de Dados
+                </button>
+                <button class="filter-btn" data-filter="automacao">
+                    <i class="fas fa-cogs"></i> Automação
+                </button>
+                <button class="filter-btn" data-filter="visualizacao">
+                    <i class="fas fa-chart-line"></i> Visualização
+                </button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Projeto 1: Preparação para vestibular -->
+                <div class="portfolio-item animate-fade-in" data-category="educacao" id="vestibular">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/vestibular-prep.jpg" alt="Preparação para vestibular">
+                            <div class="portfolio-tags">
+                                <span class="tag">Educação</span>
+                                <span class="tag">Matemática</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Preparação para Vestibular</h3>
+                            <p>Aulas e materiais didáticos desenvolvidos para preparação intensiva de estudantes para vestibulares, com foco em resolução de problemas e estratégias de estudo.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>Público-alvo: Vestibulandos</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Duração: 3 meses</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://www.youtube.com/live/6USbAMchHIk?si=YePrVU6Ha7opJTAq" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver aula demonstrativa
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-vestibular">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Simulação e otimização de processos -->
+                <div class="portfolio-item animate-fade-in delay-1" data-category="automacao" id="simulacao">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/simulacao.jpg" alt="Simulação e otimização de processos">
+                            <div class="portfolio-tags">
+                                <span class="tag">Automação</span>
+                                <span class="tag">Otimização</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Simulação e Otimização de Processos</h3>
+                            <p>Desenvolvimento de modelos matemáticos para simulação e otimização de processos industriais, com implementação em Python e ferramentas de visualização.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-industry"></i>
+                                    <span>Setor: Industrial</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Ferramentas: Python, SimPy</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://youtu.be/o87KFnDWoSI?si=5BDXOJwnoAa4XXqD" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver demonstração
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-simulacao">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Resolução de lista de RESMAT -->
+                <div class="portfolio-item animate-fade-in delay-2" data-category="educacao" id="resmat">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/resmat.jpg" alt="Resolução de lista de RESMAT">
+                            <div class="portfolio-tags">
+                                <span class="tag">Educação</span>
+                                <span class="tag">Engenharia</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Resolução de Lista de RESMAT</h3>
+                            <p>Resolução detalhada de exercícios de Resistência dos Materiais para cursos de Engenharia, com explicações passo a passo e fundamentação teórica.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-university"></i>
+                                    <span>Nível: Graduação</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-book"></i>
+                                    <span>Disciplina: Resistência dos Materiais</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://www.youtube.com/watch?v=yyt3ckRPSQg" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver resolução
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-resmat">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Regressão linear para previsão de demanda -->
+                <div class="portfolio-item animate-fade-in" data-category="analise" id="regressao">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/regressao.jpg" alt="Regressão linear para previsão de demanda">
+                            <div class="portfolio-tags">
+                                <span class="tag">Análise</span>
+                                <span class="tag">Estatística</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Regressão Linear para Previsão de Demanda</h3>
+                            <p>Desenvolvimento de modelo estatístico baseado em regressão linear múltipla para previsão de demanda em empresa do setor varejista.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Técnica: Regressão Linear</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <span>Ferramentas: R, Excel</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://youtu.be/KGgfFggnmbY?si=53f6XQG4V117W9Nr" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver tutorial
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-regressao">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Gráficos avançados no Excel -->
+                <div class="portfolio-item animate-fade-in delay-1" data-category="visualizacao" id="excel">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/excel-graficos.jpg" alt="Gráficos avançados no Excel">
+                            <div class="portfolio-tags">
+                                <span class="tag">Visualização</span>
+                                <span class="tag">Excel</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Gráficos Avançados no Excel</h3>
+                            <p>Tutorial detalhado sobre criação de gráficos avançados no Excel para análise e apresentação de dados de forma profissional e impactante.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-file-excel"></i>
+                                    <span>Ferramenta: Excel</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <span>Foco: Visualização de dados</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://youtu.be/CB8Lf7HFeLM?si=uH55QZCh8imNvse5" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver tutorial
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-excel">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 6: Apoio acadêmico em disciplina de Cálculo -->
+                <div class="portfolio-item animate-fade-in delay-2" data-category="educacao" id="calculo">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/calculo.jpg" alt="Apoio acadêmico em disciplina de Cálculo">
+                            <div class="portfolio-tags">
+                                <span class="tag">Educação</span>
+                                <span class="tag">Cálculo</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Apoio Acadêmico em Disciplina de Cálculo</h3>
+                            <p>Materiais didáticos e aulas de reforço para estudantes universitários em disciplinas de Cálculo Diferencial e Integral.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-university"></i>
+                                    <span>Nível: Graduação</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>Disciplina: Cálculo I e II</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://youtu.be/jkHNieRif_Y?si=fmdkzIUKKYf8Uzqp" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-youtube"></i> Ver aula
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-calculo">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 7: Análise de fluxo escolar -->
+                <div class="portfolio-item animate-fade-in" data-category="analise" id="fluxo">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/fluxo-escolar.jpg" alt="Análise de fluxo escolar">
+                            <div class="portfolio-tags">
+                                <span class="tag">Análise</span>
+                                <span class="tag">Educação</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Análise de Fluxo Escolar</h3>
+                            <p>Dashboard interativo para análise de indicadores educacionais e fluxo escolar no estado de São Paulo, desenvolvido com R e Shiny.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-database"></i>
+                                    <span>Dados: Censo Escolar</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-code"></i>
+                                    <span>Ferramentas: R, Shiny</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://maiconcentner.shinyapps.io/fluxo-escolar-sp/" class="btn btn-outline" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Acessar dashboard
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-fluxo">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 8: Análise Exploratória dos Impactos da COVID-19 -->
+                <div class="portfolio-item animate-fade-in delay-1" data-category="analise" id="covid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio/covid-analysis.jpg" alt="Análise Exploratória dos Impactos da COVID-19">
+                            <div class="portfolio-tags">
+                                <span class="tag">Análise</span>
+                                <span class="tag">Saúde</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Análise Exploratória dos Impactos da COVID-19</h3>
+                            <p>Estudo estatístico sobre os impactos da pandemia de COVID-19 no estado de São Paulo, com visualizações e análises de tendências.</p>
+                            <div class="portfolio-details">
+                                <div class="detail">
+                                    <i class="fas fa-chart-area"></i>
+                                    <span>Tipo: Análise Exploratória</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>Região: Estado de São Paulo</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <a href="https://maiconcentner.github.io/relatorio1_covid.github.io/" class="btn btn-outline" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Ver relatório
+                                </a>
+                                <a href="#" class="btn-icon portfolio-modal-trigger" data-modal="modal-covid">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Estatísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-count-up" data-count="120">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Projetos Concluídos</div>
+                </div>
+                <div class="stat-item animate-count-up" data-count="85">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Clientes Satisfeitos</div>
+                </div>
+                <div class="stat-item animate-count-up" data-count="15">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item animate-count-up" data-count="250">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Alunos Orientados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de CTA -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content animate-fade-in">
+                <h2>Vamos trabalhar juntos no seu próximo projeto?</h2>
+                <p>Entre em contato para discutirmos como posso ajudar você a alcançar seus objetivos acadêmicos ou profissionais.</p>
+                <div class="cta-buttons">
+                    <a href="orcamento.html" class="btn btn-primary">Solicitar orçamento</a>
+                    <a href="contato.html" class="btn btn-outline">Entrar em contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modais de Detalhes dos Projetos -->
+    <div class="portfolio-modals">
+        <!-- Modal Vestibular -->
+        <div id="modal-vestibular" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2>Preparação para Vestibular</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-image">
+                        <img src="../images/portfolio/vestibular-prep-large.jpg" alt="Preparação para vestibular">
+                    </div>
+                    <div class="modal-description">
+                        <h3>Sobre o Projeto</h3>
+                        <p>Programa de preparação intensiva para vestibulares desenvolvido especialmente para estudantes que buscam aprovação em universidades públicas e privadas de alto nível. O foco principal está na resolução de problemas matemáticos e desenvolvimento de estratégias de estudo eficientes.</p>
+                        
+                        <h3>Metodologia</h3>
+                        <ul>
+                            <li>Diagnóstico inicial para identificação de pontos fortes e fracos</li>
+                            <li>Plano de estudos personalizado com cronograma detalhado</li>
+                            <li>Aulas teóricas com abordagem objetiva e direcionada</li>
+                            <li>Resolução de exercícios de vestibulares anteriores</li>
+                            <li>Simulados periódicos para avaliação de progresso</li>
+                        </ul>
+                        
+                        <h3>Resultados</h3>
+                        <p>Os alunos que participaram deste programa obtiveram uma taxa de aprovação de 78% nos vestibulares-alvo, com melhoria média de 42% na pontuação em questões de matemática.</p>
+                        
+                        <div class="modal-cta">
+                            <a href="https://www.youtube.com/live/6USbAMchHIk?si=YePrVU6Ha7opJTAq" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-youtube"></i> Ver aula demonstrativa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modais similares para os outros projetos -->
+        <!-- Adicione os outros modais seguindo o mesmo padrão -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Matemática, Estatística e Ciência de Dados</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                            <li><a href="depoimentos.html">Depoimentos</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#estatistica">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                            <li><a href="servicos.html#consultoria">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contato</h3>
+                        <ul class="contact-info">
+                            <li><i class="fab fa-whatsapp"></i> (14) 99125-8667</li>
+                            <li><i class="fas fa-envelope"></i> maiconcentner@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Atendimento online</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/prof.maiconcentner/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/maiconcentner/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.youtube.com/@SobreExatas" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/particles-config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/portfolio.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filtro de portfólio
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter items
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal functionality
+            const modalTriggers = document.querySelectorAll('.portfolio-modal-trigger');
+            const modals = document.querySelectorAll('.portfolio-modal');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    document.getElementById(modalId).style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.portfolio-modal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            window.addEventListener('click', function(e) {
+                modals.forEach(modal => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Count up animation for statistics
+            const statNumbers = document.querySelectorAll('.animate-count-up');
+            
+            function animateCountUp() {
+                statNumbers.forEach(statItem => {
+                    const target = parseInt(statItem.getAttribute('data-count'));
+                    const numberElement = statItem.querySelector('.stat-number');
+                    const current = parseInt(numberElement.innerText);
+                    
+                    if (current < target) {
+                        const increment = Math.ceil(target / 50);
+                        const newValue = Math.min(current + increment, target);
+                        numberElement.innerText = newValue;
+                        
+                        if (newValue < target) {
+                            setTimeout(animateCountUp, 50);
+                        }
+                    }
+                });
+            }
+            
+            // Intersection Observer for triggering count animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(animateCountUp, 400);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+</body>
+</html>

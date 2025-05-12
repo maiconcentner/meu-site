@@ -1,0 +1,350 @@
+/* 
+* Estilos específicos para a página de orçamento
+* Autor: Seu Nome
+* Data: 2025
+*/
+
+/* ===== BANNER DA PÁGINA ===== */
+.page-banner {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('../images/quote-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 80px;
+    color: white;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: var(--font-primary);
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* ===== SEÇÃO DE ORÇAMENTO ===== */
+.quote-section {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+.quote-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.quote-info h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+}
+
+/* Passos do processo */
+.process-steps {
+    margin-bottom: 40px;
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    height: calc(100% - 20px);
+    width: 2px;
+    background-color: #e0e0e0;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.step-content {
+    padding-top: 5px;
+}
+
+.step-content h3 {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.step-content p {
+    color: var(--text-light);
+}
+
+/* Perguntas frequentes - Acordeão */
+.quote-faq {
+    margin-top: 50px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.quote-faq h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion-header {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-header h4 {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.accordion-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 0 0 15px;
+    color: var(--text-light);
+}
+
+/* Formulário de Orçamento */
+.quote-form {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.quote-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.text-link {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.text-link:hover {
+    color: var(--primary-color);
+}
+
+/* Estilização para campos com erro */
+.error {
+    border-color: var(--accent-color) !important;
+}
+
+.error-message {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* ===== SERVIÇOS POPULARES ===== */
+.popular-services-section {
+    padding: 100px 0;
+}
+
+.services-table {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-table-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.service-table-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-name h3 {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.service-name p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.service-price {
+    text-align: right;
+}
+
+.service-price p {
+    color: var(--text-color);
+}
+
+.service-price strong {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.price-note {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.price-note i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+/* ===== DEPOIMENTOS GRID ===== */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 991.98px) {
+    .quote-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-info {
+        margin-bottom: 40px;
+    }
+    
+    .page-banner h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .service-table-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .service-name {
+        margin-bottom: 15px;
+    }
+    
+    .service-price {
+        text-align: center;
+    }
+    
+    .page-banner {
+        padding: 120px 0 60px;
+    }
+    
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .quote-section,
+    .popular-services-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .process-step {
+        flex-direction: column;
+    }
+    
+    .step-number {
+        margin-bottom: 15px;
+    }
+    
+    .process-step:not(:last-child)::after {
+        left: 20px;
+        top: 40px;
+        height: calc(100% - 40px);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}

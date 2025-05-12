@@ -1,0 +1,399 @@
+/* Estilos específicos para a página de E-books */
+
+/* Banner da página */
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/backgrounds/ebooks-banner.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.page-banner .banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-banner h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-banner p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Seção de E-books */
+.ebooks-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.ebooks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.ebook-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .ebook-card {
+        flex-direction: row;
+        height: auto;
+        align-items: stretch;
+    }
+}
+
+.ebook-image {
+    flex: 0 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.ebook-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    max-height: 300px;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .ebook-image {
+        width: 250px;
+        max-width: 30%;
+    }
+    
+    .ebook-image img {
+        height: 100%;
+        max-height: 400px;
+        object-fit: cover;
+    }
+}
+
+.ebook-card:hover .ebook-image img {
+    transform: scale(1.05);
+}
+
+.ebook-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    /* Removido overflow-y: auto para evitar que o botão fique escondido */
+}
+
+/* Novo - Container para o conteúdo que pode ter scroll */
+.ebook-scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px; /* Espaço para o botão e preço */
+    max-height: 350px; /* Altura máxima para o conteúdo rolável */
+}
+
+.ebook-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.ebook-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.ebook-description {
+    margin-bottom: 25px;
+}
+
+.ebook-description p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.ebook-description h4 {
+    font-size: 1.2rem;
+    margin: 20px 0 15px;
+    color: #444;
+}
+
+.ebook-description ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.ebook-description li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.ebook-description li:before {
+    content: "•";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.ebook-price {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    /* Removido do conteúdo rolável */
+}
+
+.ebook-price span {
+    font-weight: 700;
+    color: #2980b9;
+    font-size: 1.4rem;
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    /* Não está mais dentro da área rolável */
+}
+
+/* Seção de Depoimentos específica para e-books */
+.ebooks-testimonials {
+    background-color: #fff;
+    padding: 70px 0;
+}
+
+.testimonial-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.testimonial-content {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-content:before {
+    content: "\201C";
+    font-size: 4rem;
+    color: #3498db;
+    opacity: 0.2;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.author-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* FAQ específico para e-books */
+.ebooks-faq {
+    background-color: #f8f9fa;
+    padding: 70px 0;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.faq-toggle {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3498db;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 1000px;
+}
+
+/* CTA específico para e-books */
+.cta-section {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Responsividade específica para a página de e-books */
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 70px 0;
+    }
+    
+    .page-banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-banner p {
+        font-size: 1.1rem;
+    }
+    
+    .ebook-card {
+        flex-direction: column;
+    }
+    
+    .ebook-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .ebook-image img {
+        max-height: 250px;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .ebook-scrollable-content {
+        max-height: none; /* Remover limite de altura em mobile */
+        overflow-y: visible; /* Remover scroll em mobile */
+    }
+    
+    .ebook-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .ebook-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .ebook-content {
+        padding: 20px;
+    }
+    
+    .ebook-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+}

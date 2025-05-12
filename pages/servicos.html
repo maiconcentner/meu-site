@@ -1,0 +1,858 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prof. Maicon Centner - Serviços profissionais de matemática, resolução de exercícios, aulas particulares e mais">
+    <title>Serviços - Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para a página de serviços */
+        .service-category {
+            margin-bottom: 80px;
+        }
+        
+        .service-category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .category-title {
+            flex: 1;
+        }
+        
+        .category-title h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .category-title p {
+            color: var(--text-light);
+        }
+        
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-item h4 i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .service-item p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .service-features {
+            margin-top: 15px;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-color);
+        }
+        
+        .service-features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background-color: var(--light-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .service-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .faq-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .faq-question i {
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 300px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-info-item .content h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .contact-info-item .content p, 
+        .contact-info-item .content a {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .contact-info-item .content a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .platform-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .platform-link:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .platform-link i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="height: 50vh; min-height: 350px;">
+        <div class="container">
+            <div class="hero-content animate-fade-in">
+                <h1>Serviços Especializados</h1>
+                <p>Soluções acadêmicas e profissionais personalizadas para impulsionar seu sucesso em exatas</p>
+                <div class="hero-buttons">
+                    <a href="#servicos-principais" class="btn btn-primary">Ver Serviços</a>
+                    <a href="orcamento.html" class="btn btn-outline">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação de Serviços -->
+    <section style="background-color: #f9f9f9; padding: 20px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+                <a href="#aulas" class="btn btn-light">Aulas Particulares</a>
+                <a href="#exercicios" class="btn btn-light">Resolução de Exercícios</a>
+                <a href="#analise" class="btn btn-light">Análise Estatística</a>
+                <a href="#revisao" class="btn btn-light">Revisão de Trabalhos</a>
+                <a href="#automacao" class="btn btn-light">Automatização de Processos</a>
+                <a href="#ia" class="btn btn-light">Consultoria em IA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços Detalhados -->
+    <section class="services-section" id="servicos-principais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Serviços Detalhados</h2>
+                <p>Conheça em profundidade cada serviço e suas variações para escolher o que melhor atende às suas necessidades</p>
+            </div>
+            
+            <!-- Categoria 1: Aulas Particulares -->
+            <div class="service-category" id="aulas">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Aulas Particulares de Matemática</h3>
+                        <p>Aulas personalizadas para diferentes níveis e áreas da matemática</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 1.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-graduation-cap"></i>Matemática Básica e Ensino Médio</h4>
+                        <p>Aulas para estudantes do ensino fundamental e médio, incluindo preparação para vestibular.</p>
+                        <ul class="service-features">
+                            <li>Aritmética e álgebra básica</li>
+                            <li>Geometria e trigonometria</li>
+                            <li>Resolução de exercícios específicos</li>
+                            <li>Preparação para provas e exames</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 70/hora</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 1.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-square-root-alt"></i>Matemática Superior</h4>
+                        <p>Aulas para disciplinas de matemática em nível universitário.</p>
+                        <ul class="service-features">
+                            <li>Cálculo diferencial e integral</li>
+                            <li>Álgebra linear</li>
+                            <li>Equações diferenciais</li>
+                            <li>Estatística e probabilidade</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 100/hora</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 1.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-laptop-code"></i>Matemática Aplicada</h4>
+                        <p>Aulas focadas em aplicações práticas da matemática em diversas áreas.</p>
+                        <ul class="service-features">
+                            <li>Matemática financeira</li>
+                            <li>Matemática para programação</li>
+                            <li>Métodos numéricos</li>
+                            <li>Otimização e pesquisa operacional</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 120/hora</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoria 2: Resolução de Exercícios -->
+            <div class="service-category" id="exercicios">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Resolução de Exercícios de Exatas</h3>
+                        <p>Soluções detalhadas para exercícios de disciplinas de ciências exatas</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 2.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-calculator"></i>Matemática e Estatística</h4>
+                        <p>Resolução de exercícios de matemática, cálculo, álgebra, estatística e probabilidade.</p>
+                        <ul class="service-features">
+                            <li>Resolução passo a passo</li>
+                            <li>Explicações detalhadas</li>
+                            <li>Gráficos e ilustrações quando necessário</li>
+                            <li>Verificação de precisão</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 25/questão</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 2.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-atom"></i>Física e Química</h4>
+                        <p>Resolução de problemas de física, química, termodinâmica, eletromagnetismo e mecânica.</p>
+                        <ul class="service-features">
+                            <li>Desenvolvimento completo das soluções</li>
+                            <li>Fundamentação teórica</li>
+                            <li>Diagramas e ilustrações</li>
+                            <li>Aplicação correta de fórmulas e leis</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 30/questão</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 2.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-laptop-code"></i>Programação e Lógica</h4>
+                        <p>Resolução de exercícios de programação, algoritmos, estruturas de dados e lógica computacional.</p>
+                        <ul class="service-features">
+                            <li>Implementação de algoritmos</li>
+                            <li>Comentários explicativos no código</li>
+                            <li>Múltiplas linguagens de programação</li>
+                            <li>Análise de complexidade</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 40/questão</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoria 3: Análise Estatística e Modelagem -->
+            <div class="service-category" id="analise">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Análise Estatística e Modelagem</h3>
+                        <p>Análise de dados, modelagem estatística e matemática para projetos acadêmicos e profissionais</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 3.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-chart-bar"></i>Análise Descritiva</h4>
+                        <p>Análise estatística descritiva de dados para projetos acadêmicos e profissionais.</p>
+                        <ul class="service-features">
+                            <li>Medidas de tendência central e dispersão</li>
+                            <li>Visualização de dados</li>
+                            <li>Interpretação de resultados</li>
+                            <li>Relatório completo com insights</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 300</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 3.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-project-diagram"></i>Modelagem Estatística</h4>
+                        <p>Desenvolvimento de modelos estatísticos para previsão, classificação e inferência.</p>
+                        <ul class="service-features">
+                            <li>Regressão linear e múltipla</li>
+                            <li>Modelos de classificação</li>
+                            <li>Séries temporais</li>
+                            <li>Testes de hipóteses</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 500</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 3.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-database"></i>Análise de Dados Avançada</h4>
+                        <p>Análise avançada com técnicas de machine learning e data mining.</p>
+                        <ul class="service-features">
+                            <li>Clustering e segmentação</li>
+                            <li>Redução de dimensionalidade</li>
+                            <li>Detecção de anomalias</li>
+                            <li>Implementação em Python ou R</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 800</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoria 4: Revisão de Trabalhos Acadêmicos -->
+            <div class="service-category" id="revisao">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Revisão de Trabalhos Acadêmicos</h3>
+                        <p>Revisão de TCC, dissertações e artigos com foco em metodologia quantitativa e análise de dados</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 4.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-edit"></i>Revisão de TCC</h4>
+                        <p>Revisão completa do seu trabalho já desenvolvido, incluindo conteúdo, metodologia e formatação.</p>
+                        <ul class="service-features">
+                            <li>Revisão ortográfica e gramatical</li>
+                            <li>Verificação de coerência e coesão</li>
+                            <li>Adequação às normas acadêmicas</li>
+                            <li>Sugestões de melhorias</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 300</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 4.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-tasks"></i>Revisão Metodológica</h4>
+                        <p>Análise e aprimoramento da metodologia quantitativa do seu trabalho acadêmico.</p>
+                        <ul class="service-features">
+                            <li>Verificação de coerência metodológica</li>
+                            <li>Análise de instrumentos de pesquisa</li>
+                            <li>Adequação de técnicas estatísticas</li>
+                            <li>Sugestões para fortalecimento da pesquisa</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 400</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 4.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-spell-check"></i>Revisão de Artigos Científicos</h4>
+                        <p>Revisão de artigos para submissão em periódicos e eventos acadêmicos.</p>
+                        <ul class="service-features">
+                            <li>Correção de erros gramaticais</li>
+                            <li>Adequação à norma culta</li>
+                            <li>Verificação de normas do periódico</li>
+                            <li>Análise da estrutura argumentativa</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 40/página</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoria 5: Automatização de Processos -->
+            <div class="service-category" id="automacao">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Automatização de Processos</h3>
+                        <p>Soluções personalizadas com Excel e Python para otimizar e automatizar processos matemáticos</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 5.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-file-excel"></i>Automação com Excel</h4>
+                        <p>Criação de planilhas automatizadas com macros e VBA para otimizar tarefas repetitivas.</p>
+                        <ul class="service-features">
+                            <li>Desenvolvimento de macros personalizadas</li>
+                            <li>Criação de dashboards interativos</li>
+                            <li>Automatização de relatórios</li>
+                            <li>Integração com outras ferramentas</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 300</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 5.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-code"></i>Scripts e Programas em Python</h4>
+                        <p>Desenvolvimento de scripts e programas para automatizar processos específicos.</p>
+                        <ul class="service-features">
+                            <li>Scripts em Python para automação</li>
+                            <li>Automação de tarefas web</li>
+                            <li>Processamento de dados</li>
+                            <li>Integração com APIs</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 500</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 5.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-project-diagram"></i>Consultoria em Processos</h4>
+                        <p>Análise e otimização de processos acadêmicos ou empresariais para maior eficiência.</p>
+                        <ul class="service-features">
+                            <li>Mapeamento de processos atuais</li>
+                            <li>Identificação de gargalos</li>
+                            <li>Propostas de otimização</li>
+                            <li>Implementação de soluções</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 800</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoria 6: Consultoria em IA para Educação -->
+            <div class="service-category" id="ia">
+                <div class="service-category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Consultoria em IA para Educação</h3>
+                        <p>Implementação de ferramentas de Inteligência Artificial para otimizar processos educacionais</p>
+                    </div>
+                </div>
+                
+                <div class="service-list">
+                    <!-- Serviço 6.1 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-robot"></i>Implementação de IA em Educação</h4>
+                        <p>Consultoria para implementação de soluções de IA em ambientes educacionais.</p>
+                        <ul class="service-features">
+                            <li>Análise de necessidades específicas</li>
+                            <li>Seleção de ferramentas adequadas</li>
+                            <li>Integração com sistemas existentes</li>
+                            <li>Treinamento para equipe pedagógica</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 1.000</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 6.2 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-graduation-cap"></i>Personalização de Aprendizado</h4>
+                        <p>Desenvolvimento de sistemas de aprendizado adaptativo com base em IA.</p>
+                        <ul class="service-features">
+                            <li>Análise de perfil de aprendizado</li>
+                            <li>Recomendação de conteúdo personalizado</li>
+                            <li>Monitoramento de progresso</li>
+                            <li>Feedback automático</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 1.500</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Serviço 6.3 -->
+                    <div class="service-item">
+                        <h4><i class="fas fa-chart-pie"></i>Análise de Dados Educacionais</h4>
+                        <p>Implementação de sistemas de análise de dados para instituições de ensino.</p>
+                        <ul class="service-features">
+                            <li>Coleta e processamento de dados</li>
+                            <li>Identificação de padrões de aprendizado</li>
+                            <li>Previsão de desempenho</li>
+                            <li>Relatórios e dashboards personalizados</li>
+                        </ul>
+                        <div class="service-actions">
+                            <span class="price-tag">A partir de R$ 1.200</span>
+                            <a href="orcamento.html" class="read-more">Solicitar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para transformar seu aprendizado em matemática?</h2>
+                <p>Solicite um orçamento sem compromisso e descubra como posso ajudar você a alcançar seus objetivos acadêmicos e profissionais.</p>
+                <div class="hero-buttons">
+                    <a href="orcamento.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    <a href="https://wa.me/5514991258667" class="btn btn-outline">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações de Contato -->
+    <section style="background-color: #f9f9f9; padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estou disponível em diversas plataformas para melhor atendê-lo</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="content">
+                        <h4>E-mail</h4>
+                        <p><a href="mailto:maiconcentner@gmail.com">maiconcentner@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="content">
+                        <h4>Telefone/WhatsApp</h4>
+                        <p><a href="tel:+5514991258667">(14) 99125-8667</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="content">
+                        <h4>Localização</h4>
+                        <p>Jaú, SP - Brasil</p>
+                        <p>Atendimento remoto para todo o Brasil</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="content">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 17h às 23h</p>
+                        <p>Sábados: 9h às 12h e das 15h às 18h</p>
+                    </div>
+                </div>
+                
+                <!-- Plataformas digitais -->
+                <div class="contact-info-item">
+                    <i class="fas fa-globe"></i>
+                    <div class="content">
+                        <h4>Plataformas Digitais</h4>
+                        <div class="platforms">
+                            <a href="https://wa.me/5514991258667" class="platform-link" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://www.instagram.com/prof.maiconcentner/" class="platform-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://www.linkedin.com/in/maiconcentner/" class="platform-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://www.tiktok.com/@prof.maiconcentner" class="platform-link" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                            <a href="https://www.youtube.com/@SobreExatas" class="platform-link" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="#aulas">Aulas Particulares</a></li>
+                            <li><a href="#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="#analise">Análise Estatística</a></li>
+                            <li><a href="#automacao">Automatização</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="faq.html">Perguntas Frequentes</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@SobreExatas" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu mobile toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        
+        // Header sticky on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // FAQ toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Fechar todos os outros itens
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle o item atual
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

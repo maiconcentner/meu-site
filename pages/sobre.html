@@ -1,0 +1,1078 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o Prof. Maicon Centner - Especialista em matemática, estatística e ciência de dados">
+    <title>Sobre - Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para a página Sobre */
+        .page-banner {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('../images/page-banner-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 50px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .page-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .breadcrumb li {
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            margin-left: 10px;
+            opacity: 0.7;
+        }
+
+        .breadcrumb li a {
+            color: #3498db;
+        }
+
+        .about-intro {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .about-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            width: 120px;
+            height: 120px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-badge .years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .experience-badge .text {
+            font-size: 0.8rem;
+            text-align: center;
+            max-width: 80px;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .about-text h3 {
+            font-size: 1.3rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-signature {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 30px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #3498db;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3498db;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 40px);
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            left: calc(50% + 40px);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .experience-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e6f3fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .experience-icon i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+        .experience-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .experience-period {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .skills-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .skill-category {
+            margin-bottom: 40px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-category h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #e6e6e6;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: #3498db;
+        }
+
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('../images/stats-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+        }
+
+        .approach-section {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .approach-text {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .approach-item h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .approach-item h3 i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .approach-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .certifications-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certification-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e6f3fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .certification-icon i {
+            font-size: 1.3rem;
+            color: #3498db;
+        }
+
+        .certification-card h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .certification-issuer {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .certification-year {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #e6f3fa;
+            color: #3498db;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .about-intro-content,
+            .skills-container,
+            .approach-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto 40px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                left: 60px !important;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html" class="active">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página Sobre -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Sobre Mim</h1>
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Início</a></li>
+                <li>Sobre</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de Introdução -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-intro-content">
+                <div class="about-image">
+                    <img src="../eu.jpg" alt="Prof. Maicon Centner" class="profile-image">
+                    <div class="experience-badge">
+                        <span class="years">10+</span>
+                        <span class="text">Anos de Experiência</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Prof. Maicon Centner Germano</h2>
+                    <h3>Especialista em Matemática, Estatística e Ciência de Dados</h3>
+                    <p>Olá! Sou o Professor Maicon Centner, fundador do projeto "Sobre Exatas". Atualmente, trabalho como Professor de Matemática na Rede SESI-SP, onde aplico metodologias inovadoras para o ensino da matemática.</p>
+                    <p>Minha trajetória profissional é diversificada, combinando experiência na indústria como Analista de Processos com formação acadêmica sólida em matemática e estatística. Esta combinação me permite oferecer uma abordagem única no ensino, conectando conceitos teóricos com aplicações práticas do mundo real.</p>
+                    <p>Sou apaixonado por tornar a matemática acessível e demonstrar como ela pode ser aplicada para resolver problemas reais. Minha missão é desmistificar conceitos complexos e ajudar meus alunos a desenvolverem confiança e competência em matemática, estatística e ciência de dados.</p>
+                    <div class="about-signature">
+                        <p>Maicon Centner Germano</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@SobreExatas" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação Acadêmica -->
+    <section class="education-section" style="padding: 100px 0; background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Formação Acadêmica</h2>
+                <p>Minha trajetória de aprendizado e especialização</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Mestrado em Biometria</h3>
+                        <p class="timeline-date">2024</p>
+                        <p>Universidade Estadual Paulista (UNESP)</p>
+                        <p>Modelgaem Matemática e Simulaçao computacional de Biossistemas: Pesquisa em otimização do processo de pulverização em culturas agrícolas com uso de drones.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Especialização em Gestão Escolar</h3>
+                        <p class="timeline-date">2024 - 2025</p>
+                        <p>Universidade Internacional (UNINTER)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Especialização em Metodologia do Ensino de Matemática</h3>
+                        <p class="timeline-date">2024</p>
+                        <p>Universidade Internacional (UNINTER)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>MBA em Matemática Financeira e Estatística</h3>
+                        <p class="timeline-date">2020 - 2021</p>
+                        <p>Descomplica Cursos</p>
+                        <p>Trabalho final: Aplicação da Regressão Linear para Previsão de Demanda em uma Encarroçadora.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Licenciatura em Matemática</h3>
+                        <p class="timeline-date">2022 - 2023</p>
+                        <p>Faculdade Unibf (UNIBF)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Tecnologia em Produção Industrial</h3>
+                        <p class="timeline-date">2017 - 2020</p>
+                        <p>Faculdade de Tecnologia de Botucatu (FATEC)</p>
+                        <p>TCC: Aplicação da Metodologia Lean Seis Sigma em uma Empresa Prestadora de Serviços.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section class="experience-section" style="padding: 100px 0; background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experiência Profissional</h2>
+                <p>Minha trajetória no ensino e na indústria</p>
+            </div>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Professor de Matemática</h3>
+                    <p class="experience-period">2024 - Atual</p>
+                    <p>SESI-SP</p>
+                    <p>Professor de Educação Básica II, atuando no Ensino Fundamental com dedicação exclusiva.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Professor de Matemática</h3>
+                    <p class="experience-period">2022 - 2023</p>
+                    <p>Colégio Anglo Botucatu</p>
+                    <p>Lecionando Matemática, Introdução à Matemática e Educação Financeira.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Analista de Processos</h3>
+                    <p class="experience-period">2019 - 2022</p>
+                    <p>Caio - Induscar Indústria e Comércio de Carrocerias</p>
+                    <p>Mapeamento e simulação de processos, coordenação de projetos, análise de viabilidade, desenvolvimento de sistemas em VBA/Excel e aplicação de ferramentas de melhoria contínua.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Trainee de Produção</h3>
+                    <p class="experience-period">2018 - 2019</p>
+                    <p>EMBRAER</p>
+                    <p>Montagem de sistemas elétricos, mecânicos e hidráulicos em aeronaves Phenom 100 e 300, realização de ensaios não destrutivos.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Monitor de Cálculo</h3>
+                    <p class="experience-period">2018 - 2019</p>
+                    <p>Faculdade de Tecnologia de Botucatu (FATEC)</p>
+                    <p>Monitoria nas disciplinas de Cálculo I e Cálculo II, auxiliando alunos com dificuldades em matemática básica, limites, derivadas e integrais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Minhas Habilidades</h2>
+                <p>Competências desenvolvidas ao longo da minha trajetória</p>
+            </div>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <div class="skill-category">
+                        <h3>Matemática e Estatística</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Matemática Avançada</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Estatística Aplicada</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Modelagem Matemática</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Matemática Financeira</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Metodologias e Processos</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Lean Six Sigma</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Mapeamento de Processos</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Metodologias Ativas de Ensino</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-column">
+                    <div class="skill-category">
+                        <h3>Tecnologia e Programação</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Excel Avançado e VBA</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>R para Análise de Dados</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Plant Simulation (Siemens)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Inteligência Artificial Aplicada</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Idiomas</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Português</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Inglês</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="students-count">1500+</div>
+                    <p>Alunos Atendidos</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="projects-count">200+</div>
+                    <p>Projetos Realizados</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="courses-count">30+</div>
+                    <p>Cursos e Certificações</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="experience-count">10+</div>
+                    <p>Anos de Experiência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minha Abordagem -->
+    <section class="approach-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Minha Abordagem de Ensino</h2>
+                <p>Como trabalho para tornar a matemática acessível e prática</p>
+            </div>
+            <div class="approach-content">
+                <div class="approach-text">
+                    <div class="approach-item">
+                        <h3><i class="fas fa-check-circle"></i> Planejamento Reverso</h3>
+                        <p>Utilizo a metodologia de planejamento reverso, definindo claramente os objetivos de aprendizagem e trabalhando de trás para frente para garantir que cada etapa do processo contribua para o resultado final desejado.</p>
+                    </div>
+                    <div class="approach-item">
+                        <h3><i class="fas fa-check-circle"></i> Aplicação Prática</h3>
+                        <p>Minha experiência na indústria me permite demonstrar como os conceitos matemáticos são aplicados em situações reais, tornando o aprendizado mais significativo e contextualizado.</p>
+                    </div>
+                    <div class="approach-item">
+                        <h3><i class="fas fa-check-circle"></i> Tecnologia e Inovação</h3>
+                        <p>Integro ferramentas tecnológicas como Excel, Python e Inteligência Artificial para agilizar processos e proporcionar uma experiência de aprendizado mais dinâmica e atual.</p>
+                    </div>
+                    <div class="approach-item">
+                        <h3><i class="fas fa-check-circle"></i> Avaliação Contínua</h3>
+                        <p>Desenvolvo critérios de avaliação baseados em expectativas claras de ensino e aprendizagem, permitindo um acompanhamento contínuo do progresso do aluno.</p>
+                    </div>
+                </div>
+                <div class="approach-image">
+                    <img src="../images/about/teaching-approach.jpg" alt="Minha abordagem de ensino">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificações Principais -->
+    <section class="certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certificações Principais</h2>
+                <p>Alguns dos meus principais cursos e certificações</p>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Black Belt em Lean Six Sigma</h3>
+                    <p class="certification-issuer">RL&ASSOCIADOS</p>
+                    <span class="certification-year">2019</span>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Especialização em Estatística</h3>
+                    <p class="certification-issuer">Faculdades Metropolitanas de São Paulo</p>
+                    <span class="certification-year">2020</span>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Inteligência Artificial: Algoritmos de Otimização</h3>
+                    <p class="certification-issuer">Expert Academy</p>
+                    <span class="certification-year">2023</span>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Programação em Python</h3>
+                    <p class="certification-issuer">Expert Academy</p>
+                    <span class="certification-year">2023</span>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3>Formação Master em Excel</h3>
+                    <p class="certification-issuer">Grupo Voitto</p>
+                    <span class="certification-year">2020</span>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>BNCC Matemática e suas Tecnologias</h3>
+                    <p class="certification-issuer">Somos Educação</p>
+                    <span class="certification-year">2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publicações e Trabalhos -->
+    <section class="publications-section" style="padding: 100px 0; background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Publicações e Trabalhos</h2>
+                <p>Artigos e trabalhos acadêmicos desenvolvidos</p>
+            </div>
+            <div class="publications-list">
+                <div class="publication-item" style="margin-bottom: 30px; padding: 30px; background-color: #f9f9f9; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px; font-size: 1.2rem;">Estudo da Célula e Melhorias no Processo de Fabricação de Dutos de Ar-condicionado em uma Encarroçadora</h3>
+                    <p style="color: #3498db; margin-bottom: 15px; font-size: 0.9rem;">TEKHNE E LOGOS, v. 12, p. 70-84, 2021</p>
+                    <p>Artigo científico sobre otimização de processos industriais na fabricação de componentes para ônibus.</p>
+                </div>
+                <div class="publication-item" style="margin-bottom: 30px; padding: 30px; background-color: #f9f9f9; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px; font-size: 1.2rem;">Administração da Produção: Estudo dos Processos de Fabricação de Graxa</h3>
+                    <p style="color: #3498db; margin-bottom: 15px; font-size: 0.9rem;">IX JORNACITEC - Jornada Científica e Tecnológica, 2020</p>
+                    <p>Resumo expandido apresentado em congresso sobre processos industriais.</p>
+                </div>
+                <div class="publication-item" style="margin-bottom: 30px; padding: 30px; background-color: #f9f9f9; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px; font-size: 1.2rem;">Aplicação da Metodologia Lean Seis Sigma em uma Empresa Prestadora de Serviços</h3>
+                    <p style="color: #3498db; margin-bottom: 15px; font-size: 0.9rem;">VIII JORNACITEC - Jornada Científica e Tecnológica, 2019</p>
+                    <p>Trabalho de conclusão de curso apresentado em congresso científico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para transformar seu aprendizado em matemática?</h2>
+                <p>Entre em contato agora mesmo e descubra como posso ajudar você a alcançar seus objetivos acadêmicos e profissionais.</p>
+                <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+                    <a href="orcamento.html" class="btn btn-light">Solicitar orçamento</a>
+                    <a href="https://wa.me/5514991258667" target="_blank" class="btn btn-outline btn-light" style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#analise">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="faq.html">Perguntas Frequentes</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@SobreExatas" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // Animação dos números de estatísticas
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start) + "+";
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Função para verificar se um elemento está visível na tela
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Iniciar animação quando a seção de estatísticas estiver visível
+            const statsSection = document.querySelector('.stats-section');
+            let animated = false;
+            
+            function checkIfInView() {
+                if (isElementInViewport(statsSection) && !animated) {
+                    animated = true;
+                    animateValue(document.getElementById("students-count"), 0, 1500, 2000);
+                    animateValue(document.getElementById("projects-count"), 0, 200, 2000);
+                    animateValue(document.getElementById("courses-count"), 0, 30, 2000);
+                    animateValue(document.getElementById("experience-count"), 0, 10, 2000);
+                }
+            }
+            
+            window.addEventListener('scroll', checkIfInView);
+            checkIfInView(); // Verificar na carga inicial
+        });
+    </script>
+</body>
+</html>

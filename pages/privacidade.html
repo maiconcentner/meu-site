@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidade - Prof. Maicon Centner">
+    <title>Política de Privacidade - Prof. Maicon Centner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .privacy-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .privacy-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-family: var(--font-primary);
+        }
+        
+        .privacy-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .privacy-date {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .privacy-section-title {
+            color: var(--primary-color);
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .privacy-section-title:first-of-type {
+            margin-top: 0;
+        }
+        
+        .privacy-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .privacy-content ul, .privacy-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .privacy-content li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .privacy-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .privacy-footer p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .privacy-contact {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .privacy-contact p {
+            margin-bottom: 10px;
+        }
+        
+        .print-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .related-docs {
+            margin-top: 30px;
+            text-align: center;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .related-docs p {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .related-docs a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .related-docs a:hover {
+            text-decoration: underline;
+        }
+
+        .rights-form-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .rights-form-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media print {
+            .header, .footer, .cta-section, .print-btn, .related-docs, .rights-form-btn {
+                display: none;
+            }
+            
+            .privacy-section {
+                padding: 0;
+                background-color: white;
+            }
+            
+            .privacy-container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .privacy-container {
+                padding: 20px;
+            }
+            
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 class="animate-fade-in">Política de Privacidade</h1>
+            <p class="animate-fade-in delay-1">Como seus dados são coletados, utilizados e protegidos</p>
+        </div>
+    </section>
+
+    <!-- Política de Privacidade -->
+    <section class="privacy-section">
+        <div class="container">
+            <div class="privacy-container">
+                <div class="privacy-header">
+                    <h1>Política de Privacidade</h1>
+                    <p>Compromisso com a proteção dos seus dados pessoais</p>
+                </div>
+                
+                <div class="privacy-date">
+                    <p>Última atualização: 12 de maio de 2025</p>
+                </div>
+                
+                <!-- Links para documentos relacionados -->
+                <div class="related-docs">
+                    <p>Documentos relacionados:</p>
+                    <a href="termos.html"><i class="fas fa-file-contract"></i> Termos de Serviço</a>
+                    <a href="cookies.html"><i class="fas fa-cookie-bite"></i> Política de Cookies</a>
+                </div>
+                
+                <div class="privacy-content">
+                    <h2 class="privacy-section-title">1. Introdução</h2>
+                    <p>A presente Política de Privacidade tem por finalidade demonstrar o compromisso do Prof. Maicon Centner ("nós", "nosso") com a privacidade e proteção dos dados pessoais coletados dos usuários ("você", "seu") que acessam nosso site e utilizam nossos serviços, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD) - Lei nº 13.709/2018.</p>
+                    <p>Esta política descreve as informações que coletamos, como as utilizamos, compartilhamos e protegemos, além de explicar suas opções em relação ao tratamento de seus dados pessoais.</p>
+                    <p>Ao utilizar nosso site e serviços, você concorda com as práticas descritas nesta Política de Privacidade.</p>
+                    
+                    <h2 class="privacy-section-title">2. Dados Coletados</h2>
+                    <p>Coletamos os seguintes tipos de informações:</p>
+                    
+                    <h3>2.1. Dados fornecidos diretamente por você:</h3>
+                    <ul>
+                        <li><strong>Dados de identificação:</strong> nome completo, e-mail, telefone/WhatsApp;</li>
+                        <li><strong>Dados acadêmicos:</strong> instituição de ensino, curso, nível de escolaridade (quando aplicável);</li>
+                        <li><strong>Dados profissionais:</strong> empresa, cargo (quando aplicável);</li>
+                        <li><strong>Informações de projetos:</strong> descrição de serviços solicitados, materiais anexados, prazos desejados;</li>
+                        <li><strong>Dados financeiros:</strong> informações de pagamento (estas são processadas por plataformas de pagamento seguras e não armazenamos dados completos de cartões de crédito).</li>
+                    </ul>
+                    
+                    <h3>2.2. Dados coletados automaticamente:</h3>
+                    <ul>
+                        <li><strong>Dados de uso:</strong> informações sobre como você navega e utiliza nosso site, incluindo páginas visitadas, tempo de permanência, cliques e interações;</li>
+                        <li><strong>Dados do dispositivo:</strong> tipo de dispositivo, sistema operacional, navegador, resolução de tela;</li>
+                        <li><strong>Dados de localização:</strong> informações gerais sobre sua localização baseadas no endereço IP;</li>
+                        <li><strong>Cookies e tecnologias semelhantes:</strong> utilizados para melhorar sua experiência no site, conforme detalhado em nossa <a href="cookies.html">Política de Cookies</a>.</li>
+                    </ul>
+                    
+                    <h2 class="privacy-section-title">3. Finalidades do Tratamento de Dados</h2>
+                    <p>Utilizamos seus dados pessoais para as seguintes finalidades:</p>
+                    <ul>
+                        <li><strong>Prestação de serviços:</strong> para fornecer os serviços solicitados, incluindo elaboração de orçamentos, execução de trabalhos contratados e suporte ao cliente;</li>
+                        <li><strong>Comunicação:</strong> para responder suas dúvidas, enviar informações sobre serviços contratados, atualizações e notificações importantes;</li>
+                        <li><strong>Processamento de pagamentos:</strong> para processar transações financeiras relacionadas aos serviços contratados;</li>
+                        <li><strong>Melhoria dos serviços:</strong> para analisar e aprimorar nossos serviços, conteúdos e funcionalidades do site;</li>
+                        <li><strong>Marketing:</strong> para enviar materiais promocionais, newsletters e informações sobre novos serviços que possam ser de seu interesse (sempre com opção de cancelamento);</li>
+                        <li><strong>Cumprimento de obrigações legais:</strong> para atender às exigências fiscais, contábeis e outras obrigações legais;</li>
+                        <li><strong>Proteção:</strong> para detectar e prevenir fraudes, abusos e violações de segurança.</li>
+                    </ul>
+                    
+                    <h2 class="privacy-section-title">4. Base Legal para o Tratamento</h2>
+                    <p>O tratamento de seus dados pessoais é realizado com base nas seguintes hipóteses legais previstas na LGPD:</p>
+                    <ul>
+                        <li><strong>Execução de contrato:</strong> quando o tratamento é necessário para cumprir obrigações contratuais relacionadas aos serviços solicitados;</li>
+                        <li><strong>Consentimento:</strong> quando você autoriza expressamente o tratamento de seus dados para finalidades específicas, como o envio de materiais de marketing;</li>
+                        <li><strong>Interesse legítimo:</strong> quando o tratamento é necessário para atender aos interesses legítimos do controlador ou de terceiros, respeitando seus direitos e liberdades fundamentais;</li>
+                        <li><strong>Cumprimento de obrigação legal:</strong> quando o tratamento é necessário para cumprir uma obrigação legal ou regulatória.</li>
+                    </ul>
+                    
+                    <h2 class="privacy-section-title">5. Compartilhamento de Dados</h2>
+                    <p>Seus dados pessoais podem ser compartilhados com:</p>
+                    <ul>
+                        <li><strong>Prestadores de serviços:</strong> empresas que nos auxiliam na operação do site e na prestação dos serviços, como provedores de hospedagem, plataformas de pagamento, ferramentas de análise e marketing;</li>
+                        <li><strong>Parceiros acadêmicos:</strong> quando necessário para a execução de serviços específicos e sempre com sua ciência prévia;</li>
+                        <li><strong>Autoridades públicas:</strong> quando exigido por lei, decisão judicial ou requisição de autoridade competente.</li>
+                    </ul>
+                    <p>Todos os terceiros com os quais compartilhamos seus dados estão sujeitos a obrigações de confidencialidade e devem utilizar os dados apenas para os fins específicos acordados.</p>
+                    <p>Não vendemos, alugamos ou comercializamos seus dados pessoais para terceiros.</p>
+                    
+                    <h2 class="privacy-section-title">6. Armazenamento e Segurança</h2>
+                    <p>Implementamos medidas técnicas e organizacionais apropriadas para proteger seus dados pessoais contra acesso não autorizado, perda, alteração ou divulgação acidental, incluindo:</p>
+                    <ul>
+                        <li>Criptografia de dados sensíveis;</li>
+                        <li>Controles de acesso rigorosos;</li>
+                        <li>Monitoramento regular de sistemas;</li>
+                        <li>Treinamento de equipe em práticas de segurança;</li>
+                        <li>Avaliações periódicas de segurança.</li>
+                    </ul>
+                    <p>Seus dados são armazenados pelo tempo necessário para cumprir as finalidades para as quais foram coletados, exceto quando um período de retenção mais longo for exigido ou permitido por lei.</p>
+                    
+                    <h2 class="privacy-section-title">7. Seus Direitos</h2>
+                    <p>Em conformidade com a LGPD, você tem os seguintes direitos em relação aos seus dados pessoais:</p>
+                    <ul>
+                        <li><strong>Acesso:</strong> direito de saber se tratamos seus dados e de acessar os dados que mantemos sobre você;</li>
+                        <li><strong>Correção:</strong> direito de solicitar a correção de dados incompletos, inexatos ou desatualizados;</li>
+                        <li><strong>Anonimização, bloqueio ou eliminação:</strong> direito de solicitar a anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD;</li>
+                        <li><strong>Portabilidade:</strong> direito de solicitar a portabilidade dos dados a outro fornecedor de serviço ou produto;</li>
+                        <li><strong>Eliminação:</strong> direito de solicitar a eliminação dos dados tratados com base no consentimento;</li>
+                        <li><strong>Informação:</strong> direito de ser informado sobre as entidades públicas e privadas com as quais compartilhamos seus dados;</li>
+                        <li><strong>Revogação do consentimento:</strong> direito de revogar o consentimento a qualquer momento.</li>
+                    </ul>
+                    <p>Para exercer seus direitos, você pode utilizar nosso <a href="direitos-lgpd.html" class="rights-form-btn">Formulário de Solicitação LGPD</a> ou entrar em contato através do e-mail: contato@maiconcentner.com.br</p>
+                    
+                    <h2 class="privacy-section-title">8. Cookies e Tecnologias Semelhantes</h2>
+                    <p>Utilizamos cookies e tecnologias semelhantes para melhorar sua experiência em nosso site, entender como você o utiliza e personalizar nosso conteúdo.</p>
+                    <p>Os tipos de cookies que utilizamos incluem:</p>
+                    <ul>
+                        <li><strong>Cookies essenciais:</strong> necessários para o funcionamento básico do site;</li>
+                        <li><strong>Cookies de desempenho:</strong> coletam informações sobre como você utiliza o site;</li>
+                        <li><strong>Cookies de funcionalidade:</strong> permitem que o site lembre escolhas que você fez;</li>
+                        <li><strong>Cookies de publicidade:</strong> utilizados para fornecer anúncios relevantes.</li>
+                    </ul>
+                    <p>Você pode gerenciar suas preferências de cookies através das configurações do seu navegador. No entanto, desabilitar certos cookies pode afetar a funcionalidade do site.</p>
+                    <p>Para informações mais detalhadas sobre como utilizamos cookies, consulte nossa <a href="cookies.html">Política de Cookies</a>.</p>
+                    
+                    <h2 class="privacy-section-title">9. Transferência Internacional de Dados</h2>
+                    <p>Alguns dos serviços que utilizamos podem envolver a transferência de seus dados para servidores localizados fora do Brasil. Nesses casos, asseguramos que a transferência seja realizada de acordo com os requisitos da LGPD e que sejam adotadas medidas de segurança adequadas para proteger seus dados.</p>
+                    
+                    <h2 class="privacy-section-title">10. Proteção de Dados de Menores</h2>
+                    <p>Nossos serviços não são direcionados a menores de 18 anos. Não coletamos intencionalmente dados pessoais de menores sem o consentimento verificável dos pais ou responsáveis legais.</p>
+                    <p>Se tomarmos conhecimento de que coletamos dados pessoais de um menor sem a verificação do consentimento parental, tomaremos medidas para remover essas informações de nossos servidores.</p>
+                    
+                    <h2 class="privacy-section-title">11. Alterações na Política de Privacidade</h2>
+                    <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas de privacidade. Recomendamos que você revise esta política regularmente.</p>
+                    <p>Em caso de alterações significativas, notificaremos você através de um aviso em nosso site ou por e-mail, quando apropriado.</p>
+                    <p>A data da última atualização será sempre indicada no início desta política.</p>
+                    
+                    <h2 class="privacy-section-title">12. Contato</h2>
+                    <p>Se você tiver dúvidas, preocupações ou solicitações relacionadas a esta Política de Privacidade ou ao tratamento de seus dados pessoais, entre em contato conosco através dos seguintes canais:</p>
+                    <ul>
+                        <li><strong>E-mail:</strong> contato@maiconcentner.com.br</li>
+                        <li><strong>WhatsApp:</strong> +55 14 99125-8667</li>
+                        <li><strong>Formulário de contato:</strong> disponível em nosso site</li>
+                    </ul>
+                    <p>Responderemos a todas as solicitações dentro de um prazo razoável, não superior a 15 dias, conforme previsto na LGPD.</p>
+                </div>
+                
+                <div class="privacy-footer">
+                    <p>Ao utilizar nosso site e serviços, você reconhece que leu e compreendeu esta Política de Privacidade e concorda com a coleta, uso e divulgação de suas informações conforme aqui descrito.</p>
+                    <p class="version-info">Versão 1.2 - Maio/2025</p>
+                </div>
+                
+                <div class="privacy-contact">
+                    <p>Para esclarecimentos adicionais sobre esta Política de Privacidade, entre em contato:</p>
+                    <p><strong>E-mail:</strong> contato@maiconcentner.com.br</p>
+                    <p><strong>WhatsApp:</strong> +55 14 99125-8667</p>
+                    <a href="javascript:window.print()" class="print-btn"><i class="fas fa-print"></i> Imprimir Política</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para solicitar um orçamento?</h2>
+                <p>Retorne à página de orçamentos e preencha o formulário com suas necessidades.</p>
+                <a href="orcamento.html" class="btn btn-light">Solicitar orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#analise">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="faq.html">Perguntas Frequentes</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@SobreExatas" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

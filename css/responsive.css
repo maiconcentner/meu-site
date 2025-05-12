@@ -1,0 +1,138 @@
+/* 
+* Estilos responsivos para o site de Serviços Acadêmicos
+* Autor: Seu Nome
+* Data: 2025
+*/
+
+/* Telas grandes (desktops, menos de 1200px) */
+@media (max-width: 1199.98px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Telas médias (tablets, menos de 992px) */
+@media (max-width: 991.98px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telas pequenas (celulares em modo paisagem, menos de 768px) */
+@media (max-width: 767.98px) {
+    .header .container {
+        padding: 0 15px;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    .main-nav .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 20px 30px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        z-index: 1000;
+    }
+    
+    .main-nav .nav-list.active {
+        right: 0;
+    }
+    
+    .main-nav .nav-list li {
+        margin: 0 0 20px;
+        width: 100%;
+    }
+    
+    .main-nav .nav-list li a {
+        display: block;
+        padding: 5px 0;
+        font-size: 1.1rem;
+    }
+    
+    .main-nav .nav-list li a.btn {
+        display: inline-block;
+    }
+    
+    .hero-section {
+        padding: 80px 0;
+        height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .services-grid,
+    .portfolio-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Telas muito pequenas (celulares em modo retrato, menos de 576px) */
+@media (max-width: 575.98px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .testimonial-author img {
+        margin: 0 auto 10px;
+    }
+}

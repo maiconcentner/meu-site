@@ -1,0 +1,461 @@
+/* Estilos específicos para a página de portfólio */
+
+/* Banner da página */
+.portfolio-banner {
+    background: linear-gradient(135deg, #2c3e50, #4a69bd);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-banner .banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.portfolio-banner p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 1;
+}
+
+/* Categorias de portfólio */
+.portfolio-categories-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-btn i {
+    font-size: 0.8rem;
+}
+
+.filter-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+/* Grid de portfólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.portfolio-item {
+    transition: all 0.4s ease;
+}
+
+.portfolio-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-tags {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.portfolio-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.portfolio-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.portfolio-details {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.detail i {
+    color: #3498db;
+}
+
+.portfolio-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.portfolio-actions .btn {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* Seção de estatísticas */
+.stats-section {
+    background-color: #2c3e50;
+    padding: 4rem 0;
+    color: #fff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1.5rem;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* CTA Section */
+.portfolio-cta {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    padding: 5rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Modal de portfólio */
+.portfolio-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    animation: modalFadeIn 0.4s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-description {
+    padding: 2rem;
+}
+
+.modal-description h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.modal-description p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.modal-description ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.modal-description ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.modal-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .portfolio-banner h1 {
+        font-size: 2.8rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    .portfolio-banner p {
+        font-size: 1rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-image {
+        height: 300px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-image {
+        height: 220px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+}

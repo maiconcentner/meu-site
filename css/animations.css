@@ -1,0 +1,220 @@
+/* 
+* Animações para o site de Serviços Acadêmicos
+* Autor: Seu Nome
+* Data: 2025
+*/
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Shake */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+/* Slide In Up */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Rotate */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Classes de animação para uso no site */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 1s ease forwards;
+}
+
+.zoom-in {
+    animation: zoomIn 1s ease forwards;
+}
+
+.bounce {
+    animation: bounce 1s ease forwards;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.shake {
+    animation: shake 0.5s ease forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 1s ease forwards;
+}
+
+.rotate {
+    animation: rotate 2s linear infinite;
+}
+
+/* Classes de atraso para animações */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+.delay-900 {
+    animation-delay: 0.9s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
