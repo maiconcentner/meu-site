@@ -1,11 +1,13 @@
 /* Estilos específicos para a página de portfólio */
 
 /* Banner da página */
+
 .portfolio-banner {
     background: linear-gradient(135deg, #2c3e50, #4a69bd);
     position: relative;
     overflow: hidden;
 }
+
 
 .portfolio-banner .banner-content {
     position: relative;
@@ -13,6 +15,7 @@
 }
 
 .portfolio-banner h1 {
+    
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -20,6 +23,7 @@
 }
 
 .portfolio-banner p {
+    
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto 2rem;
