@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PTD – STEAM+ | Projeto 1 – Módulo 2 (Março/2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ====== Tokens ====== */
+    :root {
+      --bg: #eef2ff;
+      --surface: #ffffff;
+      --surface2: #f7f9ff;
+      --surface3: #eef2ff;
+      --text: #0d1b3e;
+      --muted: #5a6e9a;
+      --line: rgba(13,27,62,.10);
+      --shadow: 0 8px 32px rgba(13,27,62,.12);
+      --shadow2: 0 3px 12px rgba(13,27,62,.08);
+      --shadow3: 0 1px 4px rgba(13,27,62,.06);
+      --primary: #2563eb;
+      --primary-dk: #1d4ed8;
+      --primary-bg: rgba(37,99,235,.08);
+      --primary2: #60a5fa;
+      --accent: #059669;
+      --warn: #d97706;
+      --danger: #dc2626;
+      --chipbg: rgba(37,99,235,.09);
+      --chipbd: rgba(37,99,235,.20);
+      --radius: 20px;
+      --radius2: 14px;
+      --radius3: 10px;
+      --font: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --progress-h: 4px;
+    }
+    [data-theme="dark"] {
+      --bg: #080e1f;
+      --surface: #0e1830;
+      --surface2: #0a1226;
+      --surface3: #111c38;
+      --text: #dde6ff;
+      --muted: #7d95c4;
+      --line: rgba(200,214,255,.10);
+      --shadow: 0 12px 36px rgba(0,0,0,.45);
+      --shadow2: 0 6px 20px rgba(0,0,0,.32);
+      --shadow3: 0 2px 8px rgba(0,0,0,.24);
+      --primary: #6191ff;
+      --primary-dk: #4d7aff;
+      --primary-bg: rgba(97,145,255,.12);
+      --primary2: #93c5fd;
+      --accent: #34d399;
+      --warn: #fbbf24;
+      --danger: #f87171;
+      --chipbg: rgba(97,145,255,.14);
+      --chipbd: rgba(97,145,255,.28);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.55;
+      background:
+        radial-gradient(ellipse 900px 600px at 5% 0%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 95% 8%, rgba(16,185,129,.13), transparent 55%),
+        radial-gradient(ellipse 800px 500px at 50% 100%, rgba(124,58,237,.10), transparent 55%),
+        var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 48px; }
+
+    /* ====== Progress bar (top) ====== */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: var(--progress-h);
+      width: 0%; background: linear-gradient(90deg, var(--primary), var(--primary2));
+      z-index: 9999; transition: width .25s ease;
+      border-radius: 0 999px 999px 0;
+    }
+
+    /* ====== Toast ====== */
+    #toast {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(60px);
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 12px; padding: 10px 18px;
+      font-size: 13px; font-weight: 500; color: var(--text);
+      box-shadow: var(--shadow); z-index: 9999;
+      display: flex; align-items: center; gap: 8px;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+      opacity: 0; pointer-events: none; white-space: nowrap;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    #toast .toast-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+    #toast.error .toast-dot { background: var(--danger); }
+
+    /* ====== Topbar ====== */
+    .topbar {
+      position: sticky; top: 12px; z-index: 20;
+      border: 1px solid var(--line);
+      background: color-mix(in oklab, var(--surface) 88%, transparent);
+      backdrop-filter: blur(20px) saturate(1.6);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .topbar-left {
+      display: flex; align-items: center; gap: 13px;
+      flex: 1 1 300px; min-width: 250px;
+    }
+    .topbar-icon {
+      width: 46px; height: 46px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; box-shadow: 0 4px 14px rgba(37,99,235,.35);
+    }
+    .ttl h1 {
+      margin: 0; font-size: clamp(14px, 1.9vw, 19px);
+      font-weight: 700; letter-spacing: -.3px; line-height: 1.25;
+    }
+    .ttl p { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    /* Progress pills in header */
+    .progress-pills {
+      display: flex; gap: 5px; align-items: center; flex-wrap: wrap;
+      flex: 0 0 auto;
+    }
+    .prog-pill {
+      padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 600;
+      border: 1px solid var(--chipbd); background: var(--chipbg);
+      color: color-mix(in oklab, var(--text) 70%, var(--primary));
+      cursor: default;
+    }
+    .prog-pill.done { border-color: rgba(5,150,105,.3); background: rgba(5,150,105,.1); color: var(--accent); }
+
+    .actions {
+      display: flex; gap: 7px; flex-wrap: wrap;
+      align-items: center; justify-content: flex-end;
+      flex: 1 1 260px;
+    }
+
+    /* ====== Buttons ====== */
+    .btn {
+      cursor: pointer; user-select: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 13px;
+      border-radius: 10px;
+      font-size: 12.5px; font-weight: 500; font-family: var(--font);
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: all .15s ease;
+      box-shadow: var(--shadow3), inset 0 1px 0 rgba(255,255,255,.07);
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow2); border-color: color-mix(in oklab, var(--primary) 30%, var(--line)); }
+    .btn:active { transform: translateY(0); box-shadow: var(--shadow3); }
+    .btn.primary {
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dk) 100%);
+      border-color: var(--primary-dk); color: #fff;
+      box-shadow: 0 3px 10px rgba(37,99,235,.30), inset 0 1px 0 rgba(255,255,255,.15);
+    }
+    .btn.primary:hover { box-shadow: 0 5px 16px rgba(37,99,235,.40), inset 0 1px 0 rgba(255,255,255,.15); }
+    .btn.ghost { background: transparent; box-shadow: none; border-color: transparent; }
+    .btn.ghost:hover { background: var(--primary-bg); border-color: var(--chipbd); }
+    .btn.danger {
+      background: color-mix(in oklab, var(--danger) 10%, var(--surface));
+      border-color: color-mix(in oklab, var(--danger) 28%, var(--line));
+      color: var(--danger);
+    }
+    .btn.icon-only { padding: 8px 9px; border-radius: 10px; }
+
+    .field {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 13px;
+      font-size: 13px; font-family: var(--font);
+      outline: none; width: 100%;
+      transition: all .2s ease;
+      box-shadow: var(--shadow3);
+    }
+    .field::placeholder { color: var(--muted); opacity: .7; }
+    .field:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.14), var(--shadow3);
+    }
+
+    /* ====== Grid layout ====== */
+    .grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 14px; margin-top: 14px; align-items: start;
+    }
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: 1fr; }
+      .topbar { position: relative; top: auto; }
+      .actions { justify-content: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .btn { font-size: 12px; padding: 7px 10px; }
+      .topbar-icon { width: 36px; height: 36px; font-size: 18px; border-radius: 10px; }
+    }
+
+    /* ====== Card ====== */
+    .card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      overflow: hidden;
+    }
+    .card-hd {
+      padding: 13px 17px;
+      border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+    }
+    .card-hd h2 {
+      margin: 0; font-size: 13.5px; font-weight: 600; letter-spacing: -.2px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-hd h2 .icon {
+      width: 27px; height: 27px; border-radius: 8px;
+      background: var(--primary-bg);
+      border: 1px solid var(--chipbd);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+    }
+    .card-bd { padding: 13px 17px 16px; }
+
+    /* ====== Chips ====== */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 11px; }
+    .chip {
+      border: 1px solid var(--chipbd); background: var(--chipbg);
+      color: color-mix(in oklab, var(--text) 78%, var(--primary));
+      padding: 5px 11px; border-radius: 999px;
+      font-size: 12px; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .chip.gray { border-color: var(--line); background: var(--surface3); color: var(--muted); font-weight: 400; }
+    .chip.green { border-color: rgba(5,150,105,.25); background: rgba(5,150,105,.09); color: var(--accent); font-weight: 500; }
+
+    /* ====== Tabs ====== */
+    .tabs {
+      display: flex; gap: 2px;
+      padding: 10px 17px 0;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      cursor: pointer; user-select: none; flex-shrink: 0;
+      border: 1px solid transparent;
+      background: transparent; color: var(--muted);
+      padding: 8px 14px; border-radius: 8px 8px 0 0;
+      font-size: 12.5px; font-weight: 500; font-family: var(--font);
+      transition: all .15s ease; margin-bottom: -1px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .tab:hover { color: var(--text); background: var(--primary-bg); }
+    .tab.active {
+      color: var(--primary);
+      border: 1px solid var(--line);
+      border-bottom: 2px solid var(--primary);
+      background: var(--surface);
+    }
+    .section { display: none; padding: 14px 17px; }
+    .section.active { display: block; }
+    .section h3 {
+      margin: 0 0 10px; font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .section h3::before {
+      content: ''; display: block; width: 3px; height: 15px;
+      background: var(--primary); border-radius: 2px; flex-shrink: 0;
+    }
+    .section ul { margin: 0; padding-left: 0; list-style: none; }
+    .section li {
+      padding: 8px 0 8px 16px; position: relative;
+      color: var(--text); font-size: 13px; line-height: 1.55;
+      border-bottom: 1px solid var(--line);
+    }
+    .section li:last-child { border-bottom: none; }
+    .section li::before {
+      content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: .55;
+    }
+    .section p { margin: 0 0 10px; color: var(--text); font-size: 13px; line-height: 1.6; }
+    .small { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ====== Lessons ====== */
+    .week-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+      color: var(--muted); padding: 14px 0 5px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .week-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .week-label:first-child { padding-top: 2px; }
+
+    .toolbar {
+      display: grid; grid-template-columns: 1fr auto auto auto;
+      gap: 8px; padding: 12px 17px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface2);
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .toolbar .field { grid-column: 1 / -1; }
+    }
+
+    .lesson {
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      overflow: hidden; background: var(--surface);
+      margin-top: 8px;
+      box-shadow: var(--shadow3);
+      transition: box-shadow .2s ease, border-color .2s ease;
+    }
+    .lesson:hover { box-shadow: var(--shadow2); border-color: color-mix(in oklab, var(--primary) 22%, var(--line)); }
+    .lesson.open {
+      border-color: color-mix(in oklab, var(--primary) 35%, var(--line));
+      box-shadow: 0 4px 20px rgba(37,99,235,.12);
+    }
+    .lesson-top {
+      padding: 12px 14px;
+      display: flex; gap: 10px; align-items: flex-start;
+      cursor: pointer; user-select: none;
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+      transition: background .15s ease;
+    }
+    .lesson.open .lesson-top { background: color-mix(in oklab, var(--primary-bg) 70%, var(--surface)); }
+    .lesson-num {
+      width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+      background: var(--primary-bg); border: 1px solid var(--chipbd);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: var(--primary);
+      margin-top: 1px;
+    }
+    .lesson.open .lesson-num { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .lesson-info { flex: 1; min-width: 0; }
+    .lesson-top h4 { margin: 0; font-size: 13.5px; font-weight: 600; line-height: 1.3; }
+    .lesson-top .meta2 {
+      margin-top: 4px; color: var(--muted); font-size: 11.5px;
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .meta2 span { display: flex; align-items: center; gap: 3px; }
+    .lesson-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+    .badge {
+      padding: 4px 9px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface3);
+      color: var(--muted); font-size: 11px; font-weight: 500; white-space: nowrap;
+    }
+    .lesson.open .badge { background: var(--primary-bg); border-color: var(--chipbd); color: var(--primary); }
+
+    /* mini progress bar per lesson */
+    .lesson-prog-wrap { width: 60px; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+    .lesson-prog { height: 100%; border-radius: 2px; background: var(--accent); transition: width .3s ease; }
+
+    .skillrow { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+    .skillpill {
+      font-size: 11px; font-weight: 500;
+      padding: 3px 8px; border-radius: 999px;
+      border: 1px solid var(--chipbd); background: var(--chipbg);
+      color: color-mix(in oklab, var(--text) 78%, var(--primary));
+    }
+
+    .lesson-body {
+      display: none; border-top: 1px solid var(--line);
+      padding: 14px; background: var(--surface);
+      animation: fadeIn .2s ease;
+    }
+    .lesson.open .lesson-body { display: block; }
+
+    .box {
+      border: 1px solid var(--line); border-radius: var(--radius3);
+      background: var(--surface2); padding: 11px 13px; margin-top: 10px;
+    }
+    .box:first-child { margin-top: 0; }
+    .box h5 {
+      margin: 0 0 8px; font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .box h5::before { content: ''; display: block; width: 3px; height: 12px; background: var(--accent); border-radius: 2px; }
+    .box ul { margin: 0; padding-left: 0; list-style: none; }
+    .box li {
+      padding: 6px 0 6px 13px; position: relative;
+      color: var(--text); font-size: 12.5px; border-bottom: 1px solid var(--line);
+    }
+    .box li:last-child { border-bottom: none; }
+    .box li::before {
+      content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .65;
+    }
+
+    /* Diário toolbar */
+    .diary-hd {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      margin-bottom: 7px; flex-wrap: wrap;
+    }
+    .diary-hd h5 { margin: 0; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .diary-hd h5::before { content: ''; display: block; width: 3px; height: 12px; background: var(--warn); border-radius: 2px; }
+    .diary-meta { font-size: 11.5px; color: var(--muted); }
+    .diary-actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+    textarea.field {
+      min-height: 140px; resize: vertical;
+      line-height: 1.6; font-size: 13px;
+      border-radius: var(--radius3);
+    }
+
+    /* char counter */
+    .char-count { font-size: 11px; color: var(--muted); margin-top: 4px; text-align: right; }
+
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-top: 10px; }
+
+    /* ====== Status ====== */
+    .status {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid var(--line); background: var(--surface);
+      padding: 6px 12px; border-radius: 999px;
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      box-shadow: var(--shadow3); white-space: nowrap;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 0 2px rgba(5,150,105,.25);
+    }
+    .dot.off { background: var(--danger); box-shadow: 0 0 0 2px rgba(220,38,38,.25); }
+
+    /* ====== Stats bar ====== */
+    .stats-bar {
+      display: flex; gap: 10px; flex-wrap: wrap; padding: 8px 17px 10px;
+      border-bottom: 1px solid var(--line); background: var(--surface3);
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 6px 12px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--surface);
+      min-width: 72px;
+    }
+    .stat-val { font-size: 18px; font-weight: 700; color: var(--primary); line-height: 1; }
+    .stat-lbl { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
+
+    /* ====== Footer ====== */
+    footer {
+      margin-top: 14px; text-align: center;
+      color: var(--muted); font-size: 12px;
+      padding-top: 12px; border-top: 1px solid var(--line);
+    }
+
+    /* ====== Scrollbar ====== */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+    /* ====== Kbd shortcut hint ====== */
+    .kbd { display: inline-block; padding: 2px 6px; border-radius: 5px; font-size: 11px; font-weight: 600; font-family: monospace; border: 1px solid var(--line); background: var(--surface3); color: var(--muted); }
+
+    /* ====== Animations ====== */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
+
+    /* ====== Mobile tweaks ====== */
+    @media (max-width: 500px) {
+      .wrap { padding: 12px 10px 40px; }
+      .topbar { padding: 10px 12px; gap: 8px; }
+      .card-bd, .card-hd, .toolbar, .section, .lesson-body { padding-left: 12px; padding-right: 12px; }
+      .stats-bar { gap: 6px; }
+      .stat-item { min-width: 60px; padding: 5px 9px; }
+    }
+  
+    /* ====== Turmas checkboxes ====== */
+    .turmas-row {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-top: 8px; align-items: center;
+    }
+    .turma-check {
+      display: flex; align-items: center; gap: 5px;
+      padding: 5px 11px 5px 8px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      cursor: pointer; user-select: none;
+      font-size: 12px; font-weight: 600;
+      background: var(--surface2);
+      color: var(--muted);
+      transition: all .15s ease;
+      white-space: nowrap;
+    }
+    .turma-check:hover { border-color: color-mix(in oklab, var(--primary) 35%, var(--line)); color: var(--text); }
+    .turma-check input[type="checkbox"] { display: none; }
+    .turma-check .chk-box {
+      width: 16px; height: 16px; border-radius: 5px;
+      border: 1.5px solid var(--line);
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; transition: all .15s ease; flex-shrink: 0;
+    }
+    /* per-turma colors when checked */
+    .turma-check[data-turma="9A"].checked  { border-color: #2563eb; background: rgba(37,99,235,.10); color: #2563eb; }
+    .turma-check[data-turma="9A"].checked .chk-box { background: #2563eb; border-color: #2563eb; color: #fff; }
+    .turma-check[data-turma="9B"].checked  { border-color: #7c3aed; background: rgba(124,58,237,.10); color: #7c3aed; }
+    .turma-check[data-turma="9B"].checked .chk-box { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+    .turma-check[data-turma="9C"].checked  { border-color: #059669; background: rgba(5,150,105,.10); color: #059669; }
+    .turma-check[data-turma="9C"].checked .chk-box { background: #059669; border-color: #059669; color: #fff; }
+    [data-theme="dark"] .turma-check[data-turma="9A"].checked { border-color: #6191ff; background: rgba(97,145,255,.15); color: #6191ff; }
+    [data-theme="dark"] .turma-check[data-turma="9A"].checked .chk-box { background: #6191ff; border-color: #6191ff; }
+    [data-theme="dark"] .turma-check[data-turma="9B"].checked { border-color: #a78bfa; background: rgba(167,139,250,.15); color: #a78bfa; }
+    [data-theme="dark"] .turma-check[data-turma="9B"].checked .chk-box { background: #a78bfa; border-color: #a78bfa; }
+    [data-theme="dark"] .turma-check[data-turma="9C"].checked { border-color: #34d399; background: rgba(52,211,153,.15); color: #34d399; }
+    [data-theme="dark"] .turma-check[data-turma="9C"].checked .chk-box { background: #34d399; border-color: #34d399; }
+
+    .turma-label { font-size: 11px; font-weight: 600; color: var(--muted); margin-right: 2px; letter-spacing: .3px; }
+
+    /* badge group showing turmas done on lesson header */
+    .turmas-done-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+    .turma-dot {
+      width: 20px; height: 20px; border-radius: 6px;
+      font-size: 9.5px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px solid var(--line); background: var(--surface3);
+      color: var(--muted); transition: all .15s ease;
+    }
+    .turma-dot[data-t="9A"].active { background: rgba(37,99,235,.15); border-color: #2563eb; color: #2563eb; }
+    .turma-dot[data-t="9B"].active { background: rgba(124,58,237,.15); border-color: #7c3aed; color: #7c3aed; }
+    .turma-dot[data-t="9C"].active { background: rgba(5,150,105,.15); border-color: #059669; color: #059669; }
+    [data-theme="dark"] .turma-dot[data-t="9A"].active { background: rgba(97,145,255,.18); border-color: #6191ff; color: #6191ff; }
+    [data-theme="dark"] .turma-dot[data-t="9B"].active { background: rgba(167,139,250,.18); border-color: #a78bfa; color: #a78bfa; }
+    [data-theme="dark"] .turma-dot[data-t="9C"].active { background: rgba(52,211,153,.18); border-color: #34d399; color: #34d399; }
+
+    /* ====== Stats turmas ====== */
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item.turma-stat { position: relative; overflow: hidden; }
+    .stat-item .turma-prog-bg {
+      position: absolute; left: 0; bottom: 0; height: 3px;
+      border-radius: 0 0 10px 10px; width: 100%;
+      background: var(--line);
+    }
+    .stat-item .turma-prog-fill {
+      position: absolute; left: 0; bottom: 0; height: 3px;
+      border-radius: 0 0 10px 10px;
+      transition: width .4s ease;
+    }
+    .stat-item.a9A .turma-prog-fill { background: #2563eb; }
+    .stat-item.a9B .turma-prog-fill { background: #7c3aed; }
+    .stat-item.a9C .turma-prog-fill { background: #059669; }
+    [data-theme="dark"] .stat-item.a9A .turma-prog-fill { background: #6191ff; }
+    [data-theme="dark"] .stat-item.a9B .turma-prog-fill { background: #a78bfa; }
+    [data-theme="dark"] .stat-item.a9C .turma-prog-fill { background: #34d399; }
+
+    .stat-val .pct { font-size: 12px; font-weight: 500; color: var(--muted); }
+
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <div id="toast"><span class="toast-dot"></span><span id="toast-msg">Salvo</span></div>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-icon">🔬</div>
+        <div class="ttl">
+          <h1>PTD – STEAM+ | Projeto 1 – Módulo 2 (Março/2026)</h1>
+          <p>Turma: 9º ano &bull; Vivência 1: Pesquisa de Campo &bull; 8 aulas (35 min úteis) &bull; Prof.: Maicon Centner Germano</p>
+        </div>
+      </div>
+      <div class="progress-pills" id="headerPills"></div>
+      <div class="actions">
+        <span class="status"><span class="dot" id="dot"></span><span id="statusText">Pronto</span></span>
+        <button class="btn ghost" id="themeBtn" title="Alternar tema (T)">🌙 Tema</button>
+        <button class="btn primary" id="expandBtn" title="Expandir/recolher todas (E)">↕ Expandir</button>
+        <button class="btn" id="exportBtn" title="Exportar JSON">⬇ Exportar</button>
+        <button class="btn" id="importBtn" title="Importar JSON">⬆ Importar</button>
+        <button class="btn danger" id="clearBtn" title="Limpar diários">🗑 Limpar</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Painel esquerdo -->
+      <section class="card">
+        <div class="card-hd">
+          <h2><span class="icon">📋</span>Visão geral</h2>
+          <span class="chip gray">Sprint 1: Aulas 1–4 &bull; Sprint 2: Aulas 5–8</span>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Seções do módulo">
+          <div class="tab active" data-tab="questao" role="tab">❓ Questão</div>
+          <div class="tab" data-tab="objetivos" role="tab">🎯 Objetivos</div>
+          <div class="tab" data-tab="avaliacao" role="tab">📊 Avaliação</div>
+          <div class="tab" data-tab="habilidades" role="tab">🏷 Habilidades</div>
+        </div>
+
+        <div class="section active" id="tab-questao" role="tabpanel">
+          <h3>Questão norteadora</h3>
+          <p>
+            Quais estratégias e práticas podem ser implementadas para garantir que todos os cidadãos, independentemente de suas
+            condições socioeconômicas, tenham acesso e habilidades necessárias para utilizar as tecnologias digitais de forma crítica e inclusiva?
+          </p>
+          <div class="chips">
+            <span class="chip">🔍 Pesquisa de Campo</span>
+            <span class="chip">📊 Coleta de dados</span>
+            <span class="chip">⚖ Ética e consentimento</span>
+            <span class="chip">📋 Kanban + protótipo</span>
+          </div>
+          <p class="small" style="margin-top:12px;">
+            💡 Use a busca (ou <span class="kbd">Ctrl+K</span>) para localizar aulas rapidamente — ex: "QR", "média", "Kanban".
+          </p>
+        </div>
+
+        <div class="section" id="tab-objetivos" role="tabpanel">
+          <h3>Objetivos do Módulo 2</h3>
+          <ul>
+            <li>Realizar a Vivência 1 para validar a relevância do produto planejado.</li>
+            <li>Elaborar questionário e coletar dados quantitativos (presencial ou digital).</li>
+            <li>Organizar/tabular dados em planilha e construir gráficos.</li>
+            <li>Aplicar noções estatísticas básicas (médias, medianas, frequências e dispersão simplificada).</li>
+            <li>Analisar resultados para confirmar/ajustar o problema e orientar decisões do protótipo.</li>
+            <li>Elaborar mural de tarefas (Kanban) e iniciar prototipação com plano de testes.</li>
+          </ul>
+        </div>
+
+        <div class="section" id="tab-avaliacao" role="tabpanel">
+          <h3>Avaliação</h3>
+          <div class="box">
+            <h5>Formativa (contínua)</h5>
+            <ul>
+              <li>Participação e colaboração (papéis e ética).</li>
+              <li>Qualidade do questionário (clareza e pertinência).</li>
+              <li>Registro no journal/portfólio.</li>
+              <li>Uso responsável de tecnologias e dados.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h5>Processual (produto do módulo)</h5>
+            <ul>
+              <li>Questionário final (Forms) + QR Code</li>
+              <li>Base de dados (planilha)</li>
+              <li>Gráficos e síntese estatística</li>
+              <li>Revisão do Canvas orientada por dados</li>
+              <li>Kanban do projeto</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" id="tab-habilidades" role="tabpanel">
+          <h3>Habilidades STEAM+ (códigos)</h3>
+          <ul id="skillsUl"></ul>
+          <p class="small" style="margin-top:10px;">🏷 No topo de cada aula, as habilidades aparecem em pílulas clicáveis para busca rápida.</p>
+        </div>
+
+        <div class="card-bd">
+          <p class="small" style="margin:0;">
+            ⚠ Obs.: garantir consentimento e ética na coleta; reservar tempo extraclasse para ampliar coleta digital; reforçar que o módulo prepara prototipação e testes com organização via Kanban.
+          </p>
+        </div>
+      </section>
+
+      <!-- Painel direito: aulas -->
+      <section class="card">
+        <div class="card-hd">
+          <h2><span class="icon">📚</span>Aulas + Diário</h2>
+          <span class="chip gray" id="resultCount">8 aulas</span>
+        </div>
+
+        <div class="stats-bar" id="statsBar"></div>
+
+        <div class="toolbar">
+          <input class="field" id="search" placeholder="🔍 Buscar: QR, ética, média, Canvas, Kanban..." autocomplete="off" />
+          <button class="btn primary" id="jumpBtn" title="Ir para primeiro resultado (Enter)">🎯 Ir</button>
+          <button class="btn" id="collapseAllBtn">⬇ Recolher</button>
+          <button class="btn" id="expandAllBtn">⬆ Abrir</button>
+        </div>
+
+        <div class="card-bd" style="padding-top:10px;">
+          <div id="lessons"></div>
+          <footer>
+            💾 Salvo automaticamente neste dispositivo &bull; Use Exportar/Importar para backup entre dispositivos
+          </footer>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" accept="application/json" style="display:none" />
+
+  <script>
+    const STORAGE_KEY = "PTD_STEAM_MOD2_APP_V1";
+    const THEME_KEY   = "PTD_STEAM_MOD2_THEME_V1";
+    const TURMAS_KEY  = "PTD_STEAM_MOD2_TURMAS_V1";
+    const TURMAS = ['9A','9B','9C'];
+
+    const SKILLS = [
+      "EF.6a9.STM+.1.01","EF.6a9.STM+.1.02","EF.6a9.STM+.1.03","EF.6a9.STM+.1.04","EF.6a9.STM+.1.05","EF.6a9.STM+.1.06",
+      "EF.6a9.STM+.2.07","EF.6a9.STM+.2.14","EF.6a9.STM+.2.16","EF.6a9.STM+.2.21","EF.6a9.STM+.2.27","EF.6a9.STM+.2.30"
+    ];
+
+    const LESSONS = [
+      {
+        id:1, week:"Semana 1 – Sprint 1",
+        title:"Lançamento da Vivência e desenho da pesquisa",
+        skills:["EF.6a9.STM+.1.01","EF.6a9.STM+.1.02","EF.6a9.STM+.2.07","EF.6a9.STM+.2.14"],
+        objective:"Apresentar Vivência 1 e estruturar o plano inicial de pesquisa.",
+        dev:[
+          "Retomada do problema e objetivo do produto (5 min)",
+          "Apresentação da Vivência 1 e combinados éticos/consentimento (10 min)",
+          "Definição do público-alvo da pesquisa (10 min)",
+          "Rascunho de dimensões temáticas + registro no journal (10 min)"
+        ],
+        diarySuggestion:
+`Realizamos a abertura da Vivência 1 (Pesquisa de Campo), retomando o problema do projeto e o objetivo do produto. Estabelecemos combinados de ética e consentimento para a coleta de dados. Em grupos, definimos o público-alvo da pesquisa e levantamos dimensões temáticas a investigar, registrando decisões no journal/portfólio.`
+      },
+      {
+        id:2, week:"Semana 1 – Sprint 1",
+        title:"Construção do questionário + QR Code",
+        skills:["EF.6a9.STM+.1.01","EF.6a9.STM+.1.03","EF.6a9.STM+.1.06","EF.6a9.STM+.2.21"],
+        objective:"Finalizar questionário (com escala Likert quando pertinente) e preparar divulgação.",
+        dev:[
+          "Revisão do Recurso A2.2 e critérios de boa pergunta (5 min)",
+          "Produção do Forms (gerais → específicas; agrupamento temático) (20 min)",
+          "Inserção de bloco Likert (quando aplicável) (5 min)",
+          "Geração de link + QR Code e registro no portfólio (5 min)"
+        ],
+        diarySuggestion:
+`Revisamos critérios para elaboração de perguntas (clareza, objetividade e pertinência) e construímos o questionário no Google Forms, organizando por temas (do geral ao específico). Quando aplicável, incluímos escala Likert para medir percepções. Ao final, geramos link e QR Code para divulgação e registramos a versão final e os papéis do grupo no portfólio.`
+      },
+      {
+        id:3, week:"Semana 2 – Sprint 1",
+        title:"Pesquisa de campo (coleta presencial/digital)",
+        skills:["EF.6a9.STM+.1.02","EF.6a9.STM+.1.06","EF.6a9.STM+.2.07","EF.6a9.STM+.2.14"],
+        objective:"Realizar coleta com estratégia de abordagem e registro.",
+        dev:[
+          "Reforço de ética/consentimento e abordagem (5 min)",
+          "Coleta (presencial e/ou digital via QR Code/link) (25 min)",
+          "Fechamento: contagem parcial e plano para atingir meta (5 min)"
+        ],
+        diarySuggestion:
+`Reforçamos os cuidados éticos (consentimento e respeito ao respondente) e a estratégia de abordagem. Os grupos realizaram a coleta de dados de forma presencial e/ou digital, divulgando o questionário por link/QR Code. Ao final, contabilizamos parcialmente as respostas e definimos ações para alcançar a meta de respondentes.`
+      },
+      {
+        id:4, week:"Semana 2 – Sprint 1",
+        title:"Encerramento da coleta + exportação e organização",
+        skills:["EF.6a9.STM+.1.01","EF.6a9.STM+.2.27","EF.6a9.STM+.2.30"],
+        objective:"Finalizar a coleta e organizar base de dados para análise.",
+        dev:[
+          "Checagem de meta e fechamento da coleta (5 min)",
+          "Exportar respostas para planilha (5 min)",
+          "Limpeza e organização dos dados (20 min)",
+          "Registro do dicionário de dados (5 min)"
+        ],
+        diarySuggestion:
+`Concluímos a coleta verificando a meta de respostas. Exportamos os dados para planilha e realizamos a limpeza/organização (padronização de respostas, categorias e campos). Em seguida, registramos o dicionário de dados, descrevendo o significado de cada coluna para apoiar a análise estatística nas próximas aulas.`
+      },
+      {
+        id:5, week:"Semana 3 – Sprint 2",
+        title:"Frequências e gráficos",
+        skills:["EF.6a9.STM+.2.27","EF.6a9.STM+.2.30","EF.6a9.STM+.2.21"],
+        objective:"Tabular frequências e gerar gráficos para visualizar padrões.",
+        dev:[
+          "Cálculo de frequências absoluta e relativa (10 min)",
+          "Construção de gráficos (barras/pizza/colunas) (20 min)",
+          "Registro do que os gráficos indicam (5 min)"
+        ],
+        diarySuggestion:
+`Tabulamos os dados coletados calculando frequências absoluta e relativa para identificar padrões. Em seguida, construímos gráficos na planilha (barras, colunas e/ou pizza) para visualizar os resultados. Por fim, cada grupo registrou uma síntese do que os gráficos evidenciam sobre o problema investigado.`
+      },
+      {
+        id:6, week:"Semana 3 – Sprint 2",
+        title:"Médias/medianas e interpretação dos dados",
+        skills:["EF.6a9.STM+.2.30","EF.6a9.STM+.2.21","EF.6a9.STM+.1.04"],
+        objective:"Aplicar medidas de tendência central e interpretar implicações.",
+        dev:[
+          "Retomada: média e mediana (10 min)",
+          "Aplicação na planilha (15 min)",
+          "Interpretação: tendências e implicações (10 min)"
+        ],
+        diarySuggestion:
+`Retomamos os conceitos de média e mediana e discutimos quando cada medida é mais adequada. Aplicamos os cálculos na planilha com base nos dados coletados e analisamos as tendências observadas. Ao final, os grupos registraram interpretações sobre implicações dos resultados para o projeto, indicando necessidades, prioridades e possíveis ajustes.`
+      },
+      {
+        id:7, week:"Semana 4 – Sprint 2",
+        title:"Validação do problema e escolha de caminho do protótipo",
+        skills:["EF.6a9.STM+.1.04","EF.6a9.STM+.1.03","EF.6a9.STM+.2.16"],
+        objective:"Validar/refinar problema com base nos dados e selecionar solução promissora.",
+        dev:[
+          "Discussão guiada: o que os dados confirmam? (10 min)",
+          "Ajustes no Canvas (10 min)",
+          "Brainstorming de soluções (10 min)",
+          "Seleção da solução por critérios (5 min)"
+        ],
+        diarySuggestion:
+`Com base nos resultados (tabelas, gráficos e medidas), realizamos discussão guiada sobre o que os dados confirmam e o que precisa ser ajustado. Os grupos revisaram o Canvas (problema, objetivos e proposta do produto), fizeram brainstorming de soluções e selecionaram a alternativa mais promissora usando critérios definidos, registrando justificativas fundamentadas em dados.`
+      },
+      {
+        id:8, week:"Semana 4 – Sprint 2",
+        title:"Mural de tarefas (Kanban) e início da prototipação",
+        skills:["EF.6a9.STM+.1.02","EF.6a9.STM+.1.06","EF.6a9.STM+.2.16"],
+        objective:"Organizar execução do projeto e iniciar protótipo conforme o módulo.",
+        dev:[
+          "Estrutura do Kanban (A fazer / Fazendo / Feito) (10 min)",
+          "Definição de tarefas, responsáveis e prazos (15 min)",
+          "Primeiro passo do protótipo (rascunho/storyboard/layout) (10 min)"
+        ],
+        diarySuggestion:
+`Organizamos o planejamento de execução com mural Kanban (A fazer/Fazendo/Feito), definindo tarefas, responsáveis e prazos. Em seguida, iniciamos a prototipação com o primeiro rascunho (storyboard, layout ou estrutura do produto). Registramos decisões e justificativas no portfólio, relacionando os dados coletados às escolhas do grupo.`
+      }
+    ];
+
+    const $ = (sel, el=document) => el.querySelector(sel);
+    const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+
+    // ── Toast ──────────────────────────────────────────────
+    let toastTimer;
+    function showToast(msg, type='ok') {
+      const t = $('#toast'), m = $('#toast-msg');
+      m.textContent = msg;
+      t.classList.toggle('error', type === 'error');
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    // ── Status dot ─────────────────────────────────────────
+    function setStatus(ok, text) {
+      $('#statusText').textContent = text || 'Pronto';
+      $('#dot').classList.toggle('off', !ok);
+    }
+
+    // ── Storage ────────────────────────────────────────────
+    function loadEdits() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+      catch(e) { return {}; }
+    }
+
+    function loadTurmas() {
+      try { return JSON.parse(localStorage.getItem(TURMAS_KEY) || '{}'); }
+      catch(e) { return {}; }
+    }
+    function saveTurmas(data) { localStorage.setItem(TURMAS_KEY, JSON.stringify(data)); }
+    function getTurmaKey(lessonId, turma) { return `${lessonId}_${turma}`; }
+    function isTurmaDone(data, lessonId, turma) { return !!data[getTurmaKey(lessonId, turma)]; }
+    function setTurmaDone(lessonId, turma, val) {
+      const data = loadTurmas();
+      data[getTurmaKey(lessonId, turma)] = val;
+      saveTurmas(data);
+    }
+
+    function saveEdits(data) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    // ── Theme ──────────────────────────────────────────────
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem(THEME_KEY, theme);
+      $('#themeBtn').innerHTML = theme === 'dark' ? '☀ Tema' : '🌙 Tema';
+    }
+    function initTheme() {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved === 'dark' || saved === 'light') return applyTheme(saved);
+      applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+
+    // ── Progress bar (scroll) ──────────────────────────────
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      $('#progress-bar').style.width = Math.min(pct, 100) + '%';
+    });
+
+    // ── Stats ──────────────────────────────────────────────
+    function updateStats() {
+      const edits = loadEdits();
+      const edited = LESSONS.filter(l => {
+        const v = edits[String(l.id)];
+        return typeof v === 'string' && v.trim() !== l.diarySuggestion.trim();
+      }).length;
+      const total = LESSONS.length;
+      const totalMin = LESSONS.reduce((s,l) => s + l.dev.reduce((a,d) => {
+        const m = d.match(/\((\d+)\s*min/); return a + (m ? +m[1] : 0);
+      }, 0), 0);
+
+      $('#statsBar').innerHTML = `
+        <div class="stat-item"><span class="stat-val">${total}</span><span class="stat-lbl">Aulas</span></div>
+        <div class="stat-item"><span class="stat-val">${totalMin}</span><span class="stat-lbl">Min total</span></div>
+        <div class="stat-item"><span class="stat-val">${edited}</span><span class="stat-lbl">Diários editados</span></div>
+        <div class="stat-item"><span class="stat-val">${total - edited}</span><span class="stat-lbl">Pendentes</span></div>
+        <div class="stat-item"><span class="stat-val">${SKILLS.length}</span><span class="stat-lbl">Habilidades</span></div>
+      `;
+
+      // header pills
+      const pills = $('#headerPills');
+      pills.innerHTML = `
+        <span class="prog-pill">Sprint 1: A1–A4</span>
+        <span class="prog-pill">Sprint 2: A5–A8</span>
+        <span class="prog-pill ${edited === total ? 'done' : ''}">${edited}/${total} diários</span>
+      `;
+    }
+
+    // ── Skills list ────────────────────────────────────────
+    function renderSkills() {
+      $('#skillsUl').innerHTML = SKILLS.map(s =>
+        `<li style="cursor:pointer" title="Clique para buscar" onclick="filterBySkill('${s}')">${s}</li>`
+      ).join('');
+    }
+
+    function filterBySkill(code) {
+      const input = $('#search');
+      input.value = code;
+      applySearch();
+      jumpFirst();
+      // switch to lessons tab on mobile
+      window.scrollTo({ top: document.querySelector('.grid').offsetTop, behavior: 'smooth' });
+    }
+
+    // ── Render lessons ─────────────────────────────────────
+    let saveTimer;
+    function renderLessons() {
+      const edits = loadEdits();
+      const host = $('#lessons');
+      host.innerHTML = '';
+
+      let lastWeek = '';
+      LESSONS.forEach(L => {
+        // week separator
+        if (L.week !== lastWeek) {
+          const sep = document.createElement('div');
+          sep.className = 'week-label';
+          sep.textContent = L.week;
+          host.appendChild(sep);
+          lastWeek = L.week;
+        }
+
+        const saved = edits[String(L.id)];
+        const text = typeof saved === 'string' ? saved : L.diarySuggestion;
+        const isEdited = typeof saved === 'string' && saved.trim() !== L.diarySuggestion.trim();
+
+        const card = document.createElement('article');
+        card.className = 'lesson';
+        card.dataset.id = L.id;
+        card.dataset.search = [
+          `aula ${L.id}`, L.week, L.title, L.objective,
+          L.dev.join(' '), L.skills.join(' '), L.diarySuggestion
+        ].join(' ').toLowerCase();
+
+        const progPct = Math.round((isEdited ? 100 : 0));
+
+        card.innerHTML = `
+          <div class="lesson-top" role="button" aria-expanded="false" tabindex="0">
+            <div class="lesson-num">${L.id}</div>
+            <div class="lesson-info">
+              <h4>${L.title}</h4>
+              <div class="meta2">
+                <span>📅 ${L.week.replace('Semana ','S')}</span>
+                <span>⏱ 35 min</span>
+                <span>🎯 ${L.skills.length} hab.</span>
+              </div>
+              <div class="skillrow">${L.skills.map(s =>
+                `<span class="skillpill" title="Clique para buscar" style="cursor:pointer" data-skill="${s}">${s}</span>`
+              ).join('')}</div>
+            </div>
+            <div class="lesson-right">
+              <div class="turmas-done-badges">
+                ${TURMAS.map(t => `<div class="turma-dot${isTurmaDone(loadTurmas(),L.id,t)?' active':''}" data-t="${t}">${t}</div>`).join('')}
+              </div>
+              <span class="badge">${isEdited ? '✏ Editado' : 'toque para abrir'}</span>
+              <div class="lesson-prog-wrap" title="Diário ${isEdited ? 'editado' : 'pendente'}">
+                <div class="lesson-prog" style="width:${progPct}%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-body">
+            <div class="box" style="border-left: 3px solid var(--primary);">
+              <h5 style="margin-bottom:10px;">Ministrada nas turmas</h5>
+              <div class="turmas-row">
+                <span class="turma-label">Marcar como ministrada:</span>
+                ${TURMAS.map(t => {
+                  const done = isTurmaDone(loadTurmas(), L.id, t);
+                  return `<label class="turma-check${done?' checked':''}" data-turma="${t}">
+                    <input type="checkbox" class="turma-cb" data-lesson="${L.id}" data-turma="${t}"${done?' checked':''}>
+                    <span class="chk-box">${done?'✓':''}</span>
+                    ${t}
+                  </label>`;
+                }).join('')}
+              </div>
+            </div>
+            <div class="box">
+              <h5>Desenvolvimento</h5>
+              <ul>${L.dev.map(i => `<li>${i}</li>`).join('')}</ul>
+            </div>
+
+            <div class="box" style="border-top: 2px solid var(--warn);">
+              <div class="diary-hd">
+                <h5>Diário de classe (texto sugerido – editável)</h5>
+                <div class="diary-actions">
+                  <button class="btn primary copy" title="Copiar texto">📋 Copiar</button>
+                  <button class="btn reset" title="Restaurar sugestão original">↩ Restaurar</button>
+                </div>
+              </div>
+              <textarea class="field diary" spellcheck="true">${text}</textarea>
+              <div class="char-count"><span class="cc-val">${text.length}</span> caracteres</div>
+              <p class="small" style="margin-top:6px;">✏ Ajuste turma, nº de respostas, ocorrências e nomes de grupos conforme necessário.</p>
+            </div>
+          </div>
+        `;
+
+        host.appendChild(card);
+      });
+
+      // ── Events ──
+      // turma checkbox events (delegated)
+      host.addEventListener('change', e => {
+        const cb = e.target.closest('.turma-cb');
+        if (!cb) return;
+        e.stopPropagation();
+        const lessonId = +cb.dataset.lesson;
+        const turma = cb.dataset.turma;
+        const val = cb.checked;
+        setTurmaDone(lessonId, turma, val);
+        // update label style
+        const lbl = cb.closest('.turma-check');
+        lbl.classList.toggle('checked', val);
+        lbl.querySelector('.chk-box').textContent = val ? '✓' : '';
+        // update header dot on lesson card
+        const card = cb.closest('.lesson');
+        const dot = card.querySelector(`.turma-dot[data-t="${turma}"]`);
+        if (dot) dot.classList.toggle('active', val);
+        updateStats();
+        showToast(val ? `✅ Aula ${lessonId} marcada — ${turma}` : `⬜ Aula ${lessonId} desmarcada — ${turma}`);
+      });
+      // prevent checkbox clicks from toggling lesson open/close
+      host.addEventListener('click', e => {
+        if (e.target.closest('.turma-check') || e.target.closest('.turma-cb')) {
+          e.stopPropagation();
+        }
+      }, true);
+
+      $$('.lesson-top', host).forEach(top => {
+        const open = () => {
+          const card = top.closest('.lesson');
+          const isOpen = card.classList.toggle('open');
+          top.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (isOpen) {
+            $('textarea', card).focus();
+          }
+        };
+        top.addEventListener('click', open);
+        top.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      });
+
+      // skill pill click → search
+      $$('.skillpill', host).forEach(pill => {
+        pill.addEventListener('click', e => {
+          e.stopPropagation();
+          filterBySkill(pill.dataset.skill);
+        });
+      });
+
+      $$('.lesson', host).forEach((card, idx) => {
+        const L = LESSONS[idx];
+        const id = String(L.id);
+        const area = $('.diary', card);
+        const ccVal = $('.cc-val', card);
+        const badge = $('.badge', card);
+        const prog = $('.lesson-prog', card);
+
+        area.addEventListener('input', () => {
+          ccVal.textContent = area.value.length;
+          const data = loadEdits();
+          data[id] = area.value;
+          saveEdits(data);
+          const edited = area.value.trim() !== L.diarySuggestion.trim();
+          badge.textContent = edited ? '✏ Editado' : 'em edição...';
+          prog.style.width = edited ? '100%' : '50%';
+          setStatus(true, 'Salvo');
+          clearTimeout(saveTimer);
+          saveTimer = setTimeout(() => { setStatus(true, 'Pronto'); updateStats(); }, 800);
+        });
+
+        $('.copy', card).addEventListener('click', async e => {
+          e.stopPropagation();
+          try {
+            await navigator.clipboard.writeText(area.value);
+            showToast('✅ Texto copiado!');
+          } catch(err) {
+            showToast('❌ Falha ao copiar', 'error');
+          }
+        });
+
+        $('.reset', card).addEventListener('click', e => {
+          e.stopPropagation();
+          if (!confirm('Restaurar texto sugerido original? Sua edição será perdida.')) return;
+          area.value = L.diarySuggestion;
+          ccVal.textContent = area.value.length;
+          const data = loadEdits();
+          data[id] = area.value;
+          saveEdits(data);
+          badge.textContent = 'toque para abrir';
+          prog.style.width = '0%';
+          showToast('↩ Texto restaurado');
+          updateStats();
+        });
+      });
+
+      updateStats();
+    }
+
+    // ── Search ─────────────────────────────────────────────
+    function applySearch() {
+      const q = ($('#search').value || '').trim().toLowerCase();
+      let visible = 0;
+      $$('.lesson').forEach(card => {
+        const ok = !q || card.dataset.search.includes(q);
+        card.style.display = ok ? '' : 'none';
+        if (ok) visible++;
+      });
+      // show/hide week labels
+      $$('.week-label').forEach(lbl => {
+        const next = lbl.nextElementSibling;
+        lbl.style.display = (next && next.style.display !== 'none') ? '' : 'none';
+      });
+      $('#resultCount').textContent = q ? `${visible} resultado${visible !== 1 ? 's' : ''}` : '8 aulas';
+    }
+
+    function jumpFirst() {
+      applySearch();
+      const first = $$('.lesson').find(x => x.style.display !== 'none');
+      if (first) {
+        first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!first.classList.contains('open')) $('.lesson-top', first).click();
+      }
+    }
+
+    // ── Export/Import ──────────────────────────────────────
+    function exportData() {
+      const payload = { schema: STORAGE_KEY, exportedAt: new Date().toISOString(), diary: loadEdits(), turmas: loadTurmas() };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'diario-ptd-steam-mod2-marco2026.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+      showToast('⬇ Arquivo exportado!');
+    }
+
+    function handleImport(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result);
+          const diary = parsed.diary || parsed;
+          if (typeof diary !== 'object' || diary === null) throw new Error('Formato inválido');
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(diary));
+          if (parsed.turmas && typeof parsed.turmas === 'object') {
+            localStorage.setItem(TURMAS_KEY, JSON.stringify(parsed.turmas));
+          }
+          renderLessons();
+          applySearch();
+          showToast('⬆ Diários importados!');
+        } catch(e) {
+          showToast('❌ Formato inválido', 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function clearAll() {
+      if (!confirm('Apagar todas as edições e voltar para os textos sugeridos?')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(TURMAS_KEY);
+      renderLessons();
+      applySearch();
+      showToast('🗑 Diários limpos');
+    }
+
+    // ── Expand/collapse ────────────────────────────────────
+    let expanded = false;
+    function setAll(open) {
+      $$('.lesson').forEach(card => {
+        if (card.style.display === 'none') return;
+        card.classList.toggle('open', open);
+        $('.lesson-top', card).setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      expanded = open;
+    }
+
+    // ── Tabs ───────────────────────────────────────────────
+    function setupTabs() {
+      $$('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          $$('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+          tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+          $$('.section').forEach(s => s.classList.remove('active'));
+          $('#tab-' + tab.dataset.tab).classList.add('active');
+        });
+      });
+    }
+
+    // ── Keyboard shortcuts ─────────────────────────────────
+    document.addEventListener('keydown', e => {
+      const tag = document.activeElement.tagName;
+      if (tag === 'TEXTAREA' || tag === 'INPUT') return;
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        $('#search').focus();
+        $('#search').select();
+      }
+      if (e.key === 't' || e.key === 'T') {
+        const cur = document.documentElement.getAttribute('data-theme');
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      }
+      if (e.key === 'e' || e.key === 'E') {
+        expanded = !expanded;
+        setAll(expanded);
+        $('#expandBtn').textContent = expanded ? '↕ Recolher' : '↕ Expandir';
+      }
+    });
+    $('#search').addEventListener('keydown', e => {
+      if (e.key === 'Enter') jumpFirst();
+      if (e.key === 'Escape') { $('#search').value = ''; applySearch(); }
+    });
+
+    // ── Init ───────────────────────────────────────────────
+    initTheme();
+    renderSkills();
+    setupTabs();
+    renderLessons();
+
+    $('#search').addEventListener('input', applySearch);
+    $('#jumpBtn').addEventListener('click', jumpFirst);
+    $('#expandBtn').addEventListener('click', () => {
+      expanded = !expanded; setAll(expanded);
+      $('#expandBtn').textContent = expanded ? '↕ Recolher' : '↕ Expandir';
+    });
+    $('#expandAllBtn').addEventListener('click', () => setAll(true));
+    $('#collapseAllBtn').addEventListener('click', () => setAll(false));
+    $('#exportBtn').addEventListener('click', exportData);
+    $('#importBtn').addEventListener('click', () => $('#fileInput').click());
+    $('#clearBtn').addEventListener('click', clearAll);
+    $('#themeBtn').addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+    $('#fileInput').addEventListener('change', e => {
+      if (e.target.files[0]) handleImport(e.target.files[0]);
+      e.target.value = '';
+    });
+  </script>
+</body>
+</html>
