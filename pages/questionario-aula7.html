@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Questionário interativo da Aula 7 (9º ano): conjuntos numéricos e inclusão, com correção e comentários.">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Questionário Aula 7 | Conjuntos Numéricos e Inclusão</title>
+
+    <link rel="stylesheet" href="../css/mobile-optimizations.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .quiz-content { padding: 70px 0; }
+        .quiz-meta { margin-bottom: 20px; color: #51606e; }
+        .quiz-card {
+            background: #fff;
+            border: 1px solid #e5e9ef;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        .quiz-card h3 { margin-bottom: 14px; color: #2c3e50; }
+        .question-list { list-style: none; margin: 0; padding: 0; }
+        .question-item {
+            border: 1px solid #dfe6ee;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+        .question-item.correct { border-color: #2e9d5b; background: #f0fff6; }
+        .question-item.wrong { border-color: #e45b5b; background: #fff3f3; }
+        .question-title { font-weight: 700; color: #263746; margin-bottom: 10px; }
+        .options { display: grid; gap: 8px; }
+        .options label { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; }
+        .symbol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+        .symbol-grid label { display: flex; flex-direction: column; gap: 6px; }
+        .symbol-grid select, .short-answer textarea {
+            border: 1px solid #c9d4e0;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .short-answer { margin-bottom: 14px; }
+        .short-answer textarea { width: 100%; min-height: 95px; resize: vertical; }
+        .feedback { margin-top: 10px; font-size: 0.95rem; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { color: #1f7f4a; }
+        .feedback.wrong { color: #b33d3d; }
+        .summary-box {
+            display: none;
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #edf5ff;
+            border: 1px solid #cfe2fb;
+            color: #234a78;
+            font-weight: 600;
+        }
+        .summary-box.show { display: block; }
+        .answer-key {
+            display: none;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px dashed #c9d4e0;
+        }
+        .answer-key.show { display: block; }
+        .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+        .hint { font-size: 0.92rem; color: #5b6c7d; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="questionarios.html" class="active">Questionários</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <h1>Questionário – Aula 7</h1>
+                <p>Conjuntos Numéricos e Inclusão (9º ano)</p>
+            </div>
+        </section>
+
+        <section class="quiz-content">
+            <div class="container">
+                <p class="quiz-meta"><strong>Objetivo:</strong> responder e corrigir automaticamente os itens de múltipla escolha e símbolos (1 a 8), com comentários ao final.</p>
+
+                <form id="quizForm" class="quiz-card">
+                    <h3>Parte A — Múltipla escolha</h3>
+                    <ol class="question-list">
+                        <li class="question-item" data-q="q1" data-answer="B">
+                            <p class="question-title">1) Qual símbolo indica que um elemento pertence a um conjunto?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="A" required> A) ⊂</label>
+                                <label><input type="radio" name="q1" value="B"> B) ∈</label>
+                                <label><input type="radio" name="q1" value="C"> C) ⊃</label>
+                                <label><input type="radio" name="q1" value="D"> D) ∉</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                        <li class="question-item" data-q="q2" data-answer="B">
+                            <p class="question-title">2) Qual alternativa representa corretamente a relação entre os conjuntos N e Q?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="A" required> A) N ⊄ Q</label>
+                                <label><input type="radio" name="q2" value="B"> B) N ⊂ Q</label>
+                                <label><input type="radio" name="q2" value="C"> C) Q ⊂ N</label>
+                                <label><input type="radio" name="q2" value="D"> D) N ∈ Q</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                        <li class="question-item" data-q="q3" data-answer="B">
+                            <p class="question-title">3) Qual afirmação é verdadeira sobre os números reais (R)?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="A" required> A) R contém apenas os racionais (Q).</label>
+                                <label><input type="radio" name="q3" value="B"> B) R contém os racionais (Q) e os irracionais (I).</label>
+                                <label><input type="radio" name="q3" value="C"> C) R é um subconjunto de Z.</label>
+                                <label><input type="radio" name="q3" value="D"> D) I é subconjunto de Q.</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                        <li class="question-item" data-q="q4" data-answer="C">
+                            <p class="question-title">4) O número 0,5 pode ser escrito como 1/2. Isso significa que ele é:</p>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="A" required> A) inteiro e racional</label>
+                                <label><input type="radio" name="q4" value="B"> B) natural e irracional</label>
+                                <label><input type="radio" name="q4" value="C"> C) racional e real</label>
+                                <label><input type="radio" name="q4" value="D"> D) inteiro e irracional</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                        <li class="question-item" data-q="q5" data-answer="B">
+                            <p class="question-title">5) A afirmação “−3 ∉ N” quer dizer que:</p>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="A" required> A) −3 é natural</label>
+                                <label><input type="radio" name="q5" value="B"> B) −3 não é natural</label>
+                                <label><input type="radio" name="q5" value="C"> C) N não é um conjunto</label>
+                                <label><input type="radio" name="q5" value="D"> D) −3 é irracional</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                        <li class="question-item" data-q="q6" data-answer="C">
+                            <p class="question-title">6) Qual número é irracional?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q6" value="A" required> A) 0,25</label>
+                                <label><input type="radio" name="q6" value="B"> B) −7</label>
+                                <label><input type="radio" name="q6" value="C"> C) √2</label>
+                                <label><input type="radio" name="q6" value="D"> D) 3/5</label>
+                            </div>
+                            <p class="feedback"></p>
+                        </li>
+                    </ol>
+
+                    <h3>Parte B — Complete com o símbolo correto (∈, ∉, ⊂, ⊄)</h3>
+                    <div class="symbol-grid">
+                        <label>7a) 10 ___ N
+                            <select name="q7a" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>7b) π ___ R
+                            <select name="q7b" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>7c) N ___ Q
+                            <select name="q7c" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>7d) R ___ Z
+                            <select name="q7d" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>8a) −1 ___ Z
+                            <select name="q8a" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>8b) −1 ___ N
+                            <select name="q8b" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>8c) 2,75 ___ Q
+                            <select name="q8c" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                        <label>8d) √25 ___ N
+                            <select name="q8d" required>
+                                <option value="">Selecione</option><option value="∈">∈</option><option value="∉">∉</option><option value="⊂">⊂</option><option value="⊄">⊄</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <h3 style="margin-top:24px;">Parte C — Respostas curtas (obrigatórias)</h3>
+                    <div class="short-answer">
+                        <label for="q9">9) Classifique o número −3 nos conjuntos N, Z, Q, R (use ∈ ou ∉).</label>
+                        <textarea id="q9" name="q9" required></textarea>
+                    </div>
+                    <div class="short-answer">
+                        <label for="q10">10) Explique por que “todo número racional é real, mas nem todo real é racional”.</label>
+                        <textarea id="q10" name="q10" required></textarea>
+                    </div>
+                    <div class="short-answer">
+                        <label for="q11">11) Dê exemplos para (a), (b) e (c).</label>
+                        <textarea id="q11" name="q11" required></textarea>
+                    </div>
+                    <div class="short-answer">
+                        <label for="q12">12) Corrija a frase “I ⊂ Q”.</label>
+                        <textarea id="q12" name="q12" required></textarea>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary">Enviar e corrigir</button>
+                        <button type="reset" class="btn btn-outline">Refazer</button>
+                    </div>
+                    <p class="hint">As respostas e comentários só aparecem após clicar em <strong>Enviar e corrigir</strong>.</p>
+
+                    <div id="summary" class="summary-box"></div>
+
+                    <div id="answerKey" class="answer-key">
+                        <h3>Gabarito comentado</h3>
+                        <p><strong>Parte A:</strong> 1) B, 2) B, 3) B, 4) C, 5) B, 6) C.</p>
+                        <p><strong>Parte B:</strong> 7a) ∈, 7b) ∈, 7c) ⊂, 7d) ⊄, 8a) ∈, 8b) ∉, 8c) ∈, 8d) ∈.</p>
+                        <p><strong>Comentário:</strong> os reais são formados por racionais e irracionais; naturais estão contidos nos racionais.</p>
+                        <ul>
+                            <li>9) Esperado: −3 ∉ N, −3 ∈ Z, −3 ∈ Q, −3 ∈ R.</li>
+                            <li>10) Esperado: Q ⊂ R e exemplo de irracional em R, como √2 ou π.</li>
+                            <li>11) Ex.: negativos inteiros; frações/decimais não inteiros; irracionais (√2, π...).</li>
+                            <li>12) Correção: I ⊄ Q; e ainda I ⊂ R e Q ⊂ R.</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="servicos.html#aulas">Aulas Particulares</a></li>
+                            <li><a href="servicos.html#exercicios">Resolução de Exercícios</a></li>
+                            <li><a href="servicos.html#analise">Análise Estatística</a></li>
+                            <li><a href="servicos.html#automacao">Automatização</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="questionarios.html">Questionários</a></li>
+                            <li><a href="faq.html">Perguntas Frequentes</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prof.maiconcentner/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maiconcentner/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@prof.maiconcentner" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@SobreExatas" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-optimizations.js"></script>
+    <script>
+        const comments = {
+            q1: '∈ significa “pertence”. Ex.: 10 ∈ N.',
+            q2: 'Todo natural pode ser escrito como fração (7 = 7/1), então N ⊂ Q.',
+            q3: 'R = Q ∪ I: reais incluem racionais e irracionais.',
+            q4: '0,5 = 1/2, logo é racional e, portanto, real.',
+            q5: 'Naturais não incluem números negativos.',
+            q6: '√2 é decimal infinito não periódico, portanto irracional.'
+        };
+
+        const symbolAnswers = {
+            q7a: '∈', q7b: '∈', q7c: '⊂', q7d: '⊄',
+            q8a: '∈', q8b: '∉', q8c: '∈', q8d: '∈'
+        };
+
+        const form = document.getElementById('quizForm');
+        const summary = document.getElementById('summary');
+        const answerKey = document.getElementById('answerKey');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            let correct = 0;
+            const totalAuto = 14;
+
+            document.querySelectorAll('.question-item').forEach((item) => {
+                const q = item.dataset.q;
+                const expected = item.dataset.answer;
+                const selected = form.elements[q].value;
+                const feedback = item.querySelector('.feedback');
+                item.classList.remove('correct', 'wrong');
+                feedback.classList.remove('correct', 'wrong');
+
+                if (selected === expected) {
+                    correct += 1;
+                    item.classList.add('correct');
+                    feedback.textContent = `✅ Correto. ${comments[q]}`;
+                    feedback.classList.add('correct', 'show');
+                } else {
+                    item.classList.add('wrong');
+                    feedback.textContent = `❌ Incorreto. Resposta correta: ${expected}. ${comments[q]}`;
+                    feedback.classList.add('wrong', 'show');
+                }
+            });
+
+            Object.entries(symbolAnswers).forEach(([name, expected]) => {
+                const select = form.elements[name];
+                const fieldWrap = select.closest('label');
+                fieldWrap.classList.remove('correct', 'wrong');
+                const oldFeedback = fieldWrap.querySelector('.feedback');
+                if (oldFeedback) oldFeedback.remove();
+
+                const note = document.createElement('p');
+                note.className = 'feedback show';
+
+                if (select.value === expected) {
+                    correct += 1;
+                    fieldWrap.classList.add('correct');
+                    note.classList.add('correct');
+                    note.textContent = `✅ Correto (${expected}).`;
+                } else {
+                    fieldWrap.classList.add('wrong');
+                    note.classList.add('wrong');
+                    note.textContent = `❌ Incorreto. Correto: ${expected}.`;
+                }
+
+                fieldWrap.appendChild(note);
+            });
+
+            summary.textContent = `Resultado automático: ${correct}/${totalAuto} acertos (questões 1 a 8). As questões 9 a 12 têm comparação orientativa no gabarito comentado abaixo.`;
+            summary.classList.add('show');
+            answerKey.classList.add('show');
+            answerKey.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        form.addEventListener('reset', function () {
+            setTimeout(() => {
+                document.querySelectorAll('.question-item').forEach((item) => {
+                    item.classList.remove('correct', 'wrong');
+                    const feedback = item.querySelector('.feedback');
+                    feedback.className = 'feedback';
+                    feedback.textContent = '';
+                });
+
+                document.querySelectorAll('.symbol-grid label').forEach((label) => {
+                    label.classList.remove('correct', 'wrong');
+                    const extraFeedback = label.querySelector('.feedback');
+                    if (extraFeedback) extraFeedback.remove();
+                });
+
+                summary.classList.remove('show');
+                summary.textContent = '';
+                answerKey.classList.remove('show');
+            }, 0);
+        });
+    </script>
+</body>
+</html>
