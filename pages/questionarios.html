@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Lista de questionários interativos para prática de matemática.">
+    <meta name="description" content="Lista de questionários interativos e simulados para prática de matemática.">
     <meta name="theme-color" content="#2c3e50">
-    <title>Questionários | Prof. Maicon Centner</title>
+    <title>Atividades e Simulados | Prof. Maicon Centner</title>
 
     <link rel="stylesheet" href="../css/mobile-optimizations.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -15,21 +15,173 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        .quiz-list-section { padding: 70px 0; }
+        .quiz-list-section { padding: 60px 0; background-color: #f4f7f6; min-height: 60vh; }
+        
+        /* =========================================================
+           ACORDEÃO / BLOCOS EXPANSÍVEIS (ANOS)
+           ========================================================= */
+        .year-block { 
+            margin-bottom: 24px; 
+            background: #ffffff; 
+            border: 1px solid #e4eaf1; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+
+        .year-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .year-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .year-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: #3498db;
+            transition: transform 0.3s ease;
+            background: #e8f4fd;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .year-content {
+            padding: 0 24px 24px 24px;
+            border-top: 2px dashed #e4eaf1;
+            margin-top: 0;
+            padding-top: 24px;
+            display: block; 
+        }
+
+        .year-block.collapsed .year-content {
+            display: none;
+        }
+
+        .year-block.collapsed .toggle-icon {
+            transform: rotate(-180deg);
+            background: #f4f7f6;
+            color: #6c757d;
+        }
+        .year-block.collapsed .year-header {
+            border-bottom: none;
+        }
+
+        /* =========================================================
+           ACORDEÃO / CATEGORIAS E CARTÕES (NOVO)
+           ========================================================= */
+        .category-block { margin-bottom: 25px; }
+        .category-block:last-child { margin-bottom: 0; }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        .category-header:hover {
+            background-color: #eef2f6;
+        }
+
+        .category-title {
+            color: #51606e;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle-icon-cat {
+            color: #51606e;
+            transition: transform 0.3s ease;
+        }
+
+        .category-content {
+            display: block;
+            padding: 0 10px; /* Pequeno recuo para os cartões */
+        }
+
+        /* Classe que aplica o estado recolhido nas categorias */
+        .category-block.collapsed .category-content {
+            display: none;
+        }
+
+        .category-block.collapsed .toggle-icon-cat {
+            transform: rotate(-180deg);
+        }
+
+        /* GRID E CARTÕES */
         .quiz-list-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
+        
         .quiz-item {
             background: #fff;
             border: 1px solid #e4eaf1;
-            border-radius: 14px;
-            padding: 24px;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-        .quiz-item h3 { margin-bottom: 8px; color: #2c3e50; }
-        .quiz-item p { margin-bottom: 16px; color: #51606e; }
+        
+        .quiz-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+            border-color: #3498db;
+        }
+
+        .quiz-item h4 { margin: 12px 0 8px 0; color: #2c3e50; font-size: 1.15rem; }
+        .quiz-item p { margin-bottom: 20px; color: #6c757d; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; }
+        
+        /* Etiquetas visuais (Badges) */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: max-content;
+        }
+        
+        .badge-exercise { background: #e8f4fd; color: #2980b9; border: 1px solid #bce0fd; }
+        .badge-exam { background: #fcebeb; color: #c0392b; border: 1px solid #f5c6c6; }
+        .badge-video { background: #fdf3e8; color: #d35400; border: 1px solid #fde1c9; }
+
+        .btn-card { width: 100%; text-align: center; padding: 0.7rem 1rem; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -65,30 +217,135 @@
     <main>
         <section class="page-banner">
             <div class="container">
-                <h1>Questionários</h1>
-                <p>Pratique conteúdos com correção automática e comentários</p>
+                <h1>Atividades e Simulados</h1>
+                <p>Pratique os conteúdos com correção automática e relatórios detalhados</p>
             </div>
         </section>
 
         <section class="quiz-list-section">
             <div class="container">
-                <div class="quiz-list-grid">
-                    <article class="quiz-item">
-                        <h3>Aula 7 — Conjuntos Numéricos e Inclusão</h3>
-                        <p>Questionário para 9º ano com múltipla escolha, símbolos e respostas curtas com gabarito comentado.</p>
-                        <a href="questionario-aula7.html" class="btn btn-primary">Responder questionário</a>
-                    </article>
-                </div>
-            </div>
-        </br>
-            <div class="container">
-                <div class="quiz-list-grid">
-                    <article class="quiz-item">
-                        <h3>Simulado — Introdução à Trigonometria - Unidade 5</h3>
-                        <p>Simulado com foco na segunda avaiação da Etapa 2.</p>
-                        <a href="simulado_pitagoras_9ano.html" class="btn btn-primary">Responder questionário</a>
-                    </article>
-                </div>
+                
+                <!-- ==============================================
+                     BLOCO: 9º ANO
+                     ============================================== -->
+                <div class="year-block" id="year-9">
+                    
+                    <!-- Cabeçalho Clicável do Ano -->
+                    <div class="year-header" onclick="toggleSection('year-9')">
+                        <h2 class="year-title">
+                            <i class="fas fa-graduation-cap"></i> 9º Ano do Ensino Fundamental
+                        </h2>
+                        <i class="fas fa-chevron-up toggle-icon"></i>
+                    </div>
+
+                    <!-- Conteúdo Recolhível do Ano -->
+                    <div class="year-content">
+                        
+                        <!-- Categoria: Aulas (Com classe 'collapsed' para exemplo) -->
+                        <div class="category-block collapsed" id="cat-9-aulas">
+                            <div class="category-header" onclick="toggleSection('cat-9-aulas')">
+                                <h3 class="category-title">
+                                    <i class="fas fa-video"></i> Aulas em Vídeo
+                                </h3>
+                                <i class="fas fa-chevron-up toggle-icon-cat"></i>
+                            </div>
+                            
+                            <div class="category-content">
+                                <div class="quiz-list-grid">
+                                    <article class="quiz-item">
+                                        <span class="badge badge-video">Em Breve</span>
+                                        <h4>Aula 1 — Introdução aos Conjuntos</h4>
+                                        <p>As videoaulas e materiais de apoio aparecerão aqui.</p>
+                                        <a href="#" class="btn btn-outline btn-card" style="opacity: 0.5; pointer-events: none;">Aguardando Liberação</a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Listas de Exercícios -->
+                        <div class="category-block" id="cat-9-exercicios">
+                            <div class="category-header" onclick="toggleSection('cat-9-exercicios')">
+                                <h3 class="category-title">
+                                    <i class="fas fa-clipboard-list"></i> Listas de Exercícios
+                                </h3>
+                                <i class="fas fa-chevron-up toggle-icon-cat"></i>
+                            </div>
+                            
+                            <div class="category-content">
+                                <div class="quiz-list-grid">
+                                    <article class="quiz-item">
+                                        <span class="badge badge-exercise">Prática Livre</span>
+                                        <h4>Aula 7 — Conjuntos Numéricos</h4>
+                                        <p>Treine a teoria dos conjuntos, as relações de pertinência (∈) e inclusão (⊂) de forma interativa e com gabarito na hora.</p>
+                                        <a href="simulado_conjuntos_9ano.html" class="btn btn-outline btn-card">Fazer exercícios</a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Simulados -->
+                        <div class="category-block" id="cat-9-simulados">
+                            <div class="category-header" onclick="toggleSection('cat-9-simulados')">
+                                <h3 class="category-title">
+                                    <i class="fas fa-stopwatch"></i> Simulados e Preparações
+                                </h3>
+                                <i class="fas fa-chevron-up toggle-icon-cat"></i>
+                            </div>
+
+                            <div class="category-content">
+                                <div class="quiz-list-grid">
+                                    <article class="quiz-item">
+                                        <span class="badge badge-exam">Valendo Nota (Relatório)</span>
+                                        <h4>Simulado Etapa 2 — Trigonometria</h4>
+                                        <p>Preparação oficial para o Instrumento Avaliativo 2 (Unidade 5). Teorema de Pitágoras e razões trigonométricas.</p>
+                                        <a href="simulado_pitagoras_9ano.html" class="btn btn-primary btn-card">Iniciar Simulado</a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- Fim year-content -->
+                </div> <!-- Fim year-block -->
+
+                <!-- ==============================================
+                     BLOCO: 1ª SÉRIE E.M (Fechado por padrão)
+                     ============================================== -->
+                <div class="year-block collapsed" id="year-em1">
+                    
+                    <!-- Cabeçalho Clicável do Ano -->
+                    <div class="year-header" onclick="toggleSection('year-em1')">
+                        <h2 class="year-title">
+                            <i class="fas fa-book-open"></i> 1ª Série do Ensino Médio
+                        </h2>
+                        <i class="fas fa-chevron-up toggle-icon"></i>
+                    </div>
+
+                    <!-- Conteúdo Recolhível do Ano -->
+                    <div class="year-content">
+                        
+                        <div class="category-block" id="cat-em1-exercicios">
+                            <div class="category-header" onclick="toggleSection('cat-em1-exercicios')">
+                                <h3 class="category-title">
+                                    <i class="fas fa-clipboard-list"></i> Listas de Exercícios
+                                </h3>
+                                <i class="fas fa-chevron-up toggle-icon-cat"></i>
+                            </div>
+
+                            <div class="category-content">
+                                <div class="quiz-list-grid">
+                                    <article class="quiz-item">
+                                        <span class="badge badge-exercise">Prática Livre</span>
+                                        <h4>Aula 1 — Funções Afins</h4>
+                                        <p>Exercícios sobre gráficos, raízes e coeficientes da função de 1º grau. (Em Breve)</p>
+                                        <a href="#" class="btn btn-outline btn-card" style="opacity: 0.5; pointer-events: none;">Aguardando Liberação</a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- Fim year-content -->
+                </div> <!-- Fim year-block -->
+
             </div>
         </section>
     </main>
@@ -145,5 +402,14 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/mobile-optimizations.js"></script>
+    
+    <!-- SCRIPT DO ACORDEÃO (Atualizado e Unificado) -->
+    <script>
+        function toggleSection(id) {
+            const block = document.getElementById(id);
+            // Adiciona ou remove a classe "collapsed" que oculta o conteúdo
+            block.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 </html>

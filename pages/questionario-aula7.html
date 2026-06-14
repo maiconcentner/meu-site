@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão - Simulado de Matemática</title>
+    <title>Lista de Exercícios - Aula 7 | Conjuntos Numéricos</title>
     <style>
         /* =========================================================
            RESET E VARIÁVEIS
            ========================================================= */
         :root {
-            --primary: #4361ee;
-            --primary-hover: #3a53d0;
-            --secondary: #3f37c9;
-            --success: #4cc9f0;
-            --success-dark: #20b2aa;
-            --danger: #f72585;
-            --warning: #f8961e;
+            --primary: #2c3e50;
+            --primary-hover: #1a252f;
+            --secondary: #3498db;
+            --success: #2ecc71;
+            --success-dark: #27ae60;
+            --danger: #e74c3c;
+            --warning: #f1c40f;
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
             --text-main: #2b2d42;
@@ -40,27 +40,22 @@
         .slide-in { animation: slideInRight 0.4s ease forwards; }
 
         /* =========================================================
-           ESTRUTURA PRINCIPAL E FORMULÁRIO
+           ESTRUTURA PRINCIPAL
            ========================================================= */
         .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; flex: 1; width: 100%; }
         .card { background: var(--card-bg); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 2rem; margin-bottom: 1.5rem; }
         header { text-align: center; margin-bottom: 2rem; }
-        h1 { color: var(--secondary); font-size: 2.2rem; margin-bottom: 0.5rem; }
+        h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 0.5rem; }
         h2 { color: var(--text-light); font-size: 1.2rem; font-weight: 500; }
-        h3 { color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
-
-        .input-group { text-align: left; max-width: 400px; margin: 0 auto 2rem; background: var(--bg-color); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border-color); }
-        .input-label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-main); }
-        .input-field { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; }
-        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); }
+        h3 { color: var(--secondary); margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
 
         /* =========================================================
            BOTÕES E CONTROLES
            ========================================================= */
-        .btn { background: var(--primary); color: white; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
-        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn { background: var(--secondary); color: white; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+        .btn:hover { background: #2980b9; transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); }
+        .btn-outline:hover { background: var(--secondary); color: white; }
         .btn-large { padding: 1rem 3rem; font-size: 1.2rem; border-radius: 50px; width: 100%; max-width: 400px; }
         
         /* =========================================================
@@ -69,14 +64,14 @@
         .progress-container { margin-bottom: 1.5rem; }
         .progress-header { display: flex; justify-content: space-between; font-weight: 600; color: var(--text-light); margin-bottom: 0.5rem;}
         .progress-bar-bg { background: var(--border-color); height: 10px; border-radius: 5px; overflow: hidden; }
-        .progress-bar-fill { background: var(--primary); height: 100%; width: 0%; transition: width 0.4s ease; }
+        .progress-bar-fill { background: var(--secondary); height: 100%; width: 0%; transition: width 0.4s ease; }
         .question-text { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
         .question-figure { text-align: center; margin-bottom: 1.5rem; }
         .question-figure svg { max-width: 100%; height: auto; }
         .options-grid { display: flex; flex-direction: column; gap: 10px; }
         .option-btn { background: var(--bg-color); border: 2px solid var(--border-color); border-radius: var(--radius); padding: 1rem; font-size: 1rem; text-align: left; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 15px; }
-        .option-btn:hover { border-color: var(--primary); background: rgba(67,97,238,0.05); }
-        .option-btn.selected { border-color: var(--primary); background: rgba(67,97,238,0.1); font-weight: 600; }
+        .option-btn:hover { border-color: var(--secondary); background: rgba(52, 152, 219, 0.05); }
+        .option-btn.selected { border-color: var(--secondary); background: rgba(52, 152, 219, 0.1); font-weight: 600; }
         .option-letter { background: white; border-radius: 50%; min-width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; border: 1px solid var(--border-color); }
         .navigation-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
 
@@ -98,9 +93,9 @@
         .data-table th, .data-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--border-color); }
         .data-table th { background: var(--bg-color); font-weight: 600; }
         .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
-        .status-good { background: rgba(32, 178, 170, 0.2); color: var(--success-dark); }
-        .status-bad { background: rgba(247, 37, 133, 0.2); color: var(--danger); }
-        .status-warn { background: rgba(248, 150, 30, 0.2); color: var(--warning); }
+        .status-good { background: rgba(39, 174, 96, 0.2); color: var(--success-dark); }
+        .status-bad { background: rgba(231, 76, 60, 0.2); color: var(--danger); }
+        .status-warn { background: rgba(241, 196, 15, 0.2); color: #d35400; }
 
         .bloom-bar-container { margin-bottom: 1rem; }
         .bloom-label { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.9rem; font-weight: 600; }
@@ -110,18 +105,17 @@
 
         .review-item { border: 1px solid var(--border-color); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
         .review-header { display: flex; justify-content: space-between; align-items: center; font-weight: bold; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;}
-        .review-correct { background: rgba(32, 178, 170, 0.05); border-color: var(--success-dark); }
-        .review-incorrect { background: rgba(247, 37, 133, 0.05); border-color: var(--danger); }
-        .explanation { background: white; padding: 12px; margin-top: 15px; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm); }
+        .review-correct { background: rgba(39, 174, 96, 0.05); border-color: var(--success-dark); }
+        .review-incorrect { background: rgba(231, 76, 60, 0.05); border-color: var(--danger); }
+        .explanation { background: white; padding: 12px; margin-top: 15px; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid var(--secondary); box-shadow: var(--shadow-sm); }
 
         .action-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-        .save-notice { text-align: center; color: var(--success-dark); font-weight: 600; margin-bottom: 1rem; padding: 10px; background: rgba(32,178,170,0.1); border-radius: var(--radius); }
 
         @media print {
             body { background: white; }
             .container { max-width: 100%; padding: 0; }
             .card { box-shadow: none; border: 1px solid #ddd; margin-bottom: 1rem; break-inside: avoid; }
-            .action-buttons, .progress-container, .save-notice { display: none; }
+            .action-buttons, .progress-container { display: none; }
             .summary-card { background: none; color: black; border: 2px solid black; }
             .summary-card h3 { color: black; }
         }
@@ -130,261 +124,220 @@
 <body>
 
 <div class="container" id="app">
-    </div>
+    <!-- As telas são renderizadas aqui -->
+</div>
 
 <script>
-    /* =========================================================
-       CONFIGURAÇÕES DE INTEGRAÇÃO (COLE SUA URL AQUI)
-       ========================================================= */
-    const URL_DA_PLANILHA = "COLE_AQUI_A_URL_DO_SEU_WEB_APP_GERADA_NO_PASSO_2";
-
     /* =========================================================
        BASE DE DADOS: QUESTÕES
        ========================================================= */
     const questions = [
         {
-            id: 1, skill: "EF.09.MAT.3.100", taxonomy: "Lembrar",
-            text: "Sobre as propriedades de um triângulo retângulo, é correto afirmar que a hipotenusa:",
+            id: 1, skill: "Relações de Pertinência", taxonomy: "Lembrar",
+            text: "Na teoria dos conjuntos numéricos, utilizamos símbolos específicos para relacionar elementos com conjuntos. Qual símbolo abaixo indica que um elemento PERTENCE a um conjunto?",
+            figure: null,
+            options: [
+                "⊂ (Está contido)",
+                "∈ (Pertence)",
+                "⊃ (Contém)",
+                "∉ (Não pertence)"
+            ],
+            correct: 1,
+            explanation: "O símbolo ∈ significa 'pertence' e é usado exclusivamente para relacionar um ELEMENTO a um CONJUNTO. Exemplo: 10 ∈ N (O número 10 pertence ao conjunto dos Naturais)."
+        },
+        {
+            id: 2, skill: "Relações de Inclusão", taxonomy: "Compreender",
+            text: "Os números Naturais (N) são formados pelos números inteiros positivos e o zero. Já os números Racionais (Q) englobam todos os números que podem ser escritos em forma de fração. Qual alternativa representa corretamente a relação entre N e Q?",
+            figure: null,
+            options: [
+                "N ⊄ Q (Naturais não estão contidos em Racionais)",
+                "N ⊂ Q (Naturais estão contidos em Racionais)",
+                "Q ⊂ N (Racionais estão contidos em Naturais)",
+                "N ∈ Q (O conjunto N pertence ao conjunto Q)"
+            ],
+            correct: 1,
+            explanation: "Todo número natural pode ser escrito como fração (ex: 7 = 7/1). Portanto, o conjunto inteiro de N está 'dentro' de Q. Usamos o símbolo de inclusão (⊂) para relacionar conjunto com conjunto."
+        },
+        {
+            id: 3, skill: "Classificação de Conjuntos", taxonomy: "Compreender",
+            text: "Observe a representação gráfica dos Conjuntos Numéricos abaixo. Qual afirmação é verdadeira sobre o conjunto dos números Reais (R)?",
             figure: `
-                <svg viewBox="0 0 200 150" width="200" height="150">
-                    <polygon points="20,130 150,130 150,40" fill="none" stroke="#2b2d42" stroke-width="2"/>
-                    <rect x="135" y="115" width="15" height="15" fill="none" stroke="#2b2d42"/>
-                    <text x="65" y="75" font-family="sans-serif" font-size="14" transform="rotate(-34, 65, 75)">hipotenusa</text>
-                    <text x="70" y="145" font-family="sans-serif" font-size="14">cateto</text>
-                    <text x="160" y="90" font-family="sans-serif" font-size="14" transform="rotate(90, 160, 90)">cateto</text>
+                <svg viewBox="0 0 320 160" width="100%" max-width="320" height="160">
+                    <rect x="10" y="10" width="300" height="140" fill="none" stroke="#2c3e50" stroke-width="2" rx="10"/>
+                    <text x="20" y="30" font-weight="bold" fill="#2c3e50">R (Reais)</text>
+                    
+                    <ellipse cx="110" cy="85" rx="80" ry="55" fill="rgba(52, 152, 219, 0.1)" stroke="#3498db" stroke-width="2"/>
+                    <text x="35" y="60" font-weight="bold" fill="#2980b9">Q</text>
+                    
+                    <circle cx="120" cy="85" r="40" fill="rgba(52, 152, 219, 0.2)" stroke="#2980b9" stroke-width="1.5"/>
+                    <text x="95" y="70" font-weight="bold" fill="#2c3e50">Z</text>
+                    
+                    <circle cx="135" cy="95" r="20" fill="rgba(52, 152, 219, 0.3)"/>
+                    <text x="130" y="100" font-weight="bold" fill="#2c3e50">N</text>
+                    
+                    <ellipse cx="250" cy="85" rx="45" ry="55" fill="rgba(231, 76, 60, 0.1)" stroke="#e74c3c" stroke-width="2"/>
+                    <text x="245" y="90" font-weight="bold" fill="#c0392b">I</text>
                 </svg>
             `,
             options: [
-                "É sempre o menor lado e fica oposta ao ângulo de 90°.",
-                "Pode ser igual a um dos catetos, dependendo do triângulo.",
-                "É sempre o maior lado e encontra-se posicionada de forma oposta ao ângulo reto.",
-                "É o lado que ajuda a formar o ângulo reto (90°) junto com a base."
-            ],
-            correct: 2,
-            explanation: "Para não cair em pegadinhas: lembre-se sempre de que a hipotenusa é o MAIOR lado de um triângulo retângulo e está sempre de frente (oposta) para o ângulo de 90°."
-        },
-        {
-            id: 2, skill: "EF.09.MAT.3.100", taxonomy: "Compreender",
-            text: "O Teorema de Pitágoras, expresso matematicamente pela fórmula c² = a² + b², pode ser aplicado para calcular lados de:",
-            figure: null,
-            options: [
-                "Qualquer tipo de triângulo, seja ele acutângulo, obtusângulo ou retângulo.",
-                "Exclusivamente triângulos retângulos.",
-                "Apenas triângulos que possuem todos os lados iguais (equiláteros).",
-                "Apenas triângulos obtusângulos."
+                "R contém apenas os números racionais (Q).",
+                "R contém os racionais (Q) e os irracionais (I).",
+                "R é um subconjunto isolado de Z.",
+                "I é um subconjunto de Q."
             ],
             correct: 1,
-            explanation: "Pitágoras é exclusivo para triângulos que possuem um ângulo reto (triângulos retângulos). Não tente aplicar a fórmula em outros tipos!"
+            explanation: "O conjunto dos Reais (R) é a união dos Racionais (Q) com os Irracionais (I). Como mostra o diagrama, Q e I são conjuntos separados (disjuntos), mas ambos formam o grande retângulo de R."
         },
         {
-            id: 3, skill: "EF.09.MAT.3.100", taxonomy: "Aplicar",
-            text: "Um aluno afirmou: 'Se os catetos de um triângulo retângulo medem 6 cm e 8 cm, a sua hipotenusa medirá exatamente 14 cm, pois basta somar os dois lados.' Esta afirmação está incorreta. Qual é a medida real da hipotenusa?",
+            id: 4, skill: "Classificação de Conjuntos", taxonomy: "Analisar",
+            text: "O número 0,5 pode ser escrito na forma de fração como 1/2. De acordo com a teoria dos conjuntos, isso significa que o número 0,5 é:",
             figure: null,
             options: [
-                "10 cm, pois a² = 6² + 8².",
-                "14 cm, pois a = 6 + 8.",
-                "2 cm, pois a = 8 - 6.",
-                "100 cm, pois a = 6² + 8²."
+                "Inteiro e Racional.",
+                "Natural e Irracional.",
+                "Racional e Real.",
+                "Inteiro e Irracional."
+            ],
+            correct: 2,
+            explanation: "Todo número que pode ser escrito como fração é Racional (Q). E, como vimos, todos os racionais estão dentro do conjunto dos Reais (R). Ele não é inteiro pois possui parte decimal."
+        },
+        {
+            id: 5, skill: "Relações de Pertinência", taxonomy: "Compreender",
+            text: "A afirmação matemática “−3 ∉ N” deve ser lida e compreendida da seguinte forma:",
+            figure: null,
+            options: [
+                "O número −3 é natural.",
+                "O número −3 não é um número natural.",
+                "O conjunto N não existe.",
+                "O número −3 é irracional."
+            ],
+            correct: 1,
+            explanation: "O símbolo ∉ significa 'não pertence'. O conjunto dos Naturais (N) engloba apenas o zero e os inteiros positivos (0, 1, 2, 3...). Logo, um número negativo não pertence a N."
+        },
+        {
+            id: 6, skill: "Classificação de Conjuntos", taxonomy: "Aplicar",
+            text: "Dentre as opções abaixo, qual representa um número IRRACIONAL (I)?",
+            figure: null,
+            options: [
+                "0,25 (Decimal exato)",
+                "−7 (Número negativo)",
+                "√2 (Raiz não exata)",
+                "3/5 (Fração)"
+            ],
+            correct: 2,
+            explanation: "Números irracionais são dízimas infinitas não periódicas, ou seja, números que não podem ser transformados em fração. Raízes não exatas (como √2, √3) e o Pi (π) são os clássicos exemplos."
+        },
+        {
+            id: 7, skill: "Relações de Pertinência", taxonomy: "Aplicar",
+            text: "Assinale a alternativa que traz a relação de PERTINÊNCIA (Elemento x Conjunto) correta:",
+            figure: null,
+            options: [
+                "10 ∉ N",
+                "π ∈ R",
+                "2,75 ∈ Z",
+                "-1 ∈ N"
+            ],
+            correct: 1,
+            explanation: "π (Pi) é irracional, mas como todos os irracionais são Reais (R), π ∈ R está correto. As outras estão erradas: 10 pertence a N, 2,75 não é inteiro (Z) e números negativos não são naturais (N)."
+        },
+        {
+            id: 8, skill: "Relações de Inclusão", taxonomy: "Analisar",
+            text: "Assinale a alternativa que demonstra a relação de INCLUSÃO (Conjunto x Conjunto) verdadeira:",
+            figure: null,
+            options: [
+                "N ⊄ Q",
+                "R ⊂ Z",
+                "Z ⊂ Q",
+                "I ⊂ Q"
+            ],
+            correct: 2,
+            explanation: "A alternativa Z ⊂ Q está correta pois todo número Inteiro (Z) pode ser escrito como fração, logo os Inteiros 'estão contidos' nos Racionais (Q)."
+        },
+        {
+            id: 9, skill: "Classificação de Conjuntos", taxonomy: "Aplicar",
+            text: "Ao classificar o número −3 nos conjuntos numéricos, qual é a alternativa completamente correta?",
+            figure: null,
+            options: [
+                "−3 ∈ N, −3 ∈ Z, −3 ∉ Q",
+                "−3 ∉ N, −3 ∈ Z, −3 ∈ Q, −3 ∈ R",
+                "−3 ∈ Z, mas −3 ∉ R",
+                "−3 é um número irracional (I)."
+            ],
+            correct: 1,
+            explanation: "O número -3 é negativo (não pertence a N, mas pertence a Z). Todo Z pertence a Q. Todo Q pertence a R. Logo: -3 ∉ N, -3 ∈ Z, -3 ∈ Q, -3 ∈ R."
+        },
+        {
+            id: 10, skill: "Classificação de Conjuntos", taxonomy: "Analisar",
+            text: "A frase 'todo número racional é real, mas nem todo real é racional' é verdadeira. Qual das opções abaixo justifica essa afirmação?",
+            figure: null,
+            options: [
+                "Porque o conjunto dos Reais (R) também contém o conjunto dos Irracionais (I), como √2 ou π.",
+                "Porque os números reais excluem as frações.",
+                "Porque não existem números inteiros nos Reais.",
+                "Porque a frase está incorreta, todo real é sempre racional."
             ],
             correct: 0,
-            explanation: "Nunca some os lados diretamente. É preciso usar Pitágoras: a² = 6² + 8² ➝ a² = 36 + 64 ➝ a² = 100 ➝ a = √100 = 10 cm."
+            explanation: "Os Reais são como uma 'caixa grande' que junta duas caixas menores: os Racionais (Q) e os Irracionais (I). Se eu pego o √2, ele é Real, mas não é racional."
         },
         {
-            id: 4, skill: "EF.09.MAT.3.100", taxonomy: "Analisar",
-            text: "Geometricamente, o que a relação do Teorema de Pitágoras nos afirma sobre as áreas desenhadas sobre os lados do triângulo retângulo?",
+            id: 11, skill: "Classificação de Conjuntos", taxonomy: "Aplicar",
+            text: "Avalie a raiz quadrada a seguir: O número √25 pertence primeiramente a qual conjunto?",
             figure: null,
             options: [
-                "A área do quadrado construído sobre a hipotenusa é o dobro da área dos catetos.",
-                "A soma das áreas dos quadrados construídos sobre as medidas dos catetos é igual à área do quadrado construído sobre a hipotenusa.",
-                "A área do triângulo é igual à soma das áreas dos quadrados dos catetos.",
-                "As áreas de todos os quadrados construídos sobre os lados do triângulo são iguais."
+                "Aos Irracionais (I), pois é uma raiz.",
+                "Aos Naturais (N), pois √25 = 5.",
+                "Apenas aos Reais (R), mas não é inteiro.",
+                "É uma dízima periódica."
             ],
             correct: 1,
-            explanation: "Essa é a definição clássica cobrada na teoria: desenhar um quadrado em cada cateto e somar suas áreas dará exatamente a mesma área do quadrado desenhado sobre a hipotenusa."
+            explanation: "Cuidado com a pegadinha! Embora tenha o símbolo de raiz, √25 tem resultado exato (5). O número 5 é natural, logo √25 ∈ N."
         },
         {
-            id: 5, skill: "EF.09.MAT.3.100", taxonomy: "Compreender",
-            text: "Um terreno tem o formato de um retângulo de 9 m de largura por 12 m de comprimento. Ao passar um cabo de aço na diagonal desse terreno, que modelo matemático se forma?",
-            figure: `
-                <svg viewBox="0 0 200 130" width="200" height="130">
-                    <rect x="20" y="20" width="160" height="90" fill="none" stroke="#2b2d42" stroke-width="2"/>
-                    <rect x="165" y="95" width="15" height="15" fill="none" stroke="#2b2d42"/>
-                    <line x1="20" y1="110" x2="180" y2="20" stroke="#2b2d42" stroke-width="2" stroke-dasharray="6,4"/>
-                    <text x="95" y="60" font-family="sans-serif" font-size="16" font-style="italic">x</text>
-                    <text x="90" y="125" font-family="sans-serif" font-size="14">12 m</text>
-                    <text x="185" y="70" font-family="sans-serif" font-size="14">9 m</text>
-                </svg>
-            `,
-            options: [
-                "Um triângulo retângulo, onde a diagonal é um cateto e os lados 9 m e 12 m são a hipotenusa.",
-                "Um triângulo retângulo, onde a diagonal 'x' representa a hipotenusa e os lados do terreno são os catetos.",
-                "Um triângulo equilátero de lados iguais a 'x'.",
-                "Um quadrado perfeito cuja área é a soma de 9 e 12."
-            ],
-            correct: 1,
-            explanation: "Ao dividir um retângulo ao meio por sua diagonal, criamos dois triângulos retângulos. Os lados do terreno formam o ângulo de 90° (são os catetos), e o cabo esticado (diagonal) é a hipotenusa."
-        },
-        {
-            id: 6, skill: "EF.09.MAT.3.100", taxonomy: "Aplicar",
-            text: "Resolvendo o problema do terreno (9 m por 12 m), qual será o comprimento exato do cabo de aço (diagonal x)?",
+            id: 12, skill: "Relações de Inclusão", taxonomy: "Analisar e Interpretar",
+            text: "Um aluno escreveu em sua prova que 'I ⊂ Q' (Os Irracionais estão contidos nos Racionais). Como devemos corrigir essa frase?",
             figure: null,
             options: [
-                "21 metros.",
-                "15 metros.",
-                "225 metros.",
-                "10 metros."
-            ],
-            correct: 1,
-            explanation: "Aplicando Pitágoras: x² = 9² + 12² ➝ x² = 81 + 144 ➝ x² = 225 ➝ x = √225 = 15 metros."
-        },
-        {
-            id: 7, skill: "EF.09.MAT.2.96", taxonomy: "Lembrar",
-            text: "Na trigonometria, como definimos a razão chamada Seno (sen) de um ângulo agudo?",
-            figure: null,
-            options: [
-                "É a razão entre o cateto adjacente e a hipotenusa.",
-                "É a razão entre a hipotenusa e o cateto oposto.",
-                "É a razão entre o cateto oposto e a hipotenusa.",
-                "É a razão exclusiva entre o cateto oposto e o cateto adjacente."
-            ],
-            correct: 2,
-            explanation: "A verdadeira definição de Seno é a divisão do Cateto Oposto pela Hipotenusa."
-        },
-        {
-            id: 8, skill: "EF.09.MAT.2.96", taxonomy: "Lembrar",
-            text: "De acordo com as razões trigonométricas fundamentais, a Tangente (tan) de um ângulo é a razão exclusiva entre:",
-            figure: null,
-            options: [
-                "Cateto Oposto e Cateto Adjacente (tan = CO / CA).",
-                "Cateto Oposto e Hipotenusa (tan = CO / H).",
-                "Cateto Adjacente e Hipotenusa (tan = CA / H).",
-                "Cateto Adjacente e Cateto Oposto (tan = CA / CO)."
-            ],
-            correct: 0,
-            explanation: "A tangente é a única razão trigonométrica que não utiliza a hipotenusa, dividindo diretamente o Cateto Oposto pelo Cateto Adjacente."
-        },
-        {
-            id: 9, skill: "EF.09.MAT.2.96", taxonomy: "Analisar",
-            text: "Observe a relação entre os ângulos α (alfa) e β (beta) de um mesmo triângulo retângulo. O cateto que atua como OPOSTO ao ângulo α será o que em relação ao ângulo β?",
-            figure: `
-                <svg viewBox="0 0 250 160" width="250" height="160">
-                    <polygon points="20,140 120,140 20,20" fill="none" stroke="#2b2d42" stroke-width="2"/>
-                    <rect x="20" y="125" width="15" height="15" fill="none" stroke="#2b2d42"/>
-                    <path d="M 95 140 A 25 25 0 0 0 100 115" fill="none" stroke="#2b2d42" stroke-width="1.5"/>
-                    <text x="80" y="130" font-family="serif" font-size="16" font-style="italic">α</text>
-                    <path d="M 20 50 A 30 30 0 0 0 40 45" fill="none" stroke="#2b2d42" stroke-width="1.5"/>
-                    <text x="25" y="70" font-family="serif" font-size="16" font-style="italic">β</text>
-                </svg>
-            `,
-            options: [
-                "Será a hipotenusa do triângulo.",
-                "Será também o cateto oposto ao ângulo β.",
-                "Será obrigatoriamente o cateto adjacente ao ângulo β.",
-                "Será o ângulo reto de 90°."
-            ],
-            correct: 2,
-            explanation: "A parede que está 'de frente' para o ângulo lá de baixo (α) é a mesma parede que forma (está 'ao lado') do ângulo lá de cima (β). Logo, o oposto de um é o adjacente do outro."
-        },
-        {
-            id: 10, skill: "EF.09.MAT.2.96", taxonomy: "Compreender",
-            text: "Se calcularmos o Seno do ângulo α e depois mudarmos nossa referência para calcular o Seno do ângulo β no mesmo triângulo, a medida da hipotenusa sofre alteração?",
-            figure: null,
-            options: [
-                "Sim, a hipotenusa muda de posição dependendo do ângulo de referência.",
-                "Sim, a hipotenusa passa a ser o cateto maior.",
-                "Depende do tamanho do triângulo.",
-                "Não, a hipotenusa é fixa e independe de qual ângulo agudo tomamos como referência."
+                "A frase está correta, não precisa de correção.",
+                "Os irracionais estão contidos apenas nos inteiros (I ⊂ Z).",
+                "Os racionais estão contidos nos irracionais (Q ⊂ I).",
+                "Devemos usar 'I ⊄ Q', pois Racionais e Irracionais são conjuntos disjuntos (não se misturam)."
             ],
             correct: 3,
-            explanation: "Os catetos mudam de nome (oposto ou adjacente) dependendo de quem 'olha' para eles, mas a hipotenusa é estrutural, é sempre o maior lado e nunca muda de valor!"
-        },
-        {
-            id: 11, skill: "EF.09.MAT.2.96", taxonomy: "Aplicar",
-            text: "Considere o triângulo retângulo abaixo, onde os catetos medem 8 cm e 15 cm, a hipotenusa mede 17 cm, e θ é o ângulo de frente para o de 8 cm. Qual é o valor do Seno (sen θ)?",
-            figure: `
-                <svg viewBox="0 0 250 140" width="250" height="140">
-                    <polygon points="40,120 220,120 40,20" fill="none" stroke="#2b2d42" stroke-width="2"/>
-                    <rect x="40" y="105" width="15" height="15" fill="none" stroke="#2b2d42"/>
-                    <path d="M 180 120 A 40 40 0 0 0 195 105" fill="none" stroke="#2b2d42" stroke-width="1.5"/>
-                    <text x="170" y="115" font-family="serif" font-size="16" font-style="italic">θ</text>
-                    <text x="130" y="60" font-family="sans-serif" font-size="14">17 cm</text>
-                    <text x="0" y="75" font-family="sans-serif" font-size="14">8 cm</text>
-                    <text x="110" y="138" font-family="sans-serif" font-size="14">15 cm</text>
-                </svg>
-            `,
-            options: [
-                "15 / 17",
-                "8 / 17",
-                "8 / 15",
-                "15 / 8"
-            ],
-            correct: 1,
-            explanation: "O Seno exige dividir o Cateto Oposto pela Hipotenusa. O cateto de frente para θ é o 8, e a hipotenusa é 17. Portanto, a fração é 8/17."
-        },
-        {
-            id: 12, skill: "EF.09.MAT.2.96", taxonomy: "Analisar e Interpretar",
-            text: "Aproveitando o mesmo triângulo da questão anterior (lados 8, 15 e 17, ângulo θ oposto ao 8), escreva em formato de fração as razões para Cosseno (cos θ) e Tangente (tan θ), respectivamente:",
-            figure: null,
-            options: [
-                "cos = 8/17 e tan = 15/17",
-                "cos = 15/17 e tan = 8/15",
-                "cos = 15/17 e tan = 15/8",
-                "cos = 8/15 e tan = 15/17"
-            ],
-            correct: 1,
-            explanation: "Cosseno é Adjacente / Hipotenusa (o vizinho é 15, a hipotenusa é 17, logo 15/17). Tangente é Oposto / Adjacente (o oposto é 8, vizinho é 15, logo 8/15)."
+            explanation: "Como vimos no diagrama de Venn, a elipse do Q e a elipse do I estão separadas. Um número nunca pode ser racional e irracional ao mesmo tempo. Portanto, I ⊄ Q (não está contido)."
         }
     ];
 
     /* =========================================================
-       ESTADO DA APLICAÇÃO E VARIÁVEIS DO ALUNO
+       ESTADO DA APLICAÇÃO
        ========================================================= */
     let currentQuestionIndex = 0;
     let userAnswers = new Array(questions.length).fill(null);
     let startTime = null;
     let endTime = null;
-    
-    // Dados do Aluno
-    let studentName = "";
-    let studentClass = "";
 
     const app = document.getElementById('app');
 
     function renderLandingPage() {
         app.innerHTML = `
             <div class="card fade-in" style="text-align: center; padding: 3rem 2rem;">
-                <h1>Simulado Preparatório - Prova Etapa 2</h1>
-                <h2>Prof. Maicon - SESI Jaú (Unidade 5)</h2>
+                <h1>Lista de Exercícios – Aula 7</h1>
+                <h2>Conjuntos Numéricos e Inclusão (9º ano) - Prof. Maicon</h2>
                 
-                <div class="input-group">
-                    <label class="input-label" for="inputName">Seu Nome Completo:</label>
-                    <input type="text" id="inputName" class="input-field" placeholder="Ex: João da Silva">
-
-                    <label class="input-label" for="selectClass">Sua Turma:</label>
-                    <select id="selectClass" class="input-field">
-                        <option value="">Selecione a turma...</option>
-                        <option value="9º Ano A">9º Ano A</option>
-                        <option value="9º Ano B">9º Ano B</option>
-                        <option value="9º Ano C">9º Ano C</option>
-                    </select>
+                <div class="card" style="background: var(--bg-color); text-align: left; max-width: 600px; margin: 2rem auto;">
+                    <h3 style="border:none; margin-bottom: 10px; color: var(--text-main); font-size: 1.1rem;">Instruções:</h3>
+                    <ul style="color: var(--text-light); padding-left: 20px;">
+                        <li>Responda as 12 questões com base no que estudamos em sala.</li>
+                        <li>Esta é uma atividade de treino, aproveite para testar seus conhecimentos!</li>
+                        <li>Ao final, você receberá a correção imediata e um relatório dos seus estudos.</li>
+                    </ul>
                 </div>
 
-                <button class="btn btn-large" onclick="startQuiz()">INICIAR REVISÃO</button>
+                <button class="btn btn-large" onclick="startQuiz()">INICIAR EXERCÍCIOS</button>
             </div>
         `;
     }
 
     function startQuiz() {
-        const nameInput = document.getElementById('inputName').value.trim();
-        const classSelect = document.getElementById('selectClass').value;
-
-        if(!nameInput || !classSelect) {
-            alert("Por favor, preencha seu nome e selecione a sua turma antes de iniciar o simulado.");
-            return;
-        }
-
-        studentName = nameInput;
-        studentClass = classSelect;
         startTime = Date.now();
         currentQuestionIndex = 0;
         userAnswers.fill(null);
@@ -446,7 +399,7 @@
     function prevQuestion() { if (currentQuestionIndex > 0) { currentQuestionIndex--; renderQuestion(); } }
 
     /* =========================================================
-       CORREÇÃO E ENVIO DE DADOS PARA A PLANILHA
+       CORREÇÃO IMEDIATA (Sem envio de dados)
        ========================================================= */
     function finishQuiz() {
         endTime = Date.now();
@@ -456,76 +409,43 @@
         const perc = Math.round((acertos / questions.length) * 100);
         const timeSpent = Math.max(1, Math.round((endTime - startTime) / 60000)); 
         
-        let hab1Acertos = 0; // Pitágoras (Q1 a Q6)
-        let hab2Acertos = 0; // Trigonometria (Q7 a Q12)
-        for(let i=0; i<6; i++) { if(userAnswers[i] === questions[i].correct) hab1Acertos++; }
-        for(let i=6; i<12; i++) { if(userAnswers[i] === questions[i].correct) hab2Acertos++; }
+        const hab1Indices = [2, 3, 5, 8, 9, 10]; // Classificação de Conjuntos
+        const hab2Indices = [0, 1, 4, 6, 7, 11]; // Símbolos e Relações
 
-        // Monta o pacote de dados do aluno
-        const payload = {
-            nome: studentName,
-            turma: studentClass,
-            acertos: acertos,
-            total: questions.length,
-            percentual: perc,
-            tempo: timeSpent,
-            pitagoras: hab1Acertos,
-            trigono: hab2Acertos
-        };
+        let hab1Acertos = 0; 
+        let hab2Acertos = 0; 
+        
+        hab1Indices.forEach(i => { if(userAnswers[i] === questions[i].correct) hab1Acertos++; });
+        hab2Indices.forEach(i => { if(userAnswers[i] === questions[i].correct) hab2Acertos++; });
 
-        // Renderiza a tela de carregamento (Opcional, dá uma sensação profissional)
-        app.innerHTML = `
-            <div class="card fade-in" style="text-align: center; padding: 4rem 2rem;">
-                <h2>Gerando seu relatório e salvando resultados...</h2>
-                <div style="margin-top: 2rem;">⏳ Por favor, aguarde alguns segundos.</div>
-            </div>
-        `;
-
-        // Envia os dados para a planilha usando Fetch API
-        if(URL_DA_PLANILHA && URL_DA_PLANILHA.includes("script.google.com")) {
-            fetch(URL_DA_PLANILHA, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Usar text/plain evita bloqueios de CORS do navegador
-                body: JSON.stringify(payload)
-            })
-            .then(response => {
-                renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos, true);
-            })
-            .catch(error => {
-                console.error("Erro ao salvar:", error);
-                renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos, false);
-            });
-        } else {
-            // Caso você esqueça de colocar a URL, ele apenas mostra o dashboard.
-            renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos, false);
-        }
+        // Chama o dashboard diretamente sem passar pela validação de rede
+        renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos);
     }
 
-    function renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos, saveSuccess) {
+    function renderDashboard(acertos, perc, timeSpent, hab1Acertos, hab2Acertos) {
         const erros = questions.length - acertos;
         
-        let medal = "Precisa Revisar a Teoria"; let icon = "📚"; let color = "var(--danger)";
-        if(perc >= 90) { medal = "Ouro (Pronto para a prova!)"; icon = "🏆"; color = "#ffd700"; }
-        else if(perc >= 70) { medal = "Prata (Bom domínio)"; icon = "🥈"; color = "#c0c0c0"; }
-        else if(perc >= 50) { medal = "Bronze (Na média)"; icon = "🥉"; color = "#cd7f32"; }
+        let medal = "Precisa Revisar os Conjuntos"; let icon = "📚"; let color = "var(--danger)";
+        if(perc >= 90) { medal = "Ouro (Domínio Total)"; icon = "🏆"; color = "#f1c40f"; }
+        else if(perc >= 70) { medal = "Prata (Ótimo Desempenho)"; icon = "🥈"; color = "#95a5a6"; }
+        else if(perc >= 50) { medal = "Bronze (Conceitos Básicos)"; icon = "🥉"; color = "#d35400"; }
 
         const classificarHabilidade = (acertosHab) => {
-            if(acertosHab >= 5) return `<span class="status-badge status-good">Forte</span>`;
-            if(acertosHab >= 3) return `<span class="status-badge status-warn">Médio</span>`;
-            return `<span class="status-badge status-bad">Fraco</span>`;
+            if(acertosHab >= 5) return `<span class="status-badge status-good">Avançado</span>`;
+            if(acertosHab >= 3) return `<span class="status-badge status-warn">Em Desenvolvimento</span>`;
+            return `<span class="status-badge status-bad">Requer Atenção</span>`;
         };
 
         let dicasSet = new Set();
         userAnswers.forEach((ans, i) => {
             if(ans !== questions[i].correct) {
-                if(i >= 0 && i <= 3) dicasSet.add("Estude a base da matéria: Lembre que Pitágoras só serve para triângulos retângulos e a hipotenusa é sempre o MAIOR lado.");
-                if(i === 4 || i === 5) dicasSet.add("Problemas com Diagonais: Para calcular a linha que corta um retângulo, eleve os lados ao quadrado e some-os (Pitágoras).");
-                if(i >= 6 && i <= 9) dicasSet.add("Conceitos: Seno é Oposto/Hipotenusa. Tangente é Oposto/Adjacente. Não esqueça que a hipotenusa nunca muda de lugar.");
-                if(i === 10 || i === 11) dicasSet.add("Frações Trigonométricas: Antes de montar a fração final, pare um segundo para circular quem é o cateto oposto, o vizinho e a hipotenusa daquele ângulo.");
+                if([0, 1, 4, 6, 7, 11].includes(i)) dicasSet.add("Revise o uso dos símbolos: ∈ e ∉ ligam ELEMENTO a CONJUNTO. ⊂ e ⊄ ligam CONJUNTO a CONJUNTO.");
+                if([2, 3, 5, 8, 9].includes(i)) dicasSet.add("Atenção às definições: N (Positivos e 0), Z (Positivos, 0 e Negativos), Q (Frações e Decimais) e I (Raízes não exatas). R é a junção de tudo!");
+                if([10].includes(i)) dicasSet.add("Lembre-se: Nem toda raiz é irracional. Resolva a raiz (ex: √25 = 5) antes de classificar o número.");
             }
         });
         let dicasHTML = '';
-        if(dicasSet.size === 0) dicasHTML = "<li>Excelente trabalho! Você compreendeu muito bem os mecanismos de resolução cobrados na prova.</li>";
+        if(dicasSet.size === 0) dicasHTML = "<li>Parabéns! Você tem um excelente domínio sobre o funcionamento e classificação dos conjuntos numéricos.</li>";
         else dicasSet.forEach(dica => dicasHTML += `<li>${dica}</li>`);
 
         let reviewHTML = '';
@@ -544,26 +464,19 @@
                     <p style="margin-bottom: 10px; font-weight: 500;">${q.text}</p>
                     <p><strong>Sua resposta:</strong> ${letters[userAnswers[i]]} - ${q.options[userAnswers[i]]}</p>
                     ${!isCorrect ? `<p><strong>Resposta Correta:</strong> ${letters[q.correct]} - ${q.options[q.correct]}</p>` : ''}
-                    <div class="explanation"><strong>Comentário de Estudo:</strong> ${q.explanation}</div>
+                    <div class="explanation"><strong>Comentário do Professor:</strong> ${q.explanation}</div>
                 </div>
             `;
         });
 
         const deg = (acertos / questions.length) * 360;
-        
-        // Mensagem visual confirmando que a nota foi enviada para o professor
-        const avisoSave = saveSuccess 
-            ? `<div class="save-notice">✅ Seus resultados foram registrados com sucesso e enviados ao professor!</div>` 
-            : ``;
 
         app.innerHTML = `
             <div class="fade-in">
                 <header>
-                    <h1>Relatório de ${studentName}</h1>
-                    <h2>Turma: ${studentClass}</h2>
+                    <h1>Relatório de Desempenho</h1>
+                    <h2>Lista de Exercícios: Conjuntos Numéricos</h2>
                 </header>
-
-                ${avisoSave}
 
                 <div class="dashboard-grid">
                     <div class="card summary-card">
@@ -592,18 +505,18 @@
                         <h3>Mapeamento de Habilidades</h3>
                         <table class="data-table">
                             <tr>
-                                <td><strong>Teorema de Pitágoras</strong><br><small>Habilidade EF.09.MAT.3.100</small></td>
+                                <td><strong>Compreensão dos Conjuntos</strong><br><small>Identificar as características de N, Z, Q, I e R</small></td>
                                 <td>${classificarHabilidade(hab1Acertos)}</td>
                             </tr>
                             <tr>
-                                <td><strong>Razões Trigonométricas</strong><br><small>Habilidade EF.09.MAT.2.96</small></td>
+                                <td><strong>Lógica e Símbolos (∈ e ⊂)</strong><br><small>Aplicar pertinência e inclusão corretamente</small></td>
                                 <td>${classificarHabilidade(hab2Acertos)}</td>
                             </tr>
                         </table>
                     </div>
 
                     <div class="card">
-                        <h3>Onde Focar os Estudos?</h3>
+                        <h3>Plano de Estudo Direcionado</h3>
                         <ul class="study-plan-list">
                             ${dicasHTML}
                         </ul>
@@ -611,15 +524,18 @@
                 </div>
 
                 <div class="card">
-                    <h3>Revisão Detalhada das Questões</h3>
+                    <h3>Gabarito Comentado</h3>
                     <div style="margin-top: 1.5rem;">
                         ${reviewHTML}
                     </div>
                 </div>
 
                 <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="startQuiz()">
+                        Refazer Exercícios
+                    </button>
                     <button class="btn" onclick="window.print()">
-                        Imprimir / Baixar PDF
+                        Imprimir / Salvar PDF
                     </button>
                 </div>
             </div>
