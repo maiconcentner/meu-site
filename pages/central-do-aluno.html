@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Central do Aluno com acesso rápido a questionários, conteúdos e canais de contato.">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Central do Aluno | Prof. Maicon Centner</title>
+
+    <link rel="stylesheet" href="../css/mobile-optimizations.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .hub-section { padding: 70px 0; }
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .hub-card {
+            border: 1px solid #dfe6ee;
+            border-radius: 14px;
+            padding: 18px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+        .hub-card h3 { color: #2c3e50; margin-bottom: 6px; }
+        .hub-card p { color: #526375; margin-bottom: 14px; }
+        .hub-tools {
+            margin-top: 30px;
+            border-top: 1px dashed #c9d4e0;
+            padding-top: 20px;
+        }
+        .tool-row {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+        .tool-card {
+            background: #f8fbff;
+            border: 1px solid #d7e8fb;
+            border-radius: 12px;
+            padding: 14px;
+        }
+        .tool-card h4 { margin-bottom: 8px; color: #1f4c7a; }
+        .hub-search { margin-top: 14px; }
+        .hub-search input {
+            width: 100%;
+            border: 1px solid #c9d4e0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+        }
+        .status-message {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #2e6f4f;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Prof. Maicon<span>Centner</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="ebooks.html">E-books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="questionarios.html">Questionários</a></li>
+                    <li><a href="central-do-aluno.html" class="active">Central do Aluno</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <h1>Central do Aluno</h1>
+                <p>Acesse rapidamente conteúdos, prática e canais de atendimento.</p>
+            </div>
+        </section>
+
+        <section class="hub-section">
+            <div class="container">
+                <h2>Atalhos rápidos</h2>
+                <p>Use a busca para filtrar o que precisa agora (ex.: "questionário", "orçamento", "blog").</p>
+
+                <div class="hub-search">
+                    <input id="hubSearch" type="search" placeholder="Buscar por página, assunto ou recurso..." aria-label="Buscar atalhos">
+                </div>
+
+                <div class="hub-grid" id="hubGrid">
+                    <article class="hub-card" data-keywords="questionarios aula prática matemática 9 ano">
+                        <h3>Questionários</h3>
+                        <p>Pratique com correção imediata, comentários e gabarito orientativo.</p>
+                        <a href="questionarios.html" class="btn btn-primary">Ir para questionários</a>
+                    </article>
+                    <article class="hub-card" data-keywords="orcamento contato whatsapp atendimento">
+                        <h3>Solicitar Orçamento</h3>
+                        <p>Envie seu pedido de aula, projeto ou resolução de exercícios.</p>
+                        <a href="orcamento.html" class="btn btn-primary">Abrir formulário</a>
+                    </article>
+                    <article class="hub-card" data-keywords="ebooks material estudo professor">
+                        <h3>E-books</h3>
+                        <p>Materiais com estratégias de ensino, IA e planejamento.</p>
+                        <a href="ebooks.html" class="btn btn-primary">Ver e-books</a>
+                    </article>
+                    <article class="hub-card" data-keywords="blog artigos estatistica matematica">
+                        <h3>Blog</h3>
+                        <p>Conteúdos para aprendizado contínuo e aplicação prática.</p>
+                        <a href="blog.html" class="btn btn-primary">Ler artigos</a>
+                    </article>
+                    <article class="hub-card" data-keywords="portfolio projetos automacao python excel">
+                        <h3>Portfólio</h3>
+                        <p>Exemplos de projetos acadêmicos e profissionais desenvolvidos.</p>
+                        <a href="portfolio.html" class="btn btn-primary">Ver portfólio</a>
+                    </article>
+                    <article class="hub-card" data-keywords="faq duvidas frequentes suporte">
+                        <h3>Perguntas Frequentes</h3>
+                        <p>Tire dúvidas sobre prazos, metodologia e formas de atendimento.</p>
+                        <a href="faq.html" class="btn btn-primary">Abrir FAQ</a>
+                    </article>
+                </div>
+
+                <div class="hub-tools">
+                    <h2>Ferramentas de gestão rápida</h2>
+                    <div class="tool-row">
+                        <div class="tool-card">
+                            <h4><i class="fab fa-whatsapp"></i> Mensagem rápida no WhatsApp</h4>
+                            <p>Abra o WhatsApp com mensagem pré-preenchida para agilizar seu atendimento.</p>
+                            <a class="btn btn-secondary" target="_blank" rel="noopener noreferrer" href="https://wa.me/5551980330822?text=Ol%C3%A1%20professor%2C%20quero%20ajuda%20com%20exatas.">Enviar mensagem</a>
+                        </div>
+                        <div class="tool-card">
+                            <h4><i class="fas fa-envelope"></i> Copiar e-mail de contato</h4>
+                            <p>Copie o e-mail para enviar materiais e orientações de forma organizada.</p>
+                            <button type="button" id="copyEmailBtn" class="btn btn-secondary">Copiar e-mail</button>
+                            <p class="status-message" id="copyStatus" aria-live="polite"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Maicon<span>Centner</span></h2>
+                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="portfolio.html">Portfólio</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="questionarios.html">Questionários</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="ebooks.html">E-books</a></li>
+                            <li><a href="central-do-aluno.html">Central do Aluno</a></li>
+                            <li><a href="orcamento.html">Orçamento</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Maicon Centner. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-optimizations.js"></script>
+    <script>
+        const searchInput = document.getElementById('hubSearch');
+        const cards = Array.from(document.querySelectorAll('#hubGrid .hub-card'));
+        const copyButton = document.getElementById('copyEmailBtn');
+        const copyStatus = document.getElementById('copyStatus');
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            cards.forEach((card) => {
+                const text = `${card.innerText} ${card.dataset.keywords || ''}`.toLowerCase();
+                card.style.display = query === '' || text.includes(query) ? '' : 'none';
+            });
+        });
+
+        copyButton.addEventListener('click', async function () {
+            const email = 'contato@sobreexatas.com.br';
+            try {
+                await navigator.clipboard.writeText(email);
+                copyStatus.textContent = `E-mail ${email} copiado com sucesso.`;
+            } catch (error) {
+                copyStatus.textContent = `Não foi possível copiar automaticamente. Use manualmente: ${email}`;
+            }
+        });
+    </script>
+</body>
+</html>
