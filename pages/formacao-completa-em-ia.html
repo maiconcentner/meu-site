@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="#0A0A0A">
     <meta name="description" content="Formação Completa em Inteligência Artificial para Pesquisa Acadêmica e Educação. Automatize seus processos com o Prof. Maicon Centner.">
+    <!-- Resolve o problema de carregamento infinito do Favicon -->
+    <link rel="icon" href="data:,">
     <title>Formação Premium em IA Educacional | Prof. Maicon Centner</title>
     
     <!-- CSS do seu ecossistema -->
@@ -16,13 +18,15 @@
     <link rel="stylesheet" href="../css/faq.css">
     <link rel="stylesheet" href="../css/portfolio.css">
     
-    <!-- Fontes e Ícones -->
+    <!-- Preconnect para carregar as fontes e ícones mais rápido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* =========================================================
-           DESIGN SYSTEM PREMIUM (Estilo Vercel, Linear, Stripe)
+           DESIGN SYSTEM PREMIUM (Estética Vercel, Linear)
            ========================================================= */
         :root {
             --font-premium: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,9 +39,8 @@
             --accent-purple: #4facfe;
         }
 
-        body { font-family: var(--font-premium); line-height: 1.6; margin: 0; padding: 0; }
+        body { font-family: var(--font-premium); line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* Tipografia Premium */
         .text-gradient {
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
@@ -45,7 +48,6 @@
             background-clip: text;
         }
         
-        /* Botões Premium */
         .btn-glow {
             background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
             color: white;
@@ -56,28 +58,24 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             box-shadow: 0 0 20px rgba(0, 97, 255, 0.4);
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
-        .btn-glow:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 97, 255, 0.6);
-            color: white;
-        }
+        .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 97, 255, 0.6); color: white; }
 
-        /* Hero Section Dark Mode */
         .hero-premium {
             background-color: var(--dark-bg);
             background-image: radial-gradient(circle at 50% 0%, rgba(79, 172, 254, 0.15), transparent 50%);
             color: var(--text-primary-dark);
             padding: 160px 20px 100px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
+        
         .hero-badge {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-glow);
@@ -93,105 +91,124 @@
             text-transform: uppercase;
         }
 
-        /* Social Proof Logos */
         .logos-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            opacity: 0.5;
-            filter: grayscale(100%);
-            font-size: 1.5rem;
-            font-weight: 600;
-            align-items: center;
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px;
+            opacity: 0.5; filter: grayscale(100%); font-size: 1.5rem; font-weight: 600; align-items: center;
         }
 
-        /* Bento Box Grid */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
+        .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
         .bento-card {
-            background: #fff;
-            border: 1px solid #eaeaea;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
+            background: #fff; border: 1px solid #eaeaea; border-radius: 16px; padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease;
         }
         .bento-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .bento-icon {
-            font-size: 2rem; margin-bottom: 20px; color: var(--accent-purple);
-        }
+        .bento-icon { font-size: 2rem; margin-bottom: 20px; color: var(--accent-purple); }
 
-        /* Comparison Table */
-        .comparison-table {
-            width: 100%; border-collapse: collapse; margin-top: 40px; background: white;
-            border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .comparison-table th, .comparison-table td { padding: 20px; text-align: left; border-bottom: 1px solid #eaeaea; }
-        .comparison-table th { background: #f9f9f9; font-weight: 600; font-size: 1.1rem; }
         .col-bad { color: #e74c3c; width: 50%; border-right: 1px solid #eaeaea; background: #fffbfb; }
         .col-good { color: #27ae60; width: 50%; background: #f4fdf8; font-weight: 500; }
 
-        /* Two Cards Grid (For Whom) */
         .two-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .card-yes { border: 2px solid var(--accent-cyan); background: #f0fbfc; border-radius: 16px; padding: 40px; }
         .card-no { border: 2px solid #e0e0e0; background: #f9f9f9; border-radius: 16px; padding: 40px; filter: grayscale(100%); }
-        @media (max-width: 768px) { .two-cards-grid { grid-template-columns: 1fr; } }
 
-        /* Pricing Area */
         .pricing-section { background-color: var(--dark-bg); color: white; padding: 100px 0; }
         .price-anchor { text-decoration: line-through; color: #888; font-size: 1.2rem; }
         .price-current { font-size: 3rem; font-weight: 700; color: white; margin: 10px 0; }
         .scarcity-bar { width: 100%; background: #333; height: 8px; border-radius: 4px; margin-top: 20px; overflow: hidden; }
         .scarcity-fill { width: 80%; background: #e74c3c; height: 100%; animation: pulse 2s infinite; }
 
-        /* Instructor B&W */
         .img-bw { filter: grayscale(100%) contrast(120%); border-radius: 16px; width: 100%; box-shadow: 20px 20px 0px rgba(0, 242, 254, 0.2); }
 
-        /* Utilities */
-        .text-center { text-align: center; }
-        .container-sm { max-width: 800px; margin: 0 auto; }
-        .mt-5 { margin-top: 50px; }
-        .mb-2 { margin-bottom: 10px; }
+        .container-sm { max-width: 900px; margin: 0 auto; }
+        
+        /* OTIMIZAÇÕES MOBILE ABSOLUTAS */
+        @media (max-width: 768px) {
+            .hero-premium { padding: 120px 15px 60px; }
+            section { padding: 60px 15px !important; }
+            h1 { font-size: 2rem !important; line-height: 1.2 !important; }
+            h2 { font-size: 1.7rem !important; line-height: 1.3 !important; }
+            .btn-glow { width: 100%; font-size: 1rem; padding: 16px 20px; }
+            
+            .logos-grid { gap: 15px; margin-top: 30px; font-size: 1.1rem; }
+            .logos-grid span { flex: 1 1 45%; text-align: center; }
+            
+            .bento-grid { grid-template-columns: 1fr; gap: 15px; }
+            .bento-card { padding: 20px; }
+            
+            /* Transforma a tabela comparativa em cartões para não quebrar a tela no celular */
+            .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td { display: block; width: 100%; }
+            .comparison-table thead { display: none; } /* Oculta o cabeçalho no mobile */
+            .comparison-table tr { margin-bottom: 20px; border: 1px solid #eaeaea; border-radius: 12px; overflow: hidden; }
+            .comparison-table td { padding: 15px; border-bottom: none; }
+            .col-bad { border-right: none; border-bottom: 1px dashed #ccc; }
+            .col-bad::before { content: "❌ Antes: "; font-weight: bold; }
+            .col-good::before { content: "✅ Com a Formação: "; font-weight: bold; }
+
+            .two-cards-grid { grid-template-columns: 1fr; gap: 20px; }
+            .card-yes, .card-no { padding: 25px; }
+            
+            .img-bw { box-shadow: 10px 10px 0px rgba(0, 242, 254, 0.2); margin-bottom: 20px; }
+            .instructor-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+            
+            .pricing-cards { flex-direction: column; gap: 20px; }
+            .pricing-card { width: 100% !important; max-width: 100% !important; margin: 0; }
+            .price-current { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 1. HERO SECTION (Dark Mode & Premium UI) -->
+    <!-- HEADER PADRÃO (Invisível/Minimalista no topo) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><h1>Prof. Maicon<span>Centner</span></h1></a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
     <section class="hero-premium">
         <div class="container container-sm">
             <div class="animate-fade-in-down">
                 <span class="hero-badge"><i class="fas fa-lock"></i> Vagas Abertas • Turmas Reduzidas</span>
             </div>
-            <h1 class="animate-fade-in" style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -1px;">
-                Domine a <span class="text-gradient">Inteligência Artificial</span> na Pesquisa e Automação
+            <h1 class="animate-fade-in" style="font-weight: 800; margin-bottom: 24px; letter-spacing: -1px;">
+                Domine a <span class="text-gradient">Inteligência Artificial</span> na Pesquisa e Automação Educacional
             </h1>
-            <p class="animate-fade-in delay-100" style="font-size: 1.25rem; color: var(--text-secondary-dark); margin-bottom: 40px; line-height: 1.6;">
+            <p class="animate-fade-in delay-100" style="font-size: 1.15rem; color: var(--text-secondary-dark); margin-bottom: 40px;">
                 Pare de perder centenas de horas com processos manuais. Do artigo científico livre de alucinações à criação de dashboards e tutores automatizados: desenvolva fluxos de trabalho éticos, críticos e altamente produtivos.
             </p>
             <div class="animate-fade-in delay-200">
                 <a href="#pricing" class="btn-glow">
-                    Multiplicar minha Produtividade <i class="fas fa-arrow-right"></i>
+                    Quero Multiplicar Minha Produtividade <i class="fas fa-arrow-right"></i>
                 </a>
-                <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">
                     <i class="fas fa-shield-alt"></i> Compra 100% segura • Garantia incondicional de 7 dias
                 </p>
             </div>
             
             <div class="logos-grid animate-fade-in delay-300">
-                <span style="font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Ferramentas que você vai dominar:</span>
-                <div style="display: flex; gap: 20px; justify-content: center; width: 100%;">
-                    <span><i class="fas fa-robot"></i> ChatGPT</span>
-                    <span><i class="fas fa-brain"></i> Gemini</span>
-                    <span><i class="fab fa-github"></i> GitHub</span>
-                    <span><i class="fas fa-search"></i> Perplexity</span>
-                    <span><i class="fas fa-code"></i> Copilot</span>
-                </div>
+                <div style="width: 100%; text-align: center; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;">Ferramentas que você vai dominar:</div>
+                <span><i class="fas fa-robot"></i> ChatGPT</span>
+                <span><i class="fas fa-brain"></i> Gemini</span>
+                <span><i class="fab fa-github"></i> GitHub</span>
+                <span><i class="fas fa-search"></i> Perplexity</span>
+                <span><i class="fas fa-code"></i> Copilot</span>
             </div>
         </div>
     </section>
@@ -202,18 +219,18 @@
             <h2 class="text-center animate-slide-up" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 40px;">
                 O modelo tradicional de pesquisa e ensino está <span style="color: #e74c3c;">esgotando você.</span>
             </h2>
-            <div class="animate-slide-up delay-100" style="font-size: 1.15rem; color: #444;">
+            <div class="animate-slide-up delay-100" style="font-size: 1.1rem; color: #444;">
                 <p>Se você é professor, pesquisador ou pós-graduando, sua rotina provavelmente se resume a uma luta constante contra o relógio:</p>
                 <ul style="list-style: none; padding: 0; margin: 30px 0;">
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px;">
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
                         <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
                         <span><strong>Você gasta madrugadas</strong> revisando literatura, formatando referências e estruturando artigos ou TCCs do zero.</span>
                     </li>
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px;">
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
                         <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
                         <span><strong>Você se frustra</strong> com tarefas repetitivas, corrigindo questionários manualmente e organizando planilhas despadronizadas.</span>
                     </li>
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px;">
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
                         <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
                         <span><strong>Você tem receio</strong> de usar IA e acabar caindo em alucinações, citações falsas ou problemas de integridade acadêmica (plágio).</span>
                     </li>
@@ -229,25 +246,25 @@
     <section style="padding: 100px 0; background: #FFFFFF;">
         <div class="container">
             <div class="text-center container-sm animate-fade-in">
-                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Esqueça comandos genéricos.<br>Desenvolva <span class="text-gradient">Fluxos de Trabalho Reais.</span></h2>
-                <p style="font-size: 1.1rem; color: #666;">A Formação Completa é um treinamento intensivo focado em resultados tangíveis. Não ensinamos apenas a "conversar" com robôs. Ensinamos você a construir um ecossistema digital que trabalha por você.</p>
+                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;">Esqueça comandos genéricos.<br>Desenvolva <span class="text-gradient">Fluxos de Trabalho Reais.</span></h2>
+                <p style="font-size: 1.1rem; color: #666;">A Formação Completa é um treinamento intensivo focado em resultados tangíveis. Não ensinamos apenas a "conversar" com robôs. Ensinamos você a construir um ecossistema digital.</p>
             </div>
             
             <div class="bento-grid animate-slide-up delay-100">
                 <div class="bento-card">
                     <i class="fas fa-rocket bento-icon"></i>
                     <h3>Produção Científica Acelerada</h3>
-                    <p style="color: #666; margin-top: 15px;">Escreva artigos, TCCs, dissertações e teses com ferramentas que auxiliam na argumentação, revisão e estruturação, mantendo 100% da sua autoria e ética.</p>
+                    <p style="color: #666; margin-top: 15px;">Escreva artigos, TCCs e dissertações com ferramentas que auxiliam na argumentação, revisão e estruturação, mantendo 100% da sua autoria.</p>
                 </div>
                 <div class="bento-card">
                     <i class="fas fa-cogs bento-icon"></i>
                     <h3>Automação de Ponta a Ponta</h3>
-                    <p style="color: #666; margin-top: 15px;">De questionários inteligentes no Google Forms a dashboards automatizados de notas e frequência. A tecnologia faz o trabalho braçal por você.</p>
+                    <p style="color: #666; margin-top: 15px;">De questionários inteligentes no Google Forms a dashboards automatizados de notas e frequência. A tecnologia faz o trabalho braçal.</p>
                 </div>
                 <div class="bento-card">
                     <i class="fas fa-shield-alt bento-icon"></i>
                     <h3>Segurança e Rigor Acadêmico</h3>
-                    <p style="color: #666; margin-top: 15px;">Aprenda técnicas avançadas para detectar alucinações das IAs, validar referências bibliográficas reais e garantir a integridade da sua pesquisa.</p>
+                    <p style="color: #666; margin-top: 15px;">Aprenda técnicas avançadas para detectar alucinações, validar referências bibliográficas reais e garantir a integridade da sua pesquisa.</p>
                 </div>
             </div>
         </div>
@@ -256,42 +273,40 @@
     <!-- 4. MÓDULOS -->
     <section style="padding: 100px 0; background: #F8FAFC;">
         <div class="container container-sm">
-            <h2 class="text-center" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;">A Estrutura da Formação <br><span style="font-size: 1.2rem; color: #666; font-weight: 500;">(16 Horas de Imersão Profunda)</span></h2>
+            <h2 class="text-center" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 40px;">A Estrutura da Formação <br><span style="font-size: 1.1rem; color: #666; font-weight: 500;">(16 Horas de Imersão Profunda)</span></h2>
             
             <!-- Módulo 1 -->
             <div class="bento-card animate-slide-up" style="margin-bottom: 30px; border-left: 6px solid var(--accent-purple);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin: 0;">MÓDULO 1: IA Aplicada à Pesquisa Acadêmica</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                    <h3 style="font-size: 1.3rem; margin: 0;">MÓDULO 1: IA Aplicada à Pesquisa Acadêmica</h3>
                     <span style="background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">8 Horas</span>
                 </div>
                 <p style="color: #666; font-style: italic; margin-bottom: 20px;">O fim do bloqueio criativo e da desorganização bibliográfica.</p>
                 <ul style="list-style: none; padding: 0;">
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Fundamentos Generativos:</strong> Engenharia de prompts para o método científico.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Stack de Pesquisa:</strong> Domínio do ChatGPT, Gemini, Perplexity, Copilot e NotebookLM.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Gestão de Literatura:</strong> Organização e revisão de literatura assistida por IA.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Escrita de Alto Nível:</strong> Estruturação de TCCs, dissertações, teses e artigos em tempo recorde.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Fundamentos Generativos:</strong> Engenharia de prompts para pesquisa científica.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Stack de Pesquisa:</strong> Domínio do ChatGPT, Gemini, Perplexity e NotebookLM.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Escrita de Alto Nível:</strong> Estruturação de TCCs, teses e artigos em tempo recorde.</li>
                     <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Revisão e Ética:</strong> Identificação de alucinações e referências inexistentes.</li>
                 </ul>
-                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                    <strong>🏆 Resultado:</strong> Redução de até 70% do tempo gasto com fichamentos e estruturação.
+                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem;">
+                    <strong>🏆 Resultado:</strong> Redução de até 70% do tempo gasto com fichamentos e estruturação bibliográfica.
                 </div>
             </div>
 
             <!-- Módulo 2 -->
             <div class="bento-card animate-slide-up delay-100" style="border-left: 6px solid var(--accent-cyan);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3 style="font-size: 1.5rem; margin: 0;">MÓDULO 2: Automação Educacional Avançada</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                    <h3 style="font-size: 1.3rem; margin: 0;">MÓDULO 2: Automação Educacional Avançada</h3>
                     <span style="background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">8 Horas</span>
                 </div>
                 <p style="color: #666; font-style: italic; margin-bottom: 20px;">Transforme sua gestão pedagógica em um sistema automatizado.</p>
                 <ul style="list-style: none; padding: 0;">
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Presença Digital:</strong> Criação de sites com IA e hospedagem GitHub Pages.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Ecossistema Google:</strong> Integração de Forms, Sheets e Apps Script para alunos.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência de Dados:</strong> Dashboards de acompanhamento pedagógico automatizados.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Engajamento e Trilhas:</strong> Questionários inteligentes e tutor digital guiado por IA.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência Visual:</strong> Napkin AI para fluxogramas e mapas mentais instantâneos.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Presença Digital:</strong> Criação de sites com IA e hospedagem no GitHub Pages.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Ecossistema Google:</strong> Integração de Forms, Sheets e Apps Script.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência de Dados:</strong> Dashboards de acompanhamento pedagógico.</li>
+                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência Visual:</strong> Napkin AI para fluxogramas e mapas mentais.</li>
                 </ul>
-                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem;">
                     <strong>🏆 Resultado:</strong> Eliminação do trabalho manual com notas, presenças e design de aulas.
                 </div>
             </div>
@@ -317,18 +332,14 @@
                     </tr>
                     <tr>
                         <td class="col-bad">Medo constante de plágio ou de usar IAs que inventam referências.</td>
-                        <td class="col-good">Uso de <strong>Perplexity</strong> e técnicas de mitigação para referências 100% reais.</td>
+                        <td class="col-good">Uso de <strong>Perplexity</strong> e mitigação para gerar referências 100% reais.</td>
                     </tr>
                     <tr>
                         <td class="col-bad">Inserir notas e dados de alunos manualmente em planilhas mortas.</td>
                         <td class="col-good">Sistemas automatizados integrando formulários a <strong>Dashboards</strong> ao vivo.</td>
                     </tr>
                     <tr>
-                        <td class="col-bad">Horas desenhando fluxogramas e mapas mentais no PowerPoint.</td>
-                        <td class="col-good">O <strong>Napkin AI</strong> transforma seus textos em diagramas profissionais em segundos.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-bad">Dificuldade técnica ou custos para ter seu próprio portal de aulas.</td>
+                        <td class="col-bad">Dificuldade técnica ou altos custos para ter seu próprio portal de aulas.</td>
                         <td class="col-good">Site educacional criado com IA e rodando de graça no <strong>GitHub Pages</strong>.</td>
                     </tr>
                 </tbody>
@@ -337,26 +348,26 @@
     </section>
 
     <!-- 6. PARA QUEM É -->
-    <section style="padding: 100px 0; background: #F8FAFC;">
-        <div class="container">
-            <h2 class="text-center" style="font-size: 2.5rem; font-weight: 800;">Esta formação é para você?</h2>
+    <section style="padding: 80px 0; background: #F8FAFC;">
+        <div class="container container-sm">
+            <h2 class="text-center" style="font-size: 2.2rem; font-weight: 800;">Esta formação é para você?</h2>
             
             <div class="two-cards-grid animate-fade-in">
                 <div class="card-yes">
-                    <h3 style="color: #27ae60; font-size: 1.5rem; margin-bottom: 20px;"><i class="fas fa-check"></i> PARA QUEM É</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="mb-2">✔️ <strong>Professores</strong> que desejam modernizar aulas e automatizar gestão.</li>
-                        <li class="mb-2">✔️ <strong>Pesquisadores e Pós-graduandos</strong> que precisam acelerar a escrita com rigor.</li>
-                        <li class="mb-2">✔️ <strong>Orientadores e Coordenadores</strong> que buscam acompanhar desempenho com dados.</li>
-                        <li class="mb-2">✔️ <strong>Gestores Educacionais</strong> focados em inovação e redução de processos.</li>
+                    <h3 style="color: #27ae60; font-size: 1.3rem; margin-bottom: 20px;"><i class="fas fa-check"></i> PARA QUEM É</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                        <li class="mb-2">✔️ <strong>Professores</strong> modernizando aulas.</li>
+                        <li class="mb-2">✔️ <strong>Pesquisadores / Pós-graduandos</strong> acelerando a escrita acadêmica.</li>
+                        <li class="mb-2">✔️ <strong>Coordenadores</strong> acompanhando dados.</li>
+                        <li class="mb-2">✔️ <strong>Gestores</strong> focados em inovação.</li>
                     </ul>
                 </div>
                 <div class="card-no">
-                    <h3 style="color: #7f8c8d; font-size: 1.5rem; margin-bottom: 20px;"><i class="fas fa-times"></i> PARA QUEM NÃO É</h3>
-                    <ul style="list-style: none; padding: 0; color: #666;">
-                        <li class="mb-2">❌ Pessoas procurando atalhos antiéticos para pedir que a IA "escreva o TCC inteiro".</li>
-                        <li class="mb-2">❌ Quem busca apenas aprender a "gerar imagens engraçadas" no ChatGPT.</li>
-                        <li class="mb-2">❌ Profissionais que não estão dispostos a aplicar as ferramentas na prática.</li>
+                    <h3 style="color: #7f8c8d; font-size: 1.3rem; margin-bottom: 20px;"><i class="fas fa-times"></i> PARA QUEM NÃO É</h3>
+                    <ul style="list-style: none; padding: 0; color: #666; font-size: 0.95rem;">
+                        <li class="mb-2">❌ Pessoas buscando atalhos antiéticos para a IA "escrever o TCC inteiro".</li>
+                        <li class="mb-2">❌ Quem quer apenas "brincar" com o ChatGPT.</li>
+                        <li class="mb-2">❌ Profissionais não dispostos a aplicar na prática.</li>
                     </ul>
                 </div>
             </div>
@@ -366,15 +377,16 @@
     <!-- 7. AUTORIDADE -->
     <section style="padding: 100px 0; background: #FFFFFF;">
         <div class="container container-sm">
-            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
+            <div class="instructor-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
                 <div class="animate-slide-up">
-                    <img src="../images/foto-maicon-perfil.jpg" alt="Prof. Maicon Centner" class="img-bw" onerror="this.src='https://via.placeholder.com/400x500/0A0A0A/FFFFFF?text=Maicon+Centner'">
+                    <!-- Imagem otimizada (sem link quebrado) -->
+                    <img src="../images/foto-maicon-perfil.jpg" alt="Prof. Maicon Centner" class="img-bw" style="background: #eee; min-height: 250px;">
                 </div>
                 <div class="animate-slide-up delay-100">
-                    <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Guiado por quem vive a academia na prática.</h2>
-                    <h3 style="color: var(--accent-purple); font-size: 1.2rem; margin-bottom: 20px;">Prof. Maicon Centner Germano</h3>
-                    <p style="color: #555; margin-bottom: 20px;">Não sou um "guru da internet". Sou um acadêmico e educador ativo, vivendo diariamente os mesmos desafios que você.</p>
-                    <ul style="list-style: none; padding: 0; color: #444;">
+                    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 10px;">Guiado por quem vive a academia na prática.</h2>
+                    <h3 style="color: var(--accent-purple); font-size: 1.1rem; margin-bottom: 20px;">Prof. Maicon Centner Germano</h3>
+                    <p style="color: #555; margin-bottom: 20px; font-size: 0.95rem;">Não sou um "guru da internet". Sou um acadêmico e educador ativo, vivendo diariamente os mesmos desafios que você.</p>
+                    <ul style="list-style: none; padding: 0; color: #444; font-size: 0.95rem;">
                         <li class="mb-2"><i class="fas fa-graduation-cap" style="color: #ccc; width: 25px;"></i> Mestrando em Biometria (Machine Learning) - UNESP</li>
                         <li class="mb-2"><i class="fas fa-chalkboard-teacher" style="color: #ccc; width: 25px;"></i> Professor de Matemática da Rede SESI-SP</li>
                         <li class="mb-2"><i class="fas fa-chart-line" style="color: #ccc; width: 25px;"></i> MBA em Matemática Financeira e Estatística</li>
@@ -387,55 +399,54 @@
 
     <!-- 8. OFERTA E INVESTIMENTO (Pricing) -->
     <section id="pricing" class="pricing-section">
-        <div class="container">
+        <div class="container container-sm">
             <div class="text-center animate-fade-in">
-                <h2 style="font-size: 2.5rem; font-weight: 800;">Escolha a modalidade ideal</h2>
-                <p style="color: var(--text-secondary-dark);">Formato Online ao vivo via Teams ou Presencial em instituições parceiras.</p>
+                <h2 style="font-size: 2.2rem; font-weight: 800;">Escolha a modalidade ideal</h2>
+                <p style="color: var(--text-secondary-dark);">Formato Online ao vivo via Teams ou Presencial in-company.</p>
             </div>
 
-            <div class="pricing-cards mt-5" style="align-items: center;">
-                <!-- Plano Individual (Âncora) -->
-                <div class="pricing-card animate-slide-up" style="background: var(--dark-surface); border: 1px solid #333; color: white;">
-                    <div class="card-header" style="background: transparent; border-bottom: 1px solid #333;">
-                        <h4 style="color: white; font-size: 1.3rem;">Formação Individual</h4>
-                        <p style="color: #888;">Para quem exige 100% de exclusividade</p>
+            <div class="pricing-cards mt-5" style="display: flex; gap: 30px; align-items: center; justify-content: center;">
+                <!-- Plano Individual -->
+                <div class="pricing-card animate-slide-up" style="flex: 1; background: var(--dark-surface); border: 1px solid #333; color: white; padding: 30px; border-radius: 16px;">
+                    <div style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
+                        <h4 style="color: white; font-size: 1.2rem; margin: 0;">Formação Individual</h4>
+                        <p style="color: #888; font-size: 0.9rem; margin: 5px 0 0;">Exclusividade total</p>
                         <div style="margin-top: 20px;">
                             <div class="price-anchor">R$ 3.500,00</div>
-                            <div class="price-current">R$ 2.400</div>
+                            <div class="price-current" style="font-size: 2.5rem;">R$ 2.400</div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="feature-item"><i class="fas fa-check" style="color:#555;"></i> Carga horária: 16 horas</div>
-                        <div class="feature-item"><i class="fas fa-check" style="color:#555;"></i> Atendimento 100% personalizado</div>
-                        <div class="feature-item"><i class="fas fa-check" style="color:#555;"></i> Projeto aplicado à sua realidade</div>
-                        <div class="feature-item"><i class="fas fa-check" style="color:#555;"></i> Flexibilidade de agenda</div>
+                    <div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Carga horária: 16 horas</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Atendimento 100% personalizado</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Projeto aplicado à sua realidade</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Flexibilidade de agenda</div>
                         <div class="mt-5 text-center">
-                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero informações sobre a Formação Individual." target="_blank" style="color: white; border: 1px solid #555; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: block;">Solicitar Individual</a>
+                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero informações sobre a Formação Individual." target="_blank" style="color: white; border: 1px solid #555; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: block; font-size: 0.95rem;">Solicitar Individual</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Plano Premium (Destaque) -->
-                <div class="pricing-card popular animate-slide-up delay-100" style="background: linear-gradient(180deg, #111111 0%, #1a1a2e 100%); border: 2px solid var(--accent-cyan); transform: scale(1.05); color: white; position: relative;">
-                    <div class="popular-tag" style="background: var(--accent-cyan); color: #000; font-weight: 800;">⭐ MELHOR CUSTO-BENEFÍCIO</div>
-                    <div class="card-header" style="background: transparent; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                        <h4 style="color: white; font-size: 1.5rem;">Turma Premium</h4>
-                        <p style="color: var(--accent-cyan);">Atenção aos detalhes e networking</p>
+                <!-- Plano Premium -->
+                <div class="pricing-card popular animate-slide-up delay-100" style="flex: 1.1; background: linear-gradient(180deg, #111111 0%, #0a192f 100%); border: 2px solid var(--accent-cyan); color: white; padding: 30px; border-radius: 16px; position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-cyan); color: #000; font-weight: 800; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; white-space: nowrap;">⭐ MELHOR CUSTO-BENEFÍCIO</div>
+                    <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 20px; padding-top: 10px;">
+                        <h4 style="color: white; font-size: 1.4rem; margin: 0;">Turma Premium</h4>
+                        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin: 5px 0 0;">Atenção aos detalhes e networking</p>
                         <div style="margin-top: 20px;">
                             <div class="price-anchor">R$ 2.400,00</div>
                             <div class="price-current">R$ 1.197<span style="font-size: 1rem; color:#888; font-weight:400;">/pessoa</span></div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="feature-item"><i class="fas fa-check text-gradient"></i> Turma ultrarreduzida (máx. 5 pessoas)</div>
-                        <div class="feature-item"><i class="fas fa-check text-gradient"></i> Acompanhamento próximo do instrutor</div>
-                        <div class="feature-item"><i class="fas fa-check text-gradient"></i> Interação com outros pesquisadores</div>
-                        <div class="feature-item"><i class="fas fa-check text-gradient"></i> Projetos reais desenvolvidos no grupo</div>
-                        <div class="feature-item"><i class="fas fa-check text-gradient"></i> Acesso a repositórios e códigos</div>
+                    <div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Turma reduzida (máx. 5 pessoas)</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Acompanhamento próximo do instrutor</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Projetos reais desenvolvidos no grupo</div>
+                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Acesso a repositórios e códigos</div>
                         
                         <div class="mt-5 text-center">
-                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero garantir minha vaga na Turma Premium." target="_blank" class="btn-glow" style="width: 100%; justify-content: center;">
-                                Garantir Minha Vaga
+                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero garantir minha vaga na Turma Premium." target="_blank" class="btn-glow" style="width: 100%; box-sizing: border-box;">
+                                Garantir Vaga
                             </a>
                         </div>
                         
@@ -453,96 +464,72 @@
     <!-- 9. GARANTIA -->
     <section style="padding: 80px 0; background: #050505; color: white;">
         <div class="container container-sm text-center animate-fade-in">
-            <i class="fas fa-shield-check" style="font-size: 4rem; color: #f1c40f; margin-bottom: 20px;"></i>
-            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">Garantia Incondicional de 7 Dias.</h2>
-            <p style="font-size: 1.1rem; color: #aaa; max-width: 600px; margin: 0 auto;">
-                Eu confio tanto no poder transformador dessa formação que assumo todo o risco. Se em até 7 dias você participar das aulas e achar que o conteúdo não vai economizar centenas de horas da sua vida acadêmica, basta enviar um e-mail. Devolvo 100% do seu investimento. Sem burocracia.
+            <i class="fas fa-shield-check" style="font-size: 3.5rem; color: #f1c40f; margin-bottom: 20px;"></i>
+            <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">Garantia Incondicional de 7 Dias.</h2>
+            <p style="font-size: 1rem; color: #aaa; max-width: 600px; margin: 0 auto;">
+                Eu confio tanto no poder transformador dessa formação que assumo todo o risco. Se em até 7 dias você participar das aulas e achar que o conteúdo não vai economizar centenas de horas da sua vida, basta enviar um e-mail e devolvo 100% do seu investimento.
             </p>
         </div>
     </section>
 
     <!-- 10. FAQ -->
-    <section class="faq-section" style="padding: 100px 0; background: #FAFAFA;">
+    <section class="faq-section" style="padding: 80px 0; background: #FAFAFA;">
         <div class="container container-sm">
             <div class="section-header text-center animate-fade-in">
-                <h2>Perguntas Frequentes</h2>
+                <h2 style="font-size: 2rem;">Perguntas Frequentes</h2>
             </div>
             
-            <div class="faq-container animate-slide-up">
-                <!-- FAQ 1-5 -->
-                <div class="faq-item active">
-                    <div class="faq-question"><h3>1. A formação é ao vivo ou gravada?</h3><span class="faq-toggle"><i class="fas fa-minus"></i></span></div>
-                    <div class="faq-answer" style="max-height: 1000px; opacity: 1; padding: 5px 30px 30px;"><p>A formação acontece online e totalmente ao vivo via Microsoft Teams, garantindo interação em tempo real, ou presencial em instituições parceiras.</p></div>
+            <div class="faq-container animate-slide-up" style="margin-top: 40px;">
+                <!-- FAQ Itens adaptados do faq.css do usuário -->
+                <div class="faq-item active" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>1. A formação é ao vivo ou gravada?</span><i class="fas fa-minus faq-toggle-icon" style="color: #888;"></i>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 20px 20px; color: #666; font-size: 0.95rem;">
+                        <p>A formação acontece online e totalmente ao vivo via Microsoft Teams, garantindo interação em tempo real, ou presencial em instituições parceiras.</p>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>2. Qual é a carga horária total?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>São 16 horas de conteúdo profundo e prático, divididas estrategicamente em 2 módulos.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>3. Se eu faltar uma aula online, poderei assistir depois?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Sim! Mediante autorização da turma, as aulas ao vivo são gravadas e o link é disponibilizado para revisão posterior.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>4. Eu preciso saber programação para participar?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Absolutamente não. O curso é construído do zero. Ferramentas como o GitHub Pages e Apps Script serão ensinadas passo a passo, de forma visual e amigável.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>5. A IA não corre o risco de cometer plágio no meu TCC/Artigo?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Esse é exatamente o diferencial deste curso. Ensinaremos métodos éticos de engenharia de prompts, focados em revisão, estruturação e ideação, além de técnicas para mitigar alucinações. A autoria será sempre 100% sua.</p></div>
-                </div>
-                <!-- FAQ 6-10 -->
-                <div class="faq-item">
-                    <div class="faq-question"><h3>6. Sou de Humanas/Saúde, o curso serve para mim?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Sim. A automação educacional e as estratégias de pesquisa (revisão de literatura, análise de referências) se aplicam a todas as áreas do conhecimento.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>7. Preciso assinar o ChatGPT Plus ou outra IA paga?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Não é obrigatório. Demonstraremos as capacidades das versões gratuitas e pagas, e mostraremos como usar ferramentas como Copilot e Gemini, que possuem recursos premium gratuitos.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>8. Como funciona a Turma Premium?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Para garantir qualidade extrema, limitamos a turma a apenas 5 pessoas. Assim, consigo dar atenção a cada projeto e tirar todas as dúvidas em tempo real.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>9. Receberei algum material de apoio?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Sim! Você terá acesso a um repositório exclusivo contendo exemplos práticos, modelos de prompts, códigos de automação e materiais complementares digitais.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>10. A automação no Google (Forms, Sheets) tem custo adicional?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Não. Utilizaremos o ecossistema gratuito do Google, potencializado por códigos que você aprenderá a implementar.</p></div>
-                </div>
-                <!-- FAQ 11-15 -->
-                <div class="faq-item">
-                    <div class="faq-question"><h3>11. Como o Napkin AI vai me ajudar?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>É uma ferramenta revolucionária que transforma seus textos e ideias em mapas mentais, diagramas e fluxogramas profissionais em segundos, ideais para slides e artigos.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>12. Posso parcelar o valor do curso?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Sim, você encontrará opções de parcelamento via cartão de crédito para adequar o investimento à sua realidade.</p></div>
+                
+                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>2. A IA não corre o risco de cometer plágio no meu TCC?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
+                        <p style="padding-bottom: 20px;">Esse é exatamente o diferencial. Ensinaremos métodos éticos de engenharia de prompts, focados em revisão, estruturação e mitigação de alucinações. A autoria será sempre 100% sua.</p>
+                    </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question"><h3>13. Posso levar a formação para os professores da minha instituição?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Sim! Oferecemos o formato presencial ou fechado para instituições parceiras. Basta entrar em contato pelo suporte para formatarmos o escopo.</p></div>
+                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>3. Preciso assinar o ChatGPT Plus ou pagar outras IAs?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
+                        <p style="padding-bottom: 20px;">Não é obrigatório. Demonstraremos as capacidades das versões gratuitas e pagas, e mostraremos como usar ferramentas como Copilot e Gemini, que possuem recursos premium gratuitos.</p>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question"><h3>14. E se eu me arrepender da compra?</h3><span class="faq-toggle"><i class="fas fa-plus"></i></span></div>
-                    <div class="faq-answer"><p>Você está protegido por nossa garantia incondicional de 7 dias. Risco zero para você.</p></div>
+
+                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>4. Como o Napkin AI vai me ajudar?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
+                        <p style="padding-bottom: 20px;">É uma ferramenta revolucionária que transforma seus textos e ideias em mapas mentais, diagramas e fluxogramas profissionais em segundos, ideais para slides e artigos.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 11. FECHAMENTO & CTA FINAL -->
-    <section style="padding: 120px 0; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); color: white; text-align: center;">
+    <section style="padding: 100px 15px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); color: white; text-align: center;">
         <div class="container container-sm animate-slide-up">
-            <h2 style="font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px;">O relógio não para.<br>A tecnologia não espera.</h2>
-            <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                Enquanto você passa horas em tarefas repetitivas, outros pesquisadores já estão utilizando a IA para acelerar publicações e criar aulas inovadoras.<br><br>
+            <h2 style="font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">O relógio não para.<br>A tecnologia não espera.</h2>
+            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                Enquanto você passa horas em tarefas repetitivas, outros pesquisadores já estão utilizando a IA para acelerar publicações.<br><br>
                 <strong>As turmas Premium fecham ao atingir exatamente 5 inscritos.</strong>
             </p>
-            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Vim pelo final da página e quero reservar minha vaga AGORA." target="_blank" style="background: #0A0A0A; color: white; padding: 20px 40px; font-size: 1.3rem; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
-                QUERO RESERVAR MINHA VAGA AGORA
+            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Vim pelo final da página e quero reservar minha vaga AGORA." target="_blank" style="background: #0A0A0A; color: white; padding: 18px 30px; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; box-sizing: border-box; max-width: 400px;">
+                RESERVAR MINHA VAGA AGORA
             </a>
         </div>
     </section>
@@ -550,50 +537,61 @@
     <!-- Footer Padrão do site -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
+            <div class="footer-content text-center">
+                <div class="footer-logo" style="margin: 0 auto;">
                     <h2>Prof. Maicon<span>Centner</span></h2>
-                    <p>Sobre Exatas - Soluções personalizadas para sua vida acadêmica e profissional</p>
+                    <p style="font-size: 0.9rem;">Soluções personalizadas para sua vida acadêmica e profissional</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Prof. Maicon Centner. Todos os direitos reservados.</p>
+            <div class="footer-bottom text-center">
+                <p style="font-size: 0.85rem;">&copy; 2026 Prof. Maicon Centner. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts do seu ecossistema -->
+    <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script src="../js/mobile-optimizations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Lógica do Accordion do FAQ (Aproveitando sua estrutura do faq.css)
+            // Lógica do Accordion do FAQ simplificada para o novo layout
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.faq-toggle i');
+                const icon = item.querySelector('.faq-toggle-icon');
                 
                 question.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
                     
-                    // Fechar todos
+                    // Fecha todos
                     faqItems.forEach(faq => {
                         faq.classList.remove('active');
-                        faq.querySelector('.faq-answer').style.maxHeight = null;
-                        faq.querySelector('.faq-answer').style.opacity = 0;
-                        faq.querySelector('.faq-toggle i').classList.replace('fa-minus', 'fa-plus');
+                        const ans = faq.querySelector('.faq-answer');
+                        const ico = faq.querySelector('.faq-toggle-icon');
+                        if(ans) { ans.style.maxHeight = null; ans.style.opacity = 0; }
+                        if(ico) { ico.classList.replace('fa-minus', 'fa-plus'); }
                     });
                     
-                    // Abrir o clicado se não estava ativo
+                    // Abre o clicado
                     if (!isActive) {
                         item.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + 50 + "px";
+                        answer.style.maxHeight = answer.scrollHeight + "px";
                         answer.style.opacity = 1;
                         icon.classList.replace('fa-plus', 'fa-minus');
                     }
                 });
             });
+
+            // Menu Mobile Toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navList.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>
