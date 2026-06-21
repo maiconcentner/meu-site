@@ -234,6 +234,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.body.removeChild(modal);
                 }
             });
+            
+            // Fechar com a tecla ESC
+            const escListener = function(e) {
+                if (e.key === 'Escape' && document.body.contains(modal)) {
+                    document.body.removeChild(modal);
+                    document.removeEventListener('keydown', escListener);
+                }
+            };
+            document.addEventListener('keydown', escListener);
         });
     });
     

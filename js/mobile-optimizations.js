@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!ticking) {
             window.requestAnimationFrame(function() {
                 // Verificar posição de rolagem para efeitos
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
                 
                 // Adicionar classe à header quando rolar
                 const header = document.querySelector('.header');
