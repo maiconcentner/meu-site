@@ -1,598 +1,876 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#0A0A0A">
-    <meta name="description" content="Formação Completa em Inteligência Artificial para Pesquisa Acadêmica e Educação. Automatize seus processos com o Prof. Maicon Centner.">
-    <!-- Resolve o problema de carregamento infinito do Favicon -->
-    <link rel="icon" href="data:,">
-    <title>Formação Premium em IA Educacional | Prof. Maicon Centner</title>
-    
-    <!-- CSS do seu ecossistema -->
-    <link rel="stylesheet" href="../css/mobile-optimizations.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="../css/faq.css">
-    <link rel="stylesheet" href="../css/portfolio.css">
-    
-    <!-- Preconnect para carregar as fontes e ícones mais rápido -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =========================================================
-           DESIGN SYSTEM PREMIUM (Estética Vercel, Linear)
-           ========================================================= */
-        :root {
-            --font-premium: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --dark-bg: #0A0A0A;
-            --dark-surface: #111111;
-            --border-glow: rgba(255, 255, 255, 0.1);
-            --text-primary-dark: #FFFFFF;
-            --text-secondary-dark: #888888;
-            --accent-cyan: #00f2fe;
-            --accent-purple: #4facfe;
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formação Completa em IA para Pesquisa Acadêmica e Educação | Prof. Maicon Centner</title>
+  <meta name="description" content="Formação premium em Inteligência Artificial para professores, pesquisadores e pós-graduandos. ChatGPT, Gemini, Perplexity, NotebookLM, automação com Google Apps Script, dashboards e sites educacionais."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root{
+      --font-premium:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      --dark-bg:#0A0A0A;
+      --dark-surface:#111111;
+      --dark-surface2:#181818;
+      --border-glow:rgba(255,255,255,0.1);
+      --text-primary-dark:#FFFFFF;
+      --text-secondary-dark:#888888;
+      --accent-cyan:#00f2fe;
+      --accent-purple:#4facfe;
+      --accent-gradient:linear-gradient(135deg,#0061ff 0%,#60efff 100%);
+      --red:#e74c3c;
+      --green:#27ae60;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-premium);line-height:1.6;background:#fff;color:#222;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+    .container-sm{max-width:860px;margin:0 auto;padding:0 24px;}
+    .text-center{text-align:center;}
+    .mb-2{margin-bottom:12px;}
+    .mt-5{margin-top:28px;}
 
-        body { font-family: var(--font-premium); line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .btn-glow {
-            background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
-            color: white;
-            padding: 16px 36px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 0 20px rgba(0, 97, 255, 0.4);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 97, 255, 0.6); color: white; }
+    /* ── GRADIENT TEXT ── */
+    .text-gradient{
+      background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
 
-        .hero-premium {
-            background-color: var(--dark-bg);
-            background-image: radial-gradient(circle at 50% 0%, rgba(79, 172, 254, 0.15), transparent 50%);
-            color: var(--text-primary-dark);
-            padding: 160px 20px 100px;
-            text-align: center;
-        }
-        
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-glow);
-            backdrop-filter: blur(10px);
-            color: #ccc;
-            padding: 8px 24px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    /* ── BUTTONS ── */
+    .btn-glow{
+      background:var(--accent-gradient);color:#fff;
+      padding:16px 36px;border-radius:10px;font-weight:700;font-size:1.05rem;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      box-shadow:0 0 24px rgba(0,97,255,.45);transition:all .3s ease;border:none;cursor:pointer;
+    }
+    .btn-glow:hover{transform:translateY(-3px);box-shadow:0 0 36px rgba(0,97,255,.65);color:#fff;}
+    .btn-outline-dark{
+      background:transparent;color:#fff;
+      padding:14px 28px;border-radius:10px;font-weight:600;font-size:1rem;
+      border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;gap:8px;
+      transition:all .3s ease;
+    }
+    .btn-outline-dark:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);}
 
-        .logos-grid {
-            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px;
-            opacity: 0.5; filter: grayscale(100%); font-size: 1.5rem; font-weight: 600; align-items: center;
-        }
+    /* ── HEADER ── */
+    .site-header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(10,10,10,.85);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .site-header .container{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:68px;gap:16px;
+    }
+    .logo-text{font-weight:800;font-size:1.1rem;color:#fff;}
+    .logo-text span{color:var(--accent-cyan);}
+    .header-cta{display:flex;align-items:center;gap:14px;}
+    .header-cta .badge{color:rgba(255,255,255,.55);font-size:.88rem;}
 
-        .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
-        .bento-card {
-            background: #fff; border: 1px solid #eaeaea; border-radius: 16px; padding: 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease;
-        }
-        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .bento-icon { font-size: 2rem; margin-bottom: 20px; color: var(--accent-purple); }
+    /* ── HERO ── */
+    .hero-premium{
+      background-color:var(--dark-bg);
+      background-image:radial-gradient(ellipse at 50% -10%,rgba(79,172,254,.22),transparent 58%);
+      color:#fff;padding:140px 24px 100px;text-align:center;
+    }
+    .hero-badge{
+      background:rgba(255,255,255,.06);border:1px solid var(--border-glow);
+      backdrop-filter:blur(10px);color:#ccc;padding:9px 22px;border-radius:100px;
+      font-size:.84rem;font-weight:600;display:inline-block;margin-bottom:28px;
+      letter-spacing:.08em;text-transform:uppercase;
+    }
+    .hero-premium h1{
+      font-weight:900;font-size:clamp(2.4rem,5.5vw,4.6rem);
+      line-height:1.0;letter-spacing:-.04em;margin-bottom:24px;
+    }
+    .hero-premium .sub{
+      font-size:1.12rem;color:var(--text-secondary-dark);
+      max-width:680px;margin:0 auto 40px;line-height:1.7;
+    }
+    .hero-safety{margin-top:16px;font-size:.84rem;color:#666;}
+    .hero-safety i{margin-right:6px;}
+    .logos-grid{
+      display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+      margin-top:56px;opacity:.45;filter:grayscale(100%);
+      font-size:1rem;font-weight:700;align-items:center;color:#fff;
+    }
+    .logos-grid .label{
+      width:100%;text-align:center;margin-bottom:12px;
+      font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;opacity:.6;
+    }
+    .logos-grid span{display:flex;align-items:center;gap:7px;}
 
-        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .comparison-table th, .comparison-table td { padding: 20px; text-align: left; border-bottom: 1px solid #eaeaea; }
-        .col-bad { color: #e74c3c; width: 50%; border-right: 1px solid #eaeaea; background: #fffbfb; }
-        .col-good { color: #27ae60; width: 50%; background: #f4fdf8; font-weight: 500; }
+    /* ── SECTIONS LIGHT ── */
+    .section-light{padding:96px 0;background:#fafafa;}
+    .section-white{padding:96px 0;background:#fff;}
+    .section-dark{padding:96px 0;background:var(--dark-bg);color:#fff;}
+    .section-dark2{padding:96px 0;background:#050505;color:#fff;}
 
-        .two-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .card-yes { border: 2px solid var(--accent-cyan); background: #f0fbfc; border-radius: 16px; padding: 40px; }
-        .card-no { border: 2px solid #e0e0e0; background: #f9f9f9; border-radius: 16px; padding: 40px; filter: grayscale(100%); }
+    .section-eyebrow{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:7px 14px;border-radius:999px;
+      background:rgba(79,172,254,.1);color:var(--accent-purple);
+      font-size:.82rem;font-weight:700;letter-spacing:.04em;
+      margin-bottom:18px;border:1px solid rgba(79,172,254,.18);
+    }
+    h2.section-title{
+      font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:800;
+      line-height:1.08;letter-spacing:-.03em;margin-bottom:18px;
+    }
+    .section-sub{font-size:1.05rem;color:#666;max-width:680px;margin-bottom:48px;}
 
-        .pricing-section { background-color: var(--dark-bg); color: white; padding: 100px 0; }
-        .price-anchor { text-decoration: line-through; color: #888; font-size: 1.2rem; }
-        .price-current { font-size: 3rem; font-weight: 700; color: white; margin: 10px 0; }
-        .scarcity-bar { width: 100%; background: #333; height: 8px; border-radius: 4px; margin-top: 20px; overflow: hidden; }
-        .scarcity-fill { width: 80%; background: #e74c3c; height: 100%; animation: pulse 2s infinite; }
+    /* ── PAIN LIST ── */
+    .pain-list{list-style:none;padding:0;margin:28px 0;}
+    .pain-list li{
+      display:flex;gap:16px;align-items:flex-start;
+      margin-bottom:20px;font-size:1.05rem;color:#444;
+    }
+    .pain-list li i{color:var(--red);font-size:1.3rem;margin-top:3px;flex-shrink:0;}
+    .pain-quote{
+      background:#fff;padding:24px 28px;
+      border-left:4px solid var(--red);border-radius:0 10px 10px 0;
+      box-shadow:0 4px 18px rgba(0,0,0,.05);font-size:1rem;color:#444;line-height:1.7;
+    }
 
-        .img-bw { filter: grayscale(100%) contrast(120%); border-radius: 16px; width: 100%; box-shadow: 20px 20px 0px rgba(0, 242, 254, 0.2); }
+    /* ── BENTO GRID ── */
+    .bento-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:40px;}
+    .bento-card{
+      background:#fff;border:1px solid #eaeaea;border-radius:18px;padding:32px;
+      box-shadow:0 4px 22px rgba(0,0,0,.04);transition:all .3s ease;
+    }
+    .bento-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,.09);}
+    .bento-icon{font-size:2rem;margin-bottom:20px;color:var(--accent-purple);}
+    .bento-card h3{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:#111;}
+    .bento-card p{color:#666;font-size:.97rem;line-height:1.7;}
 
-        .container-sm { max-width: 900px; margin: 0 auto; }
-        
-        /* OTIMIZAÇÕES MOBILE ABSOLUTAS */
-        @media (max-width: 768px) {
-            .hero-premium { padding: 120px 15px 60px; }
-            section { padding: 60px 15px !important; }
-            h1 { font-size: 2rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.7rem !important; line-height: 1.3 !important; }
-            .btn-glow { width: 100%; font-size: 1rem; padding: 16px 20px; }
-            
-            .logos-grid { gap: 15px; margin-top: 30px; font-size: 1.1rem; }
-            .logos-grid span { flex: 1 1 45%; text-align: center; }
-            
-            .bento-grid { grid-template-columns: 1fr; gap: 15px; }
-            .bento-card { padding: 20px; }
-            
-            /* Transforma a tabela comparativa em cartões para não quebrar a tela no celular */
-            .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td { display: block; width: 100%; }
-            .comparison-table thead { display: none; } /* Oculta o cabeçalho no mobile */
-            .comparison-table tr { margin-bottom: 20px; border: 1px solid #eaeaea; border-radius: 12px; overflow: hidden; }
-            .comparison-table td { padding: 15px; border-bottom: none; }
-            .col-bad { border-right: none; border-bottom: 1px dashed #ccc; }
-            .col-bad::before { content: "❌ Antes: "; font-weight: bold; }
-            .col-good::before { content: "✅ Com a Formação: "; font-weight: bold; }
+    /* ── MÓDULOS ── */
+    .module-card{
+      background:#fff;border:1px solid #eaeaea;border-radius:18px;padding:32px;
+      margin-bottom:28px;box-shadow:0 4px 22px rgba(0,0,0,.04);
+    }
+    .module-card.m1{border-left:5px solid var(--accent-purple);}
+    .module-card.m2{border-left:5px solid var(--accent-cyan);}
+    .module-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+    .module-header h3{font-size:1.2rem;font-weight:800;color:#111;margin:0;}
+    .module-tag{background:#f1f5f9;padding:6px 14px;border-radius:20px;font-weight:700;font-size:.88rem;color:#555;}
+    .module-subtitle{color:#888;font-style:italic;margin-bottom:18px;font-size:.95rem;}
+    .check-list{list-style:none;padding:0;}
+    .check-list li{
+      display:flex;align-items:flex-start;gap:12px;
+      margin-bottom:12px;font-size:.97rem;color:#444;
+    }
+    .check-list li i{
+      background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;font-size:1rem;flex-shrink:0;margin-top:3px;
+    }
+    .module-result{
+      background:rgba(0,242,254,.06);padding:16px 18px;border-radius:10px;
+      margin-top:20px;font-size:.95rem;color:#333;border:1px solid rgba(0,242,254,.15);
+    }
 
-            .two-cards-grid { grid-template-columns: 1fr; gap: 20px; }
-            .card-yes, .card-no { padding: 25px; }
-            
-            .img-bw { box-shadow: 10px 10px 0px rgba(0, 242, 254, 0.2); margin-bottom: 20px; }
-            .instructor-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-            
-            .pricing-cards { flex-direction: column; gap: 20px; }
-            .pricing-card { width: 100% !important; max-width: 100% !important; margin: 0; }
-            .price-current { font-size: 2.5rem; }
-        }
-    </style>
+    /* ── COMPARISON TABLE ── */
+    .comparison-table{width:100%;border-collapse:collapse;margin-top:40px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,.06);}
+    .comparison-table th,.comparison-table td{padding:20px 24px;text-align:left;border-bottom:1px solid #eaeaea;font-size:.97rem;}
+    .comparison-table thead th{font-weight:800;font-size:1rem;}
+    .col-bad{color:var(--red);width:50%;border-right:1px solid #eaeaea;background:#fffbfb;}
+    .col-good{color:var(--green);width:50%;background:#f4fdf8;font-weight:500;}
+
+    /* ── FOR WHO ── */
+    .two-cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px;}
+    .card-yes{border:2px solid var(--accent-cyan);background:rgba(0,242,254,.04);border-radius:18px;padding:36px;}
+    .card-no{border:2px solid #e0e0e0;background:#f9f9f9;border-radius:18px;padding:36px;filter:grayscale(60%);}
+    .card-yes h3{color:var(--green);font-size:1.1rem;margin-bottom:20px;}
+    .card-no h3{color:#999;font-size:1.1rem;margin-bottom:20px;}
+    .two-cards-grid ul{list-style:none;padding:0;font-size:.95rem;color:#444;}
+    .two-cards-grid li{margin-bottom:12px;}
+
+    /* ── TOOLS BAND ── */
+    .tools-band{
+      display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+      padding:36px 24px;background:var(--dark-surface);border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .tool-chip{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+      color:#ddd;font-size:.9rem;font-weight:600;
+    }
+    .tool-chip i{color:var(--accent-cyan);}
+
+    /* ── INSTRUCTOR ── */
+    .instructor-grid{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;}
+    .img-bw{
+      filter:grayscale(100%) contrast(115%);border-radius:18px;width:100%;
+      box-shadow:16px 16px 0 rgba(0,242,254,.2);background:#1a1a1a;min-height:300px;
+      object-fit:cover;
+    }
+    .instructor-creds{list-style:none;padding:0;margin-top:20px;}
+    .instructor-creds li{
+      display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:.97rem;color:#555;
+    }
+    .instructor-creds li i{color:#bbb;width:22px;flex-shrink:0;margin-top:3px;}
+
+    /* ── BONUS ── */
+    .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:36px;}
+    .bonus-card{
+      background:var(--dark-surface);border:1px solid rgba(255,255,255,.08);border-radius:18px;
+      padding:28px;color:#fff;
+    }
+    .bonus-card .bonus-icon{font-size:1.8rem;margin-bottom:14px;}
+    .bonus-card h4{font-size:1rem;font-weight:700;margin-bottom:10px;color:#fff;}
+    .bonus-card p{color:#888;font-size:.92rem;}
+
+    /* ── PRICING ── */
+    .pricing-section{background:var(--dark-bg);padding:100px 0;color:#fff;}
+    .pricing-cards{display:flex;gap:26px;align-items:stretch;justify-content:center;margin-top:48px;flex-wrap:wrap;}
+    .pricing-card{
+      flex:1;min-width:280px;max-width:380px;
+      background:var(--dark-surface);border:1px solid #2a2a2a;
+      color:#fff;padding:32px;border-radius:18px;display:flex;flex-direction:column;
+    }
+    .pricing-card.popular{
+      background:linear-gradient(180deg,#111,#0a192f 100%);
+      border:2px solid var(--accent-cyan);position:relative;flex:1.1;
+    }
+    .popular-badge{
+      position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+      background:var(--accent-cyan);color:#000;font-weight:800;
+      padding:5px 16px;border-radius:20px;font-size:.78rem;white-space:nowrap;
+    }
+    .pricing-card-head{border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:22px;margin-bottom:22px;}
+    .pricing-card h4{font-size:1.3rem;font-weight:800;margin-bottom:6px;color:#fff;}
+    .pricing-card .tagline{color:#888;font-size:.9rem;}
+    .price-anchor{text-decoration:line-through;color:#555;font-size:1.1rem;}
+    .price-current{font-size:2.8rem;font-weight:800;color:#fff;margin:8px 0;}
+    .pricing-card .perks{list-style:none;padding:0;flex:1;}
+    .pricing-card .perks li{
+      display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;
+      font-size:.95rem;color:#bbb;
+    }
+    .pricing-card .perks li i.fa-check{color:var(--accent-cyan);}
+    .pricing-card .perks li i.fa-check.gray{color:#444;}
+    .pricing-card .cta-wrap{margin-top:26px;}
+    .scarcity-block{margin-top:20px;}
+    .scarcity-label{font-size:.78rem;color:#bbb;margin-bottom:8px;text-align:center;}
+    .scarcity-bar{width:100%;background:#2a2a2a;height:7px;border-radius:4px;overflow:hidden;}
+    .scarcity-fill{width:80%;background:var(--red);height:100%;animation:pulse-bar 2s infinite;}
+    @keyframes pulse-bar{0%,100%{opacity:1;}50%{opacity:.65;}}
+
+    /* ── GUARANTEE ── */
+    .guarantee-section{padding:80px 0;background:#050505;color:#fff;}
+    .guarantee-box{
+      display:flex;align-items:center;gap:36px;flex-wrap:wrap;
+      max-width:680px;margin:0 auto;
+    }
+    .shield-icon{font-size:3.8rem;color:#f1c40f;flex-shrink:0;}
+    .guarantee-box h2{font-size:1.7rem;font-weight:800;margin-bottom:12px;}
+    .guarantee-box p{color:#aaa;font-size:.97rem;line-height:1.7;}
+
+    /* ── FAQ ── */
+    .faq-section{padding:88px 0;background:#fafafa;}
+    .faq-item{background:#fff;border-radius:12px;margin-bottom:14px;border:1px solid #eaeaea;overflow:hidden;}
+    .faq-item.active{border-color:rgba(79,172,254,.3);}
+    .faq-question{
+      padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;
+      align-items:center;gap:16px;font-weight:600;font-size:.97rem;color:#222;transition:.2s;
+    }
+    .faq-question:hover{background:#f9f9f9;}
+    .faq-item.active .faq-question{color:var(--accent-purple);}
+    .faq-toggle-icon{color:#999;flex-shrink:0;transition:.3s;}
+    .faq-item.active .faq-toggle-icon{transform:rotate(45deg);color:var(--accent-purple);}
+    .faq-answer{max-height:0;overflow:hidden;opacity:0;transition:all .35s ease;}
+    .faq-item.active .faq-answer{max-height:400px;opacity:1;padding:0 24px 22px;}
+    .faq-answer p{color:#666;font-size:.95rem;line-height:1.75;}
+
+    /* ── FINAL CTA BANNER ── */
+    .final-cta{
+      padding:100px 0;
+      background:var(--dark-bg);
+      background-image:radial-gradient(ellipse at 50% 100%,rgba(0,242,254,.12),transparent 55%);
+      color:#fff;text-align:center;
+    }
+    .final-cta h2{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:900;letter-spacing:-.04em;margin-bottom:22px;}
+    .final-cta p{color:#888;font-size:1.05rem;max-width:600px;margin:0 auto 40px;}
+
+    /* ── MOBILE CTA ── */
+    .mobile-cta{
+      display:none;position:fixed;bottom:12px;left:12px;right:12px;z-index:1100;
+      background:rgba(10,10,10,.94);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:10px;
+    }
+    .mobile-cta .btn-glow{width:100%;font-size:.97rem;padding:14px;}
+
+    /* ── FOOTER ── */
+    .site-footer{background:#000;padding:28px 24px;text-align:center;color:#444;font-size:.88rem;}
+
+    /* ── ANIMATIONS ── */
+    .fade-in{opacity:0;animation:fadeIn .9s ease forwards;}
+    .slide-up{opacity:0;transform:translateY(20px);animation:slideUp .9s ease forwards;}
+    .delay-1{animation-delay:.1s;}.delay-2{animation-delay:.2s;}.delay-3{animation-delay:.3s;}
+    @keyframes fadeIn{to{opacity:1;}}
+    @keyframes slideUp{to{opacity:1;transform:translateY(0);}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .instructor-grid{grid-template-columns:1fr;}
+      .two-cards-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:768px){
+      .hero-premium{padding:110px 20px 64px;}
+      .section-light,.section-white,.section-dark,.section-dark2,.faq-section,.guarantee-section,.final-cta,.pricing-section{padding:64px 0;}
+      h2.section-title{font-size:1.7rem!important;}
+      .hero-premium h1{font-size:2.2rem!important;}
+      .btn-glow{width:100%;font-size:1rem;padding:16px 20px;}
+      .bento-grid{grid-template-columns:1fr;gap:14px;}
+      .bento-card{padding:22px;}
+      .pricing-cards{flex-direction:column;align-items:center;}
+      .pricing-card,.pricing-card.popular{max-width:100%;width:100%;}
+      .price-current{font-size:2.3rem;}
+      .comparison-table,.comparison-table tbody,.comparison-table tr,.comparison-table th,.comparison-table td{display:block;width:100%;}
+      .comparison-table thead{display:none;}
+      .comparison-table tr{margin-bottom:18px;border:1px solid #eaeaea;border-radius:14px;overflow:hidden;}
+      .comparison-table td{padding:16px;border-bottom:none;}
+      .col-bad{border-right:none;border-bottom:1px dashed #ddd;}
+      .col-bad::before{content:"❌ Antes: ";font-weight:800;}
+      .col-good::before{content:"✅ Com a Formação: ";font-weight:800;}
+      .logos-grid span{flex:1 1 40%;text-align:center;}
+      .guarantee-box{flex-direction:column;text-align:center;}
+      .mobile-cta{display:block;}
+      .site-footer{padding-bottom:110px;}
+      .header-cta .badge,.header-cta .btn-outline-dark{display:none;}
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER PADRÃO (Invisível/Minimalista no topo) -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="../index.html"><h1>Prof. Maicon<span>Centner</span></h1></a>
-            </div>
-            <nav class="main-nav">
-                <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="portfolio.html">Portfólio</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="orcamento.html" class="btn btn-primary">Orçamento</a></li>
-                </ul>
-            </nav>
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo-text">Prof. Maicon<span>Centner</span></div>
+    <div class="header-cta">
+      <span class="badge"><i class="fas fa-lock" style="margin-right:5px;"></i>Vagas limitadas</span>
+      <a href="#pricing" class="btn-glow" style="padding:10px 22px;font-size:.9rem;">Garantir Vaga</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ 1. HERO ══════════════ -->
+<section class="hero-premium">
+  <div class="container container-sm">
+    <div class="fade-in">
+      <span class="hero-badge"><i class="fas fa-lock"></i> &nbsp;Vagas Abertas &bull; Turmas Reduzidas &bull; Online ao Vivo</span>
+    </div>
+    <h1 class="fade-in delay-1">
+      Domine a <span class="text-gradient">Inteligência Artificial</span><br/>
+      na Pesquisa Acadêmica<br/>e na Educação
+    </h1>
+    <p class="sub fade-in delay-2">
+      Pare de perder centenas de horas com processos manuais. Do artigo científico livre de alucinações à criação de dashboards e tutores automatizados: desenvolva fluxos de trabalho éticos, críticos e altamente produtivos.
+    </p>
+    <div class="fade-in delay-3">
+      <a href="#pricing" class="btn-glow">
+        Quero Multiplicar Minha Produtividade &nbsp;<i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="hero-safety">
+        <i class="fas fa-shield-alt"></i> Compra 100% segura &bull; Garantia incondicional de 7 dias
+      </p>
+    </div>
+    <div class="logos-grid fade-in delay-3">
+      <div class="label">Ferramentas que você vai dominar:</div>
+      <span><i class="fas fa-robot"></i> ChatGPT</span>
+      <span><i class="fas fa-brain"></i> Gemini</span>
+      <span><i class="fas fa-search"></i> Perplexity</span>
+      <span><i class="fas fa-book-open"></i> NotebookLM</span>
+      <span><i class="fas fa-code"></i> Copilot</span>
+      <span><i class="fas fa-project-diagram"></i> Napkin AI</span>
+      <span><i class="fab fa-github"></i> GitHub Pages</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 2. O PROBLEMA ══════════════ -->
+<section class="section-light">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow"><i class="fas fa-bolt"></i> O problema</span>
+      <h2 class="section-title">O modelo tradicional de pesquisa e ensino está <span style="color:var(--red);">esgotando você.</span></h2>
+    </div>
+    <p style="font-size:1.05rem;color:#444;margin-bottom:8px;">Se você é professor, pesquisador ou pós-graduando, sua rotina provavelmente se resume a uma luta constante contra o relógio:</p>
+    <ul class="pain-list">
+      <li><i class="fas fa-times-circle"></i><span><strong>Você gasta madrugadas</strong> revisando literatura, formatando referências e estruturando artigos ou TCCs do zero.</span></li>
+      <li><i class="fas fa-times-circle"></i><span><strong>Você se frustra</strong> com tarefas repetitivas, corrigindo questionários manualmente e organizando planilhas despadronizadas.</span></li>
+      <li><i class="fas fa-times-circle"></i><span><strong>Você tem receio</strong> de usar IA e cair em alucinações, citações falsas ou problemas de integridade acadêmica.</span></li>
+      <li><i class="fas fa-times-circle"></i><span><strong>Você vê outros publicando mais</strong>, sem entender como chegaram a esse ritmo de produção.</span></li>
+      <li><i class="fas fa-times-circle"></i><span><strong>Você sabe que a IA pode ajudar,</strong> mas os "cursinhos de prompts" genéricos não atendem ao rigor científico da sua carreira.</span></li>
+    </ul>
+    <div class="pain-quote slide-up">
+      Você sabe que a Inteligência Artificial pode ajudar, mas os "cursinhos de prompts" genéricos da internet <strong>não atendem ao rigor científico e à precisão</strong> que a sua carreira acadêmica exige. <strong>Essa formação foi criada para preencher exatamente essa lacuna.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 3. A SOLUÇÃO – BENTO ══════════════ -->
+<section class="section-white">
+  <div class="container">
+    <div class="text-center container-sm fade-in" style="margin:0 auto 0;">
+      <span class="section-eyebrow"><i class="fas fa-lightbulb"></i> A solução</span>
+      <h2 class="section-title">Esqueça comandos genéricos.<br/>Desenvolva <span class="text-gradient">Fluxos de Trabalho Reais.</span></h2>
+      <p class="section-sub" style="margin:0 auto;">A Formação Completa é um treinamento intensivo focado em resultados tangíveis. Não ensinamos apenas a "conversar" com robôs — ensinamos você a construir um ecossistema digital.</p>
+    </div>
+    <div class="bento-grid slide-up">
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Produção Científica Acelerada</h3>
+        <p>Escreva artigos, TCCs e dissertações com ferramentas que auxiliam na argumentação, revisão e estruturação, mantendo 100% da sua autoria.</p>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-cogs"></i></div>
+        <h3>Automação de Ponta a Ponta</h3>
+        <p>De questionários inteligentes no Google Forms a dashboards automatizados de notas e frequência. A tecnologia faz o trabalho braçal.</p>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Segurança e Rigor Acadêmico</h3>
+        <p>Aprenda técnicas avançadas para detectar alucinações, validar referências bibliográficas reais e garantir a integridade da sua pesquisa.</p>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Decisões Baseadas em Dados</h3>
+        <p>Dashboards pedagógicos que transformam dados brutos de desempenho em indicadores visuais acionáveis para acompanhamento real.</p>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Presença Digital Educacional</h3>
+        <p>Sites educacionais completos no GitHub Pages, tutor digital guiado por IA e recursos visuais premium para seus alunos.</p>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon"><i class="fas fa-project-diagram"></i></div>
+        <h3>Visualização e Comunicação</h3>
+        <p>Fluxogramas, mapas mentais e esquemas conceituais criados com Napkin AI para tornar o conhecimento visualmente claro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FERRAMENTAS BAND ══════════════ -->
+<div class="tools-band">
+  <div class="tool-chip"><i class="fas fa-robot"></i> ChatGPT</div>
+  <div class="tool-chip"><i class="fas fa-brain"></i> Gemini</div>
+  <div class="tool-chip"><i class="fas fa-search"></i> Perplexity</div>
+  <div class="tool-chip"><i class="fas fa-book-open"></i> NotebookLM</div>
+  <div class="tool-chip"><i class="fas fa-code"></i> Copilot</div>
+  <div class="tool-chip"><i class="fas fa-project-diagram"></i> Napkin AI</div>
+  <div class="tool-chip"><i class="fab fa-github"></i> GitHub Pages</div>
+  <div class="tool-chip"><i class="fab fa-google"></i> Google Apps Script</div>
+  <div class="tool-chip"><i class="fas fa-table"></i> Google Sheets</div>
+</div>
+
+<!-- ══════════════ 4. MÓDULOS ══════════════ -->
+<section class="section-light">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow"><i class="fas fa-layer-group"></i> Estrutura</span>
+      <h2 class="section-title">A Formação em Detalhe<br/><span style="font-size:1rem;font-weight:500;color:#888;">(16 Horas de Imersão Profunda)</span></h2>
+    </div>
+
+    <div class="module-card m1 slide-up">
+      <div class="module-header">
+        <h3>MÓDULO 1: IA Aplicada à Pesquisa Acadêmica</h3>
+        <span class="module-tag">8 Horas</span>
+      </div>
+      <p class="module-subtitle">O fim do bloqueio criativo e da desorganização bibliográfica.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia de Prompts:</strong> Técnicas específicas para o contexto científico e acadêmico.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Stack de Pesquisa:</strong> Domínio do ChatGPT, Gemini, Perplexity e NotebookLM integrados.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Escrita de Alto Nível:</strong> Estruturação de TCCs, dissertações, teses e artigos com método.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Organização de Referências:</strong> Revisão de literatura eficiente e sem perda de tempo.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Ética e Integridade:</strong> Detecção de alucinações, validação de fontes e preservação da autoria.</span></li>
+      </ul>
+      <div class="module-result">
+        🏆 <strong>Resultado esperado:</strong> Redução de até 70% do tempo gasto com fichamentos, estruturação e revisão bibliográfica.
+      </div>
+    </div>
+
+    <div class="module-card m2 slide-up delay-1">
+      <div class="module-header">
+        <h3>MÓDULO 2: Automação Educacional Avançada</h3>
+        <span class="module-tag">8 Horas</span>
+      </div>
+      <p class="module-subtitle">Transforme sua gestão pedagógica em um sistema automatizado.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i><span><strong>Presença Digital:</strong> Criação de sites educacionais com IA e hospedagem no GitHub Pages.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Ecossistema Google:</strong> Integração de Forms, Sheets e Apps Script para automações reais.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Inteligência de Dados:</strong> Dashboards pedagógicos de acompanhamento ao vivo.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Questionários Inteligentes:</strong> Tutor digital guiado por IA para maior engajamento.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Visualização:</strong> Napkin AI para fluxogramas, mapas mentais e esquemas conceituais.</span></li>
+      </ul>
+      <div class="module-result">
+        🏆 <strong>Resultado esperado:</strong> Eliminação do trabalho manual com notas, presenças, design de materiais e acompanhamento.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 5. COMPARATIVO ══════════════ -->
+<section class="section-white">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow"><i class="fas fa-exchange-alt"></i> Antes &amp; Depois</span>
+      <h2 class="section-title">A vida antes e depois da Formação</h2>
+    </div>
+    <table class="comparison-table fade-in">
+      <thead>
+        <tr>
+          <th class="col-bad"><i class="fas fa-times-circle"></i> A Vida Tradicional</th>
+          <th class="col-good"><i class="fas fa-check-circle"></i> Com a Formação em IA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-bad">Meses organizando centenas de PDFs para revisão de literatura.</td>
+          <td class="col-good">O <strong>NotebookLM</strong> cruza dados e extrai insights em minutos.</td>
+        </tr>
+        <tr>
+          <td class="col-bad">Medo constante de plágio ou de IAs que inventam referências.</td>
+          <td class="col-good">Uso do <strong>Perplexity</strong> com técnicas para gerar referências 100% reais.</td>
+        </tr>
+        <tr>
+          <td class="col-bad">Inserir notas e dados dos alunos manualmente em planilhas mortas.</td>
+          <td class="col-good">Sistemas automatizados integrando Forms a <strong>Dashboards ao vivo</strong>.</td>
+        </tr>
+        <tr>
+          <td class="col-bad">Dificuldade técnica ou altos custos para ter um portal de aulas.</td>
+          <td class="col-good">Site educacional criado com IA e rodando <strong>de graça no GitHub Pages</strong>.</td>
+        </tr>
+        <tr>
+          <td class="col-bad">Horas perdidas criando questionários, gabaritos e relatórios manualmente.</td>
+          <td class="col-good"><strong>Google Apps Script</strong> automatiza correção e geração de relatórios.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ 6. PARA QUEM É ══════════════ -->
+<section class="section-light">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow"><i class="fas fa-users"></i> Público-alvo</span>
+      <h2 class="section-title">Esta formação é para você?</h2>
+    </div>
+    <div class="two-cards-grid fade-in">
+      <div class="card-yes">
+        <h3><i class="fas fa-check"></i>&nbsp; PARA QUEM É</h3>
+        <ul>
+          <li>✔️ <strong>Professores</strong> que querem modernizar aulas e reduzir retrabalho.</li>
+          <li>✔️ <strong>Pesquisadores e pós-graduandos</strong> acelerando escrita científica.</li>
+          <li>✔️ <strong>Orientadores acadêmicos</strong> buscando método e eficiência.</li>
+          <li>✔️ <strong>Coordenadores pedagógicos</strong> que precisam acompanhar dados.</li>
+          <li>✔️ <strong>Gestores educacionais</strong> focados em inovação prática.</li>
+        </ul>
+      </div>
+      <div class="card-no">
+        <h3><i class="fas fa-times"></i>&nbsp; PARA QUEM NÃO É</h3>
+        <ul>
+          <li>❌ Quem busca atalhos antiéticos para "IA fazer o TCC inteiro".</li>
+          <li>❌ Quem quer apenas "brincar" com o ChatGPT sem comprometimento.</li>
+          <li>❌ Profissionais não dispostos a aplicar o conteúdo na prática.</li>
+          <li>❌ Quem espera um cursinho de prompts genérico e descontextualizado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 7. INSTRUTOR ══════════════ -->
+<section class="section-white">
+  <div class="container container-sm">
+    <div class="instructor-grid slide-up">
+      <div>
+        <img src="../images/foto-maicon-perfil.jpg" alt="Prof. Maicon Centner Germano" class="img-bw"/>
+      </div>
+      <div>
+        <span class="section-eyebrow"><i class="fas fa-user-tie"></i> Instrutor</span>
+        <h2 class="section-title" style="margin-top:10px;">Guiado por quem vive a academia na prática.</h2>
+        <p style="color:var(--accent-purple);font-weight:700;font-size:1.05rem;margin-bottom:14px;">Prof. Maicon Centner Germano</p>
+        <p style="color:#555;margin-bottom:18px;font-size:.97rem;">Não sou um "guru da internet". Sou um acadêmico e educador ativo, vivendo diariamente os mesmos desafios que você — e desenvolvendo soluções reais para eles.</p>
+        <ul class="instructor-creds">
+          <li><i class="fas fa-graduation-cap"></i> Mestrando em Biometria (Machine Learning) — UNESP</li>
+          <li><i class="fas fa-chalkboard-teacher"></i> Professor de Matemática da Rede SESI-SP</li>
+          <li><i class="fas fa-chart-line"></i> MBA em Matemática Financeira e Estatística</li>
+          <li><i class="fas fa-school"></i> Pós-graduado em Gestão Escolar</li>
+          <li><i class="fas fa-book"></i> Pós-graduado em Metodologia do Ensino de Matemática</li>
+          <li><i class="fas fa-flask"></i> Experiência em análise de processos educacionais e dados</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 8. BÔNUS ══════════════ -->
+<section class="section-dark">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow" style="background:rgba(255,255,255,.08);color:var(--accent-cyan);border-color:rgba(0,242,254,.2);">
+        <i class="fas fa-gift"></i> Bônus exclusivos
+      </span>
+      <h2 class="section-title" style="color:#fff;">Mais do que uma formação. Um ecossistema de recursos.</h2>
+      <p style="color:#888;max-width:580px;margin:0 auto 8px;">Além das 16 horas ao vivo, você receberá materiais de implementação imediata.</p>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-icon">📋</div>
+        <h4>Biblioteca de Prompts Acadêmicos</h4>
+        <p>Estruturas testadas para revisar, organizar, comparar, sintetizar e planejar pesquisas com critério.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-icon">⚙️</div>
+        <h4>Templates de Automação</h4>
+        <p>Fluxos prontos com formulários, planilhas e scripts para adaptação imediata ao seu contexto.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-icon">🗺️</div>
+        <h4>Estruturas Visuais Reutilizáveis</h4>
+        <p>Mapas mentais, fluxogramas e páginas educacionais com apresentação premium prontos para usar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 9. PRICING ══════════════ -->
+<section id="pricing" class="pricing-section">
+  <div class="container container-sm">
+    <div class="text-center fade-in">
+      <span class="section-eyebrow" style="background:rgba(255,255,255,.08);color:var(--accent-cyan);border-color:rgba(0,242,254,.2);">
+        <i class="fas fa-tag"></i> Investimento
+      </span>
+      <h2 class="section-title" style="color:#fff;">Escolha a modalidade ideal</h2>
+      <p style="color:#888;max-width:500px;margin:0 auto;">Formato Online ao vivo via Teams ou Presencial in-company.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <!-- Individual -->
+      <div class="pricing-card slide-up">
+        <div class="pricing-card-head">
+          <h4>Formação Individual</h4>
+          <p class="tagline">Exclusividade total — seu ritmo, seu projeto</p>
+          <div style="margin-top:18px;">
+            <div class="price-anchor">R$ 3.500,00</div>
+            <div class="price-current">R$&nbsp;2.400</div>
+          </div>
         </div>
-    </header>
-
-    <!-- 1. HERO SECTION -->
-    <section class="hero-premium">
-        <div class="container container-sm">
-            <div class="animate-fade-in-down">
-                <span class="hero-badge"><i class="fas fa-lock"></i> Vagas Abertas • Turmas Reduzidas</span>
-            </div>
-            <h1 class="animate-fade-in" style="font-weight: 800; margin-bottom: 24px; letter-spacing: -1px;">
-                Domine a <span class="text-gradient">Inteligência Artificial</span> na Pesquisa e Automação Educacional
-            </h1>
-            <p class="animate-fade-in delay-100" style="font-size: 1.15rem; color: var(--text-secondary-dark); margin-bottom: 40px;">
-                Pare de perder centenas de horas com processos manuais. Do artigo científico livre de alucinações à criação de dashboards e tutores automatizados: desenvolva fluxos de trabalho éticos, críticos e altamente produtivos.
-            </p>
-            <div class="animate-fade-in delay-200">
-                <a href="#pricing" class="btn-glow">
-                    Quero Multiplicar Minha Produtividade <i class="fas fa-arrow-right"></i>
-                </a>
-                <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">
-                    <i class="fas fa-shield-alt"></i> Compra 100% segura • Garantia incondicional de 7 dias
-                </p>
-            </div>
-            
-            <div class="logos-grid animate-fade-in delay-300">
-                <div style="width: 100%; text-align: center; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;">Ferramentas que você vai dominar:</div>
-                <span><i class="fas fa-robot"></i> ChatGPT</span>
-                <span><i class="fas fa-brain"></i> Gemini</span>
-                <span><i class="fab fa-github"></i> GitHub</span>
-                <span><i class="fas fa-search"></i> Perplexity</span>
-                <span><i class="fas fa-code"></i> Copilot</span>
-            </div>
+        <ul class="perks">
+          <li><i class="fas fa-check gray"></i> Carga horária: 16 horas ao vivo</li>
+          <li><i class="fas fa-check gray"></i> Atendimento 100% personalizado</li>
+          <li><i class="fas fa-check gray"></i> Projeto aplicado à sua realidade</li>
+          <li><i class="fas fa-check gray"></i> Flexibilidade total de agenda</li>
+          <li><i class="fas fa-check gray"></i> Acesso a todos os bônus</li>
+        </ul>
+        <div class="cta-wrap">
+          <a href="https://wa.me/5514991258667?text=Olá,%20Prof.%20Maicon!%20Quero%20informações%20sobre%20a%20Formação%20Individual." target="_blank" class="btn-outline-dark" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Solicitar Individual
+          </a>
         </div>
-    </section>
+      </div>
 
-    <!-- 2. O PROBLEMA (PAS) -->
-    <section style="padding: 100px 0; background-color: #FAFAFA;">
-        <div class="container container-sm">
-            <h2 class="text-center animate-slide-up" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 40px;">
-                O modelo tradicional de pesquisa e ensino está <span style="color: #e74c3c;">esgotando você.</span>
-            </h2>
-            <div class="animate-slide-up delay-100" style="font-size: 1.1rem; color: #444;">
-                <p>Se você é professor, pesquisador ou pós-graduando, sua rotina provavelmente se resume a uma luta constante contra o relógio:</p>
-                <ul style="list-style: none; padding: 0; margin: 30px 0;">
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
-                        <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
-                        <span><strong>Você gasta madrugadas</strong> revisando literatura, formatando referências e estruturando artigos ou TCCs do zero.</span>
-                    </li>
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
-                        <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
-                        <span><strong>Você se frustra</strong> com tarefas repetitivas, corrigindo questionários manualmente e organizando planilhas despadronizadas.</span>
-                    </li>
-                    <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
-                        <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem; margin-top: 3px;"></i>
-                        <span><strong>Você tem receio</strong> de usar IA e acabar caindo em alucinações, citações falsas ou problemas de integridade acadêmica (plágio).</span>
-                    </li>
-                </ul>
-                <p style="background: #fff; padding: 24px; border-left: 4px solid #e74c3c; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    Você sabe que a Inteligência Artificial pode ajudar, mas os "cursinhos de prompts" genéricos da internet <strong>não atendem ao rigor científico e à precisão</strong> que a sua carreira acadêmica exige.
-                </p>
-            </div>
+      <!-- Premium -->
+      <div class="pricing-card popular slide-up delay-1">
+        <span class="popular-badge">⭐ MELHOR CUSTO-BENEFÍCIO</span>
+        <div class="pricing-card-head" style="padding-top:12px;">
+          <h4>Turma Premium</h4>
+          <p class="tagline" style="color:var(--accent-cyan);">Atenção personalizada e networking qualificado</p>
+          <div style="margin-top:18px;">
+            <div class="price-anchor">R$ 2.400,00</div>
+            <div class="price-current">R$&nbsp;1.197<span style="font-size:1rem;color:#888;font-weight:400;">/pessoa</span></div>
+          </div>
         </div>
-    </section>
-
-    <!-- 3. A SOLUÇÃO (Bento Box) -->
-    <section style="padding: 100px 0; background: #FFFFFF;">
-        <div class="container">
-            <div class="text-center container-sm animate-fade-in">
-                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;">Esqueça comandos genéricos.<br>Desenvolva <span class="text-gradient">Fluxos de Trabalho Reais.</span></h2>
-                <p style="font-size: 1.1rem; color: #666;">A Formação Completa é um treinamento intensivo focado em resultados tangíveis. Não ensinamos apenas a "conversar" com robôs. Ensinamos você a construir um ecossistema digital.</p>
-            </div>
-            
-            <div class="bento-grid animate-slide-up delay-100">
-                <div class="bento-card">
-                    <i class="fas fa-rocket bento-icon"></i>
-                    <h3>Produção Científica Acelerada</h3>
-                    <p style="color: #666; margin-top: 15px;">Escreva artigos, TCCs e dissertações com ferramentas que auxiliam na argumentação, revisão e estruturação, mantendo 100% da sua autoria.</p>
-                </div>
-                <div class="bento-card">
-                    <i class="fas fa-cogs bento-icon"></i>
-                    <h3>Automação de Ponta a Ponta</h3>
-                    <p style="color: #666; margin-top: 15px;">De questionários inteligentes no Google Forms a dashboards automatizados de notas e frequência. A tecnologia faz o trabalho braçal.</p>
-                </div>
-                <div class="bento-card">
-                    <i class="fas fa-shield-alt bento-icon"></i>
-                    <h3>Segurança e Rigor Acadêmico</h3>
-                    <p style="color: #666; margin-top: 15px;">Aprenda técnicas avançadas para detectar alucinações, validar referências bibliográficas reais e garantir a integridade da sua pesquisa.</p>
-                </div>
-            </div>
+        <ul class="perks">
+          <li><i class="fas fa-check"></i> Turma reduzida (máx. 5 participantes)</li>
+          <li><i class="fas fa-check"></i> Acompanhamento próximo do instrutor</li>
+          <li><i class="fas fa-check"></i> Projetos reais desenvolvidos no grupo</li>
+          <li><i class="fas fa-check"></i> Acesso a repositórios e códigos</li>
+          <li><i class="fas fa-check"></i> Acesso a todos os bônus</li>
+        </ul>
+        <div class="cta-wrap">
+          <a href="https://wa.me/5514991258667?text=Olá,%20Prof.%20Maicon!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Premium." target="_blank" class="btn-glow" style="width:100%;justify-content:center;box-sizing:border-box;">
+            <i class="fab fa-whatsapp"></i> Garantir Vaga na Turma Premium
+          </a>
+          <div class="scarcity-block">
+            <p class="scarcity-label">🔴 Vagas limitadas — máx. 5 alunos por turma</p>
+            <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 4. MÓDULOS -->
-    <section style="padding: 100px 0; background: #F8FAFC;">
-        <div class="container container-sm">
-            <h2 class="text-center" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 40px;">A Estrutura da Formação <br><span style="font-size: 1.1rem; color: #666; font-weight: 500;">(16 Horas de Imersão Profunda)</span></h2>
-            
-            <!-- Módulo 1 -->
-            <div class="bento-card animate-slide-up" style="margin-bottom: 30px; border-left: 6px solid var(--accent-purple);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                    <h3 style="font-size: 1.3rem; margin: 0;">MÓDULO 1: IA Aplicada à Pesquisa Acadêmica</h3>
-                    <span style="background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">8 Horas</span>
-                </div>
-                <p style="color: #666; font-style: italic; margin-bottom: 20px;">O fim do bloqueio criativo e da desorganização bibliográfica.</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Fundamentos Generativos:</strong> Engenharia de prompts para pesquisa científica.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Stack de Pesquisa:</strong> Domínio do ChatGPT, Gemini, Perplexity e NotebookLM.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Escrita de Alto Nível:</strong> Estruturação de TCCs, teses e artigos em tempo recorde.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Revisão e Ética:</strong> Identificação de alucinações e referências inexistentes.</li>
-                </ul>
-                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem;">
-                    <strong>🏆 Resultado:</strong> Redução de até 70% do tempo gasto com fichamentos e estruturação bibliográfica.
-                </div>
-            </div>
+<!-- ══════════════ 10. GARANTIA ══════════════ -->
+<section class="guarantee-section">
+  <div class="container container-sm">
+    <div class="guarantee-box">
+      <i class="fas fa-shield-alt shield-icon"></i>
+      <div>
+        <h2>Garantia Incondicional de 7 Dias.</h2>
+        <p>Eu confio tanto no poder transformador dessa formação que assumo todo o risco. Se em até 7 dias você participar das aulas e achar que o conteúdo não vai economizar centenas de horas da sua vida, basta enviar um e-mail e devolvo 100% do seu investimento. Sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Módulo 2 -->
-            <div class="bento-card animate-slide-up delay-100" style="border-left: 6px solid var(--accent-cyan);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                    <h3 style="font-size: 1.3rem; margin: 0;">MÓDULO 2: Automação Educacional Avançada</h3>
-                    <span style="background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">8 Horas</span>
-                </div>
-                <p style="color: #666; font-style: italic; margin-bottom: 20px;">Transforme sua gestão pedagógica em um sistema automatizado.</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Presença Digital:</strong> Criação de sites com IA e hospedagem no GitHub Pages.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Ecossistema Google:</strong> Integração de Forms, Sheets e Apps Script.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência de Dados:</strong> Dashboards de acompanhamento pedagógico.</li>
-                    <li class="mb-2"><i class="fas fa-check text-gradient" style="margin-right: 10px;"></i> <strong>Inteligência Visual:</strong> Napkin AI para fluxogramas e mapas mentais.</li>
-                </ul>
-                <div style="background: #f0fbfc; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem;">
-                    <strong>🏆 Resultado:</strong> Eliminação do trabalho manual com notas, presenças e design de aulas.
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ══════════════ 11. FAQ ══════════════ -->
+<section class="faq-section">
+  <div class="container container-sm">
+    <div class="text-center">
+      <span class="section-eyebrow"><i class="fas fa-question-circle"></i> Dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+    <div style="margin-top:36px;">
 
-    <!-- 5. COMPARATIVO -->
-    <section style="padding: 100px 0; background: #FFFFFF;">
-        <div class="container container-sm">
-            <h2 class="text-center animate-fade-in" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 20px;">A vida antes e depois da Formação</h2>
-            
-            <table class="comparison-table animate-slide-up">
-                <thead>
-                    <tr>
-                        <th class="col-bad"><i class="fas fa-times-circle"></i> A Vida Tradicional</th>
-                        <th class="col-good"><i class="fas fa-check-circle"></i> Com a Formação em IA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-bad">Meses organizando centenas de PDFs para revisão de literatura.</td>
-                        <td class="col-good">O <strong>NotebookLM</strong> e a IA cruzam dados e extraem insights em minutos.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-bad">Medo constante de plágio ou de usar IAs que inventam referências.</td>
-                        <td class="col-good">Uso de <strong>Perplexity</strong> e mitigação para gerar referências 100% reais.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-bad">Inserir notas e dados de alunos manualmente em planilhas mortas.</td>
-                        <td class="col-good">Sistemas automatizados integrando formulários a <strong>Dashboards</strong> ao vivo.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-bad">Dificuldade técnica ou altos custos para ter seu próprio portal de aulas.</td>
-                        <td class="col-good">Site educacional criado com IA e rodando de graça no <strong>GitHub Pages</strong>.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+      <div class="faq-item active">
+        <div class="faq-question"><span>1. A formação é ao vivo ou gravada?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>A formação acontece online e totalmente ao vivo via Microsoft Teams, garantindo interação em tempo real, ou presencial em instituições parceiras.</p></div>
+      </div>
 
-    <!-- 6. PARA QUEM É -->
-    <section style="padding: 80px 0; background: #F8FAFC;">
-        <div class="container container-sm">
-            <h2 class="text-center" style="font-size: 2.2rem; font-weight: 800;">Esta formação é para você?</h2>
-            
-            <div class="two-cards-grid animate-fade-in">
-                <div class="card-yes">
-                    <h3 style="color: #27ae60; font-size: 1.3rem; margin-bottom: 20px;"><i class="fas fa-check"></i> PARA QUEM É</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
-                        <li class="mb-2">✔️ <strong>Professores</strong> modernizando aulas.</li>
-                        <li class="mb-2">✔️ <strong>Pesquisadores / Pós-graduandos</strong> acelerando a escrita acadêmica.</li>
-                        <li class="mb-2">✔️ <strong>Coordenadores</strong> acompanhando dados.</li>
-                        <li class="mb-2">✔️ <strong>Gestores</strong> focados em inovação.</li>
-                    </ul>
-                </div>
-                <div class="card-no">
-                    <h3 style="color: #7f8c8d; font-size: 1.3rem; margin-bottom: 20px;"><i class="fas fa-times"></i> PARA QUEM NÃO É</h3>
-                    <ul style="list-style: none; padding: 0; color: #666; font-size: 0.95rem;">
-                        <li class="mb-2">❌ Pessoas buscando atalhos antiéticos para a IA "escrever o TCC inteiro".</li>
-                        <li class="mb-2">❌ Quem quer apenas "brincar" com o ChatGPT.</li>
-                        <li class="mb-2">❌ Profissionais não dispostos a aplicar na prática.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>2. A IA não corre o risco de cometer plágio no meu TCC?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Esse é exatamente o diferencial. Ensinamos métodos éticos de engenharia de prompts, focados em revisão, estruturação e mitigação de alucinações. A autoria será sempre 100% sua.</p></div>
+      </div>
 
-    <!-- 7. AUTORIDADE -->
-    <section style="padding: 100px 0; background: #FFFFFF;">
-        <div class="container container-sm">
-            <div class="instructor-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
-                <div class="animate-slide-up">
-                    <!-- Imagem otimizada (sem link quebrado) -->
-                    <img src="../images/foto-maicon-perfil.jpg" alt="Prof. Maicon Centner" class="img-bw" style="background: #eee; min-height: 250px;">
-                </div>
-                <div class="animate-slide-up delay-100">
-                    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 10px;">Guiado por quem vive a academia na prática.</h2>
-                    <h3 style="color: var(--accent-purple); font-size: 1.1rem; margin-bottom: 20px;">Prof. Maicon Centner Germano</h3>
-                    <p style="color: #555; margin-bottom: 20px; font-size: 0.95rem;">Não sou um "guru da internet". Sou um acadêmico e educador ativo, vivendo diariamente os mesmos desafios que você.</p>
-                    <ul style="list-style: none; padding: 0; color: #444; font-size: 0.95rem;">
-                        <li class="mb-2"><i class="fas fa-graduation-cap" style="color: #ccc; width: 25px;"></i> Mestrando em Biometria (Machine Learning) - UNESP</li>
-                        <li class="mb-2"><i class="fas fa-chalkboard-teacher" style="color: #ccc; width: 25px;"></i> Professor de Matemática da Rede SESI-SP</li>
-                        <li class="mb-2"><i class="fas fa-chart-line" style="color: #ccc; width: 25px;"></i> MBA em Matemática Financeira e Estatística</li>
-                        <li class="mb-2"><i class="fas fa-book" style="color: #ccc; width: 25px;"></i> Pós-graduado em Gestão Escolar e Metodologia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>3. Preciso ter conhecimento técnico avançado?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Não. A formação foi estruturada para professores, pesquisadores e educadores — não para programadores. Todo o conteúdo é introduzido de forma progressiva e aplicada.</p></div>
+      </div>
 
-    <!-- 8. OFERTA E INVESTIMENTO (Pricing) -->
-    <section id="pricing" class="pricing-section">
-        <div class="container container-sm">
-            <div class="text-center animate-fade-in">
-                <h2 style="font-size: 2.2rem; font-weight: 800;">Escolha a modalidade ideal</h2>
-                <p style="color: var(--text-secondary-dark);">Formato Online ao vivo via Teams ou Presencial in-company.</p>
-            </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>4. Esta formação é apenas sobre prompts?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Não. Prompts são apenas um dos instrumentos. A proposta é ensinar processos completos: pesquisa, escrita, automação, visualização de dados e criação de recursos digitais.</p></div>
+      </div>
 
-            <div class="pricing-cards mt-5" style="display: flex; gap: 30px; align-items: center; justify-content: center;">
-                <!-- Plano Individual -->
-                <div class="pricing-card animate-slide-up" style="flex: 1; background: var(--dark-surface); border: 1px solid #333; color: white; padding: 30px; border-radius: 16px;">
-                    <div style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
-                        <h4 style="color: white; font-size: 1.2rem; margin: 0;">Formação Individual</h4>
-                        <p style="color: #888; font-size: 0.9rem; margin: 5px 0 0;">Exclusividade total</p>
-                        <div style="margin-top: 20px;">
-                            <div class="price-anchor">R$ 3.500,00</div>
-                            <div class="price-current" style="font-size: 2.5rem;">R$ 2.400</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Carga horária: 16 horas</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Atendimento 100% personalizado</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Projeto aplicado à sua realidade</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check" style="color:#555; width:20px;"></i> Flexibilidade de agenda</div>
-                        <div class="mt-5 text-center">
-                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero informações sobre a Formação Individual." target="_blank" style="color: white; border: 1px solid #555; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: block; font-size: 0.95rem;">Solicitar Individual</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>5. Serve para quem está fazendo TCC, dissertação ou tese?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. O Módulo 1 foi pensado especificamente para apoiar quem precisa estruturar, escrever, revisar e organizar melhor pesquisas acadêmicas com qualidade e ética.</p></div>
+      </div>
 
-                <!-- Plano Premium -->
-                <div class="pricing-card popular animate-slide-up delay-100" style="flex: 1.1; background: linear-gradient(180deg, #111111 0%, #0a192f 100%); border: 2px solid var(--accent-cyan); color: white; padding: 30px; border-radius: 16px; position: relative;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-cyan); color: #000; font-weight: 800; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; white-space: nowrap;">⭐ MELHOR CUSTO-BENEFÍCIO</div>
-                    <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 20px; padding-top: 10px;">
-                        <h4 style="color: white; font-size: 1.4rem; margin: 0;">Turma Premium</h4>
-                        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin: 5px 0 0;">Atenção aos detalhes e networking</p>
-                        <div style="margin-top: 20px;">
-                            <div class="price-anchor">R$ 2.400,00</div>
-                            <div class="price-current">R$ 1.197<span style="font-size: 1rem; color:#888; font-weight:400;">/pessoa</span></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Turma reduzida (máx. 5 pessoas)</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Acompanhamento próximo do instrutor</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Projetos reais desenvolvidos no grupo</div>
-                        <div style="margin-bottom: 10px; font-size: 0.95rem;"><i class="fas fa-check text-gradient" style="width:20px;"></i> Acesso a repositórios e códigos</div>
-                        
-                        <div class="mt-5 text-center">
-                            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Quero garantir minha vaga na Turma Premium." target="_blank" class="btn-glow" style="width: 100%; box-sizing: border-box;">
-                                Garantir Vaga
-                            </a>
-                        </div>
-                        
-                        <!-- Escassez -->
-                        <div style="margin-top: 20px;">
-                            <p style="font-size: 0.8rem; color: #ccc; margin-bottom: 5px; text-align: center;">🔴 Vagas limitadas (máx. 5 alunos por turma)</p>
-                            <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>6. O que diferencia a Turma Premium da Individual?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>A modalidade individual oferece exclusividade total, personalização máxima e flexibilidade de agenda. A Turma Premium (até 5 pessoas) oferece networking qualificado e um custo reduzido por participante.</p></div>
+      </div>
 
-    <!-- 9. GARANTIA -->
-    <section style="padding: 80px 0; background: #050505; color: white;">
-        <div class="container container-sm text-center animate-fade-in">
-            <i class="fas fa-shield-check" style="font-size: 3.5rem; color: #f1c40f; margin-bottom: 20px;"></i>
-            <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">Garantia Incondicional de 7 Dias.</h2>
-            <p style="font-size: 1rem; color: #aaa; max-width: 600px; margin: 0 auto;">
-                Eu confio tanto no poder transformador dessa formação que assumo todo o risco. Se em até 7 dias você participar das aulas e achar que o conteúdo não vai economizar centenas de horas da sua vida, basta enviar um e-mail e devolvo 100% do seu investimento.
-            </p>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>7. Vou aprender a criar sites educacionais do zero?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. No Módulo 2 você aprende a criar sites educacionais completos com apoio de IA e hospedá-los gratuitamente no GitHub Pages, sem custo de servidor.</p></div>
+      </div>
 
-    <!-- 10. FAQ -->
-    <section class="faq-section" style="padding: 80px 0; background: #FAFAFA;">
-        <div class="container container-sm">
-            <div class="section-header text-center animate-fade-in">
-                <h2 style="font-size: 2rem;">Perguntas Frequentes</h2>
-            </div>
-            
-            <div class="faq-container animate-slide-up" style="margin-top: 40px;">
-                <!-- FAQ Itens adaptados do faq.css do usuário -->
-                <div class="faq-item active" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
-                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
-                        <span>1. A formação é ao vivo ou gravada?</span><i class="fas fa-minus faq-toggle-icon" style="color: #888;"></i>
-                    </div>
-                    <div class="faq-answer" style="padding: 0 20px 20px; color: #666; font-size: 0.95rem;">
-                        <p>A formação acontece online e totalmente ao vivo via Microsoft Teams, garantindo interação em tempo real, ou presencial em instituições parceiras.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
-                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
-                        <span>2. A IA não corre o risco de cometer plágio no meu TCC?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
-                    </div>
-                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
-                        <p style="padding-bottom: 20px;">Esse é exatamente o diferencial. Ensinaremos métodos éticos de engenharia de prompts, focados em revisão, estruturação e mitigação de alucinações. A autoria será sempre 100% sua.</p>
-                    </div>
-                </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>8. Precisa saber programar para usar Google Apps Script?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Não é necessário conhecimento prévio de programação. Você aprenderá a utilizar a IA como copiloto na construção dos scripts, tornando o processo acessível e prático.</p></div>
+      </div>
 
-                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
-                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
-                        <span>3. Preciso assinar o ChatGPT Plus ou pagar outras IAs?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
-                    </div>
-                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
-                        <p style="padding-bottom: 20px;">Não é obrigatório. Demonstraremos as capacidades das versões gratuitas e pagas, e mostraremos como usar ferramentas como Copilot e Gemini, que possuem recursos premium gratuitos.</p>
-                    </div>
-                </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>9. Serve para coordenadores pedagógicos e gestores?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. A parte de automação, dashboards e análise de dados é especialmente relevante para coordenação pedagógica e gestão educacional baseada em evidências.</p></div>
+      </div>
 
-                <div class="faq-item" style="background: white; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea;">
-                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
-                        <span>4. Como o Napkin AI vai me ajudar?</span><i class="fas fa-plus faq-toggle-icon" style="color: #888;"></i>
-                    </div>
-                    <div class="faq-answer" style="padding: 0 20px; color: #666; font-size: 0.95rem; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;">
-                        <p style="padding-bottom: 20px;">É uma ferramenta revolucionária que transforma seus textos e ideias em mapas mentais, diagramas e fluxogramas profissionais em segundos, ideais para slides e artigos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>10. Quantas pessoas participam por turma?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>As turmas são limitadas a no máximo 5 participantes para garantir proximidade e qualidade no acompanhamento. Quando a turma fecha, abre-se uma nova.</p></div>
+      </div>
 
-    <!-- 11. FECHAMENTO & CTA FINAL -->
-    <section style="padding: 100px 15px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); color: white; text-align: center;">
-        <div class="container container-sm animate-slide-up">
-            <h2 style="font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">O relógio não para.<br>A tecnologia não espera.</h2>
-            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                Enquanto você passa horas em tarefas repetitivas, outros pesquisadores já estão utilizando a IA para acelerar publicações.<br><br>
-                <strong>As turmas Premium fecham ao atingir exatamente 5 inscritos.</strong>
-            </p>
-            <a href="https://wa.me/5514991258667?text=Olá, professor Maicon! Vim pelo final da página e quero reservar minha vaga AGORA." target="_blank" style="background: #0A0A0A; color: white; padding: 18px 30px; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; box-sizing: border-box; max-width: 400px;">
-                RESERVAR MINHA VAGA AGORA
-            </a>
-        </div>
-    </section>
+      <div class="faq-item">
+        <div class="faq-question"><span>11. O NotebookLM realmente ajuda na pesquisa acadêmica?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. O NotebookLM permite fazer upload de artigos, PDFs e fontes, e então cruzar, resumir e extrair insights de grandes volumes de documentos de forma rápida e confiável.</p></div>
+      </div>
 
-    <!-- Footer Padrão do site -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content text-center">
-                <div class="footer-logo" style="margin: 0 auto;">
-                    <h2>Prof. Maicon<span>Centner</span></h2>
-                    <p style="font-size: 0.9rem;">Soluções personalizadas para sua vida acadêmica e profissional</p>
-                </div>
-            </div>
-            <div class="footer-bottom text-center">
-                <p style="font-size: 0.85rem;">&copy; 2026 Prof. Maicon Centner. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="faq-item">
+        <div class="faq-question"><span>12. Como funciona a garantia de 7 dias?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Se dentro de 7 dias após o início das aulas você sentir que o conteúdo não atende às suas expectativas, basta enviar um e-mail e o valor será devolvido integralmente, sem questionamentos.</p></div>
+      </div>
 
-    <!-- Scripts -->
-    <script src="../js/main.js"></script>
-    <script src="../js/mobile-optimizations.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lógica do Accordion do FAQ simplificada para o novo layout
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.faq-toggle-icon');
-                
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Fecha todos
-                    faqItems.forEach(faq => {
-                        faq.classList.remove('active');
-                        const ans = faq.querySelector('.faq-answer');
-                        const ico = faq.querySelector('.faq-toggle-icon');
-                        if(ans) { ans.style.maxHeight = null; ans.style.opacity = 0; }
-                        if(ico) { ico.classList.replace('fa-minus', 'fa-plus'); }
-                    });
-                    
-                    // Abre o clicado
-                    if (!isActive) {
-                        item.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + "px";
-                        answer.style.opacity = 1;
-                        icon.classList.replace('fa-plus', 'fa-minus');
-                    }
-                });
-            });
+      <div class="faq-item">
+        <div class="faq-question"><span>13. Como é feito o agendamento das aulas?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Após a confirmação da inscrição, agendamos juntos os horários conforme disponibilidade mútua. A formação individual tem máxima flexibilidade nesse processo.</p></div>
+      </div>
 
-            // Menu Mobile Toggle
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navList = document.querySelector('.nav-list');
-            if (mobileMenuToggle && navList) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navList.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+      <div class="faq-item">
+        <div class="faq-question"><span>14. Vou sair com materiais prontos para usar?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. A proposta inclui entrega de prompts, templates de automação e estruturas visuais que podem ser adaptadas e aplicadas imediatamente na sua rotina.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>15. A formação serve para professores da educação básica?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. A frente de automação educacional foi pensada exatamente para docentes da educação básica que querem criar recursos digitais, acompanhar alunos com dados e otimizar sua rotina.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>16. Enquanto espero pelas vagas, outros estão avançando?</span><i class="fas fa-plus faq-toggle-icon"></i></div>
+        <div class="faq-answer"><p>Sim. As turmas fecham ao atingir exatamente 5 inscritos. Enquanto você analisa, outros pesquisadores já estão utilizando IA para acelerar publicações e modernizar sua prática. As vagas são limitadas por design.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 12. FINAL CTA ══════════════ -->
+<section class="final-cta">
+  <div class="container container-sm">
+    <span class="section-eyebrow" style="background:rgba(255,255,255,.08);color:var(--accent-cyan);border-color:rgba(0,242,254,.2);">
+      <i class="fas fa-flag-checkered"></i> Sua decisão
+    </span>
+    <h2>O futuro da educação não pertence a quem <em>ouviu falar</em> de IA.<br/>Pertence a quem a <span class="text-gradient">domina com método.</span></h2>
+    <p>As turmas Premium fecham ao atingir exatamente 5 inscritos. Enquanto você espera, outros pesquisadores já estão acelerando publicações e modernizando sua prática.</p>
+    <a href="https://wa.me/5514991258667?text=Olá,%20Prof.%20Maicon!%20Quero%20garantir%20minha%20vaga%20na%20Formação%20em%20IA." target="_blank" class="btn-glow">
+      <i class="fab fa-whatsapp"></i> Garantir Minha Vaga Agora
+    </a>
+    <p style="margin-top:14px;font-size:.84rem;color:#555;">
+      <i class="fas fa-shield-alt"></i> Garantia incondicional de 7 dias &bull; Compra 100% segura
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-footer">
+  <p>© 2025 Prof. Maicon Centner Germano &bull; Formação Completa em IA para Pesquisa Acadêmica e Educação</p>
+</footer>
+
+<!-- ══════════════ MOBILE STICKY CTA ══════════════ -->
+<div class="mobile-cta">
+  <a href="https://wa.me/5514991258667?text=Olá,%20Prof.%20Maicon!%20Quero%20garantir%20minha%20vaga." target="_blank" class="btn-glow">
+    <i class="fab fa-whatsapp"></i> Garantir Minha Vaga
+  </a>
+</div>
+
+<!-- ══════════════ SCRIPTS ══════════════ -->
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var wasOpen=item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active');});
+      if(!wasOpen) item.classList.add('active');
+    });
+  });
+
+  // Scroll-triggered animations via IntersectionObserver
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.animationPlayState='running';
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.fade-in,.slide-up').forEach(function(el){
+    el.style.animationPlayState='paused';
+    io.observe(el);
+  });
+</script>
 </body>
 </html>
