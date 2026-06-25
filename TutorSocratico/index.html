@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Socrático de Matemática — 9º ano</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+  <header id="app-header" class="hidden">
+    <div class="user-info">
+      <span class="user-name" id="display-nome"></span>
+      <span class="user-class" id="display-turma"></span>
+    </div>
+    
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <div class="accessibility-controls" style="display: flex; gap: 5px;">
+        <button id="btn-dark-mode" class="btn btn-outline" style="padding: 4px 10px; font-size: 14px;" onclick="window.app.toggleDarkMode()" title="Modo Escuro">🌙</button>
+        <button class="btn btn-outline" style="padding: 4px 10px; font-weight: bold; font-size: 14px;" onclick="window.app.changeFontSize(-1)" title="Diminuir texto">A-</button>
+        <button class="btn btn-outline" style="padding: 4px 10px; font-weight: bold; font-size: 14px;" onclick="window.app.changeFontSize(1)" title="Aumentar texto">A+</button>
+      </div>
+      <button class="btn btn-outline" style="padding: 6px 12px;" onclick="window.app.logout()">Trocar aluno</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-login" class="fade-in">
+      <div class="login-box">
+        <h1>Tutor Socrático</h1>
+        <p style="margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem;">Aprenda Matemática no seu ritmo.</p>
+        <div class="input-group">
+          <label for="input-nome">O seu Nome</label>
+          <input type="text" id="input-nome" placeholder="Ex: João Silva">
+        </div>
+        <div class="input-group">
+          <label for="select-turma">A sua Turma</label>
+          <select id="select-turma">
+            <option value="9A">9º Ano A</option>
+            <option value="9B">9º Ano B</option>
+            <option value="9C">9º Ano C</option>
+          </select>
+        </div>
+        <button class="btn" onclick="window.app.login()">Começar Jornada</button>
+      </div>
+    </section>
+
+    <section id="view-home" class="hidden fade-in">
+      <div id="motivational-box" class="motivational-msg"></div>
+      
+      <div id="active-session-box" class="hidden" style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--primary-color);">
+        <h3 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 10px;">Sessão em andamento</h3>
+        <p id="active-session-name" style="font-size: 0.9rem; margin-bottom: 10px;"></p>
+        <button class="btn" style="width: 100%;" onclick="window.app.resumeSession()">Continuar de onde parei</button>
+      </div>
+
+      <h2 class="section-title">O seu Plano de Estudos</h2>
+      <div class="skills-grid" id="skills-container">
+        </div>
+    </section>
+
+    <section id="view-study" class="hidden fade-in">
+      <div class="study-header">
+        <h2 id="study-title" style="font-size: 1.1rem; color: var(--primary-color);"></h2>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="study-progress"></div>
+        </div>
+      </div>
+      <div class="chat-container" id="chat-box">
+        </div>
+      <div class="options-container" id="options-box">
+        </div>
+    </section>
+
+    <section id="view-dashboard" class="hidden fade-in">
+      <h2 class="section-title">O meu Desempenho</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-label">Habilidades</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color: var(--success);" id="stat-concluidas">0</div>
+          <div class="stat-label">Concluídas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color: var(--warning);" id="stat-revisao">0</div>
+          <div class="stat-label">Em Revisão</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color: var(--primary-color);" id="stat-pontuacao">0%</div>
+          <div class="stat-label">Desempenho</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="radarChart"></canvas>
+      </div>
+
+      <h3 class="section-title" style="font-size: 1rem;">Conquistas</h3>
+      <div class="achievements-container" id="achievements-box">
+        <div class="achievement" id="ach-1"><div class="achievement-icon">🌱</div><div class="achievement-text">Primeira sessão!</div></div>
+        <div class="achievement" id="ach-2"><div class="achievement-icon">🔥</div><div class="achievement-text">5 sessões seguidas!</div></div>
+        <div class="achievement" id="ach-3"><div class="achievement-icon">⭐</div><div class="achievement-text">Dominou um tema!</div></div>
+        <div class="achievement" id="ach-4"><div class="achievement-icon">👑</div><div class="achievement-text">100% no app</div></div>
+      </div>
+
+      <h3 class="section-title" style="font-size: 1rem; margin-top: 20px;">Histórico</h3>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Habilidade</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+        <tbody id="history-body">
+          </tbody>
+      </table>
+    </section>
+  </main>
+
+  <nav id="app-nav" class="hidden">
+    <div class="nav-item active" onclick="window.app.switchView('view-home', this)">
+      <div class="nav-icon">🏠</div>
+      <span>Início</span>
+    </div>
+    <div class="nav-item" onclick="window.app.switchView('view-study', this)">
+      <div class="nav-icon">📚</div>
+      <span>Estudar</span>
+    </div>
+    <div class="nav-item" onclick="window.app.switchView('view-dashboard', this)">
+      <div class="nav-icon">📊</div>
+      <span>Desempenho</span>
+    </div>
+  </nav>
+
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

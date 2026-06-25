@@ -1,0 +1,342 @@
+/* CSS Puro - Variáveis e Reset */
+/* CSS Puro - Variáveis e Modo Escuro */
+:root {
+  --bg-color: #f8fafc;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --card-bg: #ffffff;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gray-light: #e5e7eb;
+  --nav-height: 60px;
+}
+
+body.dark-mode {
+  --bg-color: #0f172a; /* Fundo principal escuro */
+  --card-bg: #1e293b;  /* Fundo de elementos e balões */
+  --text-main: #f8fafc; /* Texto claro */
+  --text-muted: #94a3b8; /* Texto secundário */
+  --gray-light: #334155; /* Bordas no modo escuro */
+  --primary-color: #3b82f6; /* Azul ligeiramente mais claro para contraste */
+  --primary-hover: #60a5fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Utilitários */
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Header */
+header {
+  background-color: var(--card-bg);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-info { display: flex; flex-direction: column; }
+.user-name { font-weight: 600; font-size: 1.1rem; color: var(--primary-color); }
+.user-class { font-size: 0.8rem; color: var(--text-muted); }
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn:hover { background-color: var(--primary-hover); }
+.btn-outline { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); }
+.btn-outline:hover { background: var(--primary-color); color: white; }
+
+/* Layout Principal */
+main {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: calc(var(--nav-height) + 20px);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* View: Login */
+#view-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+}
+.login-box {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 400px;
+}
+.login-box h1 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.5rem; }
+.input-group { margin-bottom: 15px; text-align: left; }
+.input-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 500; }
+.input-group input, .input-group select {
+  width: 100%; padding: 10px; border: 1px solid var(--gray-light); border-radius: 8px; font-size: 1rem;
+}
+.login-box button { width: 100%; margin-top: 10px; padding: 12px; font-size: 1rem; }
+
+/* View: Home (Mapa de Habilidades) */
+.motivational-msg {
+  background: linear-gradient(135deg, var(--primary-color), #60a5fa);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.section-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; }
+
+.skills-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+@media(min-width: 600px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  border-left: 5px solid var(--gray-light);
+}
+.skill-card:hover:not(.locked) { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.skill-card.status-novo { border-left-color: var(--warning); }
+.skill-card.status-revisar { border-left-color: var(--danger); }
+.skill-card.status-concluido { border-left-color: var(--success); }
+
+.skill-card.locked { opacity: 0.6; cursor: not-allowed; }
+.skill-title { font-weight: 600; font-size: 1rem; margin-bottom: 5px; padding-right: 20px; }
+.skill-desc { font-size: 0.8rem; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-top: 10px; color: white; }
+.badge.novo { background: var(--warning); color: #fff; }
+.badge.revisar { background: var(--danger); }
+.badge.concluido { background: var(--success); }
+.lock-icon { position: absolute; top: 15px; right: 15px; font-size: 1.2rem; }
+
+/* View: Tutor Socrático (Chat) */
+/* Formato geral dos balões */
+/* Contentor do Chat (Controla o espaço entre as mensagens) */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* É ESTE NÚMERO QUE CONTROLA O ESPAÇO VERTICAL */
+  padding-bottom: 20px; /* Dá um pequeno respiro no final das mensagens */
+}
+
+.chat-bubble {
+  padding: 14px 18px; 
+  border-radius: 18px; 
+  font-size: 1rem;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* O Balão do Tutor com o Avatar do Robô */
+.chat-bubble.tutor {
+  background: var(--card-bg);
+  color: var(--text-main);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--gray-light);
+  position: relative;
+  margin-left: 45px; /* Espaço para o avatar */
+  max-width: calc(90% - 45px); /* Previne cortes no ecrã */
+}
+
+/* Criar a "foto" do robô via CSS */
+.chat-bubble.tutor::before {
+  content: "🤖";
+  position: absolute;
+  left: -45px;
+  bottom: 0px;
+  width: 36px;
+  height: 36px;
+  background: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* O Balão do Aluno */
+.chat-bubble.user {
+  background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  position: relative;
+  margin-right: 45px;
+  max-width: calc(90% - 45px);
+}
+
+/* Avatar do Aluno */
+.chat-bubble.user::after {
+  content: "🎓"; /* Ícone do aluno */
+  position: absolute;
+  right: -45px;
+  bottom: 0px;
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  border: 2px solid var(--card-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Botões de Múltipla Escolha (Adaptados para o Dark Mode) */
+/* Container das opções (Empurra os botões para o lado direito) */
+.options-container { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-end; /* Joga as opções para a direita */
+  gap: 10px; 
+  margin-top: 10px; 
+}
+
+/* Botões de Múltipla Escolha (Restaurando o Azul) */
+.option-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--primary-color); /* Volta para a borda Azul */
+  color: var(--primary-color); /* Texto Azul */
+  padding: 12px 16px;
+  border-radius: 16px;
+  border-bottom-right-radius: 4px; /* Canto reto para combinar com o balão do aluno */
+  text-align: left; /* Mantém o texto alinhado à esquerda para facilitar a leitura */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.95rem;
+  font-weight: 500;
+  max-width: 90%; /* Limita a largura para não colar no lado do tutor */
+}
+
+/* Efeito ao passar o rato (Hover) */
+.option-btn:hover {
+  background: var(--primary-color); /* Preenche de azul sólido */
+  color: #ffffff; /* O texto fica branco */
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25); /* Sombra azulada */
+}
+
+/* Formatação de listas dentro do chat (Estilo Word) */
+.chat-bubble ul, .chat-bubble ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 25px; /* Cria o recuo da lista */
+}
+
+.chat-bubble li {
+  margin-bottom: 8px; /* Dá um respiro entre um tópico e outro */
+  line-height: 1.5;
+}
+
+/* Negrito mais elegante no chat */
+.chat-bubble strong {
+  color: var(--primary-color); /* Deixa as palavras em negrito com a cor azul do tema */
+}
+
+/* View: Dashboard */
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+.stat-card { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.stat-value { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); }
+
+.chart-container { background: white; padding: 15px; border-radius: 12px; margin-bottom: 20px; position: relative; height: 300px; width: 100%; }
+
+.history-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; font-size: 0.85rem; }
+.history-table th, .history-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--gray-light); }
+.history-table th { background: var(--gray-light); font-weight: 600; }
+
+.achievements-container { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; }
+.achievement { background: white; padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; min-width: 100px; opacity: 0.5; filter: grayscale(1); transition: all 0.3s; }
+.achievement.unlocked { opacity: 1; filter: grayscale(0); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.achievement-icon { font-size: 1.5rem; margin-bottom: 5px; }
+.achievement-text { font-size: 0.7rem; text-align: center; }
+
+/* Navegação Inferior Corrigida */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  /* Altura fixa rigorosa considerando bordas de telemóveis */
+  height: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.nav-item { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  color: var(--text-muted); 
+  text-decoration: none; 
+  font-size: 0.75rem; 
+  cursor: pointer; 
+  transition: color 0.2s; 
+  flex: 1; 
+  height: 100%; 
+}
+
+.nav-item.active { 
+  color: var(--primary-color); 
+  /* Substituímos o font-weight:600 por text-shadow. 
+     O bold engrossava o botão e fazia a barra tremer! */
+  text-shadow: 0 0 0.5px var(--primary-color);
+}
+
+.nav-item { display: flex; flex-direction: column; align-items: center; color: var(--text-muted); text-decoration: none; font-size: 0.75rem; cursor: pointer; transition: color 0.2s; flex: 1; padding: 10px 0; }
+.nav-item.active { color: var(--primary-color); font-weight: 600; }
+.nav-icon { font-size: 1.2rem; margin-bottom: 2px; }
