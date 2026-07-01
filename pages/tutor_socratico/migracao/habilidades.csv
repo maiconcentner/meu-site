@@ -1,0 +1,10 @@
+id,titulo,descricao,prerequisitos,prioridade,status_inicial,ordem_sugerida
+EF.09.MAT.2.92,Produtos Notáveis,Reconhecer e calcular produtos notáveis.,,1,revisar,0
+EF.09.MAT.2.93,Fatoração e Equação do 2º Grau,Fatorar expressões algébricas.,EF.09.MAT.2.92,2,revisar,1
+EF.09.MAT.2.94,Simplificação de Expressões,Simplificar expressões algébricas.,EF.09.MAT.2.93,3,revisar,2
+EF.09.MAT.3.101,Relações Métricas no Triângulo Retângulo,Calcular relações métricas no triângulo retângulo.,EF.09.MAT.3.100,4,novo,4
+EF.09.MAT.3.99,Semelhança de Triângulos,Reconhecer condições de semelhança entre triângulos.,,5,novo,5
+EF.09.MAT.3.102,Teorema de Tales,Aplicar o Teorema de Tales em problemas de proporcionalidade.,EF.09.MAT.3.99,6,novo,6
+EF.09.MAT.2.96,"Ângulos Notáveis (30°, 45°, 60°)",Resolver problemas com razões trigonométricas.,,7,novo,7
+EF.09.MAT.3.98,Arcos e Ângulos da Circunferência,Calcular ângulos centrais e inscritos.,,8,novo,8
+EF.09.MAT.3.100,Teorema de Pitágoras,Relação algébrica e demonstração geométrica.,,3.5,novo,3

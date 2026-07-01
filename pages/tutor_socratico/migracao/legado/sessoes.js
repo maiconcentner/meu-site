@@ -1,5 +1,5 @@
 // Importamos as funções que nos ajudam a construir as sessões
-import { op, etapaEscolha, etapaAvaliacao, etapaTexto } from '../engine/helpers.js';
+import { op, etapaEscolha, etapaAvaliacao, etapaTexto } from '../../js/engine/helpers.js';
 
 export const SESSOES = {
   "EF.09.MAT.2.92": {

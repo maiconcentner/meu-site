@@ -1,20 +1,21 @@
-import { HABILIDADES, ORDEM_SUGERIDA } from '../data/habilidades.js';
-import { SESSOES } from '../data/sessoes.js';
+import { ContentStore } from '../data/store.js';
 import { deepClone, op, etapaEscolha, etapaTexto, etapaAvaliacao } from './helpers.js';
 
 // Função de segurança caso uma habilidade ainda não tenha árvore mapeada
+// na planilha (ex: o professor acabou de criar a linha em "Habilidades"
+// mas ainda não escreveu os nós dela em "Nos"/"Opcoes").
 function criarSessaoFallback(id) {
-  const h = HABILIDADES[id];
+  const h = ContentStore.habilidades[id];
   return {
     id, titulo: h?.titulo || id, objetivo: h?.descricao || "Sessão de estudo.",
     etapas: [
       etapaEscolha("e1", `Vamos estudar ${h?.titulo || id}. Antes de começar, como se sente sobre este assunto?`, [
         op(1, "Tenho segurança.", "e2"), op(2, "Tenho alguma dúvida.", "e2"), op(3, "Estou a começar agora.", "e2")
-      ], "pergunta_diagnostica"),
+      ], "escolha", null, false), // contaPontuacao = false: é diagnóstico, não conteúdo
       etapaTexto("e2", `O nosso plano será: identificar a ideia principal, testar um exemplo, observar um erro comum e fechar com uma verificação. O objetivo não é decorar, mas entender o 'porquê'.`, "e3"),
       etapaEscolha("e3", `Se tivesse que explicar este tema, o que seria mais importante: a regra pronta ou a relação entre as partes?`, [
-        op(1, "A relação entre as partes.", "e4", "Excelente. Entender relações dá mais autonomia."),
-        op(2, "A regra pronta.", "e4r", "A regra ajuda, mas vamos ver por que funciona.")
+        op(1, "A relação entre as partes.", "e4", "Excelente. Entender relações dá mais autonomia.", true),
+        op(2, "A regra pronta.", "e4r", "A regra ajuda, mas vamos ver por que funciona.", false)
       ]),
       etapaTexto("e4r", `As regras são úteis, mas aprendemos melhor quando percebemos o padrão que as gerou. Vamos treinar isso.`, "e4"),
       etapaAvaliacao("e4", `Fechamento rápido:`, `Qual é a melhor postura para aprender ${h?.titulo || id}?`, [
@@ -26,9 +27,9 @@ function criarSessaoFallback(id) {
 
 export const SessionFactory = {
   getSession(id) {
-    if (SESSOES[id]) return deepClone(SESSOES[id]);
+    if (ContentStore.sessoes[id]) return deepClone(ContentStore.sessoes[id]);
     const fallback = criarSessaoFallback(id);
-    SESSOES[id] = fallback; // Guarda em cache
+    ContentStore.sessoes[id] = fallback; // Guarda em cache de memória
     return deepClone(fallback);
   },
   createSessionState(id) {
@@ -48,18 +49,33 @@ export function getEtapaAtual(sessionState) {
   return sessao.etapas.find(e => e.id === sessionState.etapaAtualId);
 }
 
-export function avancarPara(sessionState, proximoId, acertou = false, isReflexao = false) {
+/**
+ * Avança a sessão para a próxima etapa.
+ *
+ * `opcaoSelecionada` é o objeto de opção que o aluno escolheu — precisa ter
+ * `.proximo` e, opcionalmente, `.correta` (default true). `etapaAtual` é a
+ * etapa de onde ele está saindo — precisa ter `.contaPontuacao` (default true).
+ *
+ * Antes essa função recebia um booleano `acertou` já calculado em outro lugar
+ * (adivinhado a partir do nome do ID de destino). Agora a decisão vem de um
+ * campo de dado explícito, então uma habilidade nova cadastrada na planilha
+ * não depende de seguir nenhuma convenção de nomenclatura escondida.
+ */
+export function avancarPara(sessionState, opcaoSelecionada, etapaAtual) {
+  const proximoId = opcaoSelecionada.proximo;
+  const acertou = opcaoSelecionada.correta !== false;
+  const contaPontuacao = etapaAtual?.contaPontuacao !== false;
+
   sessionState.historico.push({ etapaId: sessionState.etapaAtualId, proximoId, acertou, timestamp: new Date().toISOString() });
-  
-  // Só contamos acertos e erros matemáticos se não for uma etapa de "só ler" e não for o fim
-  if (!isReflexao && proximoId !== 'fim') {
+
+  if (contaPontuacao && proximoId !== 'fim') {
     if (acertou) sessionState.acertos += 1;
     else sessionState.erros += 1;
   }
-  
+
   sessionState.etapaAtualId = proximoId;
   sessionState.tentativasEtapa = 0;
-  
+
   const sessao = getSessaoById(sessionState.habilidadeId);
   const existe = sessao.etapas.some(e => e.id === proximoId);
   if (!existe || proximoId === 'fim') {
@@ -77,20 +93,19 @@ export function calcularPontuacao(sessionState) {
 }
 
 export function habilidadeDesbloqueada(habilidadeId, progresso) {
-  const habilidade = HABILIDADES[habilidadeId];
+  const habilidade = ContentStore.habilidades[habilidadeId];
   if (!habilidade || !habilidade.prerequisitos || habilidade.prerequisitos.length === 0) return true;
   return habilidade.prerequisitos.every(pr => {
     const reg = progresso?.[pr];
     return reg && reg.status === 'concluido';
   });
-  
 }
 
 export function sugerirProximaHabilidade(progresso = {}) {
-  for (const id of ORDEM_SUGERIDA) {
+  for (const id of ContentStore.ordemSugerida) {
     const reg = progresso[id];
     if (reg?.status === 'concluido') continue;
     if (habilidadeDesbloqueada(id, progresso)) return id;
   }
-  return ORDEM_SUGERIDA[0];
+  return ContentStore.ordemSugerida[0];
 }

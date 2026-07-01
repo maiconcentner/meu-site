@@ -1,0 +1,549 @@
+habilidade_id,no_id_origem,ordem,texto,no_id_destino,correta,feedback
+EF.09.MAT.2.92,e1,1,Eu travo. Não sei por onde começar.,e2_nao_sabe,TRUE,Ótimo ponto de partida: vamos construir desde o começo.
+EF.09.MAT.2.92,e1,2,Penso em 'elevar cada termo' e pronto.,e2_erro_inicial,TRUE,Essa é uma ideia comum. Vamos investigar se está faltando algo.
+EF.09.MAT.2.92,e1,3,"Penso em multiplicar \( (a+b) \) por \( (a+b) \), usando o 'chuveirinho'.",e2_caminho_bom,TRUE,"Muito bem, você já pensa na estrutura do produto."
+EF.09.MAT.2.92,e1,4,Eu já conheço a regra pronta e uso direto.,e2_avancado,TRUE,"Excelente, vamos ver se você também entende a origem da regra."
+EF.09.MAT.2.92,e2_nao_sabe,1,"Entendido, continuar ➔",e3_nao_sabe_q1,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e3_nao_sabe_q1,1,"É 'vezes ele mesmo', ou seja, multiplicar o número por ele mesmo.",e3_nao_sabe_q2,TRUE,Perfeito. Esse é o ponto crucial.
+EF.09.MAT.2.92,e3_nao_sabe_q1,2,É 'vezes dois'.,e3_nao_sabe_corrige,FALSE,Esse é um erro comum. Vamos ajustar isso.
+EF.09.MAT.2.92,e3_nao_sabe_q1,3,Não tenho certeza.,e3_nao_sabe_corrige,FALSE,Sem problema. Vamos clarear essa ideia.
+EF.09.MAT.2.92,e3_nao_sabe_corrige,1,"Entendido, continuar ➔",e3_nao_sabe_q2,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e3_nao_sabe_q2,1,"Entendido, continuar ➔",e3_distributiva_intro,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e2_erro_inicial,1,"Entendido, continuar ➔",e3_distributiva_intro,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e2_caminho_bom,1,"Entendido, continuar ➔",e3_distributiva_intro,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e2_avancado,1,"Entendido, continuar ➔",e3_distributiva_intro,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e3_distributiva_intro,1,"Entendido, continuar ➔",e3_distributiva,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e3_distributiva,1,"\( a \cdot a \), \( a \cdot b \), \( b \cdot a \), \( b \cdot b \)",e4_agrupamento,TRUE,Perfeito. Esses são os quatro produtos que surgem.
+EF.09.MAT.2.92,e3_distributiva,2,"\( a \cdot a \), \( b \cdot b \)",e4_recuperacao_parcial,FALSE,Você anotou apenas os extremos. Faltaram os cruzamentos.
+EF.09.MAT.2.92,e3_distributiva,3,\( a \cdot b \) e \( b \cdot a \) apenas.,e4_recuperacao_parcial,FALSE,Você anotou apenas os cruzados. Faltaram os quadrados.
+EF.09.MAT.2.92,e4_recuperacao_parcial,1,"Entendido, continuar ➔",e4_agrupamento,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e4_agrupamento,1,"\( a^2 \), \( ab \), \( ba \), \( b^2 \)",e5_agrupa_ab,TRUE,Correto. Agora vamos analisar \( ab \) e \( ba \).
+EF.09.MAT.2.92,e4_agrupamento,2,"\( a^2 \), \( b^2 \), \( 2ab \)",e5_agrupa_ab_recupera,FALSE,"Você já deu um passo à frente, mas vamos chegar a \( 2ab \) com calma."
+EF.09.MAT.2.92,e4_agrupamento,3,"\( a^2 \), \( a^2 \), \( b^2 \), \( b^2 \)",e5_agrupa_ab_recupera,FALSE,Você repetiu os quadrados. Vamos olhar os cruzados.
+EF.09.MAT.2.92,e5_agrupa_ab_recupera,1,"Entendido, continuar ➔",e5_agrupa_ab,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e5_agrupa_ab,1,Eles se somam e viram \( 2ab \).,e6_forma_padrao,TRUE,Isso mesmo. É daí que nasce o termo do meio.
+EF.09.MAT.2.92,e5_agrupa_ab,2,Um cancela o outro e desaparecem.,e5_agrupa_ab_corrige,FALSE,Isso só aconteceria se um fosse \( +ab \) e o outro \( -ab \).
+EF.09.MAT.2.92,e5_agrupa_ab,3,Eles viram \( a^2 \).,e5_agrupa_ab_corrige,FALSE,"O termo \( a^2 \) vem de \( a \cdot a \), não de \( ab \)."
+EF.09.MAT.2.92,e5_agrupa_ab_corrige,1,"Entendido, continuar ➔",e6_forma_padrao,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e6_forma_padrao,1,"Entendido, continuar ➔",e7_geometria,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e7_geometria,1,"Entendido, continuar ➔",e8_geometria_q1,,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e8_geometria_q1,1,\( a^2 + ab + ab + b^2 \),e8_geometria_q2,TRUE,Correto. Isso é igual à área total \( (a + b)^2 \).
+EF.09.MAT.2.92,e8_geometria_q1,2,\( a^2 + b^2 \),e8_geometria_corrige,FALSE,Você esqueceu os dois retângulos \( ab \).
+EF.09.MAT.2.92,e8_geometria_q1,3,\( 2a + 2b \),e8_geometria_corrige,FALSE,"Isso lembra perímetro, não área."
+EF.09.MAT.2.92,e8_geometria_corrige,1,"Entendido, continuar ➔",e8_geometria_q2,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e8_geometria_q2,1,\( a^2 + 2ab + b^2 \),e9_conexao_regras,TRUE,Perfeito. É a mesma expressão que encontramos pela multiplicação.
+EF.09.MAT.2.92,e8_geometria_q2,2,\( a^2 + b^2 \),e8_geometria_corrige2,FALSE,Vamos lembrar dos dois retângulos novamente.
+EF.09.MAT.2.92,e8_geometria_q2,3,\( 2(a + b) \),e8_geometria_corrige2,FALSE,Perímetro não é área.
+EF.09.MAT.2.92,e8_geometria_corrige2,1,"Entendido, continuar ➔",e9_conexao_regras,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e9_conexao_regras,1,"Entendido, continuar ➔",e10_comparar_outros,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e10_comparar_outros,1,\( (a + b)(a - b) \),e11_diferenca_quadrados,TRUE,Correto. Essa é a diferença de quadrados.
+EF.09.MAT.2.92,e10_comparar_outros,2,\( (a - b)^2 \),e10_corrige_outros,FALSE,Essa gera \( a^2 - 2ab + b^2 \).
+EF.09.MAT.2.92,e10_comparar_outros,3,\( (a + b)^2 \),e10_corrige_outros,FALSE,Essa gera \( a^2 + 2ab + b^2 \).
+EF.09.MAT.2.92,e10_corrige_outros,1,"Entendido, continuar ➔",e11_diferenca_quadrados,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e11_diferenca_quadrados,1,"Entendido, continuar ➔",e12_erro_x_5,,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e12_erro_x_5,1,Onde foram parar os produtos cruzados \( x \cdot 5 \) e \( 5 \cdot x \)?,e13_pesquisa,TRUE,Excelente pergunta. Ela obriga o colega a reconstruir a distributiva.
+EF.09.MAT.2.92,e12_erro_x_5,2,Você decorou a fórmula errada?,e12_corrige_pergunta,FALSE,"Isso culpa o colega, mas não o ajuda a pensar melhor."
+EF.09.MAT.2.92,e12_erro_x_5,3,Quer que eu te dê a resposta?,e12_corrige_pergunta,FALSE,Nosso objetivo é que ele mesmo reconstrua.
+EF.09.MAT.2.92,e12_corrige_pergunta,1,"Entendido, continuar ➔",e13_pesquisa,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e13_pesquisa,1,"Entendido, continuar ➔",e14_aplicar,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e14_aplicar,1,\( x^2 + 9 \),e14_feedback_errado1,FALSE,Você considerou apenas os quadrados. Faltou o termo do meio.
+EF.09.MAT.2.92,e14_aplicar,2,\( x^2 + 6x + 9 \),e14_feedback_correto,TRUE,Muito bem! Você aplicou corretamente o padrão.
+EF.09.MAT.2.92,e14_aplicar,3,\( x^2 + 3x + 9 \),e14_feedback_errado2,FALSE,"Faltou perceber que o termo do meio é \( 2 \cdot x \cdot 3 \), não apenas \( x \cdot 3 \)."
+EF.09.MAT.2.92,e14_aplicar,4,\( x^2 - 6x + 9 \),e14_feedback_errado3,FALSE,"Esse padrão aparece em \( (x - 3)^2 \), não em \( (x + 3)^2 \)."
+EF.09.MAT.2.92,e14_feedback_errado1,1,"Entendido, continuar ➔",e15_desafio_extra,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e14_feedback_errado2,1,"Entendido, continuar ➔",e15_desafio_extra,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e14_feedback_errado3,1,"Entendido, continuar ➔",e15_desafio_extra,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e14_feedback_correto,1,"Entendido, continuar ➔",e15_desafio_extra,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e15_desafio_extra,1,\( 4x^2 - 10x + 25 \),e15_feedback_errado_a,FALSE,Observe o termo do meio: ele parece diferente do padrão \( a^2 - 2ab + b^2 \).
+EF.09.MAT.2.92,e15_desafio_extra,2,\( 4x^2 - 20x + 25 \),e15_feedback_correto_a,TRUE,Muito bom. Você aplicou o padrão com \( a = 2x \) e \( b = 5 \).
+EF.09.MAT.2.92,e15_desafio_extra,3,\( 4x^2 + 20x + 25 \),e15_feedback_errado_b,FALSE,Cuidado com o sinal. Aqui temos \( (a - b)^2 \).
+EF.09.MAT.2.92,e15_desafio_extra,4,\( 4x^2 + 10x + 25 \),e15_feedback_errado_b,FALSE,Também não bate com o padrão \( (a - b)^2 \).
+EF.09.MAT.2.92,e15_feedback_errado_a,1,"Entendido, continuar ➔",e16_reflexao_final,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e15_feedback_errado_b,1,"Entendido, continuar ➔",e16_reflexao_final,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e15_feedback_correto_a,1,"Entendido, continuar ➔",e16_reflexao_final,TRUE,Vamos seguir passo a passo.
+EF.09.MAT.2.92,e16_reflexao_final,1,"São multiplicações tão frequentes que ganham uma forma padrão, mas que eu consigo reconstruir usando distributiva e geometria.",e_final,TRUE,Essa visão dá segurança para resolver problemas novos.
+EF.09.MAT.2.92,e16_reflexao_final,2,São fórmulas prontas que eu devo decorar sem pensar muito.,e_final,TRUE,"Você pode até usar fórmulas, mas entender sua origem dá mais autonomia."
+EF.09.MAT.2.92,e16_reflexao_final,3,São truques que só servem para prova.,e_final,TRUE,"Na verdade, elas aparecem em vários problemas algébricos e geométricos."
+EF.09.MAT.2.92,e_final,1,\( (a + b)^2 = a^2 + 2ab + b^2 \),,FALSE,
+EF.09.MAT.2.92,e_final,2,\( (a - b)^2 = a^2 - 2ab + b^2 \),,FALSE,
+EF.09.MAT.2.92,e_final,3,\( (a + b)(a - b) = a^2 - b^2 \),,FALSE,
+EF.09.MAT.2.92,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.2.93,e1,1,Eu travo. Não sei por onde começar.,e2_nao_sabe,TRUE,Ótimo ponto de partida. Vamos construir a ideia passo a passo.
+EF.09.MAT.2.93,e1,2,Penso em tentar 'juntar tudo' ou fazer alguma conta direta.,e2_nao_sabe,TRUE,Vamos ver se faz sentido tratar isso como 'uma coisa só' ou se há estrutura escondida.
+EF.09.MAT.2.93,e1,3,"Penso que isso pode ser o resultado de algum produto notável, como \( (x+3)^2 \).",e2_produto_notavel,TRUE,"Ótimo, você já suspeita da origem da expressão."
+EF.09.MAT.2.93,e1,4,"Vejo que é um polinômio de 2º grau, mas não sei como fatorar.",e2_polinomio,TRUE,"Excelente, você já identifica o tipo. Falta conectar com a fatoração."
+EF.09.MAT.2.93,e1,5,Minha primeira ideia é aplicar Bhaskara direto.,e2_bhaskara,TRUE,"Bhaskara ajuda, mas vamos ver um caminho mais estrutural primeiro."
+EF.09.MAT.2.93,e2_nao_sabe,1,"Entendido, continuar ➔",e3_tipo_termos,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e2_produto_notavel,1,"Entendido, continuar ➔",e3_tipo_termos,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e2_polinomio,1,"Entendido, continuar ➔",e3_tipo_termos,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e2_bhaskara,1,"Entendido, continuar ➔",e3_tipo_termos,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e3_tipo_termos,1,"Todos são 'do mesmo tipo', só com números diferentes.",e3_corrige_tipos,FALSE,"Vamos diferenciar melhor potência, variável e constante."
+EF.09.MAT.2.93,e3_tipo_termos,2,"\( x^2 \) é termo quadrático, \( 6x \) é termo linear e \( 9 \) é termo constante.",e4_quadrado_perfeito,TRUE,Perfeito. Essa é a estrutura típica de um polinômio de 2º grau.
+EF.09.MAT.2.93,e3_tipo_termos,3,Não sei bem como classificar.,e3_corrige_tipos,FALSE,Sem problema. Vamos organizar isso juntos.
+EF.09.MAT.2.93,e3_corrige_tipos,1,"Entendido, continuar ➔",e4_quadrado_perfeito,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e4_quadrado_perfeito,1,"Não, não vejo relação.",e4_recupera_padroes,FALSE,Vamos comparar termo a termo com \( a^2 + 2ab + b^2 \).
+EF.09.MAT.2.93,e4_quadrado_perfeito,2,Estou em dúvida. Pode ser ou não.,e4_recupera_padroes,FALSE,"Ótimo, a dúvida é um bom ponto para investigar com calma."
+EF.09.MAT.2.93,e4_quadrado_perfeito,3,"Sim, parece um quadrado perfeito.",e5_identifica_a_b,TRUE,Boa suspeita. Vamos identificar \( a \) e \( b \).
+EF.09.MAT.2.93,e4_recupera_padroes,1,"Entendido, continuar ➔",e5_identifica_a_b,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e5_identifica_a_b,1,"Entendido, continuar ➔",e5_identifica_a_b_q,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e5_identifica_a_b_q,1,\( a = 3 \) e \( b = x \).,e5_corrige_ab,FALSE,"A ordem pode ser trocada, mas é mais natural deixar a variável como \( a \)."
+EF.09.MAT.2.93,e5_identifica_a_b_q,2,\( a = x^2 \) e \( b = 9 \).,e5_corrige_ab,FALSE,"Se \( a = x^2 \), então \( a^2 = x^4 \), o que não bate com \( x^2 \)."
+EF.09.MAT.2.93,e5_identifica_a_b_q,3,\( a = x \) e \( b = 3 \).,e6_confere_meio,TRUE,Boa escolha. Agora vamos conferir o termo do meio usando \( 2ab \).
+EF.09.MAT.2.93,e5_corrige_ab,1,"Entendido, continuar ➔",e6_confere_meio,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e6_confere_meio,1,\( 2ab = 5x \).,e6_corrige_meio,FALSE,Refaça a conta: \( 2 \cdot x \cdot 3 \).
+EF.09.MAT.2.93,e6_confere_meio,2,\( 2ab = 2x + 3 \).,e6_corrige_meio,FALSE,"Aqui não estamos somando, estamos multiplicando."
+EF.09.MAT.2.93,e6_confere_meio,3,\( 2ab = 2 \cdot x \cdot 3 = 6x \).,e7_conclui_quadrado_perfeito,TRUE,Perfeito. O termo do meio coincide com \( 6x \).
+EF.09.MAT.2.93,e6_corrige_meio,1,"Entendido, continuar ➔",e7_conclui_quadrado_perfeito,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e7_conclui_quadrado_perfeito,1,"Entendido, continuar ➔",e8_significado_fatorar,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e8_significado_fatorar,1,Significa apenas 'deixar menor'.,e8_corrige_significado,FALSE,Nem sempre a forma fatorada é 'menor'; ela é mais estruturada.
+EF.09.MAT.2.93,e8_significado_fatorar,2,Significa já resolver a equação.,e8_corrige_significado,FALSE,"Resolver equação usa fatoração, mas não é a mesma coisa."
+EF.09.MAT.2.93,e8_significado_fatorar,3,"Significa reescrever o polinômio como um produto, em vez de soma de termos.",e9_reverso,TRUE,Exatamente. Fatorar é enxergar a expressão em forma de produto.
+EF.09.MAT.2.93,e8_corrige_significado,1,"Entendido, continuar ➔",e9_reverso,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e9_reverso,1,"Entendido, continuar ➔",e10_reexpansao,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e10_reexpansao,1,\( x^2 + 9 \).,e10_corrige_reexpansao,FALSE,Você esqueceu os produtos cruzados \( x \cdot 3 \) e \( 3 \cdot x \).
+EF.09.MAT.2.93,e10_reexpansao,2,\( x^2 + 3x + 9 \).,e10_corrige_reexpansao,FALSE,Faltou multiplicar por 2 no termo do meio.
+EF.09.MAT.2.93,e10_reexpansao,3,\( x^2 + 6x + 9 \).,e10_confirma_equiv,TRUE,Perfeito. Isso confirma a equivalência.
+EF.09.MAT.2.93,e10_corrige_reexpansao,1,"Entendido, continuar ➔",e10_confirma_equiv,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e10_confirma_equiv,1,"Entendido, continuar ➔",e11_equacao_2grau,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e11_equacao_2grau,1,"Substituir e escrever \( (x + 3)^2 = 0 \), depois perguntar quando um quadrado é zero.",e12_produto_nulo,TRUE,Excelente abordagem.
+EF.09.MAT.2.93,e11_equacao_2grau,2,Dividir tudo por 9 para simplificar.,e11_corrige_equacao,FALSE,Dividir não explora bem a estrutura do quadrado perfeito.
+EF.09.MAT.2.93,e11_equacao_2grau,3,Aplicar Bhaskara direto e ignorar a fatoração.,e11_corrige_equacao,FALSE,Vamos aproveitar que já temos uma forma fatorada simples.
+EF.09.MAT.2.93,e11_corrige_equacao,1,"Entendido, continuar ➔",e12_produto_nulo,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e12_produto_nulo,1,Que \( x + 3 \) pode ser qualquer número.,e12_corrige_produto_nulo,FALSE,"Se a base fosse qualquer número não nulo, o quadrado não seria zero."
+EF.09.MAT.2.93,e12_produto_nulo,2,Que \( x + 3 \) é necessariamente positivo.,e12_corrige_produto_nulo,FALSE,"Aqui estamos impondo que o quadrado seja zero, não apenas positivo."
+EF.09.MAT.2.93,e12_produto_nulo,3,"Que \( x + 3 \) precisa ser zero, porque um quadrado só é zero quando a base é zero.",e13_encontra_raiz,TRUE,Correto. Esse é o princípio central.
+EF.09.MAT.2.93,e12_corrige_produto_nulo,1,"Entendido, continuar ➔",e13_encontra_raiz,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e13_encontra_raiz,1,\( x = 3 \).,e13_corrige_raiz,FALSE,Cuidado: precisamos 'anular' o \(+3\).
+EF.09.MAT.2.93,e13_encontra_raiz,2,\( x = -3 \).,e14_interpreta_raiz,TRUE,Perfeito. Essa é a raiz da equação.
+EF.09.MAT.2.93,e13_encontra_raiz,3,\( x = 0 \).,e13_corrige_raiz,FALSE,Verifique: \( 0 + 3 \) resulta em 0?
+EF.09.MAT.2.93,e13_corrige_raiz,1,"Entendido, continuar ➔",e14_interpreta_raiz,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e14_interpreta_raiz,1,"Entendido, continuar ➔",e15_outros_exemplos,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e15_outros_exemplos,1,\( (x + 5)^2 \).,e15_feedback_errado1,FALSE,Verifique o sinal do termo do meio.
+EF.09.MAT.2.93,e15_outros_exemplos,2,\( (x - 5)^2 \).,e15_feedback_correto1,TRUE,"Muito bem, isso indica outro trinômio quadrado perfeito."
+EF.09.MAT.2.93,e15_outros_exemplos,3,\( (x - 25)^2 \).,e15_feedback_errado1,FALSE,Observe qual número ao quadrado dá 25.
+EF.09.MAT.2.93,e15_outros_exemplos,4,"Não sei, não parece produto notável.",e15_feedback_errado1,FALSE,Vamos analisar termo a termo.
+EF.09.MAT.2.93,e15_feedback_errado1,1,"Entendido, continuar ➔",e15_feedback_correto1,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e15_feedback_correto1,1,"Entendido, continuar ➔",e16_diferenca_quadrados,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e16_diferenca_quadrados,1,"Entendido, continuar ➔",e17_diferenca_quadrados_q,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e17_diferenca_quadrados_q,1,Ela diz apenas que \( a^2 \) é maior que \( b^2 \).,e17_corrige_dif,FALSE,Isso não captura o padrão de fatoração.
+EF.09.MAT.2.93,e17_diferenca_quadrados_q,2,Ela mostra que a diferença de duas áreas quadradas pode ser vista como o produto da soma e da diferença dos lados.,e18_reflexao_final,TRUE,Excelente leitura geométrica.
+EF.09.MAT.2.93,e17_diferenca_quadrados_q,3,"Ela é um truque sem sentido, usado só em exercícios.",e17_corrige_dif,FALSE,"Na verdade, essa relação aparece em muitos problemas reais."
+EF.09.MAT.2.93,e17_corrige_dif,1,"Entendido, continuar ➔",e18_reflexao_final,,Vamos seguir passo a passo.
+EF.09.MAT.2.93,e18_reflexao_final,1,Ela é apenas uma etapa burocrática antes de aplicar fórmulas.,e_final,TRUE,"Na prática, muitas vezes dispensa fórmulas."
+EF.09.MAT.2.93,e18_reflexao_final,2,Ela só serve para polinômios 'bonitinhos'.,e_final,TRUE,Mesmo polinômios sem produto notável podem se beneficiar da tentativa de fatoração.
+EF.09.MAT.2.93,e18_reflexao_final,3,"Ela permite enxergar o polinômio como produto, facilitando encontrar raízes pelo princípio do produto nulo.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.2.93,e_final,1,"Se \( x^2 - 10x + 25 = 0 \), então \( (x - 5)^2 = 0 \) e a única solução é \( x = 5 \).",,FALSE,
+EF.09.MAT.2.93,e_final,2,"Se \( x^2 + 6x + 9 = 0 \), então \( (x + 3)^2 = 0 \) e a única solução é \( x = -3 \).",,FALSE,
+EF.09.MAT.2.93,e_final,3,Trinômios que se encaixam em \( a^2 \pm 2ab + b^2 \) podem ser fatorados como \( (a \pm b)^2 \).,,FALSE,
+EF.09.MAT.2.93,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.2.94,e1,1,Eu travo e só penso em 'fazer alguma conta' sem saber qual.,e2_nao_sabe,TRUE,Ótimo ponto de partida. Vamos descobrir o que significa simplificar.
+EF.09.MAT.2.94,e1,2,"Eu tento somar tudo direto, como se fosse um número só.",e2_somar,TRUE,Vamos ver quando somar faz sentido e quando não.
+EF.09.MAT.2.94,e1,3,Eu já olho se tem fator comum ou se parece com produto notável.,e2_avancado,TRUE,Excelente. Vamos aprofundar esse olhar.
+EF.09.MAT.2.94,e1,4,Eu penso primeiro em substituir um valor para \( x \) e calcular.,e2_valor_numerico,TRUE,"Boa estratégia, mas simplificar antes costuma reduzir erros."
+EF.09.MAT.2.94,e2_nao_sabe,1,"Entendido, continuar ➔",e3_expressao_visao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e2_somar,1,"Entendido, continuar ➔",e3_expressao_visao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e2_avancado,1,"Entendido, continuar ➔",e3_expressao_visao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e2_valor_numerico,1,"Entendido, continuar ➔",e3_expressao_visao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e3_expressao_visao,1,"Entendido, continuar ➔",e3_tipo_termos,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e3_tipo_termos,1,Ambos são termos quadráticos.,e3_corrige_tipo,FALSE,Veja a diferença entre \( x^2 \) e \( x \).
+EF.09.MAT.2.94,e3_tipo_termos,2,O primeiro é quadrático e o segundo é linear.,e4_fator_comum_simples,TRUE,Correto: isso é típico de expressões de 2º grau.
+EF.09.MAT.2.94,e3_tipo_termos,3,"São apenas 'números com letras', não sei classificar.",e3_corrige_tipo,FALSE,Vamos organizar essa ideia.
+EF.09.MAT.2.94,e3_corrige_tipo,1,"Entendido, continuar ➔",e4_fator_comum_simples,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e4_fator_comum_simples,1,"Entendido, continuar ➔",e4_escolha_fator,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e4_escolha_fator,1,Apenas \( x \).,e4_corrige_fator,FALSE,Veja que os números 3 e 6 também têm algo em comum.
+EF.09.MAT.2.94,e4_escolha_fator,2,Apenas \( 3 \).,e4_corrige_fator,FALSE,Observe que a letra x também se repete.
+EF.09.MAT.2.94,e4_escolha_fator,3,\( 3x \).,e5_fator_em_evidencia,TRUE,Perfeito: 3 aparece em ambos os coeficientes e x em ambos os termos.
+EF.09.MAT.2.94,e4_corrige_fator,1,"Entendido, continuar ➔",e5_fator_em_evidencia,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e5_fator_em_evidencia,1,\( 3x(x + 2) \).,e6_interpreta_fatoracao,TRUE,"Correto: dividindo cada termo por \( 3x \), obtemos \( x \) e \( 2 \)."
+EF.09.MAT.2.94,e5_fator_em_evidencia,2,\( 3x(x^2 + 2x) \).,e5_corrige_evidencia,FALSE,Você ainda não dividiu os termos pelo fator comum.
+EF.09.MAT.2.94,e5_fator_em_evidencia,3,\( x(3x + 6) \).,e5_corrige_evidencia,FALSE,Isso é fatoração parcial: ainda podemos colocar \( 3 \) em evidência.
+EF.09.MAT.2.94,e5_corrige_evidencia,1,"Entendido, continuar ➔",e6_interpreta_fatoracao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e6_interpreta_fatoracao,1,"Entendido, continuar ➔",e7_valor_numerico_simples,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e7_valor_numerico_simples,1,24,e7_feedback_valor_correto,TRUE,Correto: \( 3 \cdot 4 + 12 = 12 + 12 = 24 \).
+EF.09.MAT.2.94,e7_valor_numerico_simples,2,12,e7_corrige_valor,FALSE,Revise o cálculo de \( x^2 \).
+EF.09.MAT.2.94,e7_valor_numerico_simples,3,36,e7_corrige_valor,FALSE,Veja se não multiplicou algo a mais.
+EF.09.MAT.2.94,e7_corrige_valor,1,"Entendido, continuar ➔",e7_feedback_valor_correto,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e7_feedback_valor_correto,1,"Entendido, continuar ➔",e8_pesquisa_rapida,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e8_pesquisa_rapida,1,"Entendido, continuar ➔",e9_expressao_mais_complexa,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e9_expressao_mais_complexa,1,"Entendido, continuar ➔",e9_escolha_caminho,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e9_escolha_caminho,1,Procurar fator comum em todos os termos.,e10_fator_comum2,TRUE,Bom começo. Fator comum costuma simplificar bastante.
+EF.09.MAT.2.94,e9_escolha_caminho,2,Tentar encaixar direto em \( (x + a)^2 \).,e10_quadrado_direto,TRUE,Vamos primeiro ver se há um fator que pode ser colocado em evidência.
+EF.09.MAT.2.94,e9_escolha_caminho,3,Calcular valor numérico com algum \( x \) e não mexer na forma.,e10_valor_direto,TRUE,Vamos além do valor numérico: queremos compreender a estrutura.
+EF.09.MAT.2.94,e10_valor_direto,1,"Entendido, continuar ➔",e10_fator_comum2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e10_quadrado_direto,1,"Entendido, continuar ➔",e10_fator_comum2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e10_fator_comum2,1,Apenas \( x \).,e10_corrige_comum2,FALSE,"Observe os números 2, 8 e 8."
+EF.09.MAT.2.94,e10_fator_comum2,2,Apenas \( 2 \).,e11_evidencia2,TRUE,Correto: 2 divide todos os coeficientes.
+EF.09.MAT.2.94,e10_fator_comum2,3,\( 2x \).,e10_corrige_comum2,FALSE,Veja se todos os termos têm x.
+EF.09.MAT.2.94,e10_corrige_comum2,1,"Entendido, continuar ➔",e11_evidencia2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e11_evidencia2,1,\( 2(x^2 + 4x + 4) \).,e12_quadrado_perfeito2,TRUE,Perfeito: cada termo foi dividido por 2.
+EF.09.MAT.2.94,e11_evidencia2,2,\( 2(x^2 + 8x + 8) \).,e11_corrige_evidencia2,FALSE,Você apenas repetiu a expressão dentro do parêntese.
+EF.09.MAT.2.94,e11_evidencia2,3,\( 2(x^2 + 6x + 4) \).,e11_corrige_evidencia2,FALSE,Reveja as divisões por 2.
+EF.09.MAT.2.94,e11_corrige_evidencia2,1,"Entendido, continuar ➔",e12_quadrado_perfeito2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e12_quadrado_perfeito2,1,"Entendido, continuar ➔",e13_confere_quadrado2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e13_confere_quadrado2,1,\( a = x \) e \( b = 2 \).,e14_forma_final2,TRUE,Boa escolha. Verifique \( 2ab \).
+EF.09.MAT.2.94,e13_confere_quadrado2,2,\( a = 2 \) e \( b = x \).,e13_corrige_quadrado2,FALSE,A ordem dos termos fica um pouco confusa.
+EF.09.MAT.2.94,e13_confere_quadrado2,3,\( a = x^2 \) e \( b = 4 \).,e13_corrige_quadrado2,FALSE,"Se \( a = x^2 \), então \( a^2 = x^4 \), o que não bate com \( x^2 \)."
+EF.09.MAT.2.94,e13_corrige_quadrado2,1,"Entendido, continuar ➔",e14_forma_final2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e14_forma_final2,1,"Entendido, continuar ➔",e15_reflexao_produtos,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e15_reflexao_produtos,1,"Entendido, continuar ➔",e16_valor_numerico2,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e16_valor_numerico2,1,0,e16_feedback_valor2_certo,TRUE,"Correto: \( x + 2 = 0 \), então o quadrado é 0 e o produto também."
+EF.09.MAT.2.94,e16_valor_numerico2,2,8,e16_feedback_valor2_errado,FALSE,Reveja o valor de \( x + 2 \) para \( x = -2 \).
+EF.09.MAT.2.94,e16_valor_numerico2,3,4,e16_feedback_valor2_errado,FALSE,"Quando a base do quadrado é 0, o resultado não pode ser 4."
+EF.09.MAT.2.94,e16_feedback_valor2_errado,1,"Entendido, continuar ➔",e16_feedback_valor2_certo,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e16_feedback_valor2_certo,1,"Entendido, continuar ➔",e17_fracao_simples,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e17_fracao_simples,1,"Entendido, continuar ➔",e17_escolha_fracao,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e17_escolha_fracao,1,Dividindo numerador e denominador por 3x.,e18_fracao_correta,TRUE,Excelente: isso usa fator comum na fração.
+EF.09.MAT.2.94,e17_escolha_fracao,2,Somando 3x^2 com 6x.,e17_corrige_fracao,FALSE,Soma não é simplificação de fração.
+EF.09.MAT.2.94,e17_escolha_fracao,3,Substituindo x por um número qualquer e calculando.,e17_corrige_fracao,FALSE,"Isso dá um valor numérico, mas não simplifica a expressão."
+EF.09.MAT.2.94,e17_corrige_fracao,1,"Entendido, continuar ➔",e18_fracao_correta,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e18_fracao_correta,1,"Entendido, continuar ➔",e19_fracao_composta,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e19_fracao_composta,1,"Entendido, continuar ➔",e19_escolha_fracao_composta,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e19_escolha_fracao_composta,1,Fatorar o numerador colocando \( 2x \) em evidência antes de simplificar.,e20_fracao_composta_fatora,TRUE,Essa abordagem organiza bem a expressão.
+EF.09.MAT.2.94,e19_escolha_fracao_composta,2,Dividir \( 2x^2 + 8x \) por 4x termo a termo direto.,e20_fracao_composta_direto,TRUE,"Também funciona, mas fique atento aos detalhes."
+EF.09.MAT.2.94,e19_escolha_fracao_composta,3,Somar numerador e denominador.,e19_corrige_composta,FALSE,Somar não é simplificar fração.
+EF.09.MAT.2.94,e19_corrige_composta,1,"Entendido, continuar ➔",e20_fracao_composta_fatora,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e20_fracao_composta_fatora,1,"Entendido, continuar ➔",e21_fracao_composta_simplifica,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e20_fracao_composta_direto,1,"Entendido, continuar ➔",e21_fracao_composta_simplifica,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e21_fracao_composta_simplifica,1,"Entendido, continuar ➔",e22_reflexao_fracoes,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e22_reflexao_fracoes,1,"Entendido, continuar ➔",e23_reflexao_final,,Vamos seguir passo a passo.
+EF.09.MAT.2.94,e23_reflexao_final,1,"Significa reescrever a expressão de forma equivalente, mas mais organizada, revelando fatores comuns, produtos notáveis e frações reduzidas.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.2.94,e23_reflexao_final,2,Significa apenas calcular um valor numérico qualquer.,e_final,TRUE,"Calcular valor numérico é uma etapa, não a definição de simplificação."
+EF.09.MAT.2.94,e23_reflexao_final,3,Significa sempre diminuir os números da expressão.,e_final,TRUE,"Às vezes os números mudam, mas o mais importante é a estrutura."
+EF.09.MAT.2.94,e_final,1,"Em \( 3x^2 + 6x \), o fator comum \( 3x \) permite escrever a expressão como \( 3x(x + 2) \).",,FALSE,
+EF.09.MAT.2.94,e_final,2,"Em \( 2x^2 + 8x + 8 \), colocar \( 2 \) em evidência leva a \( 2(x^2 + 4x + 4) \), que é \( 2(x + 2)^2 \).",,FALSE,
+EF.09.MAT.2.94,e_final,3,"Na fração \( \frac{3x^2}{6x} \), dividir numerador e denominador por \( 3x \) resulta em \( \frac{x}{2} \).",,FALSE,
+EF.09.MAT.2.94,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.3.100,e1,1,"A fórmula \( a^2 + b^2 = c^2 \), mas sem saber de onde ela vem.",e2_formula_sem_origem,TRUE,Ótimo. Vamos descobrir de onde essa fórmula nasce.
+EF.09.MAT.3.100,e1,2,Quadrados desenhados sobre os lados do triângulo.,e2_quadrados,TRUE,Excelente. Você já tem uma intuição geométrica importante.
+EF.09.MAT.3.100,e1,3,Nada. Nunca vi ou não me lembro.,e2_nunca_viu,TRUE,"Tudo bem. Vamos construir a ideia do zero, com imagens."
+EF.09.MAT.3.100,e1,4,"Sei calcular, mas não sei por que a fórmula é verdadeira.",e2_calcula_sem_entender,TRUE,Essa é exatamente a questão desta sessão: entender a validade.
+EF.09.MAT.3.100,e2_formula_sem_origem,1,"Entendido, continuar ➔",e3_triangulo_retangulo,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e2_quadrados,1,"Entendido, continuar ➔",e3_triangulo_retangulo,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e2_nunca_viu,1,"Entendido, continuar ➔",e3_triangulo_retangulo,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e2_calcula_sem_entender,1,"Entendido, continuar ➔",e3_triangulo_retangulo,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e3_triangulo_retangulo,1,"Entendido, continuar ➔",e3_identificar_lados,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e3_identificar_lados,1,O menor lado do triângulo.,e3_corrige_lados,FALSE,"Esse seria um dos catetos, não a hipotenusa."
+EF.09.MAT.3.100,e3_identificar_lados,2,"Qualquer lado, dependendo de como o triângulo está orientado.",e3_corrige_lados,FALSE,"Não: a hipotenusa é sempre o lado oposto ao ângulo reto, independente de orientação."
+EF.09.MAT.3.100,e3_identificar_lados,3,"O maior lado, oposto ao ângulo reto.",e4_enunciado_algebrico,TRUE,Correto. A hipotenusa é sempre oposta ao ângulo de 90°.
+EF.09.MAT.3.100,e3_corrige_lados,1,"Entendido, continuar ➔",e4_enunciado_algebrico,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e4_enunciado_algebrico,1,"Entendido, continuar ➔",e5_o_que_significa_quadrado,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e5_o_que_significa_quadrado,1,Significa dobrar o comprimento.,e5_corrige_quadrado,FALSE,"Dobrar seria \( 2c \), não \( c^2 \)."
+EF.09.MAT.3.100,e5_o_que_significa_quadrado,2,Significa a área de um quadrado de lado \( c \).,e6_demonstracao_geometrica,TRUE,Exatamente. \( c^2 \) é a área do quadrado cujo lado mede \( c \).
+EF.09.MAT.3.100,e5_o_que_significa_quadrado,3,"Não tem significado geométrico, é só uma operação.",e5_corrige_quadrado,FALSE,Tem sim: toda potência de segundo grau corresponde a uma área.
+EF.09.MAT.3.100,e5_corrige_quadrado,1,"Entendido, continuar ➔",e6_demonstracao_geometrica,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e6_demonstracao_geometrica,1,"Entendido, continuar ➔",e6_interpreta_figura,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e6_interpreta_figura,1,"\( 2c \), o dobro da hipotenusa.",e6_corrige_figura,FALSE,"Não: o quadrado construído sobre um lado representa o quadrado desse comprimento, ou seja, \( c^2 \)."
+EF.09.MAT.3.100,e6_interpreta_figura,2,"\( c^2 \), a área do quadrado de lado \( c \).",e7_verificacao_numerica,TRUE,Exato. Essa conexão entre a figura e a álgebra é o coração da demonstração.
+EF.09.MAT.3.100,e6_interpreta_figura,3,A soma dos perímetros de todos os lados.,e6_corrige_figura,FALSE,"Perímetro usa somas de comprimentos, aqui estamos falando de áreas."
+EF.09.MAT.3.100,e6_corrige_figura,1,"Entendido, continuar ➔",e7_verificacao_numerica,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e7_verificacao_numerica,1,"Entendido, continuar ➔",e7_confirma_345,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e7_confirma_345,1,"Não, porque os números são muito diferentes entre si.",e7_corrige_345,FALSE,Compare a soma das duas áreas menores com a área maior.
+EF.09.MAT.3.100,e7_confirma_345,2,"Sim, porque \( 9 + 16 = 25 \), ou seja, \( a^2 + b^2 = c^2 \).",e8_validade_geral,TRUE,Perfeito. A igualdade confirma o teorema numericamente.
+EF.09.MAT.3.100,e7_confirma_345,3,Não dá para saber sem saber o ângulo reto.,e7_corrige_345,FALSE,O ângulo reto já está garantido pela definição do triângulo retângulo.
+EF.09.MAT.3.100,e7_corrige_345,1,"Entendido, continuar ➔",e8_validade_geral,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e8_validade_geral,1,"Entendido, continuar ➔",e8_outro_exemplo,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e8_outro_exemplo,1,"\( c = 2 \), mas o teorema só funciona para números inteiros.",e8_corrige_outro_exemplo,FALSE,"Reveja: \( 1^2 + 1^2 = 2 \), então \( c = \sqrt{2} \), não 2."
+EF.09.MAT.3.100,e8_outro_exemplo,2,"\( c = \sqrt{2} \), e o teorema funciona mesmo com resultado irracional.",e9_triangulo_invalido,TRUE,"Correto. O teorema vale para qualquer triângulo retângulo, mesmo que a hipotenusa seja irracional."
+EF.09.MAT.3.100,e8_outro_exemplo,3,Não é possível calcular porque \( \sqrt{2} \) não é um número.,e8_corrige_outro_exemplo,FALSE,"\( \sqrt{2} \) é um número real, apenas irracional."
+EF.09.MAT.3.100,e8_corrige_outro_exemplo,1,"Entendido, continuar ➔",e9_triangulo_invalido,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e9_triangulo_invalido,1,"Um triângulo com ângulos 60°, 60° e 60°.",e9_corrige_invalido,FALSE,"Esse é um triângulo equilátero, sem ângulo reto. Pitágoras não se aplica diretamente."
+EF.09.MAT.3.100,e9_triangulo_invalido,2,"Um triângulo com ângulos 90°, 45° e 45°.",e10_reciproca,TRUE,"Correto: tem ângulo de 90°, então é retângulo e o teorema se aplica."
+EF.09.MAT.3.100,e9_triangulo_invalido,3,"Um triângulo com ângulos 30°, 60° e 90°.",e10_reciproca,TRUE,"Correto também: tem ângulo de 90°, portanto é retângulo."
+EF.09.MAT.3.100,e9_corrige_invalido,1,"Entendido, continuar ➔",e10_reciproca,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e10_reciproca,1,"Entendido, continuar ➔",e10_reciproca_q,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e10_reciproca_q,1,Não é possível saber sem medir os ângulos.,e10_corrige_reciproca,FALSE,A recíproca do teorema permite decidir isso apenas com os comprimentos dos lados.
+EF.09.MAT.3.100,e10_reciproca_q,2,"Não, porque os lados não são (3, 4, 5).",e10_corrige_reciproca,FALSE,"Os lados (6, 8, 10) são o dobro de (3, 4, 5). Verifique se satisfazem \( a^2 + b^2 = c^2 \)."
+EF.09.MAT.3.100,e10_reciproca_q,3,"Sim, porque \( 6^2 + 8^2 = 36 + 64 = 100 = 10^2 \).",e11_problema_aplicado,TRUE,Perfeito. A recíproca confirma que é retângulo sem precisar medir ângulos.
+EF.09.MAT.3.100,e10_corrige_reciproca,1,"Entendido, continuar ➔",e11_problema_aplicado,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e11_problema_aplicado,1,"Entendido, continuar ➔",e11_problema_escada,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e11_problema_escada,1,8 m.,e11_corrige_escada,FALSE,Você subtraiu os comprimentos direto. Precisamos trabalhar com os quadrados.
+EF.09.MAT.3.100,e11_problema_escada,2,18 m.,e11_corrige_escada,FALSE,Você somou os comprimentos. Lembre-se: \( b^2 = c^2 - a^2 \).
+EF.09.MAT.3.100,e11_problema_escada,3,12 m.,e12_reflexao_algebra_geometria,TRUE,"Correto: \( b^2 = 13^2 - 5^2 = 169 - 25 = 144 \), logo \( b = 12 \) m."
+EF.09.MAT.3.100,e11_corrige_escada,1,"Entendido, continuar ➔",e12_reflexao_algebra_geometria,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e12_reflexao_algebra_geometria,1,"Entendido, continuar ➔",e13_sintese_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e13_sintese_final,1,"A fórmula \( c^2 = a^2 + b^2 \) é apenas uma receita de cálculo, sem conexão com a geometria.",e13_reforca_sintese,TRUE,Vamos revisitar essa conexão antes de concluir.
+EF.09.MAT.3.100,e13_sintese_final,2,A fórmula algébrica e a demonstração geométrica por áreas são duas formas de expressar a mesma verdade: a área do quadrado da hipotenusa iguala a soma das áreas dos quadrados dos catetos.,e_final,TRUE,Excelente síntese. Você está pronto para o desafio final.
+EF.09.MAT.3.100,e13_sintese_final,3,"A geometria é uma ilustração sem rigor, e só a álgebra comprova o teorema.",e13_reforca_sintese,TRUE,Tanto a álgebra quanto a geometria são formas rigorosas de demonstrar o teorema.
+EF.09.MAT.3.100,e13_reforca_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.100,e_final,1,"Na demonstração geométrica, \( c^2 \) representa a área do quadrado construído sobre a hipotenusa, e \( a^2 + b^2 \) representa a soma das áreas dos quadrados sobre os catetos.",,FALSE,
+EF.09.MAT.3.100,e_final,2,"O Teorema de Pitágoras é válido para qualquer triângulo retângulo, inclusive quando a hipotenusa é um número irracional como \( \sqrt{2} \).",,FALSE,
+EF.09.MAT.3.100,e_final,3,"Pela recíproca do teorema, se três lados satisfazem \( a^2 + b^2 = c^2 \), o triângulo é necessariamente retângulo, sem precisar medir ângulos.",,FALSE,
+EF.09.MAT.3.100,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.3.101,e1,1,Eu travo. Vejo muitas letras e não sei por onde começar.,e2_nao_sabe,TRUE,Ótimo ponto de partida. Vamos organizar esses elementos.
+EF.09.MAT.3.101,e1,2,"Eu tento aplicar direto alguma fórmula decorada, sem entender de onde veio.",e2_formula_sem_sentido,TRUE,Vamos ver de onde as fórmulas nascem.
+EF.09.MAT.3.101,e1,3,"Eu sei que existe semelhança de triângulos ali, mas não consigo usar.",e2_semelhanca_confusa,TRUE,Perfeito. Vamos usar a semelhança como motor das relações.
+EF.09.MAT.3.101,e1,4,"Eu me sinto confortável com relação, projeção, altura, mas às vezes confundo os símbolos.",e2_avancado,TRUE,Ótimo. Vamos sistematizar tudo bem devagar.
+EF.09.MAT.3.101,e2_nao_sabe,1,"Entendido, continuar ➔",e3_figura_base,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e2_formula_sem_sentido,1,"Entendido, continuar ➔",e3_figura_base,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e2_semelhanca_confusa,1,"Entendido, continuar ➔",e3_figura_base,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e2_avancado,1,"Entendido, continuar ➔",e3_figura_base,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e3_figura_base,1,"Entendido, continuar ➔",e3_identificar_notacao,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e3_identificar_notacao,1,Catetos: \( b \) e \( c \); hipotenusa: \( a \).,e4_semelhanca_triangulos,TRUE,"Correto. \( b \) e \( c \) partem do ângulo reto, \( a = BC \) é o lado oposto."
+EF.09.MAT.3.101,e3_identificar_notacao,2,Catetos: \( m \) e \( n \); hipotenusa: \( h \).,e3_corrige_notacao,FALSE,"Veja que \( m \) e \( n \) são partes da hipotenusa, e \( h \) é a altura."
+EF.09.MAT.3.101,e3_identificar_notacao,3,Catetos: \( h \) e \( a \); hipotenusa: \( b \).,e3_corrige_notacao,FALSE,Repare na posição do ângulo reto e quem é o maior lado.
+EF.09.MAT.3.101,e3_corrige_notacao,1,"Entendido, continuar ➔",e4_semelhanca_triangulos,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e4_semelhanca_triangulos,1,"Entendido, continuar ➔",e4_escolha_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e4_escolha_semelhanca,1,Apenas \( ABD \).,e4_corrige_semelhanca,FALSE,Veja que \( ADC \) também é retângulo e compartilha ângulos com \( ABC \).
+EF.09.MAT.3.101,e4_escolha_semelhanca,2,Apenas \( ADC \).,e4_corrige_semelhanca,FALSE,Veja que \( ABD \) também é retângulo e compartilha ângulos com \( ABC \).
+EF.09.MAT.3.101,e4_escolha_semelhanca,3,Os dois triângulos menores: \( ABD \) e \( ADC \).,e5_escreve_semelhancas,TRUE,Isso mesmo. Ambos são semelhantes a \( ABC \).
+EF.09.MAT.3.101,e4_corrige_semelhanca,1,"Entendido, continuar ➔",e5_escreve_semelhancas,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e5_escreve_semelhancas,1,"Entendido, continuar ➔",e6_relacao_altura,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e6_relacao_altura,1,"Entendido, continuar ➔",e6_escolha_altura,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e6_escolha_altura,1,"No triângulo \( ABD \), como cateto entre \( c \) e \( n \).",e7_deduz_h2_mn,TRUE,Isso mesmo: \( h \) está ligado a \( n \).
+EF.09.MAT.3.101,e6_escolha_altura,2,"No triângulo \( ADC \), como cateto entre \( b \) e \( m \).",e7_deduz_h2_mn,TRUE,Correto: \( h \) também está ligado a \( m \).
+EF.09.MAT.3.101,e6_escolha_altura,3,Nos dois: \( h \) é cateto em \( ABD \) e em \( ADC \).,e7_deduz_h2_mn,TRUE,Exato. Vamos usar os dois para chegar em \( h^2 = m\cdot n \).
+EF.09.MAT.3.101,e7_deduz_h2_mn,1,"Entendido, continuar ➔",e7_escolha_h2_mn,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e7_escolha_h2_mn,1,\( h^2 = m + n \).,e7_corrige_h2_mn,FALSE,"Essa é a soma das projeções, não o produto."
+EF.09.MAT.3.101,e7_escolha_h2_mn,2,\( h^2 = m \cdot n \).,e8_aplica_h2_mn,TRUE,Correto: surge a relação \( h^2 = m\cdot n \).
+EF.09.MAT.3.101,e7_escolha_h2_mn,3,\( h^2 = a^2 \).,e7_corrige_h2_mn,FALSE,"Isso seria o Teorema de Pitágoras, não a relação da altura."
+EF.09.MAT.3.101,e7_corrige_h2_mn,1,"Entendido, continuar ➔",e8_aplica_h2_mn,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e8_aplica_h2_mn,1,"Entendido, continuar ➔",e8_exemplo_h2_mn,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e8_exemplo_h2_mn,1,\( h = 36 \).,e8_corrige_exemplo_h,FALSE,"36 seria \( h^2 \), não \( h \)."
+EF.09.MAT.3.101,e8_exemplo_h2_mn,2,\( h = 13 \).,e8_corrige_exemplo_h,FALSE,"Você somou as projeções, mas a relação usa o produto."
+EF.09.MAT.3.101,e8_exemplo_h2_mn,3,\( h = 6 \).,e9_relacao_catetos,TRUE,"Correto: \( h^2 = 4 \cdot 9 = 36 \), logo \( h = 6 \)."
+EF.09.MAT.3.101,e8_corrige_exemplo_h,1,"Entendido, continuar ➔",e9_relacao_catetos,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e9_relacao_catetos,1,"Entendido, continuar ➔",e9_escolha_cateto_relacao,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e9_escolha_cateto_relacao,1,\( \frac{b}{a} = \frac{a}{b} \).,e9_corrige_cateto_relacao,FALSE,Isso não envolve \( m \).
+EF.09.MAT.3.101,e9_escolha_cateto_relacao,2,\( \frac{b}{a} = \frac{m}{b} \).,e10_deduz_b2_am,TRUE,"Perfeito: isso liga \( b \), \( a \) e \( m \)."
+EF.09.MAT.3.101,e9_escolha_cateto_relacao,3,\( \frac{b}{m} = \frac{a}{n} \).,e9_corrige_cateto_relacao,FALSE,Mistura \( m \) e \( n \) de forma confusa.
+EF.09.MAT.3.101,e9_corrige_cateto_relacao,1,"Entendido, continuar ➔",e10_deduz_b2_am,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e10_deduz_b2_am,1,"Entendido, continuar ➔",e10_exemplo_catetos,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e10_exemplo_catetos,1,\( b = 52 \).,e10_corrige_exemplo_b,FALSE,"52 seria \( b^2 \), não \( b \)."
+EF.09.MAT.3.101,e10_exemplo_catetos,2,\( b = 2\sqrt{13} \).,e11_produto_catetos,TRUE,"Correto: \( b^2 = 13 \cdot 4 = 52 \), então \( b = \sqrt{52} = 2\sqrt{13} \)."
+EF.09.MAT.3.101,e10_exemplo_catetos,3,\( b = 26 \).,e10_corrige_exemplo_b,FALSE,Reveja o cálculo da raiz quadrada de 52.
+EF.09.MAT.3.101,e10_corrige_exemplo_b,1,"Entendido, continuar ➔",e11_produto_catetos,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e11_produto_catetos,1,"Entendido, continuar ➔",e11_escolha_produto,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e11_escolha_produto,1,\( h = 24 \).,e11_corrige_produto,FALSE,"24 é o valor de \( b \cdot c \), ainda falta dividir por \( a \)."
+EF.09.MAT.3.101,e11_escolha_produto,2,"\( h = 4{,}8 \).",e12_problema_integra,TRUE,"Correto: \( 6 \cdot 8 = 10 \cdot h \), então \( h = 48 / 10 = 4{,}8 \)."
+EF.09.MAT.3.101,e11_escolha_produto,3,\( h = 7 \).,e11_corrige_produto,FALSE,Reveja a divisão: \( h = 48 / 10 \).
+EF.09.MAT.3.101,e11_corrige_produto,1,"Entendido, continuar ➔",e12_problema_integra,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e12_problema_integra,1,"Entendido, continuar ➔",e12_hipotenusa_integra,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e12_hipotenusa_integra,1,\( a = 21 \).,e12_corrige_hipotenusa,FALSE,Você somou os catetos direto.
+EF.09.MAT.3.101,e12_hipotenusa_integra,2,\( a = 15 \).,e13_altura_integra,TRUE,"Correto: \( a^2 = 9^2 + 12^2 = 81 + 144 = 225 \), logo \( a = 15 \)."
+EF.09.MAT.3.101,e12_hipotenusa_integra,3,\( a = \sqrt{225} \).,e12_corrige_hipotenusa,FALSE,"\( \sqrt{225} = 15 \), então podemos simplificar."
+EF.09.MAT.3.101,e12_corrige_hipotenusa,1,"Entendido, continuar ➔",e13_altura_integra,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e13_altura_integra,1,\( h = 36 \).,e13_corrige_altura,FALSE,Esse valor não é compatível com a dimensão do triângulo. Reveja o cálculo.
+EF.09.MAT.3.101,e13_altura_integra,2,"\( h = 7{,}2 \).",e14_projecoes_integra,TRUE,"Correto: \( 9 \cdot 12 = 15 \cdot h \) -> \( 108 = 15h \) -> \( h = 108/15 = 7{,}2 \)."
+EF.09.MAT.3.101,e13_altura_integra,3,\( h = 108 \).,e13_corrige_altura,FALSE,"108 é o produto dos catetos, falta dividir por \( a \)."
+EF.09.MAT.3.101,e13_corrige_altura,1,"Entendido, continuar ➔",e14_projecoes_integra,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e14_projecoes_integra,1,"Entendido, continuar ➔",e14_escolha_projecoes,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e14_escolha_projecoes,1,\( m^2 + n^2 = 15 \) e \( h = m + n \).,e14_corrige_projecoes,FALSE,Misturou somas e quadrados de forma incorreta.
+EF.09.MAT.3.101,e14_escolha_projecoes,2,"\( m + n = 15 \) e \( m \cdot n = h^2 = 51{,}84 \).",e15_sintese_final,TRUE,Correto. Essas são as relações que ligam altura e projeções.
+EF.09.MAT.3.101,e14_escolha_projecoes,3,\( m - n = 15 \) e \( m \cdot n = h \).,e14_corrige_projecoes,FALSE,O sinal e o uso de \( h \) estão incorretos.
+EF.09.MAT.3.101,e14_corrige_projecoes,1,"Entendido, continuar ➔",e15_sintese_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e15_sintese_final,1,São fórmulas desconectadas que precisamos decorar separadamente.,e15_reforca_sintese,TRUE,"Na verdade, todas vêm da mesma ideia de semelhança de triângulos."
+EF.09.MAT.3.101,e15_sintese_final,2,"Todas as relações métricas nascem da semelhança entre os três triângulos formados pela altura da hipotenusa, combinada com o Teorema de Pitágoras.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.3.101,e15_sintese_final,3,Só a relação \( c^2 = a^2 + b^2 \) é importante; o resto é detalhe.,e15_reforca_sintese,TRUE,As outras relações ampliam o poder de Pitágoras em problemas mais ricos.
+EF.09.MAT.3.101,e15_reforca_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.101,e_final,1,A relação \( h^2 = m \cdot n \) expressa que o quadrado da altura relativa à hipotenusa é igual ao produto das projeções dos catetos sobre a hipotenusa.,,FALSE,
+EF.09.MAT.3.101,e_final,2,"As relações \( b^2 = a \cdot m \) e \( c^2 = a \cdot n \) ligam cada cateto à hipotenusa e à sua projeção, e surgem de proporções de semelhança.",,FALSE,
+EF.09.MAT.3.101,e_final,3,"A relação \( b \cdot c = a \cdot h \) conecta o produto dos catetos com o produto da hipotenusa pela altura, sendo útil para encontrar \( h \) quando conhecemos \( a \), \( b \) e \( c \).",,FALSE,
+EF.09.MAT.3.101,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.3.99,e1,1,"Só penso que eles têm 'formato parecido', sem saber a definição.",e2_formato_parecido,TRUE,Vamos transformar esse 'parecido' em algo matemático.
+EF.09.MAT.3.99,e1,2,"Acho que são congruentes (iguais), não vejo diferença.",e2_confunde_congruencia,TRUE,Vamos separar semelhança de congruência.
+EF.09.MAT.3.99,e1,3,"Sei que tem relação com ângulos e lados proporcionais, mas não lembro as condições.",e2_sabe_meio,TRUE,"Ótimo; vamos organizar as condições AA, LAL e LLL."
+EF.09.MAT.3.99,e1,4,"Me sinto seguro com semelhança, mas às vezes erro na identificação dos lados correspondentes.",e2_avancado,TRUE,Perfeito; vamos treinar esse detalhe.
+EF.09.MAT.3.99,e2_formato_parecido,1,"Entendido, continuar ➔",e3_intuicao_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e2_confunde_congruencia,1,"Entendido, continuar ➔",e3_intuicao_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e2_sabe_meio,1,"Entendido, continuar ➔",e3_intuicao_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e2_avancado,1,"Entendido, continuar ➔",e3_intuicao_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e3_intuicao_semelhanca,1,"Entendido, continuar ➔",e3_imagem_basica,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e3_imagem_basica,1,"Os ângulos podem mudar, desde que os lados sejam múltiplos.",e3_corrige_imagem,FALSE,"Se os ângulos mudam, a forma muda; deixamos de ter semelhança."
+EF.09.MAT.3.99,e3_imagem_basica,2,"Os ângulos devem ser iguais, e os lados devem estar em proporção.",e4_definicao_formal,TRUE,Exatamente. Mesmos ângulos e lados proporcionais.
+EF.09.MAT.3.99,e3_imagem_basica,3,"Os lados devem ser todos iguais, e os ângulos podem variar.",e3_corrige_imagem,FALSE,Lados iguais e ângulos diferentes não fazem sentido em triângulos.
+EF.09.MAT.3.99,e3_corrige_imagem,1,"Entendido, continuar ➔",e4_definicao_formal,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e4_definicao_formal,1,"Entendido, continuar ➔",e4_condicoes_resumo,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e4_condicoes_resumo,1,"Entendido, continuar ➔",e5_condicao_AA,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e5_condicao_AA,1,"Entendido, continuar ➔",e5_escolha_AA,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e5_escolha_AA,1,"Nada, precisamos de mais informações sobre lados.",e5_corrige_AA,FALSE,A soma de 180° garante que o terceiro ângulo também coincide.
+EF.09.MAT.3.99,e5_escolha_AA,2,Os triângulos são semelhantes (condição AA).,e6_condicao_LAL,TRUE,Correto. AA é suficiente para semelhança.
+EF.09.MAT.3.99,e5_escolha_AA,3,Os triângulos são congruentes.,e5_corrige_AA,FALSE,Congruência exige igualdade de lados também.
+EF.09.MAT.3.99,e5_corrige_AA,1,"Entendido, continuar ➔",e6_condicao_LAL,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e6_condicao_LAL,1,"Entendido, continuar ➔",e6_escolha_LAL,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e6_escolha_LAL,1,"Sim, pela condição LAL (lados que formam o ângulo B/E).",e7_condicao_LLL,TRUE,Correto: um ângulo igual + lados adjacentes proporcionais.
+EF.09.MAT.3.99,e6_escolha_LAL,2,"Não, só AA pode garantir semelhança.",e6_corrige_LAL,FALSE,LAL também é uma condição suficiente.
+EF.09.MAT.3.99,e6_escolha_LAL,3,"Não, precisaríamos de todos os três lados proporcionais.",e6_corrige_LAL,FALSE,"LAL já é suficiente, desde que os lados sejam adjacentes ao ângulo."
+EF.09.MAT.3.99,e6_corrige_LAL,1,"Entendido, continuar ➔",e7_condicao_LLL,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e7_condicao_LLL,1,"Entendido, continuar ➔",e7_escolha_LLL,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e7_escolha_LLL,1,"Sim, porque cada lado do segundo é o dobro do correspondente no primeiro.",e8_exemplo_LLL_detalhe,TRUE,Correto: fator de escala 2 e mesma forma.
+EF.09.MAT.3.99,e7_escolha_LLL,2,"Não, porque os ângulos podem ser diferentes.",e7_corrige_LLL,FALSE,"Se os lados são proporcionais, os ângulos ficam determinados e iguais."
+EF.09.MAT.3.99,e7_escolha_LLL,3,"Só podemos garantir congruência, não semelhança.",e7_corrige_LLL,FALSE,"Congruência exigiria lados iguais, não apenas proporcionais."
+EF.09.MAT.3.99,e7_corrige_LLL,1,"Entendido, continuar ➔",e8_exemplo_LLL_detalhe,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e8_exemplo_LLL_detalhe,1,"Entendido, continuar ➔",e9_identificar_correspondencia,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e9_identificar_correspondencia,1,"Entendido, continuar ➔",e9_escolha_correspondencia,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e9_escolha_correspondencia,1,\( \frac{AB}{DE} = \frac{BC}{EF} = \frac{AC}{DF} \).,e10_exemplo_proporcao,TRUE,Perfeito: segue a ordem das letras na nomeação da semelhança.
+EF.09.MAT.3.99,e9_escolha_correspondencia,2,\( \frac{AB}{EF} = \frac{BC}{DE} = \frac{AC}{DF} \).,e9_corrige_correspondencia,FALSE,"Misturou os lados correspondentes; não segue a ordem A↔D, B↔E, C↔F."
+EF.09.MAT.3.99,e9_escolha_correspondencia,3,"Qualquer ordem serve, desde que todas as frações sejam iguais.",e9_corrige_correspondencia,FALSE,A ordem importa: cada lado deve ser comparado com o seu correspondente.
+EF.09.MAT.3.99,e9_corrige_correspondencia,1,"Entendido, continuar ➔",e10_exemplo_proporcao,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e10_exemplo_proporcao,1,"Entendido, continuar ➔",e11_problema_contextual,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e11_problema_contextual,1,"Entendido, continuar ➔",e11_escolha_contexto,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e11_escolha_contexto,1,"Sim, porque ambos têm o mesmo ângulo em relação ao Sol e estão sobre o mesmo chão.",e12_calculo_altura_predio,TRUE,Correto: isso garante ângulos iguais; os triângulos são semelhantes.
+EF.09.MAT.3.99,e11_escolha_contexto,2,"Não, porque o prédio é mais alto.",e11_corrige_contexto,FALSE,Ser maior não impede semelhança; basta mesma forma.
+EF.09.MAT.3.99,e11_escolha_contexto,3,Não podemos saber sem medir todos os ângulos.,e11_corrige_contexto,FALSE,A situação física garante ângulos iguais (raios solares paralelos).
+EF.09.MAT.3.99,e11_corrige_contexto,1,"Entendido, continuar ➔",e12_calculo_altura_predio,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e12_calculo_altura_predio,1,"Entendido, continuar ➔",e13_sintese,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e13_sintese,1,Basta que os triângulos tenham o mesmo perímetro.,e13_corrige_sintese,FALSE,Perímetros iguais não garantem mesma forma.
+EF.09.MAT.3.99,e13_sintese,2,"Precisamos de ângulos correspondentes iguais e lados correspondentes proporcionais, o que pode ser verificado por AA, LAL ou LLL.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.3.99,e13_sintese,3,Só AA funciona; LAL e LLL não garantem semelhança.,e13_corrige_sintese,FALSE,LAL e LLL também são condições suficientes.
+EF.09.MAT.3.99,e13_corrige_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.99,e_final,1,"Se dois ângulos de um triângulo são iguais a dois ângulos de outro, os triângulos são semelhantes pela condição AA.",,FALSE,
+EF.09.MAT.3.99,e_final,2,"Se os três lados de um triângulo são proporcionais aos três lados de outro, os triângulos são semelhantes pela condição LLL.",,FALSE,
+EF.09.MAT.3.99,e_final,3,"Se um ângulo é comum e os lados que formam esse ângulo estão em proporção, os triângulos são semelhantes pela condição LAL.",,FALSE,
+EF.09.MAT.3.99,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.3.102,e1,1,"Nada específico, só lembro do nome do matemático.",e2_nada_especifico,TRUE,"Tudo bem, vamos construir a ideia do zero."
+EF.09.MAT.3.102,e1,2,"Lembro de retas paralelas cortadas por transversais, mas não sei montar as proporções.",e2_retaseproporcao,TRUE,"Ótimo ponto de partida, vamos organizar as frações."
+EF.09.MAT.3.102,e1,3,"Penso em segmentos proporcionais, mas às vezes confundo quais segmentos comparar.",e2_confusao_segmentos,TRUE,Vamos focar na identificação dos segmentos correspondentes.
+EF.09.MAT.3.102,e1,4,Me sinto seguro com o Teorema de Tales e já o uso em problemas de semelhança de triângulos.,e2_avancado,TRUE,"Excelente, vamos refinar com problemas mais ricos."
+EF.09.MAT.3.102,e2_nada_especifico,1,"Entendido, continuar ➔",e3_figura_basica,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e2_retaseproporcao,1,"Entendido, continuar ➔",e3_figura_basica,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e2_confusao_segmentos,1,"Entendido, continuar ➔",e3_figura_basica,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e2_avancado,1,"Entendido, continuar ➔",e3_figura_basica,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e3_figura_basica,1,"Entendido, continuar ➔",e3_enunciado_tales,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e3_enunciado_tales,1,"Entendido, continuar ➔",e4_escolha_enunciado,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e4_escolha_enunciado,1,Um feixe de retas paralelas determina sobre duas transversais segmentos proporcionais.,e5_interpretar_figura,TRUE,Essa é a forma clássica do enunciado.
+EF.09.MAT.3.102,e4_escolha_enunciado,2,Qualquer conjunto de três retas produz segmentos iguais em qualquer figura.,e4_corrige_enunciado,FALSE,Não basta ter três retas; é preciso paralelismo e transversais.
+EF.09.MAT.3.102,e4_escolha_enunciado,3,Todo triângulo retângulo tem lados proporcionais.,e4_corrige_enunciado,FALSE,"Isso é Pitágoras, não Tales."
+EF.09.MAT.3.102,e4_corrige_enunciado,1,"Entendido, continuar ➔",e5_interpretar_figura,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e5_interpretar_figura,1,"Entendido, continuar ➔",e5_montar_proporcao_simples,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e5_montar_proporcao_simples,1,\( \frac{3}{5} = \frac{6}{x} \).,e6_resolver_proporcao_simples,TRUE,"Correto: 3 corresponde a 6, 5 corresponde a \( x \)."
+EF.09.MAT.3.102,e5_montar_proporcao_simples,2,\( \frac{3}{6} = \frac{5}{x} \).,e5_corrige_proporcao_simples,FALSE,Essa comparação inverte a ordem dos correspondentes.
+EF.09.MAT.3.102,e5_montar_proporcao_simples,3,\( \frac{5}{3} = \frac{6}{x} \).,e5_corrige_proporcao_simples,FALSE,A proporção deixa de associar os segmentos na mesma posição sobre as transversais.
+EF.09.MAT.3.102,e5_corrige_proporcao_simples,1,"Entendido, continuar ➔",e6_resolver_proporcao_simples,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e6_resolver_proporcao_simples,1,"Entendido, continuar ➔",e7_tales_semelhanca_triangulos,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e7_tales_semelhanca_triangulos,1,"Entendido, continuar ➔",e7_escolha_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e7_escolha_semelhanca,1,Porque compartilham ângulos e têm lados correspondentes em proporção.,e8_exemplo_semelhanca,TRUE,Exato: isso é semelhança AA + LAL.
+EF.09.MAT.3.102,e7_escolha_semelhanca,2,Porque todo triângulo é automaticamente semelhante a qualquer outro.,e7_corrige_semelhanca,FALSE,Semelhança exige condições específicas (ângulos/lados).
+EF.09.MAT.3.102,e7_escolha_semelhanca,3,Porque o Teorema de Tales diz isso sem precisar ver ângulos.,e7_corrige_semelhanca,FALSE,"O teorema afirma a proporcionalidade, que pode ser vista via semelhança."
+EF.09.MAT.3.102,e7_corrige_semelhanca,1,"Entendido, continuar ➔",e8_exemplo_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e8_exemplo_semelhanca,1,"Entendido, continuar ➔",e9_problema_escala_mapa,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e9_problema_escala_mapa,1,"Entendido, continuar ➔",e9_escolha_mapa,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e9_escolha_mapa,1,3 cm.,e10_resolucao_mapa,TRUE,Vamos conferir pela proporção.
+EF.09.MAT.3.102,e9_escolha_mapa,2,\( x \) tal que \( \frac{4}{6} = \frac{2}{x} \).,e10_resolucao_mapa,TRUE,"Correto, essa é a igualdade que devemos resolver."
+EF.09.MAT.3.102,e9_escolha_mapa,3,Não há como saber sem a escala do mapa.,e9_corrige_mapa,FALSE,A escala não muda a proporção entre os segmentos no papel.
+EF.09.MAT.3.102,e9_corrige_mapa,1,"Entendido, continuar ➔",e10_resolucao_mapa,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e10_resolucao_mapa,1,"Entendido, continuar ➔",e11_problema_construcao,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e11_problema_construcao,1,"Entendido, continuar ➔",e11_escolha_construcao,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e11_escolha_construcao,1,"Teorema de Tales, pois um feixe de paralelas determina segmentos proporcionais nas transversais.",e12_reflexao_tales_semelhanca,TRUE,Exatamente: as paralelas garantem que a divisão é proporcional.
+EF.09.MAT.3.102,e11_escolha_construcao,2,"Teorema de Pitágoras, pois os segmentos formam triângulos retângulos.",e11_corrige_construcao,FALSE,"Pitágoras trata de triângulos retângulos, não dessa divisão em feixe de paralelas."
+EF.09.MAT.3.102,e11_escolha_construcao,3,"Apenas a soma dos comprimentos, sem precisar de nenhum teorema.",e11_corrige_construcao,FALSE,"Sem paralelismo e proporcionalidade, não há garantia geométrica da igualdade."
+EF.09.MAT.3.102,e11_corrige_construcao,1,"Entendido, continuar ➔",e12_reflexao_tales_semelhanca,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e12_reflexao_tales_semelhanca,1,"Entendido, continuar ➔",e13_sintese_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e13_sintese_final,1,"Ele serve apenas para decorar frações, sem interpretação geométrica.",e13_corrige_sintese,FALSE,O teorema nasce da geometria de paralelas e transversais.
+EF.09.MAT.3.102,e13_sintese_final,2,"Ele permite montar proporções corretas entre segmentos de transversais de um feixe de paralelas, conectando geometria e números.",e_final,TRUE,Boa síntese.
+EF.09.MAT.3.102,e13_sintese_final,3,"Ele é usado apenas em exercícios de prova, sem ligação com situações reais.",e13_corrige_sintese,FALSE,"Vimos aplicações em mapas, construção e escalas."
+EF.09.MAT.3.102,e13_corrige_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.102,e_final,1,"Um feixe de retas paralelas determina, sobre duas retas transversais, segmentos proporcionais.",,FALSE,
+EF.09.MAT.3.102,e_final,2,"Em um feixe de paralelas cortadas por duas transversais, a razão entre dois segmentos quaisquer de uma transversal é igual à razão entre os segmentos correspondentes da outra.",,FALSE,
+EF.09.MAT.3.102,e_final,3,"O Teorema de Tales pode ser usado para encontrar medidas desconhecidas em situações de mapas, escalas e construção, montando e resolvendo proporções.",,FALSE,
+EF.09.MAT.3.102,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.2.96,e1,1,"Pânico. Vejo fórmulas sen, cos, tg, mas não entendo o que significam.",e2_panico,TRUE,"Vamos começar pela ideia geométrica, não pela fórmula decorada."
+EF.09.MAT.2.96,e1,2,"Lembro que tem a ver com triângulo retângulo, mas não sei qual razão usar em cada problema.",e2_sabe_meio,TRUE,Ótimo ponto de partida. Vamos organizar 'quando usar qual'.
+EF.09.MAT.2.96,e1,3,"Sei as fórmulas básicas, mas me confundo na hora de relacionar com ângulos e lados.",e2_confusao,TRUE,Vamos fixar o papel de cada lado em relação ao ângulo.
+EF.09.MAT.2.96,e1,4,Me sinto à vontade com trigonometria no triângulo retângulo.,e2_avancado,TRUE,"Excelente, vamos trabalhar problemas mais ricos."
+EF.09.MAT.2.96,e2_panico,1,"Entendido, continuar ➔",e3_triangulo_base,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e2_sabe_meio,1,"Entendido, continuar ➔",e3_triangulo_base,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e2_confusao,1,"Entendido, continuar ➔",e3_triangulo_base,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e2_avancado,1,"Entendido, continuar ➔",e3_triangulo_base,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e3_triangulo_base,1,"Entendido, continuar ➔",e3_identificar_oposto_adjacente,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e3_identificar_oposto_adjacente,1,Cateto oposto: \( BC \); cateto adjacente: \( AC \).,e4_definicao_razoes,TRUE,Perfeito. A hipotenusa continua sendo \( AB \).
+EF.09.MAT.2.96,e3_identificar_oposto_adjacente,2,Cateto oposto: \( AC \); cateto adjacente: \( BC \).,e3_corrige_oposto_adjacente,FALSE,Repare qual lado não encosta no \( \angle A \).
+EF.09.MAT.2.96,e3_identificar_oposto_adjacente,3,Hipotenusa: \( AC \); catetos: \( AB \) e \( BC \).,e3_corrige_oposto_adjacente,FALSE,A hipotenusa é sempre o lado oposto ao ângulo reto.
+EF.09.MAT.2.96,e3_corrige_oposto_adjacente,1,"Entendido, continuar ➔",e4_definicao_razoes,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e4_definicao_razoes,1,"Entendido, continuar ➔",e4_escolha_definicao,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e4_escolha_definicao,1,Seno: oposto/hipotenusa; Cosseno: adjacente/hipotenusa; Tangente: oposto/adjacente.,e5_aplicar_definicao_simples,TRUE,Isso mesmo.
+EF.09.MAT.2.96,e4_escolha_definicao,2,Seno: hipotenusa/oposto; Cosseno: hipotenusa/adjacente; Tangente: adjacente/oposto.,e4_corrige_definicao,FALSE,"As razões sempre são ""cateto sobre"" outro lado, não o inverso."
+EF.09.MAT.2.96,e4_escolha_definicao,3,Todas são hipotenusa sobre algum cateto.,e4_corrige_definicao,FALSE,"A tangente não envolve hipotenusa, só catetos."
+EF.09.MAT.2.96,e4_corrige_definicao,1,"Entendido, continuar ➔",e5_aplicar_definicao_simples,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e5_aplicar_definicao_simples,1,"Entendido, continuar ➔",e5_escolha_exemplo_simples,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e5_escolha_exemplo_simples,1,"sen(\( \theta \)) = 3/5, cos(\( \theta \)) = 4/5, tan(\( \theta \)) = 3/4.",e6_relacionar_angulo_medida,TRUE,Correto.
+EF.09.MAT.2.96,e5_escolha_exemplo_simples,2,"sen(\( \theta \)) = 5/3, cos(\( \theta \)) = 5/4, tan(\( \theta \)) = 4/3.",e5_corrige_exemplo_simples,FALSE,Inverteu as frações.
+EF.09.MAT.2.96,e5_escolha_exemplo_simples,3,"sen(\( \theta \)) = 3/4, cos(\( \theta \)) = 4/3, tan(\( \theta \)) = 5/4.",e5_corrige_exemplo_simples,FALSE,Essas razões não seguem as definições.
+EF.09.MAT.2.96,e5_corrige_exemplo_simples,1,"Entendido, continuar ➔",e6_relacionar_angulo_medida,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e6_relacionar_angulo_medida,1,"Entendido, continuar ➔",e6_escolha_relacao,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e6_escolha_relacao,1,"Seno, pois envolve oposto e hipotenusa.",e6_corrige_relacao,FALSE,Você precisa relacionar adjacente com hipotenusa.
+EF.09.MAT.2.96,e6_escolha_relacao,2,"Cosseno, pois relaciona cateto adjacente e hipotenusa.",e7_problema_escada,TRUE,Exato: cos(\( \theta \)) = adjacente/hipotenusa.
+EF.09.MAT.2.96,e6_escolha_relacao,3,"Tangente, pois não usa a hipotenusa.",e6_corrige_relacao,FALSE,Tangente não aproveita a informação da hipotenusa.
+EF.09.MAT.2.96,e6_corrige_relacao,1,"Entendido, continuar ➔",e7_problema_escada,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e7_problema_escada,1,"Entendido, continuar ➔",e7_escolha_escada,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e7_escolha_escada,1,2 m.,e8_corrige_escada,FALSE,Vamos conferir pelo cálculo passo a passo.
+EF.09.MAT.2.96,e7_escolha_escada,2,"2 m (pois adjacente = cos(60°) · 4 = 0,5 · 4 = 2).",e8_problema_altura,TRUE,Correto: aplicamos cosseno diretamente.
+EF.09.MAT.2.96,e7_escolha_escada,3,8 m.,e8_corrige_escada,FALSE,"Essa seria a hipotenusa multiplicada por 2, sem relação com o cosseno."
+EF.09.MAT.2.96,e8_corrige_escada,1,"Entendido, continuar ➔",e8_problema_altura,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e8_problema_altura,1,"Entendido, continuar ➔",e8_escolha_altura,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e8_escolha_altura,1,"3,464 m (aprox.).",e9_corrige_altura,FALSE,Vamos ver o cálculo passo a passo.
+EF.09.MAT.2.96,e8_escolha_altura,2,"3,464 m (pois oposto = sen(60°) · 4 = 0,866 · 4).",e9_relacao_tangente,TRUE,Correto: aplica-se seno para obter a altura.
+EF.09.MAT.2.96,e8_escolha_altura,3,"1,732 m.",e9_corrige_altura,FALSE,Esse é metade do valor correto; reveja a multiplicação.
+EF.09.MAT.2.96,e9_corrige_altura,1,"Entendido, continuar ➔",e9_relacao_tangente,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e9_relacao_tangente,1,"Entendido, continuar ➔",e9_escolha_tangente,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e9_escolha_tangente,1,3/4.,e10_problema_rampa,TRUE,Correto: oposto/adjacente.
+EF.09.MAT.2.96,e9_escolha_tangente,2,4/3.,e9_corrige_tangente,FALSE,Inverteu os lados na razão.
+EF.09.MAT.2.96,e9_escolha_tangente,3,3/5.,e9_corrige_tangente,FALSE,"Incluiu hipotenusa, que não aparece na tangente."
+EF.09.MAT.2.96,e9_corrige_tangente,1,"Entendido, continuar ➔",e10_problema_rampa,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e10_problema_rampa,1,"Entendido, continuar ➔",e10_escolha_rampa,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e10_escolha_rampa,1,"Que para cada 1 m na horizontal, a rampa sobe 0,5 m na vertical.",e11_reflexao_trigonometria,TRUE,Boa interpretação geométrica da tangente.
+EF.09.MAT.2.96,e10_escolha_rampa,2,"Que a rampa tem 0,5 m de comprimento total.",e10_corrige_rampa,FALSE,"Esse valor é uma razão, não o comprimento da rampa."
+EF.09.MAT.2.96,e10_escolha_rampa,3,"Que o ângulo \( \theta \) mede 0,5°.",e10_corrige_rampa,FALSE,"Tangente não é o valor do ângulo em graus, mas a razão entre lados."
+EF.09.MAT.2.96,e10_corrige_rampa,1,"Entendido, continuar ➔",e11_reflexao_trigonometria,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e11_reflexao_trigonometria,1,"Entendido, continuar ➔",e12_sintese_final,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e12_sintese_final,1,"É apenas um conjunto de fórmulas de sen, cos e tg para decorar.",e12_corrige_sintese,FALSE,"Na verdade, são relações geométricas entre lados e ângulos."
+EF.09.MAT.2.96,e12_sintese_final,2,"É o estudo das relações entre ângulos e lados de triângulos retângulos, usando seno, cosseno e tangente como razões entre catetos e hipotenusa.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.2.96,e12_sintese_final,3,Serve apenas para calcular comprimento de hipotenusa.,e12_corrige_sintese,FALSE,"Usamos também para catetos, alturas, distâncias horizontais etc."
+EF.09.MAT.2.96,e12_corrige_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.2.96,e_final,1,"Em um triângulo retângulo, sen(\( \theta \)) é a razão entre o cateto oposto ao ângulo \( \theta \) e a hipotenusa.",,FALSE,
+EF.09.MAT.2.96,e_final,2,"Em um triângulo retângulo, cos(\( \theta \)) é a razão entre o cateto adjacente ao ângulo \( \theta \) e a hipotenusa.",,FALSE,
+EF.09.MAT.2.96,e_final,3,"Em um triângulo retângulo, tan(\( \theta \)) é a razão entre o cateto oposto e o cateto adjacente ao ângulo \( \theta \).",,FALSE,
+EF.09.MAT.2.96,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,
+EF.09.MAT.3.98,e1,1,Eu não sei diferenciar ângulo central de ângulo inscrito.,e2_nao_diferencia,TRUE,Vamos começar pelas definições claras.
+EF.09.MAT.3.98,e1,2,"Eu sei identificar, mas não lembro as relações entre ângulo e arco.",e2_sabe_meio,TRUE,"Ótimo, vamos fixar as fórmulas e seu sentido geométrico."
+EF.09.MAT.3.98,e1,3,"Eu lembro que o ângulo inscrito ""vale metade"", mas não estou seguro quando isso se aplica.",e2_meia_duvida,TRUE,Vamos ver exatamente quando e por quê.
+EF.09.MAT.3.98,e1,4,Me sinto à vontade com arcos e ângulos na circunferência.,e2_avancado,TRUE,"Excelente, vamos trabalhar problemas com mais etapas e uso de software."
+EF.09.MAT.3.98,e2_nao_diferencia,1,"Entendido, continuar ➔",e3_definicoes_basicas,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e2_sabe_meio,1,"Entendido, continuar ➔",e3_definicoes_basicas,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e2_meia_duvida,1,"Entendido, continuar ➔",e3_definicoes_basicas,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e2_avancado,1,"Entendido, continuar ➔",e3_definicoes_basicas,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e3_definicoes_basicas,1,"Entendido, continuar ➔",e3_figura_central_inscrito,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e3_figura_central_inscrito,1,O ângulo com vértice no centro é central; o com vértice na circunferência é inscrito.,e4_relacao_central_arco,TRUE,Exatamente.
+EF.09.MAT.3.98,e3_figura_central_inscrito,2,O ângulo maior é sempre inscrito e o menor é sempre central.,e3_corrige_central_inscrito,FALSE,"O tamanho não define o tipo, e sim a posição do vértice."
+EF.09.MAT.3.98,e3_figura_central_inscrito,3,Qualquer ângulo desenhado perto do círculo é inscrito.,e3_corrige_central_inscrito,FALSE,"Precisamos olhar para o vértice, não para a ""proximidade""."
+EF.09.MAT.3.98,e3_corrige_central_inscrito,1,"Entendido, continuar ➔",e4_relacao_central_arco,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e4_relacao_central_arco,1,"Entendido, continuar ➔",e4_escolha_central_arco,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e4_escolha_central_arco,1,120°.,e5_relacao_inscrito_arco,TRUE,Correto: arco e ângulo central têm mesma medida.
+EF.09.MAT.3.98,e4_escolha_central_arco,2,60°.,e4_corrige_central_arco,FALSE,"60° será importante para ângulo inscrito, não para o central."
+EF.09.MAT.3.98,e4_escolha_central_arco,3,240°.,e4_corrige_central_arco,FALSE,240° seria o arco complementar; aqui queremos o arco interceptado diretamente.
+EF.09.MAT.3.98,e4_corrige_central_arco,1,"Entendido, continuar ➔",e5_relacao_inscrito_arco,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e5_relacao_inscrito_arco,1,"Entendido, continuar ➔",e5_escolha_inscrito_arco,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e5_escolha_inscrito_arco,1,60°.,e6_exemplo_central_inscrito,TRUE,Correto: ângulo inscrito = metade do arco.
+EF.09.MAT.3.98,e5_escolha_inscrito_arco,2,120°.,e5_corrige_inscrito_arco,FALSE,"Esse valor é o do ângulo central, não do inscrito."
+EF.09.MAT.3.98,e5_escolha_inscrito_arco,3,240°.,e5_corrige_inscrito_arco,FALSE,"240° seria um arco maior, não o ângulo inscrito."
+EF.09.MAT.3.98,e5_corrige_inscrito_arco,1,"Entendido, continuar ➔",e6_exemplo_central_inscrito,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e6_exemplo_central_inscrito,1,"Entendido, continuar ➔",e7_problema_simples_arco_inscrito,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e7_problema_simples_arco_inscrito,1,"Entendido, continuar ➔",e7_escolha_problema_simples,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e7_escolha_problema_simples,1,35°.,e7_corrige_problema_simples,FALSE,"35° seria a medida do próprio ângulo, não do arco."
+EF.09.MAT.3.98,e7_escolha_problema_simples,2,70°.,e8_problema_simples_central,TRUE,Correto: arco = 2 × 35°.
+EF.09.MAT.3.98,e7_escolha_problema_simples,3,"17,5°.",e7_corrige_problema_simples,FALSE,"17,5° seria metade, e aqui queremos o dobro."
+EF.09.MAT.3.98,e7_corrige_problema_simples,1,"Entendido, continuar ➔",e8_problema_simples_central,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e8_problema_simples_central,1,"Entendido, continuar ➔",e9_uso_software_dinamico,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e9_uso_software_dinamico,1,"Entendido, continuar ➔",e9_escolha_software,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e9_escolha_software,1,"Ver dinamicamente que, para qualquer posição de P, o ângulo inscrito que vê o mesmo arco tem metade da medida do ângulo central/arco.",e10_problema_contextual_setor,TRUE,Correto: o foco é observar a relação se mantendo.
+EF.09.MAT.3.98,e9_escolha_software,2,"Evitar qualquer cálculo, deixando que o software faça tudo sozinho.",e9_corrige_software,FALSE,"O software é ferramenta de observação e confirmação, não substituto de raciocínio."
+EF.09.MAT.3.98,e9_escolha_software,3,Desenhar apenas círculos bonitos sem relação com ângulos.,e9_corrige_software,FALSE,Queremos trabalhar relações matemáticas entre arco e ângulo.
+EF.09.MAT.3.98,e9_corrige_software,1,"Entendido, continuar ➔",e10_problema_contextual_setor,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e10_problema_contextual_setor,1,"Entendido, continuar ➔",e10_escolha_setor,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e10_escolha_setor,1,45°.,e11_problema_contextual_arco,TRUE,Correto: inscrito = metade do central.
+EF.09.MAT.3.98,e10_escolha_setor,2,90°.,e10_corrige_setor,FALSE,"Essa é a medida do ângulo central, não do inscrito."
+EF.09.MAT.3.98,e10_escolha_setor,3,180°.,e10_corrige_setor,FALSE,"180° seria o arco maior da semicircunferência, não o inscrito."
+EF.09.MAT.3.98,e10_corrige_setor,1,"Entendido, continuar ➔",e11_problema_contextual_arco,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e11_problema_contextual_arco,1,"Entendido, continuar ➔",e11_escolha_roda,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e11_escolha_roda,1,20°.,e11_corrige_roda,FALSE,Aqui o arco precisa ser o dobro.
+EF.09.MAT.3.98,e11_escolha_roda,2,40°.,e11_corrige_roda,FALSE,"40° é a medida do próprio ângulo, não do arco."
+EF.09.MAT.3.98,e11_escolha_roda,3,80°.,e12_reflexao_arcos_angulos,TRUE,Correto: arco = 2 × 40°.
+EF.09.MAT.3.98,e11_corrige_roda,1,"Entendido, continuar ➔",e12_reflexao_arcos_angulos,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e12_reflexao_arcos_angulos,1,"Entendido, continuar ➔",e13_sintese_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e13_sintese_final,1,"O ângulo central tem medida igual ao arco correspondente, e o ângulo inscrito que vê esse arco tem metade da medida.",e_final,TRUE,Excelente síntese.
+EF.09.MAT.3.98,e13_sintese_final,2,O ângulo inscrito é sempre maior que o ângulo central.,e13_corrige_sintese,FALSE,"Na verdade, o inscrito é metade do central que vê o mesmo arco."
+EF.09.MAT.3.98,e13_sintese_final,3,Arcos e ângulos na circunferência não têm relação numérica entre si.,e13_corrige_sintese,FALSE,Toda a teoria que vimos é justamente sobre essas relações.
+EF.09.MAT.3.98,e13_corrige_sintese,1,"Entendido, continuar ➔",e_final,,Vamos seguir passo a passo.
+EF.09.MAT.3.98,e_final,1,A medida de um arco de circunferência é igual à medida do ângulo central correspondente.,,FALSE,
+EF.09.MAT.3.98,e_final,2,A medida de um ângulo inscrito é igual à metade da medida do arco que ele intercepta.,,FALSE,
+EF.09.MAT.3.98,e_final,3,"Um software de geometria dinâmica pode ser usado para observar que, ao mover um ponto sobre a circunferência, o ângulo inscrito que vê um mesmo arco mantém a relação de ""metade"" em relação ao arco/ângulo central.",,FALSE,
+EF.09.MAT.3.98,e_final,4,Todas as afirmativas acima estão corretas.,,TRUE,

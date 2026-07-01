@@ -26,11 +26,20 @@
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+<body>
+
+  <div id="view-loading" class="loading-overlay hidden">
+    <div class="loading-box">
+      <div class="loading-spinner"></div>
+      <p id="loading-message">Carregando…</p>
+    </div>
+  </div>
 
   <header id="app-header" class="hidden">
     <div class="user-info">
       <span class="user-name" id="display-nome"></span>
       <span class="user-class" id="display-turma"></span>
+      <span class="sync-status" id="sync-status"></span>
     </div>
     
     <div style="display: flex; gap: 10px; align-items: center;">
@@ -67,7 +76,7 @@
     <section id="view-home" class="hidden fade-in">
       <div id="motivational-box" class="motivational-msg"></div>
       
-      <div id="active-session-box" class="hidden" style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--primary-color);">
+      <div id="active-session-box" class="hidden" style="margin-bottom: 20px; background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--primary-color);">
         <h3 style="font-size: 1rem; color: var(--primary-color); margin-bottom: 10px;">Sessão em andamento</h3>
         <p id="active-session-name" style="font-size: 0.9rem; margin-bottom: 10px;"></p>
         <button class="btn" style="width: 100%;" onclick="window.app.resumeSession()">Continuar de onde parei</button>
